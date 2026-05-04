@@ -1,0 +1,17 @@
+export const VBM = {
+  name: "VBM Elektro",
+  phone: "900 00 000",
+  phoneHref: "tel:90000000",
+  email: "post@vbmelektro.no",
+  address: "Billingstadsletta 22, 1396 Billingstad",
+  areas: ["Asker", "Bærum", "Oslo", "Drammen", "Lillestrøm", "Holmestrand"],
+  areaString: "Asker · Bærum · Oslo · Drammen",
+  areaFull: "Asker · Bærum · Oslo · Drammen · Lillestrøm · Holmestrand · og omegn",
+  teamSize: 4,
+  org: "VBM Elektro AS",
+  orgNr: "935 452 856",
+  tagline: "Lokal elektriker for boligeiere, entreprenører og næring — ryddig arbeid, tydelig kommunikasjon.",
+  hours: "Mandag–fredag: 07.00–15.00",
+  url: "https://www.vbmelektro.no",
+  builtBy: "Seek AI AS",
+} as const
