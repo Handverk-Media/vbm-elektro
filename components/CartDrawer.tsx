@@ -81,7 +81,7 @@ export function CartDrawer() {
             <Link
               href="/bestill"
               onClick={() => setÅpen(false)}
-              className="w-full bg-[#E1342B] text-white font-semibold py-4 rounded flex items-center justify-center gap-2 hover:bg-[#c42d24] transition-colors"
+              className="w-full bg-[#1A1A1A] text-white font-semibold py-4 rounded flex items-center justify-center gap-2 hover:bg-[#333] transition-colors"
             >
               Gå til betaling
               <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
