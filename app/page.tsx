@@ -394,18 +394,18 @@ function EVCharger() {
               <span className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase">Elbillader</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A] mb-4">
-              Vi installerer alle ledende merker
+              Installasjon av elbillader for bolig og næring
             </h2>
             <div className="w-12 h-[3px] bg-[#E1342B] mb-6" />
             <p className="text-[#6B6B6B] text-lg leading-relaxed mb-8">
-              Uansett hvilken hjemmelader du ønsker – vi monterer og idriftsetter den
-              riktig. Vi hjelper deg også velge rett løsning for ditt anlegg og behov.
+              Vi hjelper deg med trygg og korrekt installasjon av hjemmelader — inkludert
+              dokumentasjon, oppsett og ferdigstillelse utført av autorisert elektriker.
             </p>
             <div className="space-y-3 mb-10">
               {[
                 "Montering og idriftsettelse",
                 "Tilkobling til sikringsskap",
-                "Konfigurering og app-oppsett",
+                "Oppsett og konfigurering",
                 "Dokumentasjon og samsvarserklæring",
               ].map((p) => (
                 <div key={p} className="flex items-center gap-3 text-[#1A1A1A]">
@@ -414,13 +414,21 @@ function EVCharger() {
                 </div>
               ))}
             </div>
-            <a
-              href="#kontakt"
-              className="inline-flex items-center gap-2 bg-[#E1342B] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#c42d24] transition-colors"
-            >
-              Bestill elbillader-installasjon
-              <ArrowIcon className="w-4 h-4" />
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="/book"
+                className="inline-flex items-center justify-center gap-2 bg-[#E1342B] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#c42d24] transition-colors"
+              >
+                Book installasjon
+                <ArrowIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="#kontakt"
+                className="inline-flex items-center justify-center gap-2 text-[#1A1A1A] font-semibold px-7 py-3.5 border border-[#1A1A1A]/20 rounded hover:border-[#1A1A1A]/50 transition-colors"
+              >
+                Få tilbud på installasjon
+              </a>
+            </div>
           </div>
 
           <div>
@@ -436,7 +444,7 @@ function EVCharger() {
               ))}
             </div>
             <p className="text-xs text-[#6B6B6B] mt-4">
-              Har du allerede valgt en lader? Vi installerer alle godkjente merker.
+              Har du allerede kjøpt lader? Vi installerer de fleste godkjente modeller.
             </p>
           </div>
         </div>
