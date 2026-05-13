@@ -137,7 +137,7 @@ function Hero() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-[68px] font-bold leading-[1.04] tracking-tight text-[#1A1A1A] mb-6">
+          <h1 className="text-[36px] sm:text-5xl md:text-[68px] font-bold leading-[1.04] tracking-tight text-[#1A1A1A] mb-6">
             Elektrikerarbeid gjort ryddig.
           </h1>
 
@@ -148,23 +148,23 @@ function Hero() {
             tydelig kommunikasjon, dokumentasjon og løsninger som faktisk blir fulgt opp.
           </p>
 
-          <div className="flex flex-wrap gap-3 items-center">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3">
             <a
               href="#kontakt"
-              className="bg-[#E1342B] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#c42d24] transition-colors inline-flex items-center gap-2"
+              className="bg-[#E1342B] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#c42d24] transition-colors inline-flex items-center justify-center gap-2"
             >
               Få tilbud
               <ArrowIcon className="w-4 h-4" />
             </a>
             <a
               href="/book"
-              className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#333] transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#1A1A1A] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#333] transition-colors"
             >
               Book befaring
             </a>
             <a
               href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-              className="inline-flex items-center gap-2 text-[#1A1A1A] font-semibold px-7 py-3.5 border border-[#EEEDE8] rounded hover:border-[#1A1A1A]/30 transition-colors"
+              className="inline-flex items-center justify-center gap-2 text-[#1A1A1A] font-semibold px-7 py-3.5 border border-[#EEEDE8] rounded hover:border-[#1A1A1A]/30 transition-colors"
             >
               <PhoneIcon className="w-4 h-4" />
               Ring oss
@@ -180,15 +180,15 @@ function Hero() {
             ))}
           </div>
 
-          <div className="mt-8 inline-flex items-center gap-3 bg-[#EEEDE8] rounded-lg px-5 py-3 text-sm">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5 text-[#E1342B] flex-shrink-0">
+          <div className="mt-8 flex items-start sm:items-center gap-3 bg-[#EEEDE8] rounded-lg px-5 py-3 text-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5 text-[#E1342B] flex-shrink-0 mt-0.5 sm:mt-0">
               <path d="M15 10l4.553-2.277A1 1 0 0121 8.67v6.66a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
             </svg>
-            <div>
+            <div className="flex-1 min-w-0">
               <span className="font-semibold text-[#1A1A1A]">Gratis videobefaring</span>
-              <span className="text-[#6B6B6B] ml-2">– få vurdering uten at vi trenger å komme hjem til deg</span>
+              <span className="text-[#6B6B6B] ml-1">– vurdering uten oppmøte</span>
             </div>
-            <a href="#kontakt" className="text-[#E1342B] font-semibold text-xs whitespace-nowrap hover:underline ml-1">
+            <a href="#kontakt" className="text-[#E1342B] font-semibold text-xs whitespace-nowrap hover:underline flex-shrink-0">
               Book nå →
             </a>
           </div>
@@ -228,7 +228,7 @@ function Services() {
             <a
               key={k.id}
               href="#kontakt"
-              className="group bg-[#F7F6F3] rounded-lg p-8 flex flex-col gap-5 hover:shadow-sm transition-all border border-transparent hover:border-[#E1342B]/15"
+              className="group bg-[#F7F6F3] rounded-lg p-5 sm:p-8 flex flex-col gap-5 hover:shadow-sm transition-all border border-transparent hover:border-[#E1342B]/15"
             >
               <div className="text-[#6B6B6B] group-hover:text-[#E1342B] transition-colors">
                 {k.icon}
@@ -277,7 +277,7 @@ function Prisliste() {
               <h3 className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase mb-4">{kat}</h3>
               <div className="space-y-2">
                 {TJENESTER.filter((t) => t.kategori === kat).map((t) => (
-                  <div key={t.id} className="bg-[#EEEDE8] rounded-lg px-6 py-5 flex items-start gap-4">
+                  <div key={t.id} className="bg-[#EEEDE8] rounded-lg px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-[#1A1A1A]">{t.navn}</p>
                       <p className="text-sm text-[#6B6B6B] mt-0.5 leading-relaxed">{t.beskrivelse}</p>
@@ -288,8 +288,8 @@ function Prisliste() {
                         </p>
                       )}
                     </div>
-                    <div className="flex flex-col items-end gap-3 flex-shrink-0">
-                      <div className="text-right">
+                    <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-3 flex-shrink-0">
+                      <div className="text-left sm:text-right">
                         <span className="font-bold text-[#1A1A1A]">
                           kr {t.pris.toLocaleString("nb-NO")}
                         </span>
@@ -316,62 +316,35 @@ function Prisliste() {
 // ── Process ──────────────────────────────────────────────────────────────────
 
 const STEG = [
-  {
-    num: "01", tittel: "Send forespørsel", tekst: "Via skjema, telefon eller SMS",
-    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>,
-  },
-  {
-    num: "02", tittel: "Tilbakering innen 1t", tekst: "Vi avklarer behov og tidspunkt",
-    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 10.9a19.79 19.79 0 01-3.07-8.68A2 2 0 012.83 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>,
-  },
-  {
-    num: "03", tittel: "Fast pristilbud", tekst: "Ingen overraskelser",
-    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" /></svg>,
-  },
-  {
-    num: "04", tittel: "Installasjon", tekst: "Ryddig og presis utførelse",
-    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" /></svg>,
-  },
-  {
-    num: "05", tittel: "Dokumentasjon", tekst: "Samsvarserklæring leveres",
-    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M9 12l2 2 4-4M7 2H5a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2V7l-5-5H7z" /><path d="M14 2v5h5" /></svg>,
-  },
+  { num: "01", tittel: "Send forespørsel", tekst: "Via skjema, telefon eller SMS" },
+  { num: "02", tittel: "Tilbakering innen 1t", tekst: "Vi avklarer behov og tidspunkt" },
+  { num: "03", tittel: "Fast pristilbud", tekst: "Ingen overraskelser" },
+  { num: "04", tittel: "Installasjon", tekst: "Ryddig og presis utførelse" },
+  { num: "05", tittel: "Dokumentasjon", tekst: "Samsvarserklæring leveres" },
 ]
 
 function Process() {
   return (
-    <section id="prosess" className="bg-[#1A1A1A] py-24 overflow-hidden">
+    <section id="prosess" className="bg-[#EEEDE8] py-24">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Bolt className="w-[10px] h-5 text-[#E1342B]" />
-              <span className="text-xs font-semibold text-white/40 tracking-widest uppercase">Slik jobber vi</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-              Slik fungerer det
-            </h2>
-          </div>
-          <p className="text-white/40 text-sm max-w-xs md:text-right leading-relaxed">
-            Enkelt og forutsigbart – fra start til ferdig.
-          </p>
+        <div className="mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
+            Slik fungerer det
+          </h2>
+          <p className="mt-4 text-[#6B6B6B]">Enkelt og forutsigbart – fra start til ferdig.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-px bg-white/[0.06]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-3">
           {STEG.map((s, i) => (
-            <div key={s.num} className="relative bg-[#1A1A1A] p-8 overflow-hidden group hover:bg-white/[0.03] transition-colors">
-              {i === 0 && <div className="absolute top-0 left-0 w-full h-[3px] bg-[#E1342B]" />}
-              <div className="absolute right-2 bottom-2 text-[96px] font-black text-white/[0.035] leading-none select-none pointer-events-none">
-                {s.num}
+            <div key={s.num} className="relative flex flex-col items-start md:items-center md:text-center">
+              {i < STEG.length - 1 && (
+                <div className="hidden md:block absolute top-7 left-[calc(50%+28px)] right-[-50%] h-px bg-[#1A1A1A]/10" />
+              )}
+              <div className="relative z-10 w-14 h-14 rounded-full bg-[#F7F6F3] flex items-center justify-center mb-4 font-bold text-sm text-[#1A1A1A]">
+                {i === 0 ? <span className="text-[#E1342B]">{s.num}</span> : s.num}
               </div>
-              <div className={`text-xs font-bold tracking-widest mb-5 ${i === 0 ? "text-[#E1342B]" : "text-white/20"}`}>
-                {s.num}
-              </div>
-              <div className={`mb-4 transition-colors ${i === 0 ? "text-[#E1342B]" : "text-white/30 group-hover:text-[#E1342B]"}`}>
-                {s.icon}
-              </div>
-              <p className="font-bold text-white text-sm mb-1.5 leading-snug">{s.tittel}</p>
-              <p className="text-xs text-white/35 leading-relaxed">{s.tekst}</p>
+              <p className="font-bold text-[#1A1A1A] text-sm mb-1">{s.tittel}</p>
+              <p className="text-xs text-[#6B6B6B]">{s.tekst}</p>
             </div>
           ))}
         </div>
@@ -384,7 +357,7 @@ function Process() {
             Start prosessen nå
             <ArrowIcon className="w-4 h-4" />
           </a>
-          <span className="text-white/30 text-sm">Tilbakering innen 1 time · Ingen bindingstid</span>
+          <span className="text-[#6B6B6B] text-sm">Tilbakering innen 1 time · Ingen bindingstid</span>
         </div>
       </div>
     </section>
@@ -404,13 +377,13 @@ function EVCharger() {
   return (
     <section id="elbillader" className="bg-[#F7F6F3] py-24">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Bolt className="w-[10px] h-5 text-[#E1342B]" />
               <span className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase">Elbillader</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A] mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A] mb-4">
               Vi installerer alle ledende merker
             </h2>
             <div className="w-12 h-[3px] bg-[#E1342B] mb-6" />
@@ -481,7 +454,7 @@ function Trust() {
               <Bolt className="w-[10px] h-5 text-[#E1342B]" />
               <span className="text-xs font-semibold text-white/40 tracking-widest uppercase">Sertifisert og trygg</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
               Du er i trygge hender
             </h2>
           </div>
@@ -492,7 +465,7 @@ function Trust() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
           {TILLIT.map((item) => (
-            <div key={item.label} className="bg-[#1A1A1A] p-8">
+            <div key={item.label} className="bg-[#1A1A1A] p-6 sm:p-8">
               <div className="text-[#E1342B] mb-5">{item.icon}</div>
               <div className="text-3xl font-bold text-white mb-1">{item.stat}</div>
               <div className="font-semibold text-white mb-3 text-sm">{item.label}</div>
@@ -556,13 +529,13 @@ function Reviews() {
             <Stars n={5} />
             <span className="text-[#6B6B6B] text-sm">5,0 · Google</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
             Hva kundene sier
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {ANMELDELSER.map((r) => (
-            <div key={r.navn} className="bg-[#F7F6F3] rounded-lg p-8">
+            <div key={r.navn} className="bg-[#F7F6F3] rounded-lg p-5 sm:p-8">
               <Stars n={r.stjerner} />
               <p className="mt-4 text-[#1A1A1A] leading-relaxed mb-6 text-[15px]">"{r.tekst}"</p>
               <div className="flex items-center gap-3">
@@ -587,14 +560,14 @@ function Reviews() {
 function MidCTA() {
   return (
     <section className="bg-[#E1342B] py-16">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
-          <p className="text-white font-bold text-2xl md:text-3xl tracking-tight">
+          <p className="text-white font-bold text-xl md:text-3xl tracking-tight">
             Klar for et pristilbud?
           </p>
-          <p className="text-white/70 mt-2 text-lg">Vi ringer tilbake innen 1 time – helt uforpliktende.</p>
+          <p className="text-white/70 mt-2">Vi ringer tilbake innen 1 time – helt uforpliktende.</p>
         </div>
-        <div className="flex flex-wrap gap-3 flex-shrink-0">
+        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto flex-shrink-0">
           <a
             href="#kontakt"
             className="bg-white text-[#E1342B] font-semibold px-7 py-3.5 rounded hover:bg-[#f5f4f2] transition-colors inline-flex items-center gap-2"
@@ -701,7 +674,7 @@ function Contact() {
   return (
     <section id="kontakt" className="bg-[#EEEDE8] py-24">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           <div>
             <div className="flex items-center gap-2 mb-6">
               <Bolt className="w-[10px] h-5 text-[#E1342B]" />
@@ -745,7 +718,7 @@ function Contact() {
             </div>
           </div>
 
-          <div className="bg-[#F7F6F3] rounded-xl p-8">
+          <div className="bg-[#F7F6F3] rounded-xl p-5 sm:p-8">
             {sendt ? (
               <div className="flex flex-col items-center justify-center h-full text-center py-12">
                 <Bolt className="w-8 h-16 mx-auto text-[#E1342B] mb-4" />
@@ -754,7 +727,7 @@ function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
                     <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Navn</label>
                     <input type="text" required placeholder="Ola Nordmann"
@@ -987,6 +960,7 @@ export default function Page() {
       <Services />
       <Prisliste />
       <Process />
+      <RedStripe />
       <EVCharger />
       <Trust />
       <Reviews />
