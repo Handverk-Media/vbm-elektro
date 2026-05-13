@@ -34,10 +34,20 @@ function Nav() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#1A1A1A]">
-          <a href="#tjenester" className="hover:text-[#E1342B] transition-colors">Tjenester</a>
-          <a href="#elbillader" className="hover:text-[#E1342B] transition-colors">Elbillader</a>
-          <a href="#prosess" className="hover:text-[#E1342B] transition-colors">Slik fungerer det</a>
-          <a href="#kontakt" className="hover:text-[#E1342B] transition-colors">Kontakt</a>
+          {[
+            { label: "Tjenester", id: "tjenester" },
+            { label: "Elbillader", id: "elbillader" },
+            { label: "Slik fungerer det", id: "prosess" },
+            { label: "Kontakt", id: "kontakt" },
+          ].map(({ label, id }) => (
+            <button
+              key={id}
+              onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })}
+              className="hover:text-[#E1342B] transition-colors cursor-pointer"
+            >
+              {label}
+            </button>
+          ))}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -316,11 +326,11 @@ function Prisliste() {
 // ── Process ──────────────────────────────────────────────────────────────────
 
 const STEG = [
-  { num: "01", tittel: "Send forespørsel", tekst: "Via skjema, telefon eller SMS" },
-  { num: "02", tittel: "Tilbakering innen 1t", tekst: "Vi avklarer behov og tidspunkt" },
-  { num: "03", tittel: "Fast pristilbud", tekst: "Ingen overraskelser" },
-  { num: "04", tittel: "Installasjon", tekst: "Ryddig og presis utførelse" },
-  { num: "05", tittel: "Dokumentasjon", tekst: "Samsvarserklæring leveres" },
+  { num: "01", tittel: "Send forespørsel", tekst: "Via skjema, chat eller telefon" },
+  { num: "02", tittel: "Svar innen få minutter", tekst: "AI-assistenten registrerer saken og sender den videre" },
+  { num: "03", tittel: "Pris og avklaring", tekst: "Vi bekrefter løsning, pris og tidspunkt" },
+  { num: "04", tittel: "Installasjon", tekst: "Ryddig og dokumentert utførelse" },
+  { num: "05", tittel: "Dokumentasjon", tekst: "Samsvarserklæring og ferdig rapport levert" },
 ]
 
 function Process() {

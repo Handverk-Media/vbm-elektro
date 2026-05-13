@@ -66,7 +66,7 @@ function BefaringForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
           <label className="text-xs font-semibold mb-1.5 block" style={{ color: "#6b6b6b" }}>Navn *</label>
           <input
@@ -202,7 +202,7 @@ export default function BefaringPage() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl font-bold leading-[1.04] tracking-tight text-white mb-6">
+              <h1 className="text-[34px] sm:text-4xl md:text-6xl font-bold leading-[1.04] tracking-tight text-white mb-6">
                 Få en elektriker<br />
                 <span style={{ color: "#E1342B" }}>hjem til deg.</span><br />
                 Gratis.
@@ -229,7 +229,7 @@ export default function BefaringPage() {
             </div>
 
             {/* Right — form */}
-            <div className="bg-[#EEEDE8] rounded-2xl p-8">
+            <div className="bg-[#EEEDE8] rounded-2xl p-5 sm:p-8">
               <div className="mb-6">
                 <p className="font-bold text-lg mb-1" style={{ color: "#1a1a1a" }}>Book gratis befaring</p>
                 <p className="text-sm" style={{ color: "#6b6b6b" }}>Fyll inn info — velg tid i neste steg</p>
@@ -244,19 +244,19 @@ export default function BefaringPage() {
 
       {/* ── Social proof ── */}
       <section className="bg-[#EEEDE8] py-6 border-b border-[#1A1A1A]/5">
-        <div className="max-w-5xl mx-auto px-6 flex flex-wrap items-center justify-between gap-6">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="flex">{[1,2,3,4,5].map(i => <Star key={i} />)}</div>
             <span style={{ color: "#1a1a1a" }} className="font-semibold text-sm">5,0 på Google</span>
           </div>
-          <div className="flex flex-wrap gap-8 text-sm">
+          <div className="flex flex-wrap gap-5 sm:gap-8 text-sm">
             {[
               { num: "200+", label: "befaringer gjennomført" },
               { num: "< 1t", label: "tilbakering" },
-              { num: "100%", label: "autorisert utførelse" },
+              { num: "100%", label: "autorisert" },
             ].map((s) => (
-              <div key={s.label} className="flex items-baseline gap-2">
-                <span className="text-2xl font-bold" style={{ color: "#E1342B" }}>{s.num}</span>
+              <div key={s.label} className="flex items-baseline gap-1.5">
+                <span className="text-xl font-bold" style={{ color: "#E1342B" }}>{s.num}</span>
                 <span className="text-xs" style={{ color: "#6b6b6b" }}>{s.label}</span>
               </div>
             ))}
@@ -308,7 +308,7 @@ export default function BefaringPage() {
       <section className="py-16 bg-[#1A1A1A]">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-white mb-8">Vi befarer alle typer oppdrag</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-10">
             {[
               "Elbillader-installasjon",
               "Sikringsskap og kursoppgradering",
@@ -430,7 +430,7 @@ export default function BefaringPage() {
           </div>
           <a
             href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-            className="inline-flex items-center gap-3 bg-white font-bold text-xl px-8 py-4 rounded-lg hover:bg-[#f5f4f2] transition-colors"
+            className="inline-flex items-center gap-3 bg-white font-bold text-lg px-6 py-4 rounded-lg hover:bg-[#f5f4f2] transition-colors"
             style={{ color: "#E1342B" }}
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">

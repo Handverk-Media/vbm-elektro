@@ -15,18 +15,19 @@ const siteUrl = "https://vbmelektro.no"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "VBM Elektro AS – Autorisert elektriker i Bærum og Oslo",
+    default: "VBM Elektro AS – Autorisert elektriker i Bærum, Oslo og Asker",
     template: "%s | VBM Elektro AS",
   },
   description:
-    "Autorisert elektriker i Bærum og Oslo. Elbillader (Zaptec, Easee), renovering, smarthus og serviceoppdrag. NELFO-godkjent, fast pris og tilbakering innen 1 time. Ring 90 63 31 18.",
+    "Autorisert elektriker i Bærum, Oslo og Asker. Elbillader (Zaptec, Easee), renovering, smarthus og serviceoppdrag. NELFO-godkjent, fast pris og tilbakering innen 1 time. Ring 90 63 31 18.",
   keywords: [
-    "elektriker Bærum", "elektriker Oslo", "elbillader installasjon", "NELFO elektriker",
-    "el-anlegg Bærum", "smarthus elektriker", "elbillader Bærum", "autorisert elektriker",
-    "elkontroll bolig", "elektriker Billingstad", "elektriker Sandvika",
+    "elektriker Bærum", "elektriker Oslo", "elektriker Asker", "elbillader installasjon",
+    "NELFO elektriker", "el-anlegg Bærum", "smarthus elektriker", "elbillader Bærum",
+    "autorisert elektriker", "elkontroll bolig", "elektriker Billingstad", "elektriker Sandvika",
+    "elektriker Lysaker", "elektriker Fornebu", "elbillader Asker",
   ],
   openGraph: {
-    title: "VBM Elektro AS – Autorisert elektriker i Bærum og Oslo",
+    title: "VBM Elektro AS – Autorisert elektriker i Bærum, Oslo og Asker",
     description: "Elbillader, renovering, smarthus og service. NELFO-godkjent. Fast pris. Ring 90 63 31 18.",
     locale: "nb_NO",
     type: "website",
@@ -56,7 +57,7 @@ const localBusinessSchema = {
     latitude: 59.9,
     longitude: 10.48,
   },
-  areaServed: ["Bærum", "Oslo", "Sandvika", "Billingstad", "Lysaker"],
+  areaServed: ["Bærum", "Oslo", "Asker", "Sandvika", "Billingstad", "Lysaker", "Fornebu", "Høvik", "Nesbru"],
   openingHours: "Mo-Fr 07:00-16:00",
   priceRange: "kr kr",
   description: "Autorisert elektriker i Bærum og Oslo. Elbillader, renovering, smarthus og serviceoppdrag.",
