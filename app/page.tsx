@@ -456,10 +456,10 @@ function EVCharger() {
 // ── Trust — THE ONE DARK SECTION ─────────────────────────────────────────────
 
 const TILLIT = [
-  { stat: "100%", label: "Autorisert elektriker", tekst: "Alt arbeid utføres av autoriserte elektrikere etter NEK 400", icon: <ShieldIcon /> },
-  { stat: "NELFO", label: "Godkjent bedrift", tekst: "Registrert NELFO-bedrift som oppfyller bransjens krav og standarder", icon: <BadgeIcon /> },
-  { stat: "Alt", label: "Dokumentert", tekst: "Samsvarserklæring og komplett dokumentasjon leveres på alle oppdrag", icon: <DocIcon /> },
-  { stat: "< 1t", label: "Tilbakering", tekst: "Vi ringer tilbake innen én time i normal arbeidstid", icon: <ClockLargeIcon /> },
+  { stat: "100%", label: "Autoriserte elektrikere", tekst: "Alt arbeid utføres etter gjeldende forskrifter og NEK-standarder.", icon: <ShieldIcon /> },
+  { stat: "NELFO", label: "Registrert bedrift", tekst: "Godkjent elektrobedrift med dokumentert fagkompetanse.", icon: <BadgeIcon /> },
+  { stat: "Alt", label: "Dokumentert", tekst: "Samsvarserklæring og nødvendig dokumentasjon leveres på utført arbeid.", icon: <DocIcon /> },
+  { stat: "< 1t", label: "Rask tilbakemelding", tekst: "Vi svarer raskt på forespørsler i normal arbeidstid.", icon: <ClockLargeIcon /> },
 ]
 
 function Trust() {
@@ -477,7 +477,7 @@ function Trust() {
             </h2>
           </div>
           <p className="text-white/40 text-sm max-w-xs md:text-right leading-relaxed">
-            Autorisert, forsikret og alltid tilgjengelig. Det er standarden – ikke unntaket.
+            Autorisert elektriker med fokus på kvalitet, dokumentasjon og rask oppfølging — fra første kontakt til ferdig arbeid.
           </p>
         </div>
 
@@ -494,19 +494,19 @@ function Trust() {
 
         <div className="mt-16 pt-12 border-t border-white/[0.07] flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-white/60 text-lg max-w-sm">
-            Klar for en uforpliktende befaring? Vi gir deg fast pris og ingen overraskelser.
+            Klar for å komme i gang? Beskriv jobben kort — vi tar kontakt for videre avklaring og tilbud.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <a
               href="/book"
-              className="bg-[#E1342B] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#c42d24] transition-colors inline-flex items-center gap-2"
+              className="bg-[#E1342B] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#c42d24] transition-colors inline-flex items-center justify-center gap-2"
             >
               Book befaring
               <ArrowIcon className="w-4 h-4" />
             </a>
             <a
               href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-              className="inline-flex items-center gap-2 text-white/70 font-semibold px-7 py-3.5 border border-white/20 rounded hover:text-white hover:border-white/40 transition-colors"
+              className="inline-flex items-center justify-center gap-2 text-white/70 font-semibold px-7 py-3.5 border border-white/20 rounded hover:text-white hover:border-white/40 transition-colors"
             >
               <PhoneIcon className="w-4 h-4" />
               Ring oss
