@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #F7F6F3;
+  --color-ink: #1A1A1A;
+  --color-mid: #6B6B6B;
+  --color-accent: #E1342B;
+  --color-flat: #EEEDE8;
+  --color-dark: #111111;
+  --font-sans: var(--font-geist-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F7F6F3;
+  color: #1A1A1A;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Tailwind v4 button reset — ensure buttons inherit body text color */
+button {
+  color: inherit;
+}
