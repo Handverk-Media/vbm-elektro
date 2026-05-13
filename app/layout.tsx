@@ -88,6 +88,21 @@ export default function RootLayout({
           data-widget-id="6a04e119c3c81a645b7fbf48"
           strategy="afterInteractive"
         />
+        <Script id="chat-widget-mobile-fix" strategy="afterInteractive">{`
+          (function() {
+            function fix() {
+              if (window.innerWidth >= 768) return;
+              document.querySelectorAll('[id*="chat"],[class*="chat"],[id*="widget"],[class*="widget-btn"],[class*="lc-"]').forEach(function(el) {
+                var s = window.getComputedStyle(el);
+                if (s.position === 'fixed' && parseInt(s.bottom) < 80) {
+                  el.style.setProperty('bottom','72px','important');
+                }
+              });
+            }
+            new MutationObserver(fix).observe(document.body,{childList:true,subtree:true});
+            window.addEventListener('resize', fix);
+          })();
+        `}</Script>
       </body>
     </html>
   )

@@ -99,14 +99,22 @@ function StickyMobileBar() {
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#1A1A1A] border-t border-white/10 flex">
       <a
         href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-        className="flex-1 flex flex-col items-center justify-center py-3 text-white/70 hover:text-white transition-colors text-xs gap-1"
+        className="flex-1 flex flex-col items-center justify-center py-3 text-white/70 hover:text-white transition-colors text-xs gap-1 border-r border-white/10"
       >
         <PhoneIcon className="w-5 h-5" />
         Ring
       </a>
+      <a
+        href="#kontakt"
+        onClick={(e) => { e.preventDefault(); document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" }) }}
+        className="flex-1 flex flex-col items-center justify-center py-3 bg-[#E1342B] text-white text-xs gap-1 font-semibold"
+      >
+        <Bolt className="w-3 h-6" />
+        Få tilbud
+      </a>
       <button
         onClick={() => setÅpen(true)}
-        className="flex-1 flex flex-col items-center justify-center py-3 text-white/70 hover:text-white transition-colors text-xs gap-1 border-x border-white/10 relative"
+        className="flex-1 flex flex-col items-center justify-center py-3 text-white/70 hover:text-white transition-colors text-xs gap-1 border-l border-white/10 relative"
       >
         <CartIcon className="w-5 h-5" />
         {antall > 0 && (
@@ -116,13 +124,6 @@ function StickyMobileBar() {
         )}
         Bestill
       </button>
-      <a
-        href="#kontakt"
-        className="flex-1 flex flex-col items-center justify-center py-3 bg-[#E1342B] text-white text-xs gap-1 font-semibold"
-      >
-        <Bolt className="w-3 h-6" />
-        Få tilbud
-      </a>
     </div>
   )
 }
