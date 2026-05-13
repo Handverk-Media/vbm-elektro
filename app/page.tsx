@@ -300,10 +300,10 @@ function Prisliste() {
                     </div>
                     <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-3 flex-shrink-0">
                       <div className="text-left sm:text-right">
+                        <span className="text-xs text-[#6B6B6B] block">{t.enhet}</span>
                         <span className="font-bold text-[#1A1A1A]">
                           kr {t.pris.toLocaleString("nb-NO")}
                         </span>
-                        <span className="text-xs text-[#6B6B6B] ml-1">{t.enhet}</span>
                       </div>
                       <button
                         onClick={() => leggTil(t)}
