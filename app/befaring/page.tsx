@@ -174,6 +174,19 @@ export default function BefaringPage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-12 text-center">
+            <a
+              href="#kalender"
+              className="inline-flex items-center gap-2 bg-[#E1342B] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#c42d24] transition-colors text-lg"
+            >
+              Book gratis befaring nå
+              <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" />
+              </svg>
+            </a>
+            <p style={{ color: "#6b6b6b" }} className="text-sm mt-3">Gratis · Uforpliktende · Tilbakering innen 1 time</p>
+          </div>
         </div>
       </section>
 
@@ -198,6 +211,18 @@ export default function BefaringPage() {
                 <span style={{ color: "rgba(255,255,255,0.7)" }} className="text-sm">{t}</span>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <a
+              href="#kalender"
+              className="inline-flex items-center gap-2 bg-[#E1342B] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#c42d24] transition-colors"
+            >
+              Book befaring
+              <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -226,6 +251,18 @@ export default function BefaringPage() {
                 <p style={{ color: "#6b6b6b" }} className="text-xs leading-relaxed">{s.b}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <a
+              href="#kalender"
+              className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#333] transition-colors text-lg"
+            >
+              Velg tid i kalenderen
+              <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                <path fillRule="evenodd" d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
