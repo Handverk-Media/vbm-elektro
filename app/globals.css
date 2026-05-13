@@ -24,3 +24,15 @@ body {
 button {
   color: inherit;
 }
+
+/* Push chat widget above sticky mobile bar on mobile */
+@media (max-width: 768px) {
+  [id*="chat-widget"],
+  [class*="chat-widget"],
+  [id*="lc-widget"],
+  [class*="lc-widget"],
+  iframe[src*="leadconnectorhq"],
+  iframe[src*="leadconnector"] {
+    bottom: 72px !important;
+  }
+}
