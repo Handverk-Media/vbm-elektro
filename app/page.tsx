@@ -614,19 +614,20 @@ function FAQ() {
                 role="button"
                 tabIndex={0}
                 className="w-full flex items-center justify-between px-6 py-5 cursor-pointer select-none"
+                style={{ color: "#1a1a1a" }}
                 onClick={() => setÅpen(åpen === i ? null : i)}
                 onKeyDown={(e) => e.key === "Enter" && setÅpen(åpen === i ? null : i)}
               >
-                <span className="font-bold pr-4 text-sm md:text-base text-ink">{s.q}</span>
+                <span style={{ color: "#1a1a1a", fontWeight: 700 }} className="pr-4 text-sm md:text-base">{s.q}</span>
                 <svg
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}
-                  className={`w-4 h-4 flex-shrink-0 transition-transform text-ink ${åpen === i ? "rotate-180" : ""}`}
+                  viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth={2.5}
+                  className={`w-4 h-4 flex-shrink-0 transition-transform ${åpen === i ? "rotate-180" : ""}`}
                 >
                   <path d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
               {åpen === i && (
-                <div className="px-6 pb-6 leading-relaxed text-sm border-t border-[#1A1A1A]/10 pt-4 text-ink/70">{s.a}</div>
+                <div style={{ color: "rgba(26,26,26,0.7)" }} className="px-6 pb-6 leading-relaxed text-sm border-t border-[#1A1A1A]/10 pt-4">{s.a}</div>
               )}
             </div>
           ))}
