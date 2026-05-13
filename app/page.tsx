@@ -33,17 +33,17 @@ function Nav() {
           <Image src="/logo.svg" alt="VBM Elektro" width={130} height={52} priority />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#6B6B6B]">
-          <a href="#tjenester" className="hover:text-[#1A1A1A] transition-colors">Tjenester</a>
-          <a href="#elbillader" className="hover:text-[#1A1A1A] transition-colors">Elbillader</a>
-          <a href="#prosess" className="hover:text-[#1A1A1A] transition-colors">Slik fungerer det</a>
-          <a href="#kontakt" className="hover:text-[#1A1A1A] transition-colors">Kontakt</a>
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#1A1A1A]">
+          <a href="#tjenester" className="hover:text-[#E1342B] transition-colors">Tjenester</a>
+          <a href="#elbillader" className="hover:text-[#E1342B] transition-colors">Elbillader</a>
+          <a href="#prosess" className="hover:text-[#E1342B] transition-colors">Slik fungerer det</a>
+          <a href="#kontakt" className="hover:text-[#E1342B] transition-colors">Kontakt</a>
         </nav>
 
         <div className="flex items-center gap-2">
           <a
             href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-            className="hidden md:flex items-center gap-2 text-sm text-[#6B6B6B] hover:text-[#1A1A1A] transition-colors mr-2"
+            className="hidden md:flex items-center gap-2 text-sm font-semibold text-[#1A1A1A] hover:text-[#E1342B] transition-colors mr-2"
           >
             <PhoneIcon className="w-4 h-4" />
             {BEDRIFT.telefon}
@@ -133,19 +133,19 @@ function Hero() {
           <div className="flex items-center gap-2 mb-8">
             <Bolt className="w-[10px] h-5 text-[#E1342B]" />
             <span className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase">
-              Autorisert elektriker · Bærum og Oslo
+              Autorisert elektriker · Bærum, Oslo og Asker
             </span>
           </div>
 
           <h1 className="text-5xl md:text-[68px] font-bold leading-[1.04] tracking-tight text-[#1A1A1A] mb-6">
-            Moderne elektriske løsninger for bolig og næring
+            Elektrikerarbeid gjort ryddig.
           </h1>
 
           <div className="w-14 h-[3px] bg-[#E1342B] mb-8" />
 
           <p className="text-lg text-[#6B6B6B] leading-relaxed mb-10 max-w-[480px]">
-            Fra elbillader til totalrenovering – autorisert elektroarbeid med fast
-            pris og dokumentasjon. Vi ringer tilbake innen 1 time.
+            VBM Elektro leverer autorisert elektroarbeid for bolig og næring — med
+            tydelig kommunikasjon, dokumentasjon og løsninger som faktisk blir fulgt opp.
           </p>
 
           <div className="flex flex-wrap gap-3 items-center">
@@ -218,8 +218,8 @@ function Services() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
             Hva trenger du hjelp med?
           </h2>
-          <p className="mt-4 text-[#6B6B6B] text-lg max-w-md">
-            Vi løser alt fra enkle serviceoppdrag til komplette el-anlegg.
+          <p className="mt-4 text-[#6B6B6B] text-lg max-w-xl">
+            VBM Elektro leverer autorisert elektroarbeid for bolig, næring og prosjekt — fra serviceoppdrag og feilsøking til rehabilitering, elbilladere, smarthus og komplette elektriske installasjoner.
           </p>
         </div>
 
@@ -316,35 +316,62 @@ function Prisliste() {
 // ── Process ──────────────────────────────────────────────────────────────────
 
 const STEG = [
-  { num: "01", tittel: "Send forespørsel", tekst: "Via skjema, telefon eller SMS" },
-  { num: "02", tittel: "Tilbakering innen 1t", tekst: "Vi avklarer behov og tidspunkt" },
-  { num: "03", tittel: "Fast pristilbud", tekst: "Ingen overraskelser" },
-  { num: "04", tittel: "Installasjon", tekst: "Ryddig og presis utførelse" },
-  { num: "05", tittel: "Dokumentasjon", tekst: "Samsvarserklæring leveres" },
+  {
+    num: "01", tittel: "Send forespørsel", tekst: "Via skjema, telefon eller SMS",
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>,
+  },
+  {
+    num: "02", tittel: "Tilbakering innen 1t", tekst: "Vi avklarer behov og tidspunkt",
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 10.9a19.79 19.79 0 01-3.07-8.68A2 2 0 012.83 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>,
+  },
+  {
+    num: "03", tittel: "Fast pristilbud", tekst: "Ingen overraskelser",
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" /></svg>,
+  },
+  {
+    num: "04", tittel: "Installasjon", tekst: "Ryddig og presis utførelse",
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" /></svg>,
+  },
+  {
+    num: "05", tittel: "Dokumentasjon", tekst: "Samsvarserklæring leveres",
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M9 12l2 2 4-4M7 2H5a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2V7l-5-5H7z" /><path d="M14 2v5h5" /></svg>,
+  },
 ]
 
 function Process() {
   return (
-    <section id="prosess" className="bg-[#EEEDE8] py-24">
+    <section id="prosess" className="bg-[#1A1A1A] py-24 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
-            Slik fungerer det
-          </h2>
-          <p className="mt-4 text-[#6B6B6B]">Enkelt og forutsigbart – fra start til ferdig.</p>
+        <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <Bolt className="w-[10px] h-5 text-[#E1342B]" />
+              <span className="text-xs font-semibold text-white/40 tracking-widest uppercase">Slik jobber vi</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+              Slik fungerer det
+            </h2>
+          </div>
+          <p className="text-white/40 text-sm max-w-xs md:text-right leading-relaxed">
+            Enkelt og forutsigbart – fra start til ferdig.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-px bg-white/[0.06]">
           {STEG.map((s, i) => (
-            <div key={s.num} className="relative flex flex-col items-start md:items-center md:text-center">
-              {i < STEG.length - 1 && (
-                <div className="hidden md:block absolute top-7 left-[calc(50%+28px)] right-[-50%] h-px bg-[#1A1A1A]/10" />
-              )}
-              <div className="relative z-10 w-14 h-14 rounded-full bg-[#F7F6F3] flex items-center justify-center mb-4 font-bold text-sm text-[#1A1A1A]">
-                {i === 0 ? <span className="text-[#E1342B]">{s.num}</span> : s.num}
+            <div key={s.num} className="relative bg-[#1A1A1A] p-8 overflow-hidden group hover:bg-white/[0.03] transition-colors">
+              {i === 0 && <div className="absolute top-0 left-0 w-full h-[3px] bg-[#E1342B]" />}
+              <div className="absolute right-2 bottom-2 text-[96px] font-black text-white/[0.035] leading-none select-none pointer-events-none">
+                {s.num}
               </div>
-              <p className="font-bold text-[#1A1A1A] text-sm mb-1">{s.tittel}</p>
-              <p className="text-xs text-[#6B6B6B]">{s.tekst}</p>
+              <div className={`text-xs font-bold tracking-widest mb-5 ${i === 0 ? "text-[#E1342B]" : "text-white/20"}`}>
+                {s.num}
+              </div>
+              <div className={`mb-4 transition-colors ${i === 0 ? "text-[#E1342B]" : "text-white/30 group-hover:text-[#E1342B]"}`}>
+                {s.icon}
+              </div>
+              <p className="font-bold text-white text-sm mb-1.5 leading-snug">{s.tittel}</p>
+              <p className="text-xs text-white/35 leading-relaxed">{s.tekst}</p>
             </div>
           ))}
         </div>
@@ -357,7 +384,7 @@ function Process() {
             Start prosessen nå
             <ArrowIcon className="w-4 h-4" />
           </a>
-          <span className="text-[#6B6B6B] text-sm">Tilbakering innen 1 time · Ingen bindingstid</span>
+          <span className="text-white/30 text-sm">Tilbakering innen 1 time · Ingen bindingstid</span>
         </div>
       </div>
     </section>
@@ -798,6 +825,53 @@ function Contact() {
   )
 }
 
+// ── Footer newsletter widget ─────────────────────────────────────────────────
+
+function FooterNewsletter() {
+  const [epost, setEpost] = useState("")
+  const [sendt, setSendt] = useState(false)
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    await fetch("/api/nyhetsbrev", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ epost }),
+    }).catch(() => {})
+    setSendt(true)
+  }
+
+  return (
+    <div>
+      <h4 className="text-white/80 font-semibold text-sm mb-5 tracking-wide">Nyhetsbrev</h4>
+      <p className="text-white/35 text-sm mb-4 leading-relaxed">
+        Få tips om smarthus, elbillading og el-nyheter rett i innboksen.
+      </p>
+      {sendt ? (
+        <p className="text-[#E1342B] text-sm font-semibold">Påmeldt!</p>
+      ) : (
+        <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+          <input
+            type="email"
+            required
+            value={epost}
+            onChange={(e) => setEpost(e.target.value)}
+            placeholder="din@epost.no"
+            className="bg-white/[0.07] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#E1342B]/50 transition-colors"
+          />
+          <button
+            type="submit"
+            className="bg-[#E1342B] text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-[#c42d24] transition-colors flex items-center justify-center gap-2"
+          >
+            Meld deg på
+            <ArrowIcon className="w-3.5 h-3.5" />
+          </button>
+        </form>
+      )}
+    </div>
+  )
+}
+
 // ── Footer ───────────────────────────────────────────────────────────────────
 
 function Footer() {
@@ -860,7 +934,12 @@ function Footer() {
             <ul className="space-y-2.5 text-sm">
               {KATEGORIER.map((k) => (
                 <li key={k.id}>
-                  <Link href={`/tjenester/${k.id}`} className="text-white/40 hover:text-white transition-colors">{k.navn}</Link>
+                  <a
+                    href={k.id === "elbillader" ? "#elbillader" : "#tjenester"}
+                    className="text-white/40 hover:text-white transition-colors"
+                  >
+                    {k.navn}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -869,8 +948,7 @@ function Footer() {
           <div>
             <h4 className="text-white/80 font-semibold text-sm mb-5 tracking-wide">Info</h4>
             <ul className="space-y-2.5 text-sm text-white/40">
-              <li><a href="#" className="hover:text-white transition-colors">Om oss</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Avtalevilkår</a></li>
+              <li><a href="#prosess" className="hover:text-white transition-colors">Om oss</a></li>
               <li><Link href="/personvern" className="hover:text-white transition-colors">Personvern</Link></li>
               <li><Link href="/nyhetsbrev" className="hover:text-white transition-colors">Nyhetsbrev</Link></li>
               <li>
@@ -884,26 +962,7 @@ function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-white/80 font-semibold text-sm mb-5 tracking-wide">Nyhetsbrev</h4>
-            <p className="text-white/35 text-sm mb-4 leading-relaxed">
-              Få tips om smarthus, elbillading og el-nyheter rett i innboksen.
-            </p>
-            <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-2">
-              <input
-                type="email"
-                placeholder="din@epost.no"
-                className="bg-white/[0.07] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#E1342B]/50 transition-colors"
-              />
-              <button
-                type="submit"
-                className="bg-[#E1342B] text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-[#c42d24] transition-colors flex items-center justify-center gap-2"
-              >
-                Meld deg på
-                <ArrowIcon className="w-3.5 h-3.5" />
-              </button>
-            </form>
-          </div>
+          <FooterNewsletter />
         </div>
 
         {/* Bottom */}
@@ -928,7 +987,6 @@ export default function Page() {
       <Services />
       <Prisliste />
       <Process />
-      <RedStripe />
       <EVCharger />
       <Trust />
       <Reviews />

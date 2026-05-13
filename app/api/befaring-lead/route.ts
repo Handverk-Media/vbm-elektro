@@ -1,0 +1,10 @@
+import { NextRequest, NextResponse } from "next/server"
+
+export async function POST(req: NextRequest) {
+  const { navn, telefon, tjeneste, adresse } = await req.json()
+
+  // TODO: forward to GHL / CRM / email
+  console.log("Befaring lead:", { navn, telefon, tjeneste, adresse })
+
+  return NextResponse.json({ ok: true })
+}
