@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { BEDRIFT } from "@/data/bedrift"
+import { SiteHeader } from "@/components/SiteHeader"
 
 export default function KontaktPage() {
   const [sendt, setSendt] = useState(false)
@@ -24,25 +24,7 @@ export default function KontaktPage() {
 
   return (
     <div className="min-h-screen bg-[#F7F6F3]">
-      {/* Nav */}
-      <header className="fixed top-0 left-0 right-0 z-40 bg-[#F7F6F3]/95 backdrop-blur-sm border-b border-[#EEEDE8]">
-        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/">
-            <Image src="/logo.svg" alt="VBM Elektro" width={120} height={48} priority />
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/" className="text-sm text-[#6B6B6B] hover:text-[#1A1A1A] transition-colors">
-              Forsiden
-            </Link>
-            <Link
-              href="/book"
-              className="bg-[#1A1A1A] text-white text-sm font-semibold px-4 py-2 rounded hover:bg-[#333] transition-colors"
-            >
-              Book befaring
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <div className="pt-20">
         {/* Hero */}

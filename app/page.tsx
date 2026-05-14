@@ -1132,11 +1132,12 @@ function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/[0.07] pt-8 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/20">
-          <span>© {new Date().getFullYear()} {BEDRIFT.navn}. Alle rettigheter forbeholdt.</span>
-          <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
+        <div className="border-t border-white/[0.07] pt-8 flex flex-col items-center gap-2 text-xs text-white/20">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-5 items-center">
+            <span>© {new Date().getFullYear()} {BEDRIFT.navn}</span>
+            <span className="text-white/10">·</span>
             <span>Org.nr: {BEDRIFT.orgnr}</span>
-            <span className="hidden sm:inline text-white/10">·</span>
+            <span className="text-white/10">·</span>
             <span>Bygget av <a href="https://handverkmedia.no" target="_blank" rel="noopener noreferrer" className="hover:text-white/50 transition-colors">Håndverk Media</a></span>
           </div>
         </div>
