@@ -1,0 +1,36 @@
+name: Generer blogginnlegg
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"   # Mandag 09:00 UTC
+    - cron: "0 9 * * 4"   # Torsdag 09:00 UTC
+  workflow_dispatch:        # Manuell trigger fra GitHub UI
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Installer @anthropic-ai/sdk
+        run: npm install @anthropic-ai/sdk
+
+      - name: Generer innlegg
+        run: node scripts/generate-post.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Commit og push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "blog: auto-generated post [skip ci]"
+          file_pattern: "data/posts.json public/sitemap.xml"
