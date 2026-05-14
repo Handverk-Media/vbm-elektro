@@ -24,8 +24,8 @@ export function CookieConsent() {
   if (!synlig) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:bottom-6 md:left-6 md:right-auto md:max-w-md">
-      <div className="bg-[#1A1A1A] text-white shadow-2xl md:rounded-xl border border-white/10">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/40 backdrop-blur-sm">
+      <div className="bg-[#1A1A1A] text-white shadow-2xl rounded-2xl border border-white/10 w-full max-w-md">
         <div className="px-5 py-5">
           <div className="flex items-center gap-2 mb-3">
             <svg viewBox="0 0 177 352" fill="currentColor" className="w-[8px] h-4 text-[#E1342B] flex-shrink-0">
@@ -59,4 +59,5 @@ export function CookieConsent() {
       </div>
     </div>
   )
+
 }

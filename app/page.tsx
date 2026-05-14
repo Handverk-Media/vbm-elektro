@@ -48,6 +48,7 @@ function Nav() {
               {label}
             </button>
           ))}
+          <Link href="/blogg" className="hover:text-[#E1342B] transition-colors">Blogg</Link>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -144,7 +145,7 @@ function Hero() {
           <div className="flex items-center gap-2 mb-8">
             <Bolt className="w-[10px] h-5 text-[#E1342B]" />
             <span className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase">
-              Autorisert elektriker · Bærum, Oslo og Asker
+              Autorisert elektriker · Oslo, Bærum, Asker, Drammen
             </span>
           </div>
 
@@ -173,13 +174,6 @@ function Hero() {
             >
               Book befaring
             </a>
-            <a
-              href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-              className="inline-flex items-center justify-center gap-2 text-[#1A1A1A] font-semibold px-7 py-3.5 border border-[#EEEDE8] rounded hover:border-[#1A1A1A]/30 transition-colors"
-            >
-              <PhoneIcon className="w-4 h-4" />
-              Ring oss
-            </a>
           </div>
 
           <div className="flex flex-wrap gap-6 mt-12 text-sm text-[#6B6B6B]">
@@ -199,9 +193,12 @@ function Hero() {
               <span className="font-semibold text-[#1A1A1A]">Gratis videobefaring</span>
               <span className="text-[#6B6B6B] ml-1">– vurdering uten oppmøte</span>
             </div>
-            <a href="#kontakt" className="text-[#E1342B] font-semibold text-xs whitespace-nowrap hover:underline flex-shrink-0">
+            <button
+              onClick={() => document.getElementById("videoavklaring")?.scrollIntoView({ behavior: "smooth" })}
+              className="text-[#E1342B] font-semibold text-xs whitespace-nowrap hover:underline flex-shrink-0 cursor-pointer"
+            >
               Book nå →
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -505,13 +502,6 @@ function Trust() {
               Book befaring
               <ArrowIcon className="w-4 h-4" />
             </a>
-            <a
-              href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-              className="inline-flex items-center justify-center gap-2 text-white/70 font-semibold px-7 py-3.5 border border-white/20 rounded hover:text-white hover:border-white/40 transition-colors"
-            >
-              <PhoneIcon className="w-4 h-4" />
-              Ring oss
-            </a>
           </div>
         </div>
       </div>
@@ -571,6 +561,188 @@ function Reviews() {
         </div>
       </div>
     </section>
+  )
+}
+
+// ── Video avklaring ──────────────────────────────────────────────────────────
+
+function VideoModal({ onLukk }: { onLukk: () => void }) {
+  const [laster, setLaster] = useState(false)
+  const [sendt, setSendt] = useState(false)
+  const [filer, setFiler] = useState<FileList | null>(null)
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setLaster(true)
+    const fd = new FormData(e.currentTarget)
+    if (filer) Array.from(filer).forEach((f) => fd.append("filer", f))
+    await fetch("/api/videoavklaring", { method: "POST", body: fd }).catch(() => {})
+    setLaster(false)
+    setSendt(true)
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      onClick={(e) => e.target === e.currentTarget && onLukk()}
+    >
+      <div className="bg-[#F7F6F3] rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl">
+        <div className="p-6 sm:p-8">
+          {/* Header */}
+          <div className="flex items-start justify-between mb-6">
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <Bolt className="w-[8px] h-4 text-[#E1342B]" />
+                <span className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase">Gratis</span>
+              </div>
+              <h3 className="text-xl font-bold text-[#1A1A1A]">Start videoavklaring</h3>
+              <p className="text-sm text-[#6B6B6B] mt-1">Vi svarer innen 2 timer i arbeidstid</p>
+            </div>
+            <button
+              onClick={onLukk}
+              className="w-8 h-8 rounded-full bg-[#EEEDE8] flex items-center justify-center text-[#6B6B6B] hover:bg-[#1A1A1A] hover:text-white transition-colors flex-shrink-0 ml-4"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {sendt ? (
+            <div className="text-center py-8">
+              <div className="w-14 h-14 bg-[#E1342B]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckIcon className="w-6 h-6 text-[#E1342B]" />
+              </div>
+              <h4 className="text-lg font-bold text-[#1A1A1A] mb-2">Mottatt!</h4>
+              <p className="text-[#6B6B6B] text-sm">Vi ser på bildene og tar kontakt innen 2 timer.</p>
+              <button onClick={onLukk} className="mt-6 text-sm font-semibold text-[#E1342B] hover:underline">Lukk</button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Navn *</label>
+                  <input name="navn" type="text" required placeholder="Ola Nordmann"
+                    className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/50 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20 text-sm" />
+                </div>
+                <div>
+                  <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Telefon *</label>
+                  <input name="telefon" type="tel" required placeholder="900 00 000"
+                    className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/50 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20 text-sm" />
+                </div>
+              </div>
+              <div>
+                <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Adresse / område</label>
+                <input name="adresse" type="text" placeholder="F.eks. Sandvika, Bærum"
+                  className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/50 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20 text-sm" />
+              </div>
+              <div>
+                <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Beskriv jobben kort *</label>
+                <textarea name="beskrivelse" required rows={3} placeholder="F.eks. vil montere elbillader i garasje, ca. 10m fra sikringsskap…"
+                  className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/50 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20 text-sm resize-none" />
+              </div>
+              <div>
+                <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Last opp bilder eller video</label>
+                <label className="block cursor-pointer">
+                  <div className={`border-2 border-dashed rounded-lg px-4 py-6 text-center transition-colors ${filer && filer.length > 0 ? "border-[#E1342B]/40 bg-[#E1342B]/5" : "border-[#1A1A1A]/15 bg-[#EEEDE8] hover:border-[#E1342B]/30"}`}>
+                    {filer && filer.length > 0 ? (
+                      <div>
+                        <CheckIcon className="w-5 h-5 text-[#E1342B] mx-auto mb-1" />
+                        <p className="text-sm font-semibold text-[#1A1A1A]">{filer.length} fil{filer.length > 1 ? "er" : ""} valgt</p>
+                        <p className="text-xs text-[#6B6B6B] mt-0.5">Klikk for å endre</p>
+                      </div>
+                    ) : (
+                      <div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6 text-[#6B6B6B] mx-auto mb-2">
+                          <path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                        </svg>
+                        <p className="text-sm text-[#6B6B6B]">Klikk for å laste opp</p>
+                        <p className="text-xs text-[#6B6B6B]/60 mt-0.5">Bilder og video støttes</p>
+                      </div>
+                    )}
+                  </div>
+                  <input type="file" accept="image/*,video/*" multiple className="hidden"
+                    onChange={(e) => setFiler(e.target.files)} />
+                </label>
+              </div>
+              <button type="submit" disabled={laster}
+                className="w-full bg-[#1A1A1A] text-white font-bold py-3.5 rounded-lg hover:bg-[#333] transition-colors flex items-center justify-center gap-2 disabled:opacity-60 text-sm">
+                {laster ? "Sender…" : "Send inn for vurdering"}
+                {!laster && <ArrowIcon className="w-4 h-4" />}
+              </button>
+              <p className="text-xs text-[#6B6B6B] text-center">Gratis og uforpliktende · Svar innen 2 timer</p>
+            </form>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function VideoAvklaring() {
+  const [modalÅpen, setModalÅpen] = useState(false)
+
+  return (
+    <>
+      <section id="videoavklaring" className="bg-[#1A1A1A] py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            {/* Left */}
+            <div>
+              <div className="flex items-center gap-2 mb-6">
+                <Bolt className="w-[10px] h-5 text-[#E1342B]" />
+                <span className="text-xs font-semibold text-white/40 tracking-widest uppercase">Gratis · Ingen forpliktelser</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.08] mb-6">
+                Få rask avklaring uten fysisk befaring
+              </h2>
+              <div className="w-12 h-[3px] bg-[#E1342B] mb-6" />
+              <p className="text-white/50 text-lg leading-relaxed mb-10 max-w-md">
+                Send bilder eller video av jobben — vi vurderer løsning, omfang og neste steg før vi eventuelt kommer ut.
+              </p>
+              <div className="space-y-4 mb-10">
+                {[
+                  "Raskere avklaring",
+                  "Ingen fysisk befaring nødvendig på mindre jobber",
+                  "Få vurdering før oppstart",
+                ].map((t) => (
+                  <div key={t} className="flex items-center gap-3">
+                    <CheckIcon className="w-4 h-4 text-[#E1342B] flex-shrink-0" />
+                    <span className="text-white/70 text-sm">{t}</span>
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={() => setModalÅpen(true)}
+                className="inline-flex items-center gap-2 bg-[#E1342B] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#c42d24] transition-colors"
+              >
+                Start videoavklaring
+                <ArrowIcon className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Right — mini flow */}
+            <div className="hidden lg:flex flex-col gap-px bg-white/[0.06]">
+              {[
+                { num: "01", tittel: "Send bilder eller video", tekst: "Ta bilde av sikringsskap, kabeltrekk eller jobben som skal gjøres" },
+                { num: "02", tittel: "Vi vurderer", tekst: "En autorisert elektriker ser på bildene og vurderer løsning og omfang" },
+                { num: "03", tittel: "Du får svar", tekst: "Tilbakemelding innen 2 timer — med anbefaling og eventuelt tilbud" },
+              ].map((s, i) => (
+                <div key={s.num} className="bg-[#1A1A1A] p-8 group hover:bg-white/[0.03] transition-colors">
+                  <div className="text-xs font-bold tracking-widest mb-3 text-white/20">{s.num}</div>
+                  <p className="font-bold text-white text-sm mb-1">{s.tittel}</p>
+                  <p className="text-xs text-white/35 leading-relaxed">{s.tekst}</p>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {modalÅpen && <VideoModal onLukk={() => setModalÅpen(false)} />}
+    </>
   )
 }
 
@@ -940,7 +1112,9 @@ function Footer() {
           <div>
             <h4 className="text-white/80 font-semibold text-sm mb-5 tracking-wide">Info</h4>
             <ul className="space-y-2.5 text-sm text-white/40">
-              <li><a href="#prosess" className="hover:text-white transition-colors">Om oss</a></li>
+              <li><Link href="/om-oss" className="hover:text-white transition-colors">Om oss</Link></li>
+              <li><Link href="/blogg" className="hover:text-white transition-colors">Blogg</Link></li>
+              <li><Link href="/kontakt" className="hover:text-white transition-colors">Kontakt oss</Link></li>
               <li><Link href="/personvern" className="hover:text-white transition-colors">Personvern</Link></li>
               <li><Link href="/nyhetsbrev" className="hover:text-white transition-colors">Nyhetsbrev</Link></li>
               <li>
@@ -987,6 +1161,7 @@ export default function Page() {
       <EVCharger />
       <Trust />
       <Reviews />
+      <VideoAvklaring />
       <MidCTA />
       <FAQ />
       <Contact />
