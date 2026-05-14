@@ -1,5 +1,114 @@
 [
   {
+    "slug": "solcellepanel-og-tilkobling-dette-gjor-elektrikeren",
+    "tittel": "Solcellepanel og tilkobling: Dette gjør elektrikeren",
+    "beskrivelse": "Skal du installere solceller? Her er elektrikerens rolle ved tilkobling, hvilke krav som gjelder, og hva du må huske på i Bærum, Oslo, Asker og Drammen.",
+    "kategori": "Regelverk",
+    "dato": "2026-05-14",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Stadig flere boligeiere i Bærum, Oslo, Asker og Drammen vurderer solcellepanel for å redusere strømregningen og bli mer selvforsynt med energi. Men selv om selve panelene kan virke som et byggeprosjekt, er den elektriske tilkoblingen et arbeid som må utføres av en autorisert elektroinstallatør. Her får du en oversikt over hva elektrikeren faktisk gjør når solcelleanlegget ditt skal kobles til strømnettet – og hvilke krav som gjelder."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvorfor må en autorisert elektriker koble til anlegget?"
+      },
+      {
+        "type": "p",
+        "tekst": "Et solcelleanlegg er ikke bare en strømkilde – det er en produksjonsenhet som mater elektrisitet inn på det samme nettet som forsyner boligen din og naboene dine. Det betyr at feil installasjon kan føre til alvorlige risikoer som brann, elektrisk støt, eller skade på utstyr hos andre nettkunder. Derfor stiller forskrift om elektriske lavspenningsanlegg (FEL) og NEK 400 strenge krav til hvem som kan utføre arbeidet."
+      },
+      {
+        "type": "p",
+        "tekst": "Kun registrerte elektroinstallasjonsvirksomheter har lov til å koble solcelleanlegget til boligens elektriske anlegg. Som huseier kan du gjerne være involvert i planleggingen og kjøp av paneler, men selve tilkoblingen – fra vekselretter til sikringsskap – må gjøres av fagfolk."
+      },
+      {
+        "type": "h2",
+        "tekst": "Elektrikerens oppgaver steg for steg"
+      },
+      {
+        "type": "p",
+        "tekst": "Når VBM Elektro eller en annen autorisert elektriker kommer hjem til deg for å koble til solcelleanlegget, omfatter jobben langt mer enn å trekke noen ledninger. Her er hovedoppgavene:"
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Befaring og dimensjonering: Elektrikeren vurderer sikringsskapet, kapasiteten på hovedinntaket og hvor vekselretteren bør plasseres.",
+          "Melding til netteier: Før arbeidet starter må det sendes inn melding om installasjon av plusskundeanlegg til lokal netteier, for eksempel Elvia eller Glitre Nett.",
+          "Montering av vekselretter (inverter): Vekselretteren konverterer likestrøm fra panelene til 230 V vekselstrøm som passer boligens anlegg.",
+          "Tilkobling i sikringsskapet: Det installeres egen kurs med riktig overspenningsvern, jordfeilbryter og automatsikring for solcelleanlegget.",
+          "AMS-måler og produksjonsmåling: Elektrikeren sørger for at strømmåleren registrerer både forbruk og produksjon, slik at du får betalt for overskuddsstrøm du selger tilbake.",
+          "Ferdigmelding og dokumentasjon: Anlegget testes, samsvarserklæring utstedes og ferdigmelding sendes til netteier før det settes i drift."
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Krav og regelverk du bør kjenne til"
+      },
+      {
+        "type": "p",
+        "tekst": "Solcelleanlegg på bolig regnes som plusskundeanlegg når du kan levere overskuddsstrøm tilbake til nettet. Det er flere regler som gjelder, og en god elektriker tar ansvar for at alt er i orden:"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "NEK 400-712 stiller spesifikke krav til solcelleinstallasjoner.",
+          "Anlegget må ha automatisk frakobling fra nettet ved strømbrudd (anti-islanding) av hensyn til sikkerhet for montører som jobber på linjenettet.",
+          "Plusskundeavtale med netteier må være på plass før anlegget settes i drift.",
+          "DC-siden (likestrømssiden) krever spesiell kompetanse og verneutstyr, og må merkes tydelig.",
+          "Brannvesenet anbefaler tydelig merking av sikringsskap og hovedbryter for solcelleanlegget."
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva koster tilkoblingen?"
+      },
+      {
+        "type": "p",
+        "tekst": "Selve elektrikerarbeidet for tilkobling av et typisk eneboliganlegg ligger ofte i området 15 000–35 000 kroner, avhengig av kompleksitet, antall paneler, plassering av vekselretter og tilstanden på eksisterende sikringsskap. Eldre sikringsskap må noen ganger oppgraderes før et solcelleanlegg kan kobles til på en trygg måte."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Komponent",
+          "Hva elektrikeren gjør"
+        ],
+        "rows": [
+          [
+            "Sikringsskap",
+            "Vurderer kapasitet, installerer ny kurs, vern og jordfeilbryter"
+          ],
+          [
+            "Vekselretter",
+            "Monterer, konfigurerer og kobler til både DC- og AC-side"
+          ],
+          [
+            "AMS-måler",
+            "Koordinerer med netteier for toveis måling"
+          ],
+          [
+            "Dokumentasjon",
+            "Utsteder samsvarserklæring og sender ferdigmelding"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Smart kombinasjon med elbillader og smarthus"
+      },
+      {
+        "type": "p",
+        "tekst": "Mange som velger solceller, ønsker også å utnytte strømmen smartere. Hos VBM Elektro ser vi ofte at kundene kombinerer solcelletilkobling med installasjon av elbillader fra Zaptec eller Easee, eller smarthusløsninger med Plejd. Da kan du for eksempel lade elbilen primært når solen skinner, eller styre forbruket etter når egenproduksjonen er høyest. Slike kombinasjoner krever god planlegging av sikringsskapet, og det er en stor fordel å la samme elektriker ha helhetsansvaret."
+      },
+      {
+        "type": "cta",
+        "tekst": "Vurderer du solceller i Bærum, Oslo, Asker eller Drammen? Kontakt VBM Elektro for en uforpliktende befaring og pristilbud på tilkobling."
+      }
+    ]
+  },
+  {
     "slug": "slik-velger-du-elbillader-2026",
     "tittel": "Slik velger du riktig elbillader i 2026",
     "beskrivelse": "Med dusinvis av lademodeller på markedet er det lett å bli forvirret. Vi gjennomgår de viktigste faktorene – effekt, smartfunksjoner og installasjonskrav.",
@@ -8,17 +117,55 @@
     "lesetid": 5,
     "featured": true,
     "content": [
-      { "type": "p", "tekst": "En elbillader er ikke bare en kontakt i veggen. Den bestemmer hvor raskt du lader, hvor enkelt du kan overvåke forbruket og om du kan integrere ladingen med resten av hjemmets strømstyring." },
-      { "type": "h2", "tekst": "Effekt: 7,4 kW eller 11 kW?" },
-      { "type": "p", "tekst": "For de fleste norske husstander er 7,4 kW (1-fase) mer enn nok. Det gir deg ca. 45 km rekkevidde per time lading – nok til å fylle opp en tom batteripakke over natten." },
-      { "type": "p", "tekst": "11 kW (3-fase) gir 3 ganger så rask lading og er aktuelt hvis du har elbil med 3-fase ombordlader, lang kjøretur daglig og lite tid til lading, eller ønske om fremtidssikring." },
-      { "type": "h2", "tekst": "Smartfunksjoner du bør se etter" },
-      { "type": "ul", "punkter": ["Lastbalansering – justerer ladeeffekten automatisk slik at du ikke utløser sikringen", "Strømstyring via app – sett ladetider på natta når strøm er billigere", "Dynamisk styring – kobles mot smartmåler og tilpasser seg sanntidsforbruk", "OCPP-støtte – åpen protokoll som gjør det mulig å bytte tjenesteleverandør"] },
-      { "type": "h2", "tekst": "Anbefalte modeller i 2026" },
-      { "type": "p", "tekst": "Zaptec Go er den mest populære i Norge og fungerer godt i leilighetskomplekser og rekkehus. Easee Home er brukervennlig og ser bra ut. Begge støtter dynamisk lastbalansering og har gode apper." },
-      { "type": "h2", "tekst": "Hva koster det?" },
-      { "type": "p", "tekst": "I Bærum og Oslo-området koster en standard installasjon av Zaptec Go eller Easee Home fra kr 9 990 inkl. materiell. Komplekse installasjoner med lang kabeltrekk, graving eller oppgradering av sikringsskap koster mer." },
-      { "type": "cta", "tekst": "Ta kontakt for et uforpliktende tilbud – vi befarer og priser jobben gratis." }
+      {
+        "type": "p",
+        "tekst": "En elbillader er ikke bare en kontakt i veggen. Den bestemmer hvor raskt du lader, hvor enkelt du kan overvåke forbruket og om du kan integrere ladingen med resten av hjemmets strømstyring."
+      },
+      {
+        "type": "h2",
+        "tekst": "Effekt: 7,4 kW eller 11 kW?"
+      },
+      {
+        "type": "p",
+        "tekst": "For de fleste norske husstander er 7,4 kW (1-fase) mer enn nok. Det gir deg ca. 45 km rekkevidde per time lading – nok til å fylle opp en tom batteripakke over natten."
+      },
+      {
+        "type": "p",
+        "tekst": "11 kW (3-fase) gir 3 ganger så rask lading og er aktuelt hvis du har elbil med 3-fase ombordlader, lang kjøretur daglig og lite tid til lading, eller ønske om fremtidssikring."
+      },
+      {
+        "type": "h2",
+        "tekst": "Smartfunksjoner du bør se etter"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Lastbalansering – justerer ladeeffekten automatisk slik at du ikke utløser sikringen",
+          "Strømstyring via app – sett ladetider på natta når strøm er billigere",
+          "Dynamisk styring – kobles mot smartmåler og tilpasser seg sanntidsforbruk",
+          "OCPP-støtte – åpen protokoll som gjør det mulig å bytte tjenesteleverandør"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Anbefalte modeller i 2026"
+      },
+      {
+        "type": "p",
+        "tekst": "Zaptec Go er den mest populære i Norge og fungerer godt i leilighetskomplekser og rekkehus. Easee Home er brukervennlig og ser bra ut. Begge støtter dynamisk lastbalansering og har gode apper."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva koster det?"
+      },
+      {
+        "type": "p",
+        "tekst": "I Bærum og Oslo-området koster en standard installasjon av Zaptec Go eller Easee Home fra kr 9 990 inkl. materiell. Komplekse installasjoner med lang kabeltrekk, graving eller oppgradering av sikringsskap koster mer."
+      },
+      {
+        "type": "cta",
+        "tekst": "Ta kontakt for et uforpliktende tilbud – vi befarer og priser jobben gratis."
+      }
     ]
   },
   {
@@ -30,14 +177,49 @@
     "lesetid": 4,
     "featured": false,
     "content": [
-      { "type": "p", "tekst": "En elkontroll er en systematisk gjennomgang av boligens elektriske anlegg. Formålet er å avdekke feil, slitasje eller mangler som kan utgjøre en brann- eller el-sikkerhetsrisiko." },
-      { "type": "h2", "tekst": "Hva sjekkes?" },
-      { "type": "ul", "punkter": ["Sikringsskap og kursoppsett – alder, kapasitet og jordfeil", "Stikkontakter og brytere – løse festepunkter, skadde deksler", "Varmgang – spor etter overoppheting rundt stikkontakter", "Gamle installasjoner – umerkede kurser, ulovlige koblingsbokser", "Dokumentasjon – finnes det samsvarserklæring på utført arbeid?"] },
-      { "type": "h2", "tekst": "Tegn på at du bør bestille elkontroll nå" },
-      { "type": "ul", "punkter": ["Anlegget er fra før 2000", "Sikringen løser ut ofte", "Det lukter svidd fra skap eller stikkontakter", "Du planlegger å selge boligen"] },
-      { "type": "h2", "tekst": "Pris for elkontroll i Bærum og Oslo" },
-      { "type": "p", "tekst": "En standard elkontroll av enebolig eller leilighet koster fra kr 2 990 hos VBM Elektro. Prisen inkluderer gjennomgang av sikringsskap, stikkontakter og synlige installasjoner, samt en skriftlig rapport med eventuelle avvik." },
-      { "type": "cta", "tekst": "Ta kontakt for bestilling – vi rykker ut i Bærum, Oslo og Asker." }
+      {
+        "type": "p",
+        "tekst": "En elkontroll er en systematisk gjennomgang av boligens elektriske anlegg. Formålet er å avdekke feil, slitasje eller mangler som kan utgjøre en brann- eller el-sikkerhetsrisiko."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva sjekkes?"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Sikringsskap og kursoppsett – alder, kapasitet og jordfeil",
+          "Stikkontakter og brytere – løse festepunkter, skadde deksler",
+          "Varmgang – spor etter overoppheting rundt stikkontakter",
+          "Gamle installasjoner – umerkede kurser, ulovlige koblingsbokser",
+          "Dokumentasjon – finnes det samsvarserklæring på utført arbeid?"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Tegn på at du bør bestille elkontroll nå"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Anlegget er fra før 2000",
+          "Sikringen løser ut ofte",
+          "Det lukter svidd fra skap eller stikkontakter",
+          "Du planlegger å selge boligen"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Pris for elkontroll i Bærum og Oslo"
+      },
+      {
+        "type": "p",
+        "tekst": "En standard elkontroll av enebolig eller leilighet koster fra kr 2 990 hos VBM Elektro. Prisen inkluderer gjennomgang av sikringsskap, stikkontakter og synlige installasjoner, samt en skriftlig rapport med eventuelle avvik."
+      },
+      {
+        "type": "cta",
+        "tekst": "Ta kontakt for bestilling – vi rykker ut i Bærum, Oslo og Asker."
+      }
     ]
   },
   {
@@ -49,12 +231,35 @@
     "lesetid": 6,
     "featured": false,
     "content": [
-      { "type": "p", "tekst": "Plejd er et svensk smarthussystem som lar deg styre lys, dimming og stikkontakter trådløst – uten å legge om hele el-anlegget. Komponentene monteres bak eksisterende lysbrytere og kommuniserer via Bluetooth Mesh." },
-      { "type": "h2", "tekst": "Hva kan du styre med Plejd?" },
-      { "type": "ul", "punkter": ["Lysstyring – dim og slukk lys fra app, tidsur eller bevegelsessensor", "Stikkontakter – styr varmepumpe eller kaffetrakteren automatisk", "Scener – ett trykk aktiverer flere enheter", "Fjernkontroll – styr hjemmet ditt fra mobilen uansett hvor du er"] },
-      { "type": "h2", "tekst": "Hva koster Plejd-installasjon?" },
-      { "type": "p", "tekst": "En installasjon for 5 rom koster fra kr 9 900 inkl. materiell og arbeid hos VBM Elektro. Prisen varierer etter antall rom, typen brytere og eventuelle ekstrafunksjoner som sensorer og stikkontakter." },
-      { "type": "cta", "tekst": "Vi gir gratis veiledning og tilbud på installasjon." }
+      {
+        "type": "p",
+        "tekst": "Plejd er et svensk smarthussystem som lar deg styre lys, dimming og stikkontakter trådløst – uten å legge om hele el-anlegget. Komponentene monteres bak eksisterende lysbrytere og kommuniserer via Bluetooth Mesh."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva kan du styre med Plejd?"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Lysstyring – dim og slukk lys fra app, tidsur eller bevegelsessensor",
+          "Stikkontakter – styr varmepumpe eller kaffetrakteren automatisk",
+          "Scener – ett trykk aktiverer flere enheter",
+          "Fjernkontroll – styr hjemmet ditt fra mobilen uansett hvor du er"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva koster Plejd-installasjon?"
+      },
+      {
+        "type": "p",
+        "tekst": "En installasjon for 5 rom koster fra kr 9 900 inkl. materiell og arbeid hos VBM Elektro. Prisen varierer etter antall rom, typen brytere og eventuelle ekstrafunksjoner som sensorer og stikkontakter."
+      },
+      {
+        "type": "cta",
+        "tekst": "Vi gir gratis veiledning og tilbud på installasjon."
+      }
     ]
   },
   {
@@ -66,12 +271,35 @@
     "lesetid": 4,
     "featured": false,
     "content": [
-      { "type": "p", "tekst": "NEK 400 er den norske standarden for installasjon og vedlikehold av elektriske lavspenningsanlegg i bygg. Den er hjemlet i Forskrift om elektriske lavspenningsanlegg (FEL) – som gjør den i praksis bindende for alt el-arbeid i norske boliger." },
-      { "type": "h2", "tekst": "Hva betyr det for deg som boligeier?" },
-      { "type": "ul", "punkter": ["Alt el-arbeid skal dokumenteres med en samsvarserklæring", "Ulovlig el-arbeid gir ikke forsikringsdekning ved brann", "Manglende dokumentasjon kan skape problemer ved boligsalg", "Eldre anlegg er ikke automatisk ulovlige, men utbedringer skal følge gjeldende NEK 400"] },
-      { "type": "h2", "tekst": "Samsvarserklæring – hva er det?" },
-      { "type": "p", "tekst": "En samsvarserklæring er et dokument som elektriker utferdiger etter utført arbeid. Den bekrefter at arbeidet er utført i samsvar med NEK 400 og gjeldende forskrifter. VBM Elektro leverer alltid samsvarserklæring – det er standard, ikke tilleggstjeneste." },
-      { "type": "cta", "tekst": "Usikker på om ditt anlegg er i henhold? Bestill en elkontroll – vi sjekker og rapporterer." }
+      {
+        "type": "p",
+        "tekst": "NEK 400 er den norske standarden for installasjon og vedlikehold av elektriske lavspenningsanlegg i bygg. Den er hjemlet i Forskrift om elektriske lavspenningsanlegg (FEL) – som gjør den i praksis bindende for alt el-arbeid i norske boliger."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva betyr det for deg som boligeier?"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Alt el-arbeid skal dokumenteres med en samsvarserklæring",
+          "Ulovlig el-arbeid gir ikke forsikringsdekning ved brann",
+          "Manglende dokumentasjon kan skape problemer ved boligsalg",
+          "Eldre anlegg er ikke automatisk ulovlige, men utbedringer skal følge gjeldende NEK 400"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Samsvarserklæring – hva er det?"
+      },
+      {
+        "type": "p",
+        "tekst": "En samsvarserklæring er et dokument som elektriker utferdiger etter utført arbeid. Den bekrefter at arbeidet er utført i samsvar med NEK 400 og gjeldende forskrifter. VBM Elektro leverer alltid samsvarserklæring – det er standard, ikke tilleggstjeneste."
+      },
+      {
+        "type": "cta",
+        "tekst": "Usikker på om ditt anlegg er i henhold? Bestill en elkontroll – vi sjekker og rapporterer."
+      }
     ]
   },
   {
@@ -83,14 +311,60 @@
     "lesetid": 5,
     "featured": false,
     "content": [
-      { "type": "p", "tekst": "Bærum og Asker er blant kommunene i Norge med høyest andel elbiler. Det betyr at de fleste elektriker-firmaer i området har solid erfaring med ladeinstallasjon – men priser og kvalitet varierer mye." },
-      { "type": "h2", "tekst": "Anbefalte lademodeller" },
-      { "type": "ul", "punkter": ["Zaptec Go – markedsleder i Norge, støtter lastbalansering", "Easee Home – elegant design, brukervennlig app", "Garo Entity – god ytelse og enkel installasjon", "DEFA Power – pålitelig norsk merke med god support"] },
-      { "type": "h2", "tekst": "Typiske priser" },
-      { "type": "table", "headers": ["Type installasjon", "Pris fra"], "rows": [["Standard (< 10m kabel)", "kr 9 990"], ["Kompleks (lang trekk, graving)", "kr 14 900"], ["Borettslag / sameie", "Etter befaring"]] },
-      { "type": "h2", "tekst": "Støtteordninger" },
-      { "type": "p", "tekst": "Enova gir støtte på opptil kr 5 000 per ladepunkt for privatpersoner i eneboliger og rekkehus. VBM Elektro leverer den nødvendige dokumentasjonen for søknaden." },
-      { "type": "cta", "tekst": "Ring oss på 90 63 31 18 eller book gratis befaring – vi rykker ut i Bærum, Sandvika, Billingstad, Lysaker, Fornebu og Asker." }
+      {
+        "type": "p",
+        "tekst": "Bærum og Asker er blant kommunene i Norge med høyest andel elbiler. Det betyr at de fleste elektriker-firmaer i området har solid erfaring med ladeinstallasjon – men priser og kvalitet varierer mye."
+      },
+      {
+        "type": "h2",
+        "tekst": "Anbefalte lademodeller"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Zaptec Go – markedsleder i Norge, støtter lastbalansering",
+          "Easee Home – elegant design, brukervennlig app",
+          "Garo Entity – god ytelse og enkel installasjon",
+          "DEFA Power – pålitelig norsk merke med god support"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Typiske priser"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Type installasjon",
+          "Pris fra"
+        ],
+        "rows": [
+          [
+            "Standard (< 10m kabel)",
+            "kr 9 990"
+          ],
+          [
+            "Kompleks (lang trekk, graving)",
+            "kr 14 900"
+          ],
+          [
+            "Borettslag / sameie",
+            "Etter befaring"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Støtteordninger"
+      },
+      {
+        "type": "p",
+        "tekst": "Enova gir støtte på opptil kr 5 000 per ladepunkt for privatpersoner i eneboliger og rekkehus. VBM Elektro leverer den nødvendige dokumentasjonen for søknaden."
+      },
+      {
+        "type": "cta",
+        "tekst": "Ring oss på 90 63 31 18 eller book gratis befaring – vi rykker ut i Bærum, Sandvika, Billingstad, Lysaker, Fornebu og Asker."
+      }
     ]
   }
 ]
