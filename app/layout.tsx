@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "VBM Elektro AS",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "VBM Elektro AS – Autorisert elektriker i Bærum, Oslo og Asker",
+    description: "Elbillader, renovering, smarthus og service. NELFO-godkjent. Fast pris. Ring 90 63 31 18.",
+  },
   alternates: { canonical: siteUrl },
   robots: { index: true, follow: true },
 }
@@ -65,6 +70,61 @@ const localBusinessSchema = {
   sameAs: [],
 }
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Hva koster en elbillader-installasjon?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Standard installasjon i garasje koster fra kr 6 500 inkl. mva. Pris avhenger av kabelføring, avstand til sikringsskap og behov for kursoppgradering. Vi gir fast pris etter befaring.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Hvor raskt kan dere komme?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Vi ringer tilbake innen 1 time og kan ofte komme ut samme dag eller neste arbeidsdag. Akutte feil prioriteres.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Hva er inkludert i en elkontroll?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Elkontroll inkluderer gjennomgang av sikringsskap, kurser, jordfeilbrytere og synlig installasjon. Skriftlig rapport med eventuelle avvik leveres.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Jobber dere på hytte og fritidsbolig?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ja. Vi tar oppdrag i Bærum, Oslo og omegn – inkludert fritidseiendommer i nærliggende områder.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Er dere NELFO-godkjent og autorisert?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ja. VBM Elektro er autorisert elektroinstallasjonsbedrift og NELFO-medlem. Alt arbeid dokumenteres med samsvarserklæring.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Kan jeg betale med Vipps?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ja, vi aksepterer Vipps, faktura og kortbetaling. For bestillinger via nettsiden kan du velge Vipps i kassen.",
+      },
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -76,6 +136,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
       <body className="min-h-full flex flex-col">
