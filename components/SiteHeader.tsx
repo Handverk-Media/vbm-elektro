@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useCart } from "@/context/CartContext"
@@ -19,13 +20,21 @@ interface Props {
 
 export function SiteHeader({ homePage = false }: Props) {
   const { antall, setÅpen } = useCart()
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
   function scrollTo(id: string) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <header className="site-header">
+    <header className={`site-header${scrolled ? " sh-scrolled" : ""}`}>
       <div className="sh-inner">
         <Link
           href="/"

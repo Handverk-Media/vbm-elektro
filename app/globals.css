@@ -800,9 +800,15 @@ footer.foot { background: var(--bg-dark); color: white; padding: 64px 0 28px; }
    ================================================ */
 .site-header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 40;
-  background: rgba(247,246,243,0.95);
+  background: rgba(247,246,243,0.7);
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.site-header.sh-scrolled {
+  background: var(--bg);
+  border-bottom-color: var(--line);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
 }
 .sh-inner {
   max-width: 1280px; margin: 0 auto; padding: 0 32px;

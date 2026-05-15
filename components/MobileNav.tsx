@@ -63,7 +63,7 @@ export function MobileNav() {
               <a href="#kontakt" className="btn btn-red" style={{ width: '100%', justifyContent: 'center' }} onClick={close}>
                 Få tilbud <span className="arr">→</span>
               </a>
-              <a href="/befaring" className="btn btn-ghost" style={{ width: '100%', justifyContent: 'center' }} onClick={close}>
+              <a href="/book" className="btn btn-ghost" style={{ width: '100%', justifyContent: 'center' }} onClick={close}>
                 Gratis Befaring
               </a>
             </div>
