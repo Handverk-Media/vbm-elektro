@@ -135,7 +135,7 @@ nav.top {
 .hero-bolt path { fill: var(--red); }
 .hero-grid { display: grid; grid-template-columns: 1fr; gap: 60px; align-items: end; position: relative; z-index: 1; }
 .hero-live {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: flex; width: fit-content; align-items: center; gap: 8px;
   background: white; border: 1px solid var(--line);
   padding: 7px 14px 7px 12px; border-radius: 100px;
   font-size: 12.5px; font-weight: 500; color: var(--text-soft);
@@ -151,7 +151,7 @@ nav.top {
   70% { box-shadow: 0 0 0 8px rgba(31,122,62,0); }
   100% { box-shadow: 0 0 0 0 rgba(31,122,62,0); }
 }
-.hero-eyebrow { margin-bottom: 28px; }
+.hero-eyebrow { margin-bottom: 28px; display: flex; width: fit-content; }
 .hero h1 {
   font-size: clamp(44px, 6.8vw, 88px);
   line-height: 1; letter-spacing: -0.035em; font-weight: 700;
@@ -161,6 +161,8 @@ nav.top {
 .hero h1 .swap { display: block; color: var(--red); font-style: italic; font-weight: 700; }
 .hero h1 .swap-word { display: inline-block; min-width: 0; }
 .hero .punct { color: var(--red); }
+.hero .cursor { display: inline-block; color: var(--red); font-weight: 400; animation: blink 0.7s step-end infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 .hero-lede { max-width: 580px; font-size: 19px; line-height: 1.55; color: var(--text-soft); margin-bottom: 16px; }
 .hero-sub { max-width: 580px; font-size: 16px; line-height: 1.6; color: var(--text-soft); margin-bottom: 40px; }
 .hero-cta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
