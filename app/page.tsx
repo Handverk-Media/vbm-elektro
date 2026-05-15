@@ -65,7 +65,7 @@ export default function Home() {
               </p>
               <div className="hero-cta">
                 <a href="#kontakt" className="btn btn-red">Be om tilbud <span className="arr">→</span></a>
-                <a href="#priser" className="btn btn-ghost">Se hva det koster</a>
+                <a href="/befaring" className="btn btn-ghost">Gratis Befaring</a>
               </div>
               <div className="hero-meta">
                 <div className="hero-meta-item"><span className="check">✓</span> Fastpris før vi starter</div>
