@@ -1,1239 +1,792 @@
-"use client"
+import { HeroRotator } from '@/components/HeroRotator'
+import { RevealObserver } from '@/components/RevealObserver'
+import { ContactForm } from '@/components/ContactForm'
+import { FooterNewsletter } from '@/components/FooterNewsletter'
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { TJENESTER } from "@/data/priser"
-import { BEDRIFT } from "@/data/bedrift"
-import { useCart } from "@/context/CartContext"
-
-// ── Brand icons ──────────────────────────────────────────────────────────────
-
-function Bolt({ className = "w-5 h-9" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 177 352" fill="currentColor" aria-hidden className={className}>
-      <polygon points="148.63,0.48 103.24,139.95 177.14,139.95 27.66,351.9 72.66,194.79 0,194.79 36.62,0.48" />
-    </svg>
-  )
-}
-
-function RedStripe() {
-  return <div className="h-[3px] w-full bg-[#E1342B]" aria-hidden />
-}
-
-// ── Nav ──────────────────────────────────────────────────────────────────────
-
-function Nav() {
-  const { antall, setÅpen } = useCart()
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-[#F7F6F3]/95 backdrop-blur-sm border-b border-[#EEEDE8]">
-      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="flex-shrink-0">
-          <Image src="/logo.svg" alt="VBM Elektro" width={130} height={52} priority />
-        </Link>
-
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#1A1A1A]">
-          {[
-            { label: "Tjenester", id: "tjenester" },
-            { label: "Elbillader", id: "elbillader" },
-            { label: "Slik fungerer det", id: "prosess" },
-            { label: "Kontakt", id: "kontakt" },
-          ].map(({ label, id }) => (
-            <button
-              key={id}
-              onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })}
-              className="hover:text-[#E1342B] transition-colors cursor-pointer"
-            >
-              {label}
-            </button>
-          ))}
-          <Link href="/blogg" className="hover:text-[#E1342B] transition-colors">Blogg</Link>
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <a
-            href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-            className="hidden md:flex items-center gap-2 text-sm font-semibold text-[#1A1A1A] hover:text-[#E1342B] transition-colors mr-2"
-          >
-            <PhoneIcon className="w-4 h-4" />
-            {BEDRIFT.telefon}
-          </a>
-
-          <button
-            onClick={() => setÅpen(true)}
-            className="relative p-2 text-[#6B6B6B] hover:text-[#1A1A1A] transition-colors"
-            aria-label="Åpne handlekurv"
-          >
-            <CartIcon className="w-5 h-5" />
-            {antall > 0 && (
-              <span className="absolute top-0.5 right-0.5 w-4 h-4 bg-[#E1342B] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-                {antall}
-              </span>
-            )}
-          </button>
-
-          <a
-            href="/book"
-            className="hidden md:inline-flex items-center bg-[#1A1A1A] text-white text-sm font-semibold px-4 py-2 rounded hover:bg-[#333] transition-colors"
-          >
-            Book befaring
-          </a>
-
-          <a
-            href="#kontakt"
-            className="bg-[#E1342B] text-white text-sm font-semibold px-4 py-2 rounded hover:bg-[#c42d24] transition-colors"
-          >
-            Få tilbud
-          </a>
-        </div>
-      </div>
-    </header>
-  )
-}
-
-// ── Sticky mobile bar ────────────────────────────────────────────────────────
-
-function StickyMobileBar() {
-  const { antall, setÅpen } = useCart()
-  return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#1A1A1A] border-t border-white/10 flex">
-      <a
-        href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-        className="flex-1 flex flex-col items-center justify-center py-3 text-white/70 hover:text-white transition-colors text-xs gap-1 border-r border-white/10"
-      >
-        <PhoneIcon className="w-5 h-5" />
-        Ring
-      </a>
-      <a
-        href="#kontakt"
-        onClick={(e) => { e.preventDefault(); document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" }) }}
-        className="flex-1 flex flex-col items-center justify-center py-3 bg-[#E1342B] text-white text-xs gap-1 font-semibold"
-      >
-        <Bolt className="w-3 h-6" />
-        Få tilbud
-      </a>
-      <button
-        onClick={() => setÅpen(true)}
-        className="flex-1 flex flex-col items-center justify-center py-3 text-white/70 hover:text-white transition-colors text-xs gap-1 border-l border-white/10 relative"
-      >
-        <CartIcon className="w-5 h-5" />
-        {antall > 0 && (
-          <span className="absolute top-2 right-[calc(50%-14px)] w-4 h-4 bg-[#E1342B] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-            {antall}
-          </span>
-        )}
-        Bestill
-      </button>
-    </div>
-  )
-}
-
-// ── Hero ─────────────────────────────────────────────────────────────────────
-
-function Hero() {
-  return (
-    <section className="relative min-h-screen flex items-start pt-20 overflow-hidden bg-[#F7F6F3]">
-      <div className="absolute right-[5%] top-1/2 -translate-y-1/2 text-[#1A1A1A]/[0.04] pointer-events-none select-none">
-        <svg viewBox="0 0 177 352" fill="currentColor" className="w-[480px] h-[960px]">
-          <polygon points="148.63,0.48 103.24,139.95 177.14,139.95 27.66,351.9 72.66,194.79 0,194.79 36.62,0.48" />
-        </svg>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 pt-16 pb-24 relative z-10 w-full">
-        <div className="max-w-2xl">
-          <div className="flex items-center gap-2 mb-8">
-            <Bolt className="w-[10px] h-5 text-[#E1342B]" />
-            <span className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase">
-              Autorisert elektriker · Oslo, Bærum, Asker, Drammen
-            </span>
-          </div>
-
-          <h1 className="text-[36px] sm:text-5xl md:text-[68px] font-bold leading-[1.04] tracking-tight text-[#1A1A1A] mb-6">
-            Elektrikerarbeid gjort ryddig.
-          </h1>
-
-          <div className="w-14 h-[3px] bg-[#E1342B] mb-8" />
-
-          <p className="text-lg text-[#6B6B6B] leading-relaxed mb-10 max-w-[480px]">
-            VBM Elektro leverer autorisert elektroarbeid for bolig og næring — med
-            tydelig kommunikasjon, dokumentasjon og løsninger som faktisk blir fulgt opp.
-          </p>
-
-          <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-            <a
-              href="#kontakt"
-              className="bg-[#E1342B] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#c42d24] transition-colors inline-flex items-center justify-center gap-2"
-            >
-              Få tilbud
-              <ArrowIcon className="w-4 h-4" />
-            </a>
-            <a
-              href="/book"
-              className="inline-flex items-center justify-center gap-2 bg-[#1A1A1A] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#333] transition-colors"
-            >
-              Book befaring
-            </a>
-          </div>
-
-          <div className="flex flex-wrap gap-6 mt-12 text-sm text-[#6B6B6B]">
-            {["NELFO-godkjent", "Autorisert elektriker", "Fast pris – ingen overraskelser"].map((t) => (
-              <span key={t} className="flex items-center gap-1.5">
-                <CheckIcon className="w-3.5 h-3.5 text-[#E1342B]" />
-                {t}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-8 flex items-start sm:items-center gap-3 bg-[#EEEDE8] rounded-lg px-5 py-3 text-sm">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5 text-[#E1342B] flex-shrink-0 mt-0.5 sm:mt-0">
-              <path d="M15 10l4.553-2.277A1 1 0 0121 8.67v6.66a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
-            </svg>
-            <div className="flex-1 min-w-0">
-              <span className="font-semibold text-[#1A1A1A]">Gratis videobefaring</span>
-              <span className="text-[#6B6B6B] ml-1">– vurdering uten oppmøte</span>
-            </div>
-            <button
-              onClick={() => document.getElementById("videoavklaring")?.scrollIntoView({ behavior: "smooth" })}
-              className="text-[#E1342B] font-semibold text-xs whitespace-nowrap hover:underline flex-shrink-0 cursor-pointer"
-            >
-              Book nå →
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ── Service category cards ────────────────────────────────────────────────────
-// Each card links to /tjenester/[id] — future home of configurator + booking flow
-
-const KATEGORIER = [
-  { id: "elbillader", navn: "Elbillader", beskrivelse: "Zaptec, Easee og mer. Installert av autorisert elektriker med dokumentasjon.", icon: <BoltServiceIcon /> },
-  { id: "service", navn: "Serviceoppdrag", beskrivelse: "Rask utrykning ved feil, bytting av sikringer og generell service.", icon: <WrenchIcon /> },
-  { id: "renovering", navn: "Renovering", beskrivelse: "Nytt el-anlegg ved bad, kjøkken, tilbygg og totalrenovering.", icon: <HouseIcon /> },
-  { id: "smarthus", navn: "Smarthus", beskrivelse: "Plejd, dimmer og smartstyring. Boligen din blir enklere å bruke.", icon: <SmartIcon /> },
-  { id: "feilsok", navn: "Feilsøking", beskrivelse: "Vi finner og utbedrer elektriske feil raskt og effektivt.", icon: <SearchIcon /> },
-  { id: "naring", navn: "Næringsbygg", beskrivelse: "Tekniske installasjoner, HMS-dokumentasjon og driftsavtaler.", icon: <BuildingIcon /> },
-]
-
-function Services() {
-  return (
-    <section id="tjenester" className="bg-[#EEEDE8] py-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
-            Hva trenger du hjelp med?
-          </h2>
-          <p className="mt-4 text-[#6B6B6B] text-lg max-w-xl">
-            VBM Elektro leverer autorisert elektroarbeid for bolig, næring og prosjekt — fra serviceoppdrag og feilsøking til rehabilitering, elbilladere, smarthus og komplette elektriske installasjoner.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {KATEGORIER.map((k) => (
-            <a
-              key={k.id}
-              href="#kontakt"
-              className="group bg-[#F7F6F3] rounded-lg p-5 sm:p-8 flex flex-col gap-5 hover:shadow-sm transition-all border border-transparent hover:border-[#E1342B]/15"
-            >
-              <div className="text-[#6B6B6B] group-hover:text-[#E1342B] transition-colors">
-                {k.icon}
-              </div>
-              <div>
-                <h3 className="font-bold text-[#1A1A1A] text-lg mb-1.5">{k.navn}</h3>
-                <p className="text-[#6B6B6B] text-sm leading-relaxed">{k.beskrivelse}</p>
-              </div>
-              <div className="mt-auto flex items-center gap-1 text-sm font-semibold text-[#1A1A1A] group-hover:text-[#E1342B] transition-colors">
-                Få tilbud
-                <ArrowIcon className="w-3.5 h-3.5" />
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ── Price list with quick-add ────────────────────────────────────────────────
-
-function Prisliste() {
-  const { leggTil } = useCart()
-  const kategorier = [...new Set(TJENESTER.map((t) => t.kategori))]
-
-  return (
-    <section className="bg-[#F7F6F3] py-24" id="priser">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-14">
-          <div className="flex items-center gap-2 mb-4">
-            <Bolt className="w-[10px] h-5 text-[#E1342B]" />
-            <span className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase">Fast pris</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
-            Tjenester og priser
-          </h2>
-          <p className="mt-4 text-[#6B6B6B] max-w-md">
-            Legg tjenester i forespørselen – vi bekrefter og avtaler tidspunkt.
-          </p>
-        </div>
-
-        <div className="space-y-12">
-          {kategorier.map((kat) => (
-            <div key={kat}>
-              <h3 className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase mb-4">{kat}</h3>
-              <div className="space-y-2">
-                {TJENESTER.filter((t) => t.kategori === kat).map((t) => (
-                  <div key={t.id} className="bg-[#EEEDE8] rounded-lg px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
-                    <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-[#1A1A1A]">{t.navn}</p>
-                      <p className="text-sm text-[#6B6B6B] mt-0.5 leading-relaxed">{t.beskrivelse}</p>
-                      {t.varighet && (
-                        <p className="text-xs text-[#6B6B6B]/60 mt-1.5 flex items-center gap-1">
-                          <ClockIcon className="w-3 h-3" />
-                          {t.varighet}
-                        </p>
-                      )}
-                    </div>
-                    <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-3 flex-shrink-0">
-                      <div className="text-left sm:text-right">
-                        <span className="text-xs text-[#6B6B6B] block">{t.enhet}</span>
-                        <span className="font-bold text-[#1A1A1A]">
-                          kr {t.pris.toLocaleString("nb-NO")}
-                        </span>
-                      </div>
-                      <button
-                        onClick={() => leggTil(t)}
-                        className="text-xs font-semibold text-[#E1342B] border border-[#E1342B]/30 hover:bg-[#E1342B] hover:text-white px-3 py-1.5 rounded transition-colors whitespace-nowrap"
-                      >
-                        + Legg til
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ── Process ──────────────────────────────────────────────────────────────────
-
-const STEG = [
-  { num: "01", tittel: "Send forespørsel", tekst: "Via skjema, chat eller telefon" },
-  { num: "02", tittel: "Svar innen få minutter", tekst: "AI-assistenten registrerer saken og sender den videre" },
-  { num: "03", tittel: "Pris og avklaring", tekst: "Vi bekrefter løsning, pris og tidspunkt" },
-  { num: "04", tittel: "Installasjon", tekst: "Ryddig og dokumentert utførelse" },
-  { num: "05", tittel: "Dokumentasjon", tekst: "Samsvarserklæring og ferdig rapport levert" },
-]
-
-function Process() {
-  return (
-    <section id="prosess" className="bg-[#EEEDE8] py-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-14">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
-            Slik fungerer det
-          </h2>
-          <p className="mt-4 text-[#6B6B6B]">Enkelt og forutsigbart – fra start til ferdig.</p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-3">
-          {STEG.map((s, i) => (
-            <div key={s.num} className="relative flex flex-col items-start md:items-center md:text-center">
-              {i < STEG.length - 1 && (
-                <div className="hidden md:block absolute top-7 left-[calc(50%+28px)] right-[-50%] h-px bg-[#1A1A1A]/10" />
-              )}
-              <div className="relative z-10 w-14 h-14 rounded-full bg-[#F7F6F3] flex items-center justify-center mb-4 font-bold text-sm text-[#1A1A1A]">
-                {i === 0 ? <span className="text-[#E1342B]">{s.num}</span> : s.num}
-              </div>
-              <p className="font-bold text-[#1A1A1A] text-sm mb-1">{s.tittel}</p>
-              <p className="text-xs text-[#6B6B6B]">{s.tekst}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-14 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-          <a
-            href="#kontakt"
-            className="inline-flex items-center gap-2 bg-[#E1342B] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#c42d24] transition-colors"
-          >
-            Start prosessen nå
-            <ArrowIcon className="w-4 h-4" />
-          </a>
-          <span className="text-[#6B6B6B] text-sm">Tilbakering innen 1 time · Ingen bindingstid</span>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ── EV Charger ───────────────────────────────────────────────────────────────
-
-const LADER_MERKER = [
-  { navn: "Zaptec", beskrivelse: "Norskutviklet, markedsledende" },
-  { navn: "Easee", beskrivelse: "Smart og elegant design" },
-  { navn: "Futurehome", beskrivelse: "Integrert smarthus-lading" },
-  { navn: "Schneider Electric", beskrivelse: "Robust og pålitelig" },
-]
-
-function EVCharger() {
-  return (
-    <section id="elbillader" className="bg-[#F7F6F3] py-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Bolt className="w-[10px] h-5 text-[#E1342B]" />
-              <span className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase">Elbillader</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A] mb-4">
-              Installasjon av elbillader for bolig og næring
-            </h2>
-            <div className="w-12 h-[3px] bg-[#E1342B] mb-6" />
-            <p className="text-[#6B6B6B] text-lg leading-relaxed mb-8">
-              Vi hjelper deg med trygg og korrekt installasjon av hjemmelader — inkludert
-              dokumentasjon, oppsett og ferdigstillelse utført av autorisert elektriker.
-            </p>
-            <div className="space-y-3 mb-10">
-              {[
-                "Montering og idriftsettelse",
-                "Tilkobling til sikringsskap",
-                "Oppsett og konfigurering",
-                "Dokumentasjon og samsvarserklæring",
-              ].map((p) => (
-                <div key={p} className="flex items-center gap-3 text-[#1A1A1A]">
-                  <CheckIcon className="w-4 h-4 text-[#E1342B] flex-shrink-0" />
-                  <span className="text-sm font-medium">{p}</span>
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="/book"
-                className="inline-flex items-center justify-center gap-2 bg-[#E1342B] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#c42d24] transition-colors"
-              >
-                Book installasjon
-                <ArrowIcon className="w-4 h-4" />
-              </a>
-              <a
-                href="#kontakt"
-                className="inline-flex items-center justify-center gap-2 text-[#1A1A1A] font-semibold px-7 py-3.5 border border-[#1A1A1A]/20 rounded hover:border-[#1A1A1A]/50 transition-colors"
-              >
-                Få tilbud på installasjon
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <p className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase mb-6">
-              Merker vi installerer
-            </p>
-            <div className="grid grid-cols-2 gap-3">
-              {LADER_MERKER.map((m) => (
-                <div key={m.navn} className="bg-[#EEEDE8] rounded-lg p-5">
-                  <p className="font-bold text-[#1A1A1A] mb-1">{m.navn}</p>
-                  <p className="text-xs text-[#6B6B6B]">{m.beskrivelse}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-xs text-[#6B6B6B] mt-4">
-              Har du allerede kjøpt lader? Vi installerer de fleste godkjente modeller.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ── Trust — THE ONE DARK SECTION ─────────────────────────────────────────────
-
-const TILLIT = [
-  { stat: "100%", label: "Autoriserte elektrikere", tekst: "Alt arbeid utføres etter gjeldende forskrifter og NEK-standarder.", icon: <ShieldIcon /> },
-  { stat: "NELFO", label: "Registrert bedrift", tekst: "Godkjent elektrobedrift med dokumentert fagkompetanse.", icon: <BadgeIcon /> },
-  { stat: "Alt", label: "Dokumentert", tekst: "Samsvarserklæring og nødvendig dokumentasjon leveres på utført arbeid.", icon: <DocIcon /> },
-  { stat: "< 1t", label: "Rask tilbakemelding", tekst: "Vi svarer raskt på forespørsler i normal arbeidstid.", icon: <ClockLargeIcon /> },
-]
-
-function Trust() {
-  return (
-    <section className="bg-[#1A1A1A] py-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Bolt className="w-[10px] h-5 text-[#E1342B]" />
-              <span className="text-xs font-semibold text-white/40 tracking-widest uppercase">Sertifisert og trygg</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
-              Du er i trygge hender
-            </h2>
-          </div>
-          <p className="text-white/40 text-sm max-w-xs md:text-right leading-relaxed">
-            Autorisert elektriker med fokus på kvalitet, dokumentasjon og rask oppfølging — fra første kontakt til ferdig arbeid.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
-          {TILLIT.map((item) => (
-            <div key={item.label} className="bg-[#1A1A1A] p-6 sm:p-8">
-              <div className="text-[#E1342B] mb-5">{item.icon}</div>
-              <div className="text-3xl font-bold text-white mb-1">{item.stat}</div>
-              <div className="font-semibold text-white mb-3 text-sm">{item.label}</div>
-              <div className="text-sm text-white/35 leading-relaxed">{item.tekst}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-16 pt-12 border-t border-white/[0.07] flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-white/60 text-lg max-w-sm">
-            Klar for å komme i gang? Beskriv jobben kort — vi tar kontakt for videre avklaring og tilbud.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href="/book"
-              className="bg-[#E1342B] text-white font-semibold px-7 py-3.5 rounded hover:bg-[#c42d24] transition-colors inline-flex items-center justify-center gap-2"
-            >
-              Book befaring
-              <ArrowIcon className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ── Reviews ──────────────────────────────────────────────────────────────────
-
-const ANMELDELSER = [
-  { navn: "Thomas H.", sted: "Bærum", tekst: "Rask, ryddig og presis. Elbillader installert på 2 timer og alt ble dokumentert. Nøyaktig slik det skal gjøres.", stjerner: 5 },
-  { navn: "Karin S.", sted: "Oslo vest", tekst: "Endelig en elektriker som svarer på telefon og faktisk holder avtaler. Ringte tilbake innen 30 minutter.", stjerner: 5 },
-  { navn: "Lars O.", sted: "Sandvika", tekst: "Profesjonell installasjon ved bad-renovering. Fast pris, ingen overraskelser. Anbefales på det varmeste.", stjerner: 5 },
-]
-
-function Stars({ n }: { n: number }) {
-  return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: n }).map((_, i) => (
-        <svg key={i} viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5 text-[#E1342B]">
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-        </svg>
-      ))}
-    </div>
-  )
-}
-
-function Reviews() {
-  return (
-    <section className="bg-[#EEEDE8] py-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-14">
-          <div className="flex items-center gap-3 mb-4">
-            <Stars n={5} />
-            <span className="text-[#6B6B6B] text-sm">5,0 · Google</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
-            Hva kundene sier
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {ANMELDELSER.map((r) => (
-            <div key={r.navn} className="bg-[#F7F6F3] rounded-lg p-5 sm:p-8">
-              <Stars n={r.stjerner} />
-              <p className="mt-4 text-[#1A1A1A] leading-relaxed mb-6 text-[15px]">"{r.tekst}"</p>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#1A1A1A] flex items-center justify-center text-white text-xs font-bold">
-                  {r.navn[0]}
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-[#1A1A1A]">{r.navn}</p>
-                  <p className="text-xs text-[#6B6B6B]">{r.sted}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ── Video avklaring ──────────────────────────────────────────────────────────
-
-function VideoModal({ onLukk }: { onLukk: () => void }) {
-  const [laster, setLaster] = useState(false)
-  const [sendt, setSendt] = useState(false)
-  const [filer, setFiler] = useState<FileList | null>(null)
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setLaster(true)
-    const fd = new FormData(e.currentTarget)
-    if (filer) Array.from(filer).forEach((f) => fd.append("filer", f))
-    await fetch("/api/videoavklaring", { method: "POST", body: fd }).catch(() => {})
-    setLaster(false)
-    setSendt(true)
-  }
-
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
-      onClick={(e) => e.target === e.currentTarget && onLukk()}
-    >
-      <div className="bg-[#F7F6F3] rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl">
-        <div className="p-6 sm:p-8">
-          {/* Header */}
-          <div className="flex items-start justify-between mb-6">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <Bolt className="w-[8px] h-4 text-[#E1342B]" />
-                <span className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase">Gratis</span>
-              </div>
-              <h3 className="text-xl font-bold text-[#1A1A1A]">Start videoavklaring</h3>
-              <p className="text-sm text-[#6B6B6B] mt-1">Vi svarer innen 2 timer i arbeidstid</p>
-            </div>
-            <button
-              onClick={onLukk}
-              className="w-8 h-8 rounded-full bg-[#EEEDE8] flex items-center justify-center text-[#6B6B6B] hover:bg-[#1A1A1A] hover:text-white transition-colors flex-shrink-0 ml-4"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          {sendt ? (
-            <div className="text-center py-8">
-              <div className="w-14 h-14 bg-[#E1342B]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckIcon className="w-6 h-6 text-[#E1342B]" />
-              </div>
-              <h4 className="text-lg font-bold text-[#1A1A1A] mb-2">Mottatt!</h4>
-              <p className="text-[#6B6B6B] text-sm">Vi ser på bildene og tar kontakt innen 2 timer.</p>
-              <button onClick={onLukk} className="mt-6 text-sm font-semibold text-[#E1342B] hover:underline">Lukk</button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Navn *</label>
-                  <input name="navn" type="text" required placeholder="Ola Nordmann"
-                    className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/50 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20 text-sm" />
-                </div>
-                <div>
-                  <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Telefon *</label>
-                  <input name="telefon" type="tel" required placeholder="900 00 000"
-                    className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/50 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20 text-sm" />
-                </div>
-              </div>
-              <div>
-                <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Adresse / område</label>
-                <input name="adresse" type="text" placeholder="F.eks. Sandvika, Bærum"
-                  className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/50 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20 text-sm" />
-              </div>
-              <div>
-                <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Beskriv jobben kort *</label>
-                <textarea name="beskrivelse" required rows={3} placeholder="F.eks. vil montere elbillader i garasje, ca. 10m fra sikringsskap…"
-                  className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/50 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20 text-sm resize-none" />
-              </div>
-              <div>
-                <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Last opp bilder eller video</label>
-                <label className="block cursor-pointer">
-                  <div className={`border-2 border-dashed rounded-lg px-4 py-6 text-center transition-colors ${filer && filer.length > 0 ? "border-[#E1342B]/40 bg-[#E1342B]/5" : "border-[#1A1A1A]/15 bg-[#EEEDE8] hover:border-[#E1342B]/30"}`}>
-                    {filer && filer.length > 0 ? (
-                      <div>
-                        <CheckIcon className="w-5 h-5 text-[#E1342B] mx-auto mb-1" />
-                        <p className="text-sm font-semibold text-[#1A1A1A]">{filer.length} fil{filer.length > 1 ? "er" : ""} valgt</p>
-                        <p className="text-xs text-[#6B6B6B] mt-0.5">Klikk for å endre</p>
-                      </div>
-                    ) : (
-                      <div>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6 text-[#6B6B6B] mx-auto mb-2">
-                          <path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
-                        </svg>
-                        <p className="text-sm text-[#6B6B6B]">Klikk for å laste opp</p>
-                        <p className="text-xs text-[#6B6B6B]/60 mt-0.5">Bilder og video støttes</p>
-                      </div>
-                    )}
-                  </div>
-                  <input type="file" accept="image/*,video/*" multiple className="hidden"
-                    onChange={(e) => setFiler(e.target.files)} />
-                </label>
-              </div>
-              <button type="submit" disabled={laster}
-                className="w-full bg-[#1A1A1A] text-white font-bold py-3.5 rounded-lg hover:bg-[#333] transition-colors flex items-center justify-center gap-2 disabled:opacity-60 text-sm">
-                {laster ? "Sender…" : "Send inn for vurdering"}
-                {!laster && <ArrowIcon className="w-4 h-4" />}
-              </button>
-              <p className="text-xs text-[#6B6B6B] text-center">Gratis og uforpliktende · Svar innen 2 timer</p>
-            </form>
-          )}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function VideoAvklaring() {
-  const [modalÅpen, setModalÅpen] = useState(false)
-
+export default function Home() {
   return (
     <>
-      <section id="videoavklaring" className="bg-[#1A1A1A] py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <RevealObserver />
 
-            {/* Left */}
+      {/* ── Nav ─────────────────────────────────── */}
+      <nav className="top">
+        <div className="nav-inner">
+          <a href="/" className="logo">
+            <svg width="26" height="36" viewBox="0 0 175 340" aria-hidden="true">
+              <path d="M 60 0 L 130 0 L 100 130 L 165 130 L 40 340 L 95 195 L 10 195 Z" fill="#1A1A1A" />
+            </svg>
+            <div className="marks">
+              <span className="name">VBM</span>
+              <div className="div" />
+              <span className="sub">Elektro AS</span>
+            </div>
+          </a>
+          <div className="nav-links">
+            <a href="#tjenester">Tjenester</a>
+            <a href="#priser">Priser</a>
+            <a href="#prosess">Slik gjør vi det</a>
+            <a href="#faq">FAQ</a>
+            <a href="#kontakt">Kontakt</a>
+          </div>
+          <div className="nav-right">
+            <a href="tel:90633118" className="nav-phone">
+              <span className="pulse" />
+              90 63 31 18
+            </a>
+            <a href="#kontakt" className="btn btn-red">Få tilbud <span className="arr">→</span></a>
+          </div>
+        </div>
+      </nav>
+
+      {/* ── Hero ────────────────────────────────── */}
+      <section className="hero">
+        <svg className="hero-bolt" viewBox="0 0 175 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <path d="M 60 0 L 130 0 L 100 130 L 165 130 L 40 340 L 95 195 L 10 195 Z" />
+        </svg>
+        <div className="wrap">
+          <div className="hero-grid">
             <div>
-              <div className="flex items-center gap-2 mb-6">
-                <Bolt className="w-[10px] h-5 text-[#E1342B]" />
-                <span className="text-xs font-semibold text-white/40 tracking-widest uppercase">Gratis · Ingen forpliktelser</span>
+              <div className="hero-live">
+                <span className="live-dot" />
+                <span><strong>Tilgjengelig nå</strong> · svartid &lt; 1 time</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.08] mb-6">
-                Få rask avklaring uten fysisk befaring
-              </h2>
-              <div className="w-12 h-[3px] bg-[#E1342B] mb-6" />
-              <p className="text-white/50 text-lg leading-relaxed mb-10 max-w-md">
-                Send bilder eller video av jobben — vi vurderer løsning, omfang og neste steg før vi eventuelt kommer ut.
+              <div className="hero-eyebrow eyebrow">Bærum · Asker · Oslo · Drammen</div>
+              <h1>
+                <span className="static">Endelig en elektriker</span>
+                <span className="swap">
+                  <HeroRotator />
+                </span>
+              </h1>
+              <p className="hero-lede">
+                <strong style={{ color: 'var(--text)', fontWeight: 600 }}>Tydelig pris. Rask oppfølging. Dokumentasjon levert som standard.</strong>
               </p>
-              <div className="space-y-4 mb-10">
-                {[
-                  "Raskere avklaring",
-                  "Ingen fysisk befaring nødvendig på mindre jobber",
-                  "Få vurdering før oppstart",
-                ].map((t) => (
-                  <div key={t} className="flex items-center gap-3">
-                    <CheckIcon className="w-4 h-4 text-[#E1342B] flex-shrink-0" />
-                    <span className="text-white/70 text-sm">{t}</span>
-                  </div>
-                ))}
+              <p className="hero-sub">
+                VBM Elektro er bygget for folk som vil ha en ryddig prosess fra første kontakt til ferdig jobb. Fastpris før vi starter. God kommunikasjon underveis. Ingen overraskelser på slutten.
+              </p>
+              <div className="hero-cta">
+                <a href="#kontakt" className="btn btn-red">Be om tilbud <span className="arr">→</span></a>
+                <a href="#priser" className="btn btn-ghost">Se hva det koster</a>
               </div>
-              <button
-                onClick={() => setModalÅpen(true)}
-                className="inline-flex items-center gap-2 bg-[#E1342B] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#c42d24] transition-colors"
-              >
-                Start videoavklaring
-                <ArrowIcon className="w-4 h-4" />
-              </button>
+              <div className="hero-meta">
+                <div className="hero-meta-item"><span className="check">✓</span> Fastpris før vi starter</div>
+                <div className="hero-meta-item"><span className="check">✓</span> Svar innen 1 time</div>
+                <div className="hero-meta-item"><span className="check">✓</span> NELFO-godkjent</div>
+              </div>
             </div>
+          </div>
 
-            {/* Right — mini flow */}
-            <div className="hidden lg:flex flex-col gap-px bg-white/[0.06]">
-              {[
-                { num: "01", tittel: "Send bilder eller video", tekst: "Ta bilde av sikringsskap, kabeltrekk eller jobben som skal gjøres" },
-                { num: "02", tittel: "Vi vurderer", tekst: "En autorisert elektriker ser på bildene og vurderer løsning og omfang" },
-                { num: "03", tittel: "Du får svar", tekst: "Tilbakemelding innen 2 timer — med anbefaling og eventuelt tilbud" },
-              ].map((s, i) => (
-                <div key={s.num} className="bg-[#1A1A1A] p-8 group hover:bg-white/[0.03] transition-colors">
-                  <div className="text-xs font-bold tracking-widest mb-3 text-white/20">{s.num}</div>
-                  <p className="font-bold text-white text-sm mb-1">{s.tittel}</p>
-                  <p className="text-xs text-white/35 leading-relaxed">{s.tekst}</p>
-                </div>
-              ))}
+          {/* Floating invoice card */}
+          <div className="hero-card">
+            <div className="stamp">Som avtalt</div>
+            <div className="hd">
+              <div className="dot-row">
+                <span className="dot r" /><span className="dot y" /><span className="dot g" />
+              </div>
+              <span className="tag">Faktura #2641</span>
             </div>
-
+            <div className="price-line"><span>Elbillader Zaptec Go</span><span>kr 9 990</span></div>
+            <div className="price-line"><span>Tilkobling sikringsskap</span><span>inkludert</span></div>
+            <div className="price-line"><span>Dokumentasjon</span><span>inkludert</span></div>
+            <div className="price-line"><span>Tillegg / overraskelser</span><span style={{ color: 'var(--green-ok)' }}>kr 0</span></div>
+            <div className="total"><span>Totalt</span><span>kr 9 990</span></div>
           </div>
         </div>
       </section>
 
-      {modalÅpen && <VideoModal onLukk={() => setModalÅpen(false)} />}
-    </>
-  )
-}
-
-// ── Mid-page CTA banner ───────────────────────────────────────────────────────
-
-function MidCTA() {
-  return (
-    <section className="bg-[#E1342B] py-16">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div>
-          <p className="text-white font-bold text-xl md:text-3xl tracking-tight">
-            Klar for et pristilbud?
-          </p>
-          <p className="text-white/70 mt-2">Vi ringer tilbake innen 1 time – helt uforpliktende.</p>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto flex-shrink-0">
-          <a
-            href="#kontakt"
-            className="bg-white text-[#E1342B] font-semibold px-7 py-3.5 rounded hover:bg-[#f5f4f2] transition-colors inline-flex items-center gap-2"
-          >
-            Send forespørsel
-            <ArrowIcon className="w-4 h-4" />
-          </a>
-          <a
-            href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-            className="inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 border border-white/40 rounded hover:border-white transition-colors"
-          >
-            <PhoneIcon className="w-4 h-4" />
-            {BEDRIFT.telefon}
-          </a>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ── FAQ ──────────────────────────────────────────────────────────────────────
-
-const SPORSMAL = [
-  { q: "Hva koster en elbillader-installasjon?", a: "Standard installasjon i garasje koster fra kr 6 500 inkl. mva. Pris avhenger av kabelføring, avstand til sikringsskap og behov for kursoppgradering. Vi gir fast pris etter befaring." },
-  { q: "Hvor raskt kan dere komme?", a: "Vi ringer tilbake innen 1 time og kan ofte komme ut samme dag eller neste arbeidsdag. Akutte feil prioriteres." },
-  { q: "Hva er inkludert i en elkontroll?", a: "Elkontroll inkluderer gjennomgang av sikringsskap, kurser, jordfeilbrytere og synlig installasjon. Skriftlig rapport med eventuelle avvik leveres." },
-  { q: "Jobber dere på hytte og fritidsbolig?", a: "Ja. Vi tar oppdrag i Bærum, Oslo og omegn – inkludert fritidseiendommer i nærliggende områder." },
-  { q: "Er dere NELFO-godkjent og autorisert?", a: "Ja. VBM Elektro er autorisert elektroinstallasjonsbedrift og NELFO-medlem. Alt arbeid dokumenteres med samsvarserklæring." },
-  { q: "Kan jeg betale med Vipps?", a: "Ja, vi aksepterer Vipps, faktura og kortbetaling. For bestillinger via nettsiden kan du velge Vipps i kassen." },
-]
-
-function FAQ() {
-  const [åpen, setÅpen] = useState<number | null>(null)
-  return (
-    <section className="bg-[#F7F6F3] py-24">
-      <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A] mb-14">
-          Vanlige spørsmål
-        </h2>
-        <div className="space-y-1.5">
-          {SPORSMAL.map((s, i) => (
-            <div key={i} className="bg-[#EEEDE8] rounded-lg overflow-hidden">
-              <div
-                role="button"
-                tabIndex={0}
-                className="w-full flex items-center justify-between px-6 py-5 cursor-pointer select-none"
-                style={{ color: "#1a1a1a" }}
-                onClick={() => setÅpen(åpen === i ? null : i)}
-                onKeyDown={(e) => e.key === "Enter" && setÅpen(åpen === i ? null : i)}
-              >
-                <span style={{ color: "#1a1a1a", fontWeight: 700 }} className="pr-4 text-sm md:text-base">{s.q}</span>
-                <svg
-                  viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth={2.5}
-                  className={`w-4 h-4 flex-shrink-0 transition-transform ${åpen === i ? "rotate-180" : ""}`}
-                >
-                  <path d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-              {åpen === i && (
-                <div style={{ color: "rgba(26,26,26,0.7)" }} className="px-6 pb-6 leading-relaxed text-sm border-t border-[#1A1A1A]/10 pt-4">{s.a}</div>
-              )}
-            </div>
+      {/* ── Marquee ─────────────────────────────── */}
+      <div className="marquee">
+        <div className="marquee-track">
+          {[
+            ['Pris som holder', true], ['Ingen tillegg uten varsel', false],
+            ['Dokumentasjon levert som standard', true], ['Svarer innen 1 time', false],
+            ['Fastpris før oppstart', true], ['NELFO-godkjent', false],
+            ['Lokalt forankret', true], ['Vi ringer tilbake', false],
+            ['Tillegg avklares før vi starter', true], ['Autorisert elektriker', false],
+            ['Ryddig fra start til slutt', true], ['Samsvarserklæring inkludert', false],
+            ['Kommer som avtalt', true], ['Tydelig kommunikasjon hele veien', false],
+            ['Ingen overraskelser på faktura', true],
+            ['Pris som holder', true], ['Ingen tillegg uten varsel', false],
+            ['Dokumentasjon levert som standard', true], ['Svarer innen 1 time', false],
+            ['Fastpris før oppstart', true], ['NELFO-godkjent', false],
+            ['Lokalt forankret', true], ['Vi ringer tilbake', false],
+            ['Tillegg avklares før vi starter', true], ['Autorisert elektriker', false],
+            ['Ryddig fra start til slutt', true], ['Samsvarserklæring inkludert', false],
+            ['Kommer som avtalt', true], ['Tydelig kommunikasjon hele veien', false],
+            ['Ingen overraskelser på faktura', true],
+          ].map(([text, red], i) => (
+            <span key={i} className="marquee-item">
+              {text} <span className={`dot ${red ? 'red-dot' : ''}`}>●</span>
+            </span>
           ))}
         </div>
+      </div>
 
-        <div className="mt-12 pt-10 border-t border-[#EEEDE8] flex flex-col sm:flex-row items-center justify-between gap-5">
-          <p className="text-[#6B6B6B]">Har du andre spørsmål? Vi hjelper deg gjerne.</p>
-          <div className="flex gap-3">
-            <a
-              href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-              className="inline-flex items-center gap-2 text-[#1A1A1A] font-semibold text-sm hover:text-[#E1342B] transition-colors"
-            >
-              <PhoneIcon className="w-4 h-4" />
-              {BEDRIFT.telefon}
-            </a>
-            <a
-              href="#kontakt"
-              className="bg-[#1A1A1A] text-white text-sm font-semibold px-5 py-2.5 rounded hover:bg-[#333] transition-colors"
-            >
-              Send melding
-            </a>
+      {/* ── Truth ───────────────────────────────── */}
+      <section className="truth">
+        <div className="wrap">
+          <div className="truth-grid">
+            <div data-reveal>
+              <div className="eyebrow" style={{ marginBottom: 24 }}>Den ærlige delen</div>
+              <h2>
+                Det er en grunn til at &ldquo;<span className="hl">sjokkregning fra elektriker</span>&rdquo; har egne Google-treff.
+              </h2>
+            </div>
+            <div className="body-col" data-reveal>
+              <p>
+                Vi vet at mange forventer dårlig oppfølging, uklare priser og tillegg som dukker opp underveis. <strong>Derfor har vi bygget VBM Elektro rundt det motsatte.</strong>
+              </p>
+              <p>
+                Tydelig pris før oppstart. God kommunikasjon underveis. Dokumentasjon levert som standard. Ingen overraskelser. Ingen &ldquo;vi får se.&rdquo;
+              </p>
+              <div className="quote-stack">
+                <div className="qq">&ldquo;Holdt seg til avtalt pris.&rdquo;<span className="src">Kunde — Bærum</span></div>
+                <div className="qq">&ldquo;Kom når de sa de skulle.&rdquo;<span className="src">Kunde — Asker</span></div>
+                <div className="qq">&ldquo;Ingen overraskelser på fakturaen.&rdquo;<span className="src">Kunde — Oslo</span></div>
+                <div className="qq">&ldquo;Dokumentasjon levert uten purring.&rdquo;<span className="src">Kunde — Drammen</span></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  )
-}
+      </section>
 
-// ── Contact CTA ──────────────────────────────────────────────────────────────
-
-function Contact() {
-  const [sendt, setSendt] = useState(false)
-  const [laster, setLaster] = useState(false)
-  const [gdpr, setGdpr] = useState(false)
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setLaster(true)
-    await new Promise((r) => setTimeout(r, 800))
-    setLaster(false)
-    setSendt(true)
-  }
-
-  return (
-    <section id="kontakt" className="bg-[#EEEDE8] py-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div>
-            <div className="flex items-center gap-2 mb-6">
-              <Bolt className="w-[10px] h-5 text-[#E1342B]" />
-              <span className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase">Kom i gang</span>
+      {/* ── Manifesto ───────────────────────────── */}
+      <section className="manifesto">
+        <div className="wrap">
+          <div className="lbl">Våre fire løfter</div>
+          <h2 data-reveal>
+            Du skal <span className="y">aldri</span> lure på prisen.<br />
+            Du skal <span className="y">aldri</span> vente forgjeves.<br />
+            Du skal <span className="y">aldri</span> mangle papirer.<br />
+            Og <span className="r">når noe går skeis</span>, skal du nå oss.
+          </h2>
+          <div className="promise-grid">
+            <div className="promise" data-reveal>
+              <div className="n">01</div>
+              <h3>Pris før vi starter</h3>
+              <p>Du får skriftlig fastpris etter befaring eller videovurdering. Tillegg avklares <em>før</em> vi gjør jobben — aldri etter. Slik håndverkertjenesteloven § 32 krever.</p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A] mb-4">
-              Trenger du elektriker?
+            <div className="promise" data-reveal>
+              <div className="n">02</div>
+              <h3>Avtalt dag = avtalt dag</h3>
+              <p>Vi booker den dagen som passer deg, og kommer den dagen. Hvis noe blir forsinket, ringer vi — ikke omvendt.</p>
+            </div>
+            <div className="promise" data-reveal>
+              <div className="n">03</div>
+              <h3>Dokumentasjon levert som standard</h3>
+              <p>Samsvarserklæring, kursfortegnelse og sluttkontroll leveres digitalt rett etter jobb. Klart for boligsalg eller tilsyn.</p>
+            </div>
+            <div className="promise" data-reveal>
+              <div className="n">04</div>
+              <h3>Du får tak i oss</h3>
+              <p>Mandag til fredag, 07–16. Etter det: vakttelefon for haster. Hvis vi ikke tar — ringer vi tilbake innen 1 time.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Services ────────────────────────────── */}
+      <section className="services" id="tjenester">
+        <div className="wrap">
+          <div className="services-head">
+            <h2 data-reveal>
+              Hva trenger du<br />
+              <span className="scrib">hjelp med?</span>
             </h2>
-            <div className="w-12 h-[3px] bg-[#E1342B] mb-6" />
-            <p className="text-[#6B6B6B] text-lg mb-10 leading-relaxed">
-              Send en melding eller ring oss. Vi svarer raskt og kommer med fast pris.
-            </p>
-            <div className="space-y-5">
-              <a href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`} className="flex items-center gap-4 group">
-                <div className="w-10 h-10 bg-[#F7F6F3] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <PhoneIcon className="w-5 h-5 text-[#6B6B6B]" />
-                </div>
-                <div>
-                  <p className="text-xs text-[#6B6B6B] mb-0.5">Telefon</p>
-                  <p className="font-semibold text-[#1A1A1A] group-hover:text-[#E1342B] transition-colors">{BEDRIFT.telefon}</p>
-                </div>
-              </a>
-              <a href={`mailto:${BEDRIFT.epost}`} className="flex items-center gap-4 group">
-                <div className="w-10 h-10 bg-[#F7F6F3] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MailIcon className="w-5 h-5 text-[#6B6B6B]" />
-                </div>
-                <div>
-                  <p className="text-xs text-[#6B6B6B] mb-0.5">E-post</p>
-                  <p className="font-semibold text-[#1A1A1A] group-hover:text-[#E1342B] transition-colors">{BEDRIFT.epost}</p>
-                </div>
-              </a>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-[#F7F6F3] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <ClockIcon className="w-5 h-5 text-[#6B6B6B]" />
-                </div>
-                <div>
-                  <p className="text-xs text-[#6B6B6B] mb-0.5">Åpningstider</p>
-                  <p className="font-semibold text-[#1A1A1A]">{BEDRIFT.apningstider}</p>
-                </div>
-              </div>
+            <div className="right" data-reveal>
+              Elbillader. Feilsøking. Oppussing. Næringsbygg. Vi gjør både småjobber og større prosjekter — ryddig, dokumentert og som avtalt.
             </div>
           </div>
 
-          <div className="bg-[#F7F6F3] rounded-xl p-5 sm:p-8">
-            {sendt ? (
-              <div className="flex flex-col items-center justify-center h-full text-center py-12">
-                <Bolt className="w-8 h-16 mx-auto text-[#E1342B] mb-4" />
-                <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Takk for henvendelsen!</h3>
-                <p className="text-[#6B6B6B] text-sm">Vi ringer deg tilbake innen 1 time.</p>
+          <div className="bento">
+            <div className="b-card feature" data-reveal>
+              <div className="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M13 2L4.09 13.09a.5.5 0 00.39.81H11l-1.27 7.27a.5.5 0 00.86.4L20 10.81a.5.5 0 00-.39-.81H13l1.27-7.27a.5.5 0 00-.86-.4z" />
+                </svg>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Navn</label>
-                    <input type="text" required placeholder="Ola Nordmann"
-                      className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/60 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/25 text-sm" />
-                  </div>
-                  <div>
-                    <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Telefon</label>
-                    <input type="tel" required placeholder="900 00 000"
-                      className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/60 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/25 text-sm" />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">E-post</label>
-                  <input type="email" placeholder="ola@example.com"
-                    className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/60 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/25 text-sm" />
-                </div>
-                <div>
-                  <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Hva gjelder oppdraget?</label>
-                  <select required defaultValue=""
-                    className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#E1342B]/25 text-sm appearance-none cursor-pointer"
-                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`, backgroundRepeat: "no-repeat", backgroundPosition: "right 14px center", backgroundSize: "16px" }}
-                  >
-                    <option value="" disabled className="text-[#6B6B6B]/60">Velg kategori…</option>
-                    <option value="Videobefaring">Gratis videobefaring – rask vurdering uten oppmøte</option>
-                    <option value="El-anlegg">El-anlegg – sikringsskap, kurser, inntak, jordfeilbryter</option>
-                    <option value="Elbillader">Elbillader – installasjon og idriftsettelse</option>
-                    <option value="Montering og demontering">Montering/demontering – stikkontakter, lamper, downlights</option>
-                    <option value="Sikkerhet">Sikkerhet – komfyrvakt, dørtelefon, brannforebygging</option>
-                    <option value="Styringssystemer">Styringssystemer – smarthus, varme, lysstyring</option>
-                    <option value="Varme og energi">Varme og energi – varmekabel, varmepumpe, solcellepanel</option>
-                    <option value="Vedlikehold og reparasjon">Vedlikehold og reparasjon – feilsøking, el-kontroll</option>
-                    <option value="Nybygg og rehabilitering">Nybygg og rehabilitering av bolig</option>
-                    <option value="Annet">Annet</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="text-xs text-[#6B6B6B] font-medium mb-1.5 block">Mer informasjon (valgfritt)</label>
-                  <textarea rows={3} placeholder="Beskriv kort hva du trenger…"
-                    className="w-full bg-[#EEEDE8] rounded-lg px-4 py-3 text-[#1A1A1A] placeholder:text-[#6B6B6B]/60 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/25 text-sm resize-none" />
-                </div>
-                <label className="flex items-start gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    required
-                    checked={gdpr}
-                    onChange={(e) => setGdpr(e.target.checked)}
-                    className="mt-0.5 w-4 h-4 accent-[#E1342B] flex-shrink-0"
-                  />
-                  <span className="text-xs text-[#6B6B6B] leading-relaxed">
-                    Jeg godtar{" "}
-                    <a href="/personvern" className="text-[#E1342B] hover:underline" target="_blank">personvernerklæringen</a>
-                    {" "}og at VBM Elektro kan kontakte meg angående denne henvendelsen.
-                  </span>
-                </label>
+              <h3>Ferdig montert elbillader med dokumentasjon inkludert.</h3>
+              <p>Vi monterer Zaptec, Easee og andre kjente merker — klart til bruk samme dag i de fleste tilfeller.</p>
+              <a href="#kontakt" className="arrow-link">Få tilbud på elbillader <span className="a">→</span></a>
+            </div>
 
-                <button type="submit" disabled={laster || !gdpr}
-                  className="w-full bg-[#E1342B] text-white font-semibold py-3.5 rounded-lg hover:bg-[#c42d24] transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed">
-                  {laster ? "Sender…" : "Send forespørsel"}
-                  {!laster && <ArrowIcon className="w-4 h-4" />}
-                </button>
-                <p className="text-xs text-[#6B6B6B] text-center">Vi ringer deg tilbake innen 1 time</p>
-              </form>
-            )}
+            <div className="b-card tr1 red" data-reveal>
+              <div className="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M14.7 6.3a4.5 4.5 0 015.7 5.7l-1.9 1.9-3.8-3.8 1.9-1.9z" />
+                  <path d="M14.6 10.2L4 20.8l-1.4-1.4L13.2 8.8" />
+                  <path d="M16 4.5l3.5 3.5" />
+                </svg>
+              </div>
+              <h3>Serviceoppdrag</h3>
+              <p>Sikringer som ryker, stikkontakter som ikke virker eller ting som bare må fikses. Vi kommer, finner feilen og ordner det.</p>
+              <a href="#kontakt" className="arrow-link">Bestill hjelp <span className="a">→</span></a>
+            </div>
+
+            <div className="b-card tr2 warm" data-reveal>
+              <div className="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="7" y="2" width="10" height="20" rx="2" />
+                  <line x1="12" y1="18" x2="12" y2="18.01" />
+                  <path d="M9.5 6h5" />
+                </svg>
+              </div>
+              <h3>Smarthus</h3>
+              <p>Lys, dimmere og styring som faktisk er enkelt å bruke. Vi hjelper deg med smarte løsninger uten å gjøre det mer komplisert enn det trenger å være.</p>
+              <a href="#kontakt" className="arrow-link">Få tilbud <span className="a">→</span></a>
+            </div>
+
+            <div className="b-card br1" data-reveal>
+              <div className="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M3 11.5L12 4l9 7.5" />
+                  <path d="M5 10v10h14V10" />
+                  <path d="M10 20v-6h4v6" />
+                </svg>
+              </div>
+              <h3>Oppussing</h3>
+              <p>Nytt kjøkken, bad, tilbygg eller totalrenovering. Vi samarbeider med de andre fagene og holder ting ryddig underveis.</p>
+              <a href="#kontakt" className="arrow-link">Få tilbud <span className="a">→</span></a>
+            </div>
+
+            <div className="b-card br2 warmer" data-reveal>
+              <div className="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" />
+                  <line x1="21" y1="21" x2="16.5" y2="16.5" />
+                </svg>
+              </div>
+              <h3>Feilsøking</h3>
+              <p>Noe som lukter brent? Strøm som forsvinner? Kurser som går hele tiden? Vi finner problemet og forklarer hva som må gjøres før vi starter.</p>
+              <a href="#kontakt" className="arrow-link">Få hjelp <span className="a">→</span></a>
+            </div>
+
+            <div className="b-card br3" data-reveal>
+              <div className="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="3" y="7" width="18" height="14" rx="1" />
+                  <path d="M8 7V5a1 1 0 011-1h6a1 1 0 011 1v2" />
+                  <line x1="3" y1="13" x2="21" y2="13" />
+                </svg>
+              </div>
+              <h3>Næringsbygg</h3>
+              <p>For sameier, butikker, kontorer og entreprenører som trenger en elektriker som følger opp. Fast kontaktperson, tydelig kommunikasjon.</p>
+              <a href="#kontakt" className="arrow-link">Snakk med oss <span className="a">→</span></a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  )
-}
+      </section>
 
-// ── Footer newsletter widget ─────────────────────────────────────────────────
-
-function FooterNewsletter() {
-  const [epost, setEpost] = useState("")
-  const [sendt, setSendt] = useState(false)
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    await fetch("/api/nyhetsbrev", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ epost }),
-    }).catch(() => {})
-    setSendt(true)
-  }
-
-  return (
-    <div>
-      <h4 className="text-white/80 font-semibold text-sm mb-5 tracking-wide">Nyhetsbrev</h4>
-      <p className="text-white/35 text-sm mb-4 leading-relaxed">
-        Få tips om smarthus, elbillading og el-nyheter rett i innboksen.
-      </p>
-      {sendt ? (
-        <p className="text-[#E1342B] text-sm font-semibold">Påmeldt!</p>
-      ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-          <input
-            type="email"
-            required
-            value={epost}
-            onChange={(e) => setEpost(e.target.value)}
-            placeholder="din@epost.no"
-            className="bg-white/[0.07] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#E1342B]/50 transition-colors"
-          />
-          <button
-            type="submit"
-            className="bg-[#E1342B] text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-[#c42d24] transition-colors flex items-center justify-center gap-2"
-          >
-            Meld deg på
-            <ArrowIcon className="w-3.5 h-3.5" />
-          </button>
-        </form>
-      )}
-    </div>
-  )
-}
-
-// ── Footer ───────────────────────────────────────────────────────────────────
-
-function Footer() {
-  return (
-    <footer className="bg-[#1A1A1A] text-white/50 pt-16 pb-24 md:pb-16">
-      <div className="max-w-6xl mx-auto px-6">
-
-        {/* Top bar — CTA + social */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-12 border-b border-white/[0.08] mb-12">
-          <div>
-            <p className="text-white font-bold text-lg mb-1">Følg oss</p>
-            <p className="text-white/35 text-sm">Nyeste prosjekter, tips og nyheter</p>
+      {/* ── Pricing ─────────────────────────────── */}
+      <section className="pricing" id="priser">
+        <div className="wrap">
+          <div className="pricing-head" data-reveal>
+            <div className="eyebrow yellow">Faste priser</div>
+            <h2 style={{ marginTop: 18 }}>Det skal være enkelt å <em>forstå hva ting koster.</em></h2>
+            <p className="sub">Her ser du priseksempler på vanlige jobber vi gjør hver uke — fra elbilladere til sikringsskap og serviceoppdrag. Tydelig pris før oppstart. Tillegg avklares før vi gjør jobben.</p>
+            <div className="pricing-snark">
+              <span>NB:</span> Endelig pris avhenger av bolig, anlegg og omfang. Vi går alltid gjennom dette før vi starter.
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            {/* Facebook */}
-            <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-lg bg-white/[0.06] hover:bg-[#E1342B] flex items-center justify-center text-white/50 hover:text-white transition-all">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-              </svg>
-            </a>
-            {/* Instagram */}
-            <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-lg bg-white/[0.06] hover:bg-[#E1342B] flex items-center justify-center text-white/50 hover:text-white transition-all">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
-              </svg>
-            </a>
-            {/* LinkedIn */}
-            <a href="#" aria-label="LinkedIn" className="w-10 h-10 rounded-lg bg-white/[0.06] hover:bg-[#E1342B] flex items-center justify-center text-white/50 hover:text-white transition-all">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-            </a>
+
+          <div className="price-doc" data-reveal>
+            <div className="price-doc-head">
+              <div className="pdh-left">
+                <span className="pdh-logo">
+                  <svg width="11" height="22" viewBox="0 0 175 340" aria-hidden="true">
+                    <path d="M 60 0 L 130 0 L 100 130 L 165 130 L 40 340 L 95 195 L 10 195 Z" fill="white" />
+                  </svg>
+                </span>
+                <span className="pdh-title">
+                  VBM Elektro · Prisliste
+                  <small>Org.nr 935 452 856</small>
+                </span>
+              </div>
+              <div className="pdh-meta">
+                <strong>Gyldig fra Mai 2026</strong>
+                Alle priser eks. mva.
+              </div>
+            </div>
+
+            <div className="price-doc-cols">
+              <span>Tjeneste / omfang</span>
+              <span className="col-time">Tidsbruk</span>
+              <span className="col-price">Fra-pris</span>
+            </div>
+
+            <div className="price-section-label">Elbillader</div>
+            <div className="price-row has-tag">
+              <span className="pop-tag">Mest bestilt</span>
+              <div className="info"><h4>Elbillader — standard installasjon</h4><p>Hjemmelader i garasje/carport. Inkluderer kabling fra sikringsskap, vern, dokumentasjon og idriftsettelse.</p></div>
+              <span className="time">2–4 timer</span>
+              <div className="pr"><div className="fra">FRA</div><div className="amt">kr 9 990</div></div>
+            </div>
+            <div className="price-row">
+              <div className="info"><h4>Elbillader — kompleks installasjon</h4><p>Krevende kabelføring, kursoppgradering, eller montering i borettslag/parkeringskjeller.</p></div>
+              <span className="time">4–8 timer</span>
+              <div className="pr"><div className="fra">FRA</div><div className="amt">kr 14 900</div></div>
+            </div>
+
+            <div className="price-section-label">Sikringsskap</div>
+            <div className="price-row">
+              <div className="info"><h4>Bytte av sikringsskap — leilighet</h4><p>Nytt skap med jordfeilautomater og overspenningsvern. Inkluderer demontering, dokumentasjon og sluttkontroll.</p></div>
+              <span className="time">6–10 timer</span>
+              <div className="pr"><div className="fra">FRA</div><div className="amt">kr 18 500</div></div>
+            </div>
+            <div className="price-row">
+              <div className="info"><h4>Bytte av sikringsskap — enebolig</h4><p>Større anlegg, flere kurser. Pris avhenger av eksisterende kabling og om hovedinntak må oppgraderes.</p></div>
+              <span className="time">1–2 dager</span>
+              <div className="pr"><div className="fra">FRA</div><div className="amt">kr 24 900</div></div>
+            </div>
+
+            <div className="price-section-label">Service &amp; kontroll</div>
+            <div className="price-row">
+              <div className="info"><h4>El-sjekk bolig</h4><p>Gjennomgang av sikringsskap, kurser, jordfeilbrytere og synlig installasjon. Skriftlig rapport med eventuelle avvik.</p></div>
+              <span className="time">1–2 timer</span>
+              <div className="pr"><div className="fra">FRA</div><div className="amt">kr 2 990</div></div>
+            </div>
+            <div className="price-row">
+              <div className="info"><h4>Feilsøking &amp; retting</h4><p>Diagnose og utbedring av elektrisk feil. Pris inkluderer oppmøte, kjøring og dokumentasjon.</p></div>
+              <span className="time">Avhenger av feil</span>
+              <div className="pr"><div className="fra">PER TIME</div><div className="amt">kr 1 490</div></div>
+            </div>
+
+            <div className="price-section-label">Belysning</div>
+            <div className="price-row">
+              <div className="info"><h4>Downlights — 5 stk montert</h4><p>Montering inkludert hulltakfresing og kabling. Spotlights ikke inkludert.</p></div>
+              <span className="time">2–4 timer</span>
+              <div className="pr"><div className="fra">FRA</div><div className="amt">kr 5 990</div></div>
+            </div>
+            <div className="price-row">
+              <div className="info"><h4>Downlights — 10 stk montert</h4><p>Montering inkludert hulltakfresing og kabling. Spotlights ikke inkludert.</p></div>
+              <span className="time">4–6 timer</span>
+              <div className="pr"><div className="fra">FRA</div><div className="amt">kr 9 990</div></div>
+            </div>
+            <div className="price-row">
+              <div className="info"><h4>Varmekabler — bad opp til 6 m²</h4><p>Inkluderer kabel, termostat, kontroll og dokumentasjon. Avrettingsmasse gjøres av flislegger.</p></div>
+              <span className="time">3–5 timer</span>
+              <div className="pr"><div className="fra">FRA</div><div className="amt">kr 7 490</div></div>
+            </div>
+
+            <div className="price-doc-foot">
+              <div className="pdf-note">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+                <span>Alle priser eks. mva. Materiell etter avtale. Befaring eller videovurdering før endelig pris.</span>
+              </div>
+              <span className="pdf-stamp">Ingen skjulte tillegg</span>
+            </div>
+          </div>
+
+          <p style={{ marginTop: 32, fontSize: 14.5, color: 'var(--text-soft)', maxWidth: 720 }}>
+            Trenger du noe annet? Send oss en kort beskrivelse av jobben — gjerne med bilde — så svarer vi med pris innen 1 time i normal arbeidstid.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Process ─────────────────────────────── */}
+      <section className="process" id="prosess">
+        <div className="wrap">
+          <div className="process-head">
+            <h2 data-reveal>Enkelt og forutsigbart.<br /><em>Fordi det burde være det.</em></h2>
+            <div className="right" data-reveal>Fem steg fra første melding til ferdig jobb. Tydelig pris, raske svar og dokumentasjon på plass.</div>
+          </div>
+          <div className="steps" data-reveal>
+            <div className="step">
+              <span className="bubble red">Start her</span>
+              <div className="num">1</div>
+              <h4>Send oss jobben</h4>
+              <p>Send bilde, melding eller ring oss. Du trenger ikke vite hva ting heter — det finner vi ut av sammen.</p>
+            </div>
+            <div className="step">
+              <span className="bubble">Typisk 30 min</span>
+              <div className="num">2</div>
+              <h4>Du hører fra oss</h4>
+              <p>Vi svarer raskt med vurdering, spørsmål eller forslag til løsning. Mange jobber kan vurderes direkte fra bilder.</p>
+            </div>
+            <div className="step">
+              <div className="num">3</div>
+              <h4>Pris og avtale</h4>
+              <p>Du får tydelig pris og forslag til tidspunkt før vi starter. Hvis noe må endres underveis, avklarer vi det først.</p>
+            </div>
+            <div className="step">
+              <div className="num">4</div>
+              <h4>Vi gjør jobben</h4>
+              <p>Vi møter opp, gjør jobben ryddig og holder deg oppdatert underveis. Ingen overraskelser. Ingen jakt på elektrikeren etterpå.</p>
+            </div>
+            <div className="step">
+              <span className="bubble">Garantert</span>
+              <div className="num">5</div>
+              <h4>Ferdig dokumentert</h4>
+              <p>Samsvarserklæring og dokumentasjon sendes rett etter jobben er gjort. Klart for Boligmappa, forsikring og boligsalg.</p>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Main grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          <div className="md:col-span-1">
-            <Image src="/logo.svg" alt="VBM Elektro" width={120} height={48} className="brightness-0 invert mb-5 opacity-80" />
-            <p className="text-sm leading-relaxed text-white/35 mb-5">
-              Autorisert elektroinstallasjonsbedrift. NELFO-godkjent. Bærum og Oslo.
-            </p>
-            <div className="flex flex-col gap-2 text-sm">
-              <a href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`} className="text-white/60 hover:text-white transition-colors flex items-center gap-2">
-                <PhoneIcon className="w-3.5 h-3.5" />
-                {BEDRIFT.telefon}
+      {/* ── VS ──────────────────────────────────── */}
+      <section className="vs">
+        <div className="wrap">
+          <div className="vs-head">
+            <div className="eyebrow">Litt for mange har opplevd dette</div>
+            <h2 data-reveal>Det skal ikke være vanskelig å <span className="y">bruke elektriker.</span></h2>
+          </div>
+          <div className="vs-grid">
+            <div className="vs-col them" data-reveal>
+              <h3>
+                <span className="emoji">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="9" y1="9" x2="9.01" y2="9" />
+                    <line x1="15" y1="9" x2="15.01" y2="9" />
+                    <path d="M16 16s-1.5-2-4-2-4 2-4 2" />
+                  </svg>
+                </span>
+                Vanlig opplevelse
+              </h3>
+              <ul>
+                <li>Vanskelig å få tak i noen etter første kontakt</li>
+                <li>Uklare priser og tillegg som dukker opp underveis</li>
+                <li>Befaring uten tydelig tilbud i etterkant</li>
+                <li>Lite informasjon om hva som faktisk gjøres</li>
+                <li>Dokumentasjon som må purres på</li>
+                <li>Ingen oppfølging etter at jobben er ferdig</li>
+              </ul>
+            </div>
+
+            <div className="vs-mid-tag">vs.</div>
+
+            <div className="vs-col us" data-reveal>
+              <h3>
+                <span className="emoji">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M13 2L4.09 13.09a.5.5 0 00.39.81H11l-1.27 7.27a.5.5 0 00.86.4L20 10.81a.5.5 0 00-.39-.81H13l1.27-7.27a.5.5 0 00-.86-.4z" />
+                  </svg>
+                </span>
+                Slik jobber vi i VBM
+              </h3>
+              <ul>
+                <li>Du får raskt svar — eller beskjed om når du får det</li>
+                <li>Tydelig pris før vi starter</li>
+                <li>Befaring eller videovurdering, avhengig av jobben</li>
+                <li>Vi forklarer hva som skal gjøres og hvorfor</li>
+                <li>Dokumentasjon leveres som standard</li>
+                <li>Vi følger opp hvis noe ikke fungerer som det skal</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials ────────────────────────── */}
+      <section className="testimonials">
+        <div className="wrap">
+          <div className="testi-head" data-reveal>
+            <div className="eyebrow">Google · 4.9 av 5 <span className="stars">★★★★★</span></div>
+            <h2 style={{ marginTop: 18 }}>Det kundene faktisk sier.</h2>
+          </div>
+          <div className="testi-grid">
+            <div className="testi" data-reveal>
+              <div className="stars">★★★★★</div>
+              <q>Rask, ryddig og presis. Elbillader installert på 2 timer og alt ble dokumentert. Nøyaktig slik det skal gjøres.</q>
+              <div className="who">
+                <div className="avatar">T</div>
+                <div className="meta"><span className="name">Thomas H.</span><span className="loc">Bærum</span></div>
+              </div>
+            </div>
+            <div className="testi" data-reveal>
+              <div className="stars">★★★★★</div>
+              <q>Endelig en elektriker som svarer på telefon og faktisk holder avtaler. Ringte tilbake innen 30 minutter. Skal være sjeldent dette.</q>
+              <div className="who">
+                <div className="avatar">K</div>
+                <div className="meta"><span className="name">Karin S.</span><span className="loc">Oslo vest</span></div>
+              </div>
+            </div>
+            <div className="testi" data-reveal>
+              <div className="stars">★★★★★</div>
+              <q>Profesjonell installasjon ved bad-renovering. Fast pris, ingen overraskelser, papirene var på plass før jeg rakk å spørre. Anbefales på det varmeste.</q>
+              <div className="who">
+                <div className="avatar">L</div>
+                <div className="meta"><span className="name">Lars O.</span><span className="loc">Sandvika</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Stats ───────────────────────────────── */}
+      <section className="stats">
+        <div className="wrap">
+          <div className="stats-head" data-reveal>
+            <div className="eyebrow">VBM i tall</div>
+            <h2>Det skal være enkelt å vite hva du kan forvente.</h2>
+          </div>
+          <div className="stats-grid">
+            <div className="stat" data-reveal>
+              <span className="nr">01 / 04</span>
+              <div className="num"><span>{'< 1'}</span><span className="unit">time</span></div>
+              <div className="lbl">Gjennomsnittlig responstid på nye henvendelser i normal arbeidstid.</div>
+            </div>
+            <div className="stat" data-reveal>
+              <span className="nr">02 / 04</span>
+              <div className="num"><span>100</span><span className="unit">%</span></div>
+              <div className="lbl">Alle jobber leveres med dokumentasjon og samsvarserklæring når det kreves.</div>
+            </div>
+            <div className="stat" data-reveal>
+              <span className="nr">03 / 04</span>
+              <div className="num"><span>0</span><span className="unit">kr</span></div>
+              <div className="lbl">Ingen tillegg uten at det er avklart med deg først.</div>
+            </div>
+            <div className="stat" data-reveal>
+              <span className="nr">04 / 04</span>
+              <div className="num"><span>4,9</span><span className="star">★</span></div>
+              <div className="lbl">Snittscore fra kunder på Google og Mittanbud.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ─────────────────────────────────── */}
+      <section className="faq" id="faq">
+        <div className="wrap-tight">
+          <div className="faq-head">
+            <h2 data-reveal>Spørsmål folk faktisk stiller.</h2>
+          </div>
+          <div className="faq-list">
+            <details className="faq-item" open>
+              <summary>Hva koster en elbillader-installasjon hos dere?<span className="ico">+</span></summary>
+              <div className="answer">
+                <p>Standard installasjon starter på <strong>kr 9 990</strong>. Det inkluderer kabling fra sikringsskap, nødvendig vern, dokumentasjon og idriftsettelse. Hvis det trengs kursoppgradering, ekstra kabling i parkeringskjeller eller graving, ligger vi typisk på kr 14 900 og oppover.</p>
+                <p>Selve laderen kommer i tillegg. Vi monterer alle godkjente merker — Zaptec, Easee, Defa, Schneider — og kan også skaffe utstyret hvis du ønsker.</p>
+              </div>
+            </details>
+            <details className="faq-item">
+              <summary>Hvor raskt kan dere komme?<span className="ico">+</span></summary>
+              <div className="answer">
+                <p>Vanlige serviceoppdrag og elbillader: <strong>1–5 dager</strong> avhengig av sesong. Akutte feil (strømmen er borte, lukter svidd, jordfeilbryter slår ut): vi vurderer hver henvendelse — ring 90 63 31 18 så hjelper vi deg å prioritere.</p>
+                <p>Større prosjekter som rehab og rammeavtaler avtaler vi separat — kontakt oss for en uforpliktende prat.</p>
+              </div>
+            </details>
+            <details className="faq-item">
+              <summary>Hva hvis jobben blir større enn dere trodde — kommer det tillegg?<span className="ico">+</span></summary>
+              <div className="answer">
+                <p>Kort svar: <strong>du hører fra oss <em>før</em> det skjer.</strong> Hvis vi oppdager noe uventet — gammel kabling som må byttes, en kurs som ikke holder mål — stopper vi opp, ringer deg, og forklarer hva som må til og hva det koster. Du tar avgjørelsen før vi går videre.</p>
+                <p><strong>Håndverkertjenesteloven § 32</strong> slår fast at hvis vi har gitt et prisoverslag, kan endelig pris ikke overstige det vesentlig. Vi går aldri dit. Hvis vi ikke kan holde prisen, hører du det først.</p>
+              </div>
+            </details>
+            <details className="faq-item">
+              <summary>Hva er inkludert i en el-kontroll?<span className="ico">+</span></summary>
+              <div className="answer">
+                <p>Vi sjekker sikringsskap, kurser, jordfeilbrytere og synlig installasjon. Du får en skriftlig rapport med eventuelle avvik og forslag til utbedring. Tar 1–2 timer for en vanlig leilighet, lengre for større boliger.</p>
+                <p>Anbefales særlig før boligsalg — manglende dokumentasjon kan koste deg på tilstandsgrad etter ny avhendingslov.</p>
+              </div>
+            </details>
+            <details className="faq-item">
+              <summary>Jobber dere på hytte og fritidsbolig?<span className="ico">+</span></summary>
+              <div className="answer">
+                <p>Ja, men vi tar primært hytter i Oslo, Bærum, Asker, Drammen og nedslagsfelt. For lengre reise legger vi til kjørekostnad — som vi sier ifra om på forhånd, ikke etterpå.</p>
+              </div>
+            </details>
+            <details className="faq-item">
+              <summary>Er dere NELFO-godkjent og autorisert?<span className="ico">+</span></summary>
+              <div className="answer">
+                <p>Ja. Vi er registrert i Elvirksomhetsregisteret hos DSB, NELFO-medlem, og alle elektrikere har relevant fagbrev. Det er minimumskravet for å få jobbe lovlig som elektroinstallatør i Norge.</p>
+              </div>
+            </details>
+            <details className="faq-item">
+              <summary>Kan jeg betale med Vipps?<span className="ico">+</span></summary>
+              <div className="answer">
+                <p>Ja, vi tar Vipps for mindre serviceoppdrag. Større prosjekter faktureres med vanlig betalingsfrist (10 dager).</p>
+              </div>
+            </details>
+            <details className="faq-item">
+              <summary>Kan dere brukes som underentreprenør på rehab-prosjekter?<span className="ico">+</span></summary>
+              <div className="answer">
+                <p>Ja — det er en stor del av det vi gjør. Vi leverer elektrofaget på rehab-prosjekter for entreprenører og byggherre i Oslo og Viken. Vi følger byggemøter, leverer dokumentasjon i tide, og jobber etter NS 8415/8416-rammer.</p>
+                <p>Vi tar også rammeavtaler for eiendomsforvaltere, borettslag og næringseiendom. Kontakt oss for en samtale.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Video Befaring ───────────────────────── */}
+      <section className="video-befaring" id="videoavklaring">
+        <div className="wrap">
+          <div className="vb-grid">
+            <div data-reveal>
+              <div className="eyebrow" style={{ color: 'var(--red)', marginBottom: 24 }}>Gratis · ingen forpliktelser</div>
+              <h2>Få rask avklaring uten å vente på befaring.</h2>
+              <p className="lede">Send oss bilder eller video av jobben, så vurderer vi løsning, omfang og hva som bør gjøres videre.</p>
+              <ul className="vb-list">
+                <li>Raskere avklaring</li>
+                <li>Mange jobber kan vurderes direkte fra bilder</li>
+                <li>Tydelig vurdering før vi avtaler noe</li>
+              </ul>
+              <a href="/videoavklaring" className="btn btn-red">Start videoavklaring <span className="arr">→</span></a>
+            </div>
+            <div className="vb-steps" data-reveal>
+              <div className="vb-step">
+                <div className="n">01</div>
+                <div><h4>Send bilder eller video</h4><p>Vis oss sikringsskap, området eller jobben som skal gjøres. Du trenger ikke forklare alt perfekt.</p></div>
+              </div>
+              <div className="vb-step">
+                <div className="n">02</div>
+                <div><h4>Vi vurderer jobben</h4><p>En autorisert elektriker ser gjennom det og vurderer løsning, omfang og neste steg.</p></div>
+              </div>
+              <div className="vb-step">
+                <div className="n">03</div>
+                <div><h4>Du får svar</h4><p>Vi kommer tilbake med vurdering, anbefaling og eventuelt prisestimat så raskt vi kan.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Contact ─────────────────────────────── */}
+      <section className="contact" id="kontakt">
+        <div className="wrap">
+          <div className="contact-grid">
+            <div data-reveal>
+              <div className="eyebrow" style={{ marginBottom: 24 }}>Kom i gang</div>
+              <h2>Trenger du elektriker?</h2>
+              <p className="lede">Send oss en melding, ring oss eller last opp bilder av jobben. Vi svarer raskt og sier fra hva som er lurt å gjøre videre.</p>
+              <div className="contact-meta">
+                <div className="cm-row">
+                  <div className="cm-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                  </div>
+                  <div><div className="cm-lbl">Telefon</div><a href="tel:90633118" className="cm-val">90 63 31 18</a></div>
+                </div>
+                <div className="cm-row">
+                  <div className="cm-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </div>
+                  <div><div className="cm-lbl">E-post</div><a href="mailto:benjamin@vbmelektro.no" className="cm-val">benjamin@vbmelektro.no</a></div>
+                </div>
+                <div className="cm-row">
+                  <div className="cm-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="9" /><polyline points="12 7 12 12 15 14" />
+                    </svg>
+                  </div>
+                  <div><div className="cm-lbl">Åpningstider</div><div className="cm-val">Man–Fre: 07:00–16:00</div></div>
+                </div>
+                <div className="cm-row">
+                  <div className="cm-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div><div className="cm-lbl">Adresse</div><div className="cm-val">Billingstadsletta 22, 1396 Billingstad</div></div>
+                </div>
+              </div>
+            </div>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Footer ──────────────────────────────── */}
+      <footer className="foot">
+        <div className="wrap">
+          <div className="foot-social">
+            <div className="foot-social-text">
+              <h4>Følg oss</h4>
+              <p>Nyeste prosjekter, tips og nyheter</p>
+            </div>
+            <div className="foot-social-icons">
+              <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
               </a>
-              <a href={`mailto:${BEDRIFT.epost}`} className="text-white/60 hover:text-white transition-colors flex items-center gap-2">
-                <MailIcon className="w-3.5 h-3.5" />
-                {BEDRIFT.epost}
+              <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" /></svg>
               </a>
             </div>
           </div>
 
-          <div>
-            <h4 className="text-white/80 font-semibold text-sm mb-5 tracking-wide">Tjenester</h4>
-            <ul className="space-y-2.5 text-sm">
-              {KATEGORIER.map((k) => (
-                <li key={k.id}>
-                  <a
-                    href={k.id === "elbillader" ? "#elbillader" : "#tjenester"}
-                    className="text-white/40 hover:text-white transition-colors"
-                  >
-                    {k.navn}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white/80 font-semibold text-sm mb-5 tracking-wide">Info</h4>
-            <ul className="space-y-2.5 text-sm text-white/40">
-              <li><Link href="/om-oss" className="hover:text-white transition-colors">Om oss</Link></li>
-              <li><Link href="/blogg" className="hover:text-white transition-colors">Blogg</Link></li>
-              <li><Link href="/kontakt" className="hover:text-white transition-colors">Kontakt oss</Link></li>
-              <li><Link href="/personvern" className="hover:text-white transition-colors">Personvern</Link></li>
-              <li><Link href="/nyhetsbrev" className="hover:text-white transition-colors">Nyhetsbrev</Link></li>
-              <li>
-                <a href="https://mittanbud.no/bedrift/9256482" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  Mittanbud-profil
-                  <svg viewBox="0 0 12 12" fill="currentColor" className="w-2.5 h-2.5 opacity-60"><path d="M3.5 1a.5.5 0 000 1H8.29L1.15 9.15a.5.5 0 00.7.7L9 2.71V7.5a.5.5 0 001 0V1a.5.5 0 00-.5-.5H3.5z"/></svg>
+          <div className="foot-top">
+            <div className="foot-logo">
+              <a href="/" className="logo">
+                <svg width="26" height="36" viewBox="0 0 175 340" aria-hidden="true">
+                  <path d="M 60 0 L 130 0 L 100 130 L 165 130 L 40 340 L 95 195 L 10 195 Z" fill="white" />
+                </svg>
+                <div className="marks">
+                  <span className="name">VBM</span>
+                  <div className="div" />
+                  <span className="sub">Elektro AS</span>
+                </div>
+              </a>
+              <p>Autorisert elektroinstallasjonsbedrift. NELFO-godkjent. Bærum og Oslo.</p>
+              <div className="foot-contact">
+                <a href="tel:90633118">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                  </svg>
+                  90 63 31 18
                 </a>
-              </li>
-              <li className="pt-2">{BEDRIFT.apningstider}</li>
-              <li className="text-white/25">{BEDRIFT.adresse}</li>
-            </ul>
+                <a href="mailto:benjamin@vbmelektro.no">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  benjamin@vbmelektro.no
+                </a>
+              </div>
+            </div>
+
+            <div className="foot-col">
+              <h5>Tjenester</h5>
+              <a href="#tjenester">Elbillader</a>
+              <a href="#tjenester">Serviceoppdrag</a>
+              <a href="#tjenester">Renovering</a>
+              <a href="#tjenester">Smarthus</a>
+              <a href="#tjenester">Feilsøking</a>
+              <a href="#tjenester">Næringsbygg</a>
+            </div>
+
+            <div className="foot-col">
+              <h5>Info</h5>
+              <a href="/om-oss">Om oss</a>
+              <a href="/blogg">Blogg</a>
+              <a href="#kontakt">Kontakt oss</a>
+              <a href="/personvern">Personvern</a>
+              <a href="/nyhetsbrev">Nyhetsbrev</a>
+              <a href="https://www.mittanbud.no" target="_blank" rel="noopener noreferrer">Mittanbud-profil ↗</a>
+              <div className="foot-meta">
+                Man–Fre: 07:00–16:00<br />
+                Billingstadsletta 22, 1396 Billingstad
+              </div>
+            </div>
+
+            <div className="foot-col foot-newsletter">
+              <h5>Nyhetsbrev</h5>
+              <p>Få tips om smarthus, elbillading og el-nyheter rett i innboksen.</p>
+              <FooterNewsletter />
+            </div>
           </div>
 
-          <FooterNewsletter />
-        </div>
-
-        {/* Bottom */}
-        <div className="border-t border-white/[0.07] pt-8 flex flex-col items-center gap-2 text-xs text-white/20">
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-5 items-center">
-            <span>© {new Date().getFullYear()} {BEDRIFT.navn}</span>
-            <span className="text-white/10">·</span>
-            <span>Org.nr: {BEDRIFT.orgnr}</span>
-            <span className="text-white/10">·</span>
-            <span>Bygget av <a href="https://handverkmedia.no" target="_blank" rel="noopener noreferrer" className="hover:text-white/50 transition-colors">Håndverk Media</a></span>
+          <div className="foot-bottom">
+            <div className="left">
+              <span>© 2026 VBM Elektro AS</span>
+              <span>Org.nr: 935 452 856</span>
+            </div>
+            <span>Bygget av <a href="https://handverkmedia.no" style={{ color: 'var(--red)', textDecoration: 'none' }}>Håndverk Media</a></span>
           </div>
         </div>
-      </div>
-    </footer>
-  )
-}
-
-// ── Page ─────────────────────────────────────────────────────────────────────
-
-export default function Page() {
-  return (
-    <>
-      <Nav />
-      <StickyMobileBar />
-      <Hero />
-      <RedStripe />
-      <Services />
-      <Prisliste />
-      <Process />
-      <RedStripe />
-      <EVCharger />
-      <Trust />
-      <Reviews />
-      <VideoAvklaring />
-      <MidCTA />
-      <FAQ />
-      <Contact />
-      <Footer />
+      </footer>
     </>
   )
-}
-
-// ── Icon components ───────────────────────────────────────────────────────────
-
-function ArrowIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" fill="currentColor" className={className}>
-      <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" />
-    </svg>
-  )
-}
-function PhoneIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={className}>
-      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 10.9a19.79 19.79 0 01-3.07-8.68A2 2 0 012.83 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-    </svg>
-  )
-}
-function CartIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={className}>
-      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 01-8 0" />
-    </svg>
-  )
-}
-function CheckIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" fill="currentColor" className={className}>
-      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
-    </svg>
-  )
-}
-function BoltServiceIcon() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
-}
-function WrenchIcon() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" /></svg>
-}
-function HouseIcon() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
-}
-function SmartIcon() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8"><rect x="5" y="2" width="14" height="20" rx="2" /><line x1="12" y1="18" x2="12.01" y2="18" strokeWidth={2} /></svg>
-}
-function SearchIcon() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-}
-function BuildingIcon() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8"><rect x="2" y="7" width="20" height="14" rx="1" /><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" /></svg>
-}
-function ShieldIcon() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-4" /></svg>
-}
-function BadgeIcon() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" /></svg>
-}
-function DocIcon() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-}
-function ClockIcon({ className }: { className?: string }) {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={className}><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
-}
-function ClockLargeIcon() {
-  return <ClockIcon className="w-7 h-7" />
-}
-function MailIcon({ className }: { className?: string }) {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={className}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
 }

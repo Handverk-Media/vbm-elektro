@@ -1,14 +1,30 @@
 import type { Metadata } from "next"
-import { Geist } from "next/font/google"
+import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { Providers } from "@/components/Providers"
 import { CartDrawer } from "@/components/CartDrawer"
 import { CookieConsent } from "@/components/CookieConsent"
 
-const geist = Geist({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-bricolage",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+})
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  display: "swap",
+  weight: ["400", "500"],
 })
 
 const siteUrl = "https://vbmelektro.no"
@@ -58,11 +74,7 @@ const localBusinessSchema = {
     addressLocality: "Billingstad",
     addressCountry: "NO",
   },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 59.9,
-    longitude: 10.48,
-  },
+  geo: { "@type": "GeoCoordinates", latitude: 59.9, longitude: 10.48 },
   areaServed: ["Bærum", "Oslo", "Asker", "Sandvika", "Billingstad", "Lysaker", "Fornebu", "Høvik", "Nesbru"],
   openingHours: "Mo-Fr 07:00-16:00",
   priceRange: "kr kr",
@@ -74,75 +86,22 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    {
-      "@type": "Question",
-      name: "Hva koster en elbillader-installasjon?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Standard installasjon i garasje koster fra kr 6 500 inkl. mva. Pris avhenger av kabelføring, avstand til sikringsskap og behov for kursoppgradering. Vi gir fast pris etter befaring.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Hvor raskt kan dere komme?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Vi ringer tilbake innen 1 time og kan ofte komme ut samme dag eller neste arbeidsdag. Akutte feil prioriteres.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Hva er inkludert i en elkontroll?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Elkontroll inkluderer gjennomgang av sikringsskap, kurser, jordfeilbrytere og synlig installasjon. Skriftlig rapport med eventuelle avvik leveres.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Jobber dere på hytte og fritidsbolig?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ja. Vi tar oppdrag i Bærum, Oslo og omegn – inkludert fritidseiendommer i nærliggende områder.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Er dere NELFO-godkjent og autorisert?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ja. VBM Elektro er autorisert elektroinstallasjonsbedrift og NELFO-medlem. Alt arbeid dokumenteres med samsvarserklæring.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Kan jeg betale med Vipps?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ja, vi aksepterer Vipps, faktura og kortbetaling. For bestillinger via nettsiden kan du velge Vipps i kassen.",
-      },
-    },
+    { "@type": "Question", name: "Hva koster en elbillader-installasjon hos dere?", acceptedAnswer: { "@type": "Answer", text: "Standard installasjon starter på kr 9 990. Det inkluderer kabling fra sikringsskap, nødvendig vern, dokumentasjon og idriftsettelse." } },
+    { "@type": "Question", name: "Hvor raskt kan dere komme?", acceptedAnswer: { "@type": "Answer", text: "Vanlige serviceoppdrag og elbillader: 1–5 dager. Akutte feil prioriteres — ring 90 63 31 18." } },
+    { "@type": "Question", name: "Hva hvis jobben blir større enn dere trodde?", acceptedAnswer: { "@type": "Answer", text: "Du hører fra oss før det skjer. Tillegg avklares alltid med deg før vi går videre." } },
+    { "@type": "Question", name: "Er dere NELFO-godkjent og autorisert?", acceptedAnswer: { "@type": "Answer", text: "Ja. Vi er registrert i Elvirksomhetsregisteret hos DSB og NELFO-medlem." } },
+    { "@type": "Question", name: "Kan jeg betale med Vipps?", acceptedAnswer: { "@type": "Answer", text: "Ja, vi tar Vipps for mindre serviceoppdrag. Større prosjekter faktureres med vanlig betalingsfrist." } },
   ],
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="no" className={`${geist.variable} h-full antialiased`}>
+    <html lang="nb" className={`${bricolage.variable} ${inter.variable} ${jetbrains.variable}`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body>
         <Providers>
           {children}
           <CartDrawer />
