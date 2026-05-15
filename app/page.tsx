@@ -4,6 +4,7 @@ import { ContactForm } from '@/components/ContactForm'
 import { FooterNewsletter } from '@/components/FooterNewsletter'
 import { MobileNav } from '@/components/MobileNav'
 import { PricingSection } from '@/components/PricingSection'
+import { BefaringCTA } from '@/components/BefaringCTA'
 
 export default function Home() {
   return (
@@ -68,7 +69,7 @@ export default function Home() {
               </p>
               <div className="hero-cta">
                 <a href="#kontakt" className="btn btn-red">Be om tilbud <span className="arr">→</span></a>
-                <a href="/befaring" className="btn btn-ghost">Gratis Befaring</a>
+                <BefaringCTA />
               </div>
               <div className="hero-meta">
                 <div className="hero-meta-item"><span className="check">✓</span> Fastpris før vi starter</div>
@@ -275,6 +276,9 @@ export default function Home() {
               <p>For sameier, butikker, kontorer og entreprenører som trenger en elektriker som følger opp. Fast kontaktperson, tydelig kommunikasjon.</p>
               <a href="#kontakt" className="arrow-link">Snakk med oss <span className="a">→</span></a>
             </div>
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 48 }} data-reveal>
+            <BefaringCTA label="Gratis Befaring" className="btn btn-red" />
           </div>
         </div>
       </section>
@@ -515,6 +519,10 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div style={{ textAlign: 'center', marginTop: 48 }} data-reveal>
+            <BefaringCTA label="Book gratis befaring" className="btn btn-red" />
+            <p style={{ marginTop: 12, fontSize: 13, color: 'var(--text-soft)' }}>Gratis og uforpliktende · Du velger tid i neste steg</p>
+          </div>
         </div>
       </section>
 
@@ -627,7 +635,10 @@ export default function Home() {
                 <li>Mange jobber kan vurderes direkte fra bilder</li>
                 <li>Tydelig vurdering før vi avtaler noe</li>
               </ul>
-              <a href="/videoavklaring" className="btn btn-red">Start videoavklaring <span className="arr">→</span></a>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <a href="/videoavklaring" className="btn btn-red">Start videoavklaring <span className="arr">→</span></a>
+                <BefaringCTA label="Gratis Befaring" />
+              </div>
             </div>
             <div className="vb-steps" data-reveal>
               <div className="vb-step">
