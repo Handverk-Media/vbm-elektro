@@ -6,7 +6,6 @@ const words = [
   'som holder pris.',
   'som møter opp.',
   'som holder avtaler.',
-  'som leverer dokumentasjon.',
 ]
 
 export function HeroRotator() {

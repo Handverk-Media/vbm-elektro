@@ -224,7 +224,7 @@ nav.top {
 }
 .hero-eyebrow { margin-bottom: 28px; display: flex; width: fit-content; }
 .hero h1 {
-  font-size: clamp(44px, 6.8vw, 88px);
+  font-size: clamp(38px, 5.6vw, 72px);
   line-height: 1; letter-spacing: -0.035em; font-weight: 700;
   margin-bottom: 32px; max-width: 1100px;
 }
@@ -248,7 +248,7 @@ nav.top {
 .hero .wrap { position: relative; }
 .hero-card {
   position: absolute; right: 32px; top: 50%; bottom: auto;
-  width: 320px; padding: 22px 24px;
+  width: 380px; padding: 28px 30px;
   background: white; border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.08);
   border: 1px solid var(--line); z-index: 2;
