@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
 import { BEDRIFT } from "@/data/bedrift"
 import { SiteHeader } from "@/components/SiteHeader"
 
@@ -23,109 +22,69 @@ export default function BookPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F7F6F3]">
+    <div className="subpage">
       <SiteHeader />
-
-      {/* Form */}
-      <div className="pt-32 pb-20 px-6 flex justify-center">
-        <div className="w-full max-w-md">
-          <div className="mb-8 text-center">
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <svg viewBox="0 0 177 352" fill="currentColor" className="w-[8px] h-4 text-[#E1342B]">
-                <polygon points="148.63,0.48 103.24,139.95 177.14,139.95 27.66,351.9 72.66,194.79 0,194.79 36.62,0.48" />
-              </svg>
-              <span className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase">Gratis · Uforpliktende</span>
+      <div className="subpage-pt">
+        <div className="book-wrap">
+          <div className="book-box">
+            <div className="book-header">
+              <div className="book-eyebrow">
+                <svg viewBox="0 0 177 352" fill="currentColor">
+                  <polygon points="148.63,0.48 103.24,139.95 177.14,139.95 27.66,351.9 72.66,194.79 0,194.79 36.62,0.48" />
+                </svg>
+                <span>Gratis · Uforpliktende</span>
+              </div>
+              <h1>Book befaring</h1>
+              <p>Fyll inn info — velg tid i neste steg</p>
             </div>
-            <h1 className="text-3xl font-bold text-[#1A1A1A] tracking-tight mb-2">Book befaring</h1>
-            <p className="text-[#6B6B6B] text-sm">Fyll inn info — velg tid i neste steg</p>
-          </div>
 
-          <div className="bg-[#EEEDE8] rounded-2xl p-7">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="text-xs font-semibold text-[#6B6B6B] mb-1.5 block">Navn *</label>
-                  <input
-                    name="navn"
-                    type="text"
-                    required
-                    placeholder="Ola Nordmann"
-                    className="w-full bg-[#F7F6F3] rounded-lg px-4 py-3 text-sm text-[#1A1A1A] placeholder:text-[#6B6B6B]/50 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20"
-                  />
+            <div className="page-form-card">
+              <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                <div className="form-row">
+                  <div className="form-field">
+                    <label>Navn *</label>
+                    <input name="navn" type="text" required placeholder="Ola Nordmann" />
+                  </div>
+                  <div className="form-field">
+                    <label>Telefon *</label>
+                    <input name="telefon" type="tel" required placeholder="900 00 000" />
+                  </div>
                 </div>
-                <div>
-                  <label className="text-xs font-semibold text-[#6B6B6B] mb-1.5 block">Telefon *</label>
-                  <input
-                    name="telefon"
-                    type="tel"
-                    required
-                    placeholder="900 00 000"
-                    className="w-full bg-[#F7F6F3] rounded-lg px-4 py-3 text-sm text-[#1A1A1A] placeholder:text-[#6B6B6B]/50 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20"
-                  />
+                <div className="form-field">
+                  <label>Hva gjelder det? *</label>
+                  <select name="tjeneste" required defaultValue="" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`, backgroundRepeat: "no-repeat", backgroundPosition: "right 14px center", backgroundSize: "16px", appearance: "none" }}>
+                    <option value="" disabled>Velg type oppdrag…</option>
+                    <option value="Elbillader">Elbillader-installasjon</option>
+                    <option value="El-anlegg">El-anlegg og sikringsskap</option>
+                    <option value="Renovering">Bad- og kjøkkenrenovering</option>
+                    <option value="Smarthus">Smarthus og styringssystemer</option>
+                    <option value="Montering">Montering av punkter og lamper</option>
+                    <option value="Elkontroll">Elkontroll og feilsøking</option>
+                    <option value="Næringsbygg">Næringsbygg og kontor</option>
+                    <option value="Nybygg">Nybygg og tilbygg</option>
+                    <option value="Annet">Annet</option>
+                  </select>
                 </div>
-              </div>
+                <div className="form-field">
+                  <label>Adresse / område</label>
+                  <input name="adresse" type="text" placeholder="F.eks. Sandvika, Bærum" />
+                </div>
+                <button type="submit" disabled={laster} className="form-submit">
+                  {laster ? "Sender…" : "Velg tidspunkt"}
+                  {!laster && (
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" />
+                    </svg>
+                  )}
+                </button>
+                <p className="form-note">Gratis og uforpliktende · Du velger tid i neste steg</p>
+              </form>
+            </div>
 
-              <div>
-                <label className="text-xs font-semibold text-[#6B6B6B] mb-1.5 block">Hva gjelder det? *</label>
-                <select
-                  name="tjeneste"
-                  required
-                  defaultValue=""
-                  className="w-full bg-[#F7F6F3] rounded-lg px-4 py-3 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20 appearance-none cursor-pointer"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right 14px center",
-                    backgroundSize: "16px",
-                  }}
-                >
-                  <option value="" disabled>Velg type oppdrag…</option>
-                  <option value="Elbillader">Elbillader-installasjon</option>
-                  <option value="El-anlegg">El-anlegg og sikringsskap</option>
-                  <option value="Renovering">Bad- og kjøkkenrenovering</option>
-                  <option value="Smarthus">Smarthus og styringssystemer</option>
-                  <option value="Montering">Montering av punkter og lamper</option>
-                  <option value="Elkontroll">Elkontroll og feilsøking</option>
-                  <option value="Næringsbygg">Næringsbygg og kontor</option>
-                  <option value="Nybygg">Nybygg og tilbygg</option>
-                  <option value="Annet">Annet</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="text-xs font-semibold text-[#6B6B6B] mb-1.5 block">Adresse / område</label>
-                <input
-                  name="adresse"
-                  type="text"
-                  placeholder="F.eks. Sandvika, Bærum"
-                  className="w-full bg-[#F7F6F3] rounded-lg px-4 py-3 text-sm text-[#1A1A1A] placeholder:text-[#6B6B6B]/50 focus:outline-none focus:ring-2 focus:ring-[#E1342B]/20"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={laster}
-                className="w-full bg-[#E1342B] text-white font-bold py-4 rounded-lg hover:bg-[#c42d24] transition-colors flex items-center justify-center gap-2 text-base disabled:opacity-60"
-              >
-                {laster ? "Sender…" : "Velg tidspunkt"}
-                {!laster && (
-                  <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-                    <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" />
-                  </svg>
-                )}
-              </button>
-
-              <p className="text-xs text-[#6B6B6B] text-center">
-                Gratis og uforpliktende · Du velger tid i neste steg
-              </p>
-            </form>
-          </div>
-
-          <div className="mt-6 text-center text-sm text-[#6B6B6B]">
-            Foretrekker å ringe?{" "}
-            <a href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`} className="font-semibold text-[#1A1A1A] hover:text-[#E1342B] transition-colors">
-              {BEDRIFT.telefon}
-            </a>
+            <p className="book-phone">
+              Foretrekker å ringe?{" "}
+              <a href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}>{BEDRIFT.telefon}</a>
+            </p>
           </div>
         </div>
       </div>

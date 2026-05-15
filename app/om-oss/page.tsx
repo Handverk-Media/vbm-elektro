@@ -5,145 +5,79 @@ import { SiteHeader } from "@/components/SiteHeader"
 
 export const metadata: Metadata = {
   title: "Om oss – VBM Elektro AS",
-  description:
-    "VBM Elektro AS er en autorisert elektroinstallasjonsbedrift i Bærum. Vi leverer elektriker-tjenester i Bærum, Oslo og Asker med fokus på kvalitet, ryddighet og dokumentasjon.",
+  description: "VBM Elektro AS er en autorisert elektroinstallasjonsbedrift i Bærum. Vi leverer elektriker-tjenester i Bærum, Oslo og Asker.",
 }
 
 const VERDIER = [
-  {
-    tittel: "Autorisert og ansvarlig",
-    tekst:
-      "Vi er NELFO-godkjent og autorisert elektroinstallasjonsbedrift. Alt arbeid dokumenteres med samsvarserklæring.",
-  },
-  {
-    tittel: "Fast pris — ingen overraskelser",
-    tekst:
-      "Vi gir skriftlig pris før oppstart. Du vet hva jobben koster — uansett om det dukker opp uforutsette ting.",
-  },
-  {
-    tittel: "Ryddig utførelse",
-    tekst:
-      "Vi rydder etter oss, sikrer at kabling er ordentlig lagt og leverer ferdig rapport med dokumentasjon.",
-  },
-  {
-    tittel: "Rask respons",
-    tekst:
-      "Vi tilbakering innen 1 time på hverdager. Akutte situasjoner håndteres alltid med høy prioritet.",
-  },
+  { tittel: "Autorisert og ansvarlig", tekst: "Vi er NELFO-godkjent og autorisert elektroinstallasjonsbedrift. Alt arbeid dokumenteres med samsvarserklæring." },
+  { tittel: "Fast pris — ingen overraskelser", tekst: "Vi gir skriftlig pris før oppstart. Du vet hva jobben koster — uansett om det dukker opp uforutsette ting." },
+  { tittel: "Ryddig utførelse", tekst: "Vi rydder etter oss, sikrer at kabling er ordentlig lagt og leverer ferdig rapport med dokumentasjon." },
+  { tittel: "Rask respons", tekst: "Vi ringer tilbake innen 1 time på hverdager. Akutte situasjoner håndteres alltid med høy prioritet." },
 ]
 
-const OMRADER = [
-  "Bærum", "Sandvika", "Billingstad", "Asker",
-  "Oslo vest", "Lysaker", "Fornebu", "Høvik", "Nesbru",
-]
+const OMRADER = ["Bærum", "Sandvika", "Billingstad", "Asker", "Oslo vest", "Lysaker", "Fornebu", "Høvik", "Nesbru"]
 
 export default function OmOssPage() {
   return (
-    <div className="min-h-screen bg-[#F7F6F3]">
+    <div className="subpage">
       <SiteHeader />
+      <div className="subpage-pt">
 
-      <div className="pt-20">
-        {/* Hero */}
-        <section className="bg-[#1A1A1A] py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex items-center gap-2 mb-5">
-              <svg viewBox="0 0 177 352" fill="currentColor" className="w-[8px] h-4 text-[#E1342B]">
-                <polygon points="148.63,0.48 103.24,139.95 177.14,139.95 27.66,351.9 72.66,194.79 0,194.79 36.62,0.48" />
-              </svg>
-              <span className="text-xs font-semibold text-white/40 tracking-widest uppercase">Om oss</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 max-w-2xl">
-              Autorisert elektriker i Bærum, Oslo og Asker
-            </h1>
-            <div className="w-12 h-[3px] bg-[#E1342B] mb-6" />
-            <p className="text-white/50 text-lg leading-relaxed max-w-2xl">
-              VBM Elektro AS er en lokal elektroinstallasjonsbedrift med base i Billingstad. Vi leverer kvalitetssikrede
-              elektriker-tjenester til private og næringskunder i Bærum-regionen.
-            </p>
+        <section className="subpage-hero">
+          <div className="wrap">
+            <div className="eyebrow">Om oss</div>
+            <h1>Autorisert elektriker i Bærum, Oslo og Asker</h1>
+            <p>VBM Elektro AS er en lokal elektroinstallasjonsbedrift med base i Billingstad. Vi leverer kvalitetssikrede elektriker-tjenester til private og næringskunder i Bærum-regionen.</p>
           </div>
-          <div className="h-[3px] bg-[#E1342B] mt-16" />
         </section>
 
-        {/* Om bedriften */}
-        <section className="py-20 bg-[#F7F6F3]">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <section style={{ padding: "80px 0" }}>
+          <div className="wrap">
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "start" }}>
               <div>
-                <h2 className="text-3xl font-bold text-[#1A1A1A] tracking-tight mb-6">
-                  Hvem er vi?
-                </h2>
-                <div className="space-y-4 text-[#6B6B6B] leading-relaxed">
-                  <p>
-                    VBM Elektro AS ble grunnlagt med ett mål: å levere autorisert elektroarbeid med høy faglig standard,
-                    ryddig kommunikasjon og forutsigbare priser. Vi er et lite og dedikert team som setter kundens behov
-                    fremst i alt vi gjør.
-                  </p>
-                  <p>
-                    Daglig leder og faglig ansvarlig er <strong className="text-[#1A1A1A]">Benjamin</strong>, en erfaren
-                    elektriker med bred kompetanse innen boligelektro, elbillading og smarthusinstallasjon.
-                    Han er personlig involvert i alle prosjekter og sørger for at arbeidet holder den standarden han setter
-                    sitt navn på.
-                  </p>
-                  <p>
-                    Vi er NELFO-godkjent og registrert som autorisert elektroinstallasjonsbedrift hos
-                    Direktoratet for samfunnssikkerhet og beredskap (DSB). Det betyr at vi har lov til å utføre
-                    og dokumentere elektrisk arbeid i tråd med norsk lov og NEK 400.
-                  </p>
-                </div>
+                <h2 style={{ fontSize: "clamp(28px,4vw,40px)", fontWeight: 700, marginBottom: 24 }}>Hvem er vi?</h2>
+                <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--text-soft)", marginBottom: 16 }}>
+                  VBM Elektro AS ble grunnlagt med ett mål: å levere autorisert elektroarbeid med høy faglig standard, ryddig kommunikasjon og forutsigbare priser.
+                </p>
+                <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--text-soft)", marginBottom: 16 }}>
+                  Daglig leder og faglig ansvarlig er <strong style={{ color: "var(--text)" }}>Benjamin</strong>, en erfaren elektriker med bred kompetanse innen boligelektro, elbillading og smarthusinstallasjon.
+                </p>
+                <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--text-soft)", marginBottom: 32 }}>
+                  Vi er NELFO-godkjent og registrert som autorisert elektroinstallasjonsbedrift hos DSB. Vi har lov til å utføre og dokumentere elektrisk arbeid i tråd med norsk lov og NEK 400.
+                </p>
 
-                <div className="mt-10 grid grid-cols-2 gap-4">
-                  {[
-                    { num: "200+", label: "prosjekter levert" },
-                    { num: "5,0", label: "Google-rating" },
-                    { num: "< 1t", label: "tilbakering" },
-                    { num: "100%", label: "dokumentert arbeid" },
-                  ].map((s) => (
-                    <div key={s.label} className="bg-[#EEEDE8] rounded-xl p-5">
-                      <div className="text-2xl font-bold text-[#E1342B] mb-1">{s.num}</div>
-                      <div className="text-xs text-[#6B6B6B]">{s.label}</div>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+                  {[{ num: "200+", label: "prosjekter levert" }, { num: "5,0", label: "Google-rating" }, { num: "< 1t", label: "tilbakering" }, { num: "100%", label: "dokumentert arbeid" }].map((s) => (
+                    <div key={s.label} style={{ background: "var(--bg-warm)", borderRadius: 12, padding: "20px 24px" }}>
+                      <div style={{ fontSize: 28, fontWeight: 700, color: "var(--red)", marginBottom: 4, fontFamily: "var(--display)" }}>{s.num}</div>
+                      <div style={{ fontSize: 13, color: "var(--text-soft)" }}>{s.label}</div>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div>
-                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-6">
-                  <p className="text-white/30 text-xs font-semibold tracking-widest uppercase mb-4">Kontaktinfo</p>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex items-start gap-3">
-                      <span className="text-white/30 w-16 flex-shrink-0">Adresse</span>
-                      <span className="text-white/70">{BEDRIFT.adresse}</span>
+                <div style={{ background: "var(--bg-dark)", borderRadius: 18, padding: 32, marginBottom: 20 }}>
+                  <p style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: 20 }}>Kontaktinfo</p>
+                  {[
+                    { lbl: "Adresse", val: BEDRIFT.adresse },
+                    { lbl: "Telefon", val: BEDRIFT.telefon, href: `tel:${BEDRIFT.telefon.replace(/\s/g, "")}` },
+                    { lbl: "E-post", val: BEDRIFT.epost, href: `mailto:${BEDRIFT.epost}` },
+                    { lbl: "Åpent", val: BEDRIFT.apningstider },
+                    { lbl: "Org.nr", val: BEDRIFT.orgnr },
+                  ].map(({ lbl, val, href }) => (
+                    <div key={lbl} style={{ display: "flex", gap: 16, paddingBottom: 12, borderBottom: "1px solid rgba(255,255,255,0.06)", marginBottom: 12, fontSize: 14 }}>
+                      <span style={{ color: "rgba(255,255,255,0.3)", width: 64, flexShrink: 0 }}>{lbl}</span>
+                      {href ? <a href={href} style={{ color: "rgba(255,255,255,0.7)" }}>{val}</a> : <span style={{ color: "rgba(255,255,255,0.7)" }}>{val}</span>}
                     </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-white/30 w-16 flex-shrink-0">Telefon</span>
-                      <a href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`} className="text-white/70 hover:text-white transition-colors">
-                        {BEDRIFT.telefon}
-                      </a>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-white/30 w-16 flex-shrink-0">E-post</span>
-                      <a href={`mailto:${BEDRIFT.epost}`} className="text-white/70 hover:text-white transition-colors">
-                        {BEDRIFT.epost}
-                      </a>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-white/30 w-16 flex-shrink-0">Åpent</span>
-                      <span className="text-white/70">{BEDRIFT.apningstider}</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-white/30 w-16 flex-shrink-0">Org.nr</span>
-                      <span className="text-white/70">{BEDRIFT.orgnr}</span>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <div className="bg-[#EEEDE8] rounded-2xl p-8">
-                  <p className="text-[#6B6B6B] text-xs font-semibold tracking-widest uppercase mb-4">Dekningsområde</p>
-                  <div className="flex flex-wrap gap-2">
+                <div style={{ background: "var(--bg-warm)", borderRadius: 18, padding: 32 }}>
+                  <p style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--text-soft)", marginBottom: 16 }}>Dekningsområde</p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                     {OMRADER.map((o) => (
-                      <span key={o} className="bg-white text-[#1A1A1A] text-xs font-medium px-3 py-1.5 rounded-full border border-[#EEEDE8]">
-                        {o}
-                      </span>
+                      <span key={o} style={{ background: "white", fontSize: 13, fontWeight: 500, padding: "6px 14px", borderRadius: 100, border: "1px solid var(--line)" }}>{o}</span>
                     ))}
                   </div>
                 </div>
@@ -152,69 +86,38 @@ export default function OmOssPage() {
           </div>
         </section>
 
-        {/* Verdier */}
-        <section className="bg-[#EEEDE8] py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-[#1A1A1A] tracking-tight mb-12">Slik jobber vi</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <section style={{ background: "var(--bg-warm)", padding: "80px 0" }}>
+          <div className="wrap">
+            <h2 style={{ fontSize: "clamp(28px,4vw,40px)", fontWeight: 700, marginBottom: 48 }}>Slik jobber vi</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
               {VERDIER.map((v, i) => (
-                <div key={v.tittel} className="bg-[#F7F6F3] rounded-xl p-7">
-                  <div className="text-xs font-bold tracking-widest text-[#E1342B] mb-4">
-                    0{i + 1}
-                  </div>
-                  <h3 className="font-bold text-[#1A1A1A] text-lg mb-3">{v.tittel}</h3>
-                  <p className="text-[#6B6B6B] text-sm leading-relaxed">{v.tekst}</p>
+                <div key={v.tittel} style={{ background: "var(--bg)", borderRadius: 14, padding: 28 }}>
+                  <div style={{ fontFamily: "var(--mono)", fontSize: 11, color: "var(--red)", fontWeight: 700, letterSpacing: "0.1em", marginBottom: 12 }}>0{i + 1}</div>
+                  <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10 }}>{v.tittel}</h3>
+                  <p style={{ fontSize: 14, color: "var(--text-soft)", lineHeight: 1.6 }}>{v.tekst}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Sertifisering */}
-        <section className="py-16 bg-[#F7F6F3] border-t border-[#EEEDE8]">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
-              <div>
-                <p className="text-xs font-semibold text-[#6B6B6B] tracking-widest uppercase mb-3">Godkjenninger</p>
-                <div className="flex flex-wrap gap-3">
-                  {["NELFO-godkjent", "Autorisert installatør", "NEK 400", "DSB-registrert"].map((g) => (
-                    <span key={g} className="flex items-center gap-1.5 bg-[#EEEDE8] text-[#1A1A1A] text-xs font-semibold px-4 py-2 rounded-full">
-                      <svg viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5 text-[#E1342B]">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
-                      </svg>
-                      {g}
-                    </span>
-                  ))}
-                </div>
+        <section style={{ padding: "60px 0", borderTop: "1px solid var(--line)" }}>
+          <div className="wrap" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 32 }}>
+            <div>
+              <p style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--text-soft)", marginBottom: 12 }}>Godkjenninger</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {["NELFO-godkjent", "Autorisert installatør", "NEK 400", "DSB-registrert"].map((g) => (
+                  <span key={g} style={{ background: "var(--bg-warm)", fontSize: 12, fontWeight: 600, padding: "8px 16px", borderRadius: 100 }}>{g}</span>
+                ))}
               </div>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/book"
-                  className="bg-[#E1342B] text-white font-bold px-7 py-3.5 rounded-lg hover:bg-[#c42d24] transition-colors inline-flex items-center justify-center gap-2"
-                >
-                  Book gratis befaring
-                </Link>
-                <Link
-                  href="/kontakt"
-                  className="border border-[#1A1A1A]/20 text-[#1A1A1A] font-semibold px-7 py-3.5 rounded-lg hover:border-[#1A1A1A]/40 transition-colors inline-flex items-center justify-center gap-2"
-                >
-                  Send melding
-                </Link>
-              </div>
+            </div>
+            <div style={{ display: "flex", gap: 12 }}>
+              <Link href="/book" className="btn btn-red">Book gratis befaring <span className="arr">→</span></Link>
+              <Link href="/kontakt" className="btn btn-ghost">Send melding</Link>
             </div>
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="bg-[#1A1A1A] py-8">
-          <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/25">
-            <span>© {new Date().getFullYear()} {BEDRIFT.navn} · Org.nr {BEDRIFT.orgnr}</span>
-            <div className="flex gap-5">
-              <Link href="/" className="hover:text-white/60 transition-colors">Forsiden</Link>
-              <Link href="/personvern" className="hover:text-white/60 transition-colors">Personvern</Link>
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
   )
