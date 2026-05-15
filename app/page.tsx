@@ -2,6 +2,8 @@ import { HeroRotator } from '@/components/HeroRotator'
 import { RevealObserver } from '@/components/RevealObserver'
 import { ContactForm } from '@/components/ContactForm'
 import { FooterNewsletter } from '@/components/FooterNewsletter'
+import { MobileNav } from '@/components/MobileNav'
+import { PricingSection } from '@/components/PricingSection'
 
 export default function Home() {
   return (
@@ -34,6 +36,7 @@ export default function Home() {
               90 63 31 18
             </a>
             <a href="#kontakt" className="btn btn-red">Få tilbud <span className="arr">→</span></a>
+            <MobileNav />
           </div>
         </div>
       </nav>
@@ -277,7 +280,8 @@ export default function Home() {
       </section>
 
       {/* ── Pricing ─────────────────────────────── */}
-      <section className="pricing" id="priser">
+      <PricingSection />
+      {false && <section className="pricing" id="priser">
         <div className="wrap">
           <div className="pricing-head" data-reveal>
             <div className="eyebrow yellow">Faste priser</div>
@@ -382,7 +386,7 @@ export default function Home() {
             Trenger du noe annet? Send oss en kort beskrivelse av jobben — gjerne med bilde — så svarer vi med pris innen 1 time i normal arbeidstid.
           </p>
         </div>
-      </section>
+      </section>}
 
       {/* ── Process ─────────────────────────────── */}
       <section className="process" id="prosess">

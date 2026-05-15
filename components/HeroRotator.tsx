@@ -27,6 +27,7 @@ export function HeroRotator() {
     const PAUSE_AFTER_DELETE = 200
 
     function tick() {
+      if (!el) return
       const word = words[wordIndex]
       const base = word.endsWith('.') ? word.slice(0, -1) : word
 

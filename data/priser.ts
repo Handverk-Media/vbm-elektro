@@ -105,6 +105,38 @@ export const TJENESTER: Tjeneste[] = [
     varighet: "Halvdag",
   },
 
+  // ── Sikringsskap ───────────────────────────────────────────
+  {
+    id: "skap-leilighet",
+    navn: "Bytte av sikringsskap – leilighet",
+    beskrivelse:
+      "Nytt skap med jordfeilautomater og overspenningsvern. Inkluderer demontering, dokumentasjon og sluttkontroll.",
+    pris: 18500,
+    enhet: "fra",
+    kategori: "Sikringsskap",
+    varighet: "6–10 timer",
+  },
+  {
+    id: "skap-enebolig",
+    navn: "Bytte av sikringsskap – enebolig",
+    beskrivelse:
+      "Større anlegg, flere kurser. Pris avhenger av eksisterende kabling og om hovedinntak må oppgraderes.",
+    pris: 24900,
+    enhet: "fra",
+    kategori: "Sikringsskap",
+    varighet: "1–2 dager",
+  },
+  {
+    id: "varmekabler-bad",
+    navn: "Varmekabler – bad opp til 6 m²",
+    beskrivelse:
+      "Inkluderer kabel, termostat, kontroll og dokumentasjon. Avrettingsmasse gjøres av flislegger.",
+    pris: 7490,
+    enhet: "fra",
+    kategori: "Belysning",
+    varighet: "3–5 timer",
+  },
+
   // ── Renovering ─────────────────────────────────────────────
   {
     id: "renovering-bad",
