@@ -342,12 +342,6 @@ section.truth { padding: 120px 0 100px; position: relative; }
   background: var(--bg-dark); color: white;
   padding: 100px 0; position: relative; overflow: hidden;
 }
-.manifesto::after {
-  content: ""; position: absolute; bottom: -200px; right: -100px;
-  width: 500px; height: 500px;
-  background: var(--red); opacity: 0.15;
-  border-radius: 50%; filter: blur(80px);
-}
 .manifesto .lbl {
   color: var(--red); font-family: var(--mono);
   font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
@@ -649,11 +643,6 @@ section.stats {
   padding: 120px 0; background: var(--bg-dark); color: white;
   position: relative; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.08);
 }
-section.stats::before {
-  content: ""; position: absolute; top: -100px; right: -100px;
-  width: 400px; height: 400px; background: var(--red); opacity: 0.08;
-  border-radius: 50%; filter: blur(100px); pointer-events: none;
-}
 .stats-head { margin-bottom: 64px; max-width: 600px; position: relative; z-index: 1; }
 .stats-head .eyebrow { color: var(--red); margin-bottom: 16px; }
 .stats-head .eyebrow::before { background: var(--red); }
@@ -695,11 +684,6 @@ section.faq { padding: 120px 0; }
 
 /* ── Video Befaring ────────────────────────────── */
 section.video-befaring { background: var(--bg-dark); color: white; padding: 120px 0; position: relative; overflow: hidden; }
-section.video-befaring::after {
-  content: ""; position: absolute; top: 50%; left: -150px;
-  width: 400px; height: 400px; background: var(--red); opacity: 0.12;
-  border-radius: 50%; filter: blur(80px); transform: translateY(-50%);
-}
 .vb-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
 .vb-grid h2 { font-size: clamp(36px,4.5vw,56px); color: white; margin-bottom: 24px; max-width: 540px; }
 .vb-grid .lede { font-size: 18px; line-height: 1.55; color: rgba(255,255,255,0.7); margin-bottom: 32px; max-width: 520px; }
