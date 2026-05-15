@@ -133,14 +133,14 @@ function StickyMobileBar() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#F7F6F3]">
+    <section className="relative min-h-screen flex items-start pt-20 overflow-hidden bg-[#F7F6F3]">
       <div className="absolute right-[5%] top-1/2 -translate-y-1/2 text-[#1A1A1A]/[0.04] pointer-events-none select-none">
         <svg viewBox="0 0 177 352" fill="currentColor" className="w-[480px] h-[960px]">
           <polygon points="148.63,0.48 103.24,139.95 177.14,139.95 27.66,351.9 72.66,194.79 0,194.79 36.62,0.48" />
         </svg>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 pt-10 pb-24 relative z-10 w-full">
+      <div className="max-w-6xl mx-auto px-6 pt-16 pb-24 relative z-10 w-full">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-8">
             <Bolt className="w-[10px] h-5 text-[#E1342B]" />
