@@ -247,7 +247,7 @@ nav.top {
 }
 .hero .wrap { position: relative; }
 .hero-card {
-  position: absolute; right: 32px; bottom: 0;
+  position: absolute; right: 32px; top: 50%; bottom: auto;
   width: 320px; padding: 22px 24px;
   background: white; border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.08);
@@ -255,8 +255,8 @@ nav.top {
   animation: card-float 6s ease-in-out infinite;
 }
 @keyframes card-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  0%, 100% { transform: translateY(-50%); }
+  50% { transform: translateY(calc(-50% - 6px)); }
 }
 .hero-card .hd { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
 .hero-card .dot-row { display: flex; gap: 4px; }

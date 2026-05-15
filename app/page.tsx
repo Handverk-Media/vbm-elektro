@@ -90,7 +90,6 @@ export default function Home() {
             </div>
             <div className="price-line"><span>Elbillader Zaptec Go</span><span>kr 9 990</span></div>
             <div className="price-line"><span>Tilkobling sikringsskap</span><span>inkludert</span></div>
-            <div className="price-line"><span>Dokumentasjon</span><span>inkludert</span></div>
             <div className="price-line"><span>Tillegg / overraskelser</span><span style={{ color: 'var(--green-ok)' }}>kr 0</span></div>
             <div className="total"><span>Totalt</span><span>kr 9 990</span></div>
           </div>
