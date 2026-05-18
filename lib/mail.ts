@@ -1,19 +1,10 @@
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.office365.com',
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-  tls: { ciphers: 'SSLv3' },
-})
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function sendMail(subject: string, html: string) {
-  await transporter.sendMail({
-    from: `"VBM Elektro nettside" <${process.env.SMTP_USER}>`,
+  await resend.emails.send({
+    from: 'VBM Elektro <nettside@vbmelektro.no>',
     to: 'benjamin@vbmelektro.no',
     subject,
     html,
