@@ -1,5 +1,120 @@
 [
   {
+    "slug": "utendors-belysning-og-stikkontakter-krav-og-tips-for-hjemmet",
+    "tittel": "Utendørs belysning og stikkontakter – krav og tips for hjemmet",
+    "beskrivelse": "Slik velger du riktig utebelysning og utestikkontakter. Krav til IP-klasse, jordfeilbryter og montering forklart av elektriker i Bærum.",
+    "kategori": "Sikkerhet",
+    "dato": "2026-05-18",
+    "lesetid": 5,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Utendørs belysning og stikkontakter gir både trygghet, trivsel og praktisk nytte rundt boligen. Men ute er forholdene helt andre enn inne – fukt, regn, snø og temperatursvingninger stiller strenge krav til både materialvalg og montering. Her får du en oversikt over hva regelverket krever, hva du bør tenke på som huseier, og hvilke løsninger som fungerer best i norsk klima."
+      },
+      {
+        "type": "h2",
+        "tekst": "Krav til utendørs elektrisk utstyr"
+      },
+      {
+        "type": "p",
+        "tekst": "All elektrisk installasjon ute må tåle vær og vind. Det viktigste begrepet å kjenne til er IP-klasse, som forteller hvor godt utstyret er beskyttet mot støv og vann. I tillegg stiller forskriften krav om jordfeilbeskyttelse og riktig montering for å hindre brann og strømulykker."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Minimum IP44 for utstyr montert under tak eller skjermet plassering",
+          "IP65 eller høyere anbefales for utstyr som utsettes for direkte regn og snø",
+          "Alle utekurser skal være beskyttet av jordfeilbryter type A på maks 30 mA",
+          "Stikkontakter ute skal ha lokk og være sprutsikre",
+          "Kabler må være godkjent for utendørs bruk eller legges i rør"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik velger du riktig utebelysning"
+      },
+      {
+        "type": "p",
+        "tekst": "Belysning utendørs har tre hovedformål: orienteringslys, stemningslys og sikkerhetslys. En god plan kombinerer alle tre. LED-armaturer er i praksis enerådende i dag – de bruker lite strøm, tåler kulde godt og har lang levetid. Velg gjerne armaturer med varmhvitt lys (2700–3000 K) rundt boligen, da dette oppleves som behagelig og hjemmekoselig."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Kartlegg hvor du trenger lys: inngang, oppkjørsel, terrasse, hage og bod",
+          "Velg armaturer med riktig IP-klasse for plasseringen",
+          "Vurder bevegelsessensor ved inngangsparti og garasje for energisparing",
+          "Tenk på lysretning – unngå å blende naboer eller deg selv",
+          "Bruk astrour eller skumringsrelé for automatisk styring"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Utestikkontakter – plassering og bruk"
+      },
+      {
+        "type": "p",
+        "tekst": "En eller flere utestikkontakter er gull verdt – enten du skal støvsuge bilen, bruke gressklipper, koble til julebelysning eller lade el-sykkelen. Plasser dem strategisk slik at du slipper lange skjøteledninger gjennom hagen, som både er en snublefare og kan utgjøre en brannrisiko."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Plassering",
+          "Anbefalt IP-klasse",
+          "Typisk bruk"
+        ],
+        "rows": [
+          [
+            "Under tak ved inngang",
+            "IP44",
+            "Julebelysning, lading"
+          ],
+          [
+            "På vegg uten le",
+            "IP55",
+            "Gressklipper, høytrykksspyler"
+          ],
+          [
+            "Frittstående i hage",
+            "IP65 / IP66",
+            "Hagearbeid, terrassevarmer"
+          ],
+          [
+            "Bod eller carport",
+            "IP44",
+            "Verktøy, sykkellading"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Vanlige feil – og hvorfor du bør bruke elektriker"
+      },
+      {
+        "type": "p",
+        "tekst": "Mange feil ute oppstår fordi det brukes feil type kabel, fordi tetninger ikke er montert riktig, eller fordi kursen ikke er beskyttet av jordfeilbryter. Vann som trenger inn i en armatur eller stikkontakt kan gi kortslutning, korrosjon og i verste fall brann. Tilkobling av faste utekurser skal alltid utføres av autorisert elektriker."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Bruk av innendørs stikkontakter ute – selv under tak",
+          "Skjøteledninger som permanent løsning",
+          "Manglende jordfeilbryter på eldre utekurser",
+          "Kabler som ligger oppå bakken uten beskyttelse",
+          "Armaturer montert uten korrekt tetning mot vegg"
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Hos VBM Elektro hjelper vi jevnlig kunder i Bærum, Asker, Oslo og Drammen med å planlegge og installere utebelysning og utestikkontakter som både ser bra ut og oppfyller dagens krav. Vi vurderer alltid eksisterende sikringsskap og kursopplegg samtidig, slik at du får en trygg helhetsløsning."
+      },
+      {
+        "type": "cta",
+        "tekst": "Ønsker du tilbud på utebelysning eller utestikkontakter? Kontakt VBM Elektro for en uforpliktende befaring."
+      }
+    ]
+  },
+  {
     "slug": "solcellepanel-og-tilkobling-dette-gjor-elektrikeren",
     "tittel": "Solcellepanel og tilkobling: Dette gjør elektrikeren",
     "beskrivelse": "Skal du installere solceller? Her er elektrikerens rolle ved tilkobling, hvilke krav som gjelder, og hva du må huske på i Bærum, Oslo, Asker og Drammen.",
