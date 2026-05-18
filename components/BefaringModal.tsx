@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 
 const KALENDER_URL = 'https://api.leadconnectorhq.com/widget/bookings/vbmelektro'
 
@@ -11,6 +12,9 @@ interface Props {
 export function BefaringModal({ open, onClose }: Props) {
   const [step, setStep] = useState<'form' | 'calendar'>('form')
   const [laster, setLaster] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => { setMounted(true) }, [])
 
   useEffect(() => {
     if (open) {
@@ -35,11 +39,10 @@ export function BefaringModal({ open, onClose }: Props) {
     setStep('calendar')
   }
 
-  if (!open) return null
+  if (!open || !mounted) return null
 
-  return (
-    <>
-      <div className="bm-overlay" onClick={onClose}>
+  return createPortal(
+    <div className="bm-overlay" onClick={onClose}>
       <div className="bm-panel" role="dialog" aria-modal="true" aria-label="Book gratis befaring" onClick={e => e.stopPropagation()}>
         <button className="bm-close" onClick={onClose} aria-label="Lukk">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -109,7 +112,7 @@ export function BefaringModal({ open, onClose }: Props) {
           </div>
         )}
       </div>
-      </div>
-    </>
+    </div>,
+    document.body
   )
 }
