@@ -19,11 +19,16 @@ export function BefaringModal({ open, onClose }: Props) {
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden'
+      document.body.classList.add('modal-open')
       setStep('form')
     } else {
       document.body.style.overflow = ''
+      document.body.classList.remove('modal-open')
     }
-    return () => { document.body.style.overflow = '' }
+    return () => {
+      document.body.style.overflow = ''
+      document.body.classList.remove('modal-open')
+    }
   }, [open])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
