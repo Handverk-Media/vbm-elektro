@@ -39,8 +39,8 @@ export function BefaringModal({ open, onClose }: Props) {
 
   return (
     <>
-      <div className="bm-overlay" onClick={onClose} />
-      <div className="bm-panel" role="dialog" aria-modal="true" aria-label="Book gratis befaring">
+      <div className="bm-overlay" onClick={onClose}>
+      <div className="bm-panel" role="dialog" aria-modal="true" aria-label="Book gratis befaring" onClick={e => e.stopPropagation()}>
         <button className="bm-close" onClick={onClose} aria-label="Lukk">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
             <path d="M18 6L6 18M6 6l12 12" />
@@ -82,6 +82,11 @@ export function BefaringModal({ open, onClose }: Props) {
               </div>
 
               <div className="form-field">
+                <label htmlFor="bm-epost">E-post</label>
+                <input id="bm-epost" name="epost" type="email" placeholder="din@epost.no" />
+              </div>
+
+              <div className="form-field">
                 <label htmlFor="bm-adresse">Adresse / område</label>
                 <input id="bm-adresse" name="adresse" type="text" placeholder="F.eks. Sandvika, Bærum" />
               </div>
@@ -103,6 +108,7 @@ export function BefaringModal({ open, onClose }: Props) {
             />
           </div>
         )}
+      </div>
       </div>
     </>
   )

@@ -164,10 +164,11 @@ nav.top {
 /* ── Befaring modal ────────────────────────────── */
 .bm-overlay {
   position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
+  display: flex; align-items: center; justify-content: center; padding: 16px;
 }
 .bm-panel {
-  position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  z-index: 301; width: min(520px, 95vw); max-height: 90vh; overflow-y: auto;
+  position: relative;
+  z-index: 301; width: min(520px, 100%); max-height: calc(100dvh - 32px); overflow-y: auto;
   background: var(--bg); border-radius: 16px; box-shadow: 0 24px 80px rgba(0,0,0,0.18);
   padding: 40px;
 }
