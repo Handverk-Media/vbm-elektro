@@ -1,9 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { sendMail } from '@/lib/mail'
 
+const GHL_WEBHOOK = "https://services.leadconnectorhq.com/hooks/N3BOu2IUcQj6WVFJ2no2/webhook-trigger/3c55c49f-06fe-4b66-b4c4-fd11de2739ce"
+
 export async function POST(req: NextRequest) {
   const body = await req.json()
   const { navn, telefon, epost, tjeneste, adresse, melding } = body
+
+  await fetch(GHL_WEBHOOK, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      firstName: navn?.split(" ")[0] ?? navn,
+      lastName: navn?.split(" ").slice(1).join(" ") || "",
+      phone: telefon,
+      email: epost ?? "",
+      service: tjeneste ?? "",
+      address: adresse ?? "",
+      message: melding ?? "",
+      source: "VBM Elektro – Kontaktskjema",
+    }),
+  }).catch((err) => console.error("GHL webhook feilet:", err))
 
   try {
     await sendMail(
