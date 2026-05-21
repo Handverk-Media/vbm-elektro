@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { trackFormSubmit } from '@/lib/analytics'
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -23,7 +24,7 @@ export function ContactForm() {
           melding: get('melding'),
         }),
       })
-      setStatus(res.ok ? 'sent' : 'error')
+      if (res.ok) { trackFormSubmit("kontaktskjema"); setStatus('sent') } else { setStatus('error') }
     } catch {
       setStatus('error')
     }

@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useCart } from "@/context/CartContext"
 import { BEDRIFT } from "@/data/bedrift"
+import { trackPhoneClick } from "@/lib/analytics"
 
 const NAV_LINKS = [
   { label: "Tjenester", id: "tjenester" },
@@ -55,7 +56,11 @@ export function SiteHeader({ homePage = false }: Props) {
         </nav>
 
         <div className="sh-right">
-          <a href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`} className="sh-phone">
+          <a
+            href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
+            className="sh-phone"
+            onClick={() => trackPhoneClick("header")}
+          >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 10.9a19.79 19.79 0 01-3.07-8.68A2 2 0 012.83 0h3a2 2 0 012 1.72c.128.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.98-.98a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z" />
             </svg>

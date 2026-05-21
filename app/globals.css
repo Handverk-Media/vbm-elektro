@@ -969,6 +969,14 @@ footer.foot { background: var(--bg-dark); color: white; padding: 64px 0 28px; }
   cursor: pointer; font-family: var(--body); transition: all 0.2s;
 }
 .cookie-decline:hover { background: rgba(255,255,255,0.14); color: white; }
+.cookie-categories { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+.cookie-cat { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 12px 14px; }
+.cookie-cat-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; font-size: 12px; font-weight: 700; color: white; }
+.cookie-cat-always { font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.4); }
+.cookie-cat-optional { font-size: 11px; font-weight: 500; color: var(--red); }
+.cookie-cat p { font-size: 11px; line-height: 1.5; color: rgba(255,255,255,0.45); margin: 0; }
+.cookie-details-toggle { background: none; border: none; color: rgba(255,255,255,0.4); font-size: 11px; cursor: pointer; padding: 0; margin-bottom: 12px; font-family: var(--body); transition: color 0.2s; }
+.cookie-details-toggle:hover { color: rgba(255,255,255,0.7); }
 
 /* ================================================
    SUB-PAGE SHARED
