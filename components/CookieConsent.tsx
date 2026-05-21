@@ -10,7 +10,13 @@ export function CookieConsent() {
     if (!localStorage.getItem("cookie-consent")) setSynlig(true)
   }, [])
 
-  function godta() { localStorage.setItem("cookie-consent", "all"); setSynlig(false) }
+  function godta() {
+    localStorage.setItem("cookie-consent", "all")
+    if (typeof window.gtag === "function") {
+      window.gtag("consent", "update", { analytics_storage: "granted", ad_storage: "granted" })
+    }
+    setSynlig(false)
+  }
   function avvis() { localStorage.setItem("cookie-consent", "necessary"); setSynlig(false) }
 
   if (!synlig) return null
