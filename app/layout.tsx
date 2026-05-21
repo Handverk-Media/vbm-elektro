@@ -108,6 +108,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CookieConsent />
         </Providers>
         <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-NCM4D5K2XN"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NCM4D5K2XN');
+        `}</Script>
+        <Script
           src="https://widgets.leadconnectorhq.com/loader.js"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
           data-widget-id="6a04e119c3c81a645b7fbf48"
