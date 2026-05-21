@@ -18,6 +18,7 @@ export function ContactForm() {
           navn: get('navn'),
           telefon: get('telefon'),
           epost: get('epost'),
+          adresse: get('adresse'),
           tjeneste: get('kategori'),
           melding: get('melding'),
         }),
@@ -56,6 +57,11 @@ export function ContactForm() {
       </div>
 
       <div className="form-field">
+        <label htmlFor="adresse">Adresse</label>
+        <input type="text" id="adresse" name="adresse" placeholder="Gateadresse, postnummer" required />
+      </div>
+
+      <div className="form-field">
         <label htmlFor="kategori">Hva gjelder oppdraget?</label>
         <select id="kategori" name="kategori" required>
           <option value="">Velg kategori …</option>
@@ -65,7 +71,6 @@ export function ContactForm() {
           <option>Renovering (bad, kjøkken)</option>
           <option>Smarthus</option>
           <option>Feilsøking</option>
-          <option>El-sjekk før boligsalg</option>
           <option>Næring / rehab-prosjekt</option>
           <option>Annet</option>
         </select>

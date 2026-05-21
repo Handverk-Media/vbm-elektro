@@ -113,6 +113,10 @@ export default function KontaktPage() {
                         <input name="epost" type="email" placeholder="din@epost.no" />
                       </div>
                       <div className="form-field">
+                        <label>Adresse *</label>
+                        <input name="adresse" type="text" required placeholder="Gateadresse, postnummer" />
+                      </div>
+                      <div className="form-field">
                         <label>Hva gjelder det?</label>
                         <select name="tjeneste" defaultValue="" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`, backgroundRepeat: "no-repeat", backgroundPosition: "right 14px center", backgroundSize: "16px", appearance: "none" }}>
                           <option value="">Velg type oppdrag…</option>
@@ -120,7 +124,7 @@ export default function KontaktPage() {
                           <option value="El-anlegg">El-anlegg og sikringsskap</option>
                           <option value="Renovering">Bad- og kjøkkenrenovering</option>
                           <option value="Smarthus">Smarthus</option>
-                          <option value="Elkontroll">Elkontroll og feilsøking</option>
+                          <option value="Feilsøking">Feilsøking</option>
                           <option value="Annet">Annet</option>
                         </select>
                       </div>

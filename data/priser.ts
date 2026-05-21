@@ -22,8 +22,8 @@ export const TJENESTER: Tjeneste[] = [
     id: "elbil-standard",
     navn: "Elbillader – standard installasjon",
     beskrivelse:
-      "Montering av hjemmelader i garasje eller carport. Inkluderer kabling fra sikringsskap, nødvendig vern, dokumentasjon og idriftsettelse.",
-    pris: 9990,
+      "Montering av hjemmelader i garasje eller carport. Inkluderer kabling fra sikringsskap, nødvendig vern, dokumentasjon og idriftsettelse. Lader/ladeboks er ikke inkludert i prisen.",
+    pris: 12490,
     enhet: "fra",
     kategori: "Elbillader",
     varighet: "2–4 timer",
@@ -32,30 +32,20 @@ export const TJENESTER: Tjeneste[] = [
     id: "elbil-komplex",
     navn: "Elbillader – kompleks installasjon",
     beskrivelse:
-      "Installasjon med krevende kabelføring, kursoppgradering eller montering i parkeringskjeller/borettslag.",
-    pris: 14900,
+      "Installasjon med krevende kabelføring, kursoppgradering eller montering i parkeringskjeller/borettslag. Lader/ladeboks er ikke inkludert i prisen.",
+    pris: 18490,
     enhet: "fra",
     kategori: "Elbillader",
     varighet: "4–8 timer",
   },
 
-  // ── Service og kontroll ────────────────────────────────────
-  {
-    id: "elkontroll-bolig",
-    navn: "Elkontroll bolig",
-    beskrivelse:
-      "Gjennomgang av sikringsskap, kurser, jordfeilbrytere og synlig installasjon. Skriftlig rapport med eventuelle avvik leveres.",
-    pris: 2990,
-    enhet: "fra",
-    kategori: "Service",
-    varighet: "1–2 timer",
-  },
+  // ── Service ────────────────────────────────────────────────
   {
     id: "feilsok-time",
     navn: "Feilsøking og retting",
     beskrivelse:
       "Diagnose og utbedring av elektrisk feil. Pris inkluderer oppmøte, kjøring og dokumentasjon.",
-    pris: 1490,
+    pris: 1200,
     enhet: "per time",
     kategori: "Service",
     varighet: "Avhenger av feil",
@@ -67,7 +57,7 @@ export const TJENESTER: Tjeneste[] = [
     navn: "Downlights – 5 stk",
     beskrivelse:
       "Montering av 5 downlights inkludert hulltakfresing og ny kabelføring. Spotlights ikke inkludert.",
-    pris: 5990,
+    pris: 6490,
     enhet: "fra",
     kategori: "Belysning",
     varighet: "2–4 timer",
@@ -108,30 +98,20 @@ export const TJENESTER: Tjeneste[] = [
   // ── Sikringsskap ───────────────────────────────────────────
   {
     id: "skap-leilighet",
-    navn: "Bytte av sikringsskap – leilighet",
+    navn: "Rehabilitering av sikringsskap",
     beskrivelse:
-      "Nytt skap med jordfeilautomater og overspenningsvern. Inkluderer demontering, dokumentasjon og sluttkontroll.",
-    pris: 18500,
+      "Nytt skap med jordfeilautomater og overspenningsvern. Inkluderer 5 stk. sikringer, demontering, dokumentasjon og sluttkontroll.",
+    pris: 14990,
     enhet: "fra",
     kategori: "Sikringsskap",
-    varighet: "6–10 timer",
-  },
-  {
-    id: "skap-enebolig",
-    navn: "Bytte av sikringsskap – enebolig",
-    beskrivelse:
-      "Større anlegg, flere kurser. Pris avhenger av eksisterende kabling og om hovedinntak må oppgraderes.",
-    pris: 24900,
-    enhet: "fra",
-    kategori: "Sikringsskap",
-    varighet: "1–2 dager",
+    varighet: "4–8 timer",
   },
   {
     id: "varmekabler-bad",
     navn: "Varmekabler – bad opp til 6 m²",
     beskrivelse:
       "Inkluderer kabel, termostat, kontroll og dokumentasjon. Avrettingsmasse gjøres av flislegger.",
-    pris: 7490,
+    pris: 8990,
     enhet: "fra",
     kategori: "Belysning",
     varighet: "3–5 timer",

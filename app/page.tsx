@@ -481,28 +481,15 @@ export default function Home() {
               </div>
             </details>
             <details className="faq-item">
-              <summary>Hva er inkludert i en el-kontroll?<span className="ico">+</span></summary>
-              <div className="answer">
-                <p>Vi sjekker sikringsskap, kurser, jordfeilbrytere og synlig installasjon. Du får en skriftlig rapport med eventuelle avvik og forslag til utbedring. Tar 1–2 timer for en vanlig leilighet, lengre for større boliger.</p>
-                <p>Anbefales særlig før boligsalg — manglende dokumentasjon kan koste deg på tilstandsgrad etter ny avhendingslov.</p>
-              </div>
-            </details>
-            <details className="faq-item">
               <summary>Jobber dere på hytte og fritidsbolig?<span className="ico">+</span></summary>
               <div className="answer">
                 <p>Ja, men vi tar primært hytter i Oslo, Bærum, Asker, Drammen og nedslagsfelt. For lengre reise legger vi til kjørekostnad — som vi sier ifra om på forhånd, ikke etterpå.</p>
               </div>
             </details>
             <details className="faq-item">
-              <summary>Er dere NELFO-godkjent og autorisert?<span className="ico">+</span></summary>
+              <summary>Er dere godkjent og autorisert?<span className="ico">+</span></summary>
               <div className="answer">
-                <p>Ja. Vi er registrert i Elvirksomhetsregisteret hos DSB, NELFO-medlem, og alle elektrikere har relevant fagbrev. Det er minimumskravet for å få jobbe lovlig som elektroinstallatør i Norge.</p>
-              </div>
-            </details>
-            <details className="faq-item">
-              <summary>Kan jeg betale med Vipps?<span className="ico">+</span></summary>
-              <div className="answer">
-                <p>Ja, vi tar Vipps for mindre serviceoppdrag. Større prosjekter faktureres med vanlig betalingsfrist (10 dager).</p>
+                <p>Ja. Vi er registrert i Elvirksomhetsregisteret hos DSB, medlem av NHO Elektro og Elektro Union, og alle elektrikere har relevant fagbrev. Det er minimumskravet for å få jobbe lovlig som elektroinstallatør i Norge.</p>
               </div>
             </details>
             <details className="faq-item">
@@ -638,7 +625,7 @@ export default function Home() {
                   <span className="sub">Elektro AS</span>
                 </div>
               </a>
-              <p>Autorisert elektroinstallasjonsbedrift. NELFO-godkjent. Bærum og Oslo.</p>
+              <p>Autorisert elektroinstallasjonsbedrift. NHO Elektro-godkjent. Bærum og Oslo.</p>
               <div className="foot-contact">
                 <a href="tel:90633118">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -685,6 +672,16 @@ export default function Home() {
               <p>Få tips om smarthus, elbillading og el-nyheter rett i innboksen.</p>
               <FooterNewsletter />
             </div>
+          </div>
+
+          <div className="foot-memberships">
+            <span className="foot-mem-label">Medlem av</span>
+            <div className="foot-mem-badges">
+              <span className="foot-mem-badge">NHO Elektro</span>
+              <span className="foot-mem-badge">Elektro Union</span>
+            </div>
+            <span className="foot-mem-divider" />
+            <span className="foot-boligmappa">All dokumentasjon lastes opp i <strong>Boligmappa</strong></span>
           </div>
 
           <div className="foot-bottom">

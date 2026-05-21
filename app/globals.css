@@ -757,6 +757,13 @@ footer.foot { background: var(--bg-dark); color: white; padding: 64px 0 28px; }
 .foot-newsletter input:focus { outline: none; border-color: var(--red); background: rgba(255,255,255,0.08); }
 .foot-newsletter button { padding: 12px 18px; background: var(--red); color: white; border-radius: 8px; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.2s; }
 .foot-newsletter button:hover { background: var(--red-dark); }
+.foot-memberships { display: flex; align-items: center; gap: 16px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; }
+.foot-mem-label { font-size: 12px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.06em; }
+.foot-mem-badges { display: flex; gap: 8px; }
+.foot-mem-badge { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 4px 10px; }
+.foot-mem-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.12); }
+.foot-boligmappa { font-size: 12.5px; color: rgba(255,255,255,0.5); }
+.foot-boligmappa strong { color: rgba(255,255,255,0.8); }
 .foot-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: rgba(255,255,255,0.4); }
 .foot-bottom .left { display: flex; gap: 24px; flex-wrap: wrap; }
 @media (max-width: 980px) { .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; } }

@@ -45,7 +45,7 @@ export function PricingSection() {
             </div>
             <div className="pdh-meta">
               <strong>Gyldig fra Mai 2026</strong>
-              Alle priser eks. mva.
+              Alle priser inkl. mva.
             </div>
           </div>
 
@@ -60,59 +60,41 @@ export function PricingSection() {
           <div className="price-row has-tag">
             <div className="info">
               <h4>Elbillader — standard installasjon</h4>
-              <p>Hjemmelader i garasje/carport. Inkluderer kabling fra sikringsskap, vern, dokumentasjon og idriftsettelse.</p>
+              <p>Hjemmelader i garasje/carport. Inkluderer kabling fra sikringsskap, vern, dokumentasjon og idriftsettelse. <strong>Lader/ladeboks er ikke inkludert i prisen.</strong></p>
             </div>
             <span className="time">2–4 timer</span>
-            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 9 990</div></div>
+            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 12 490</div></div>
             <CartBtn id="elbil-standard" tag="Mest bestilt" />
           </div>
           <div className="price-row">
             <div className="info">
               <h4>Elbillader — kompleks installasjon</h4>
-              <p>Krevende kabelføring, kursoppgradering, eller montering i borettslag/parkeringskjeller.</p>
+              <p>Krevende kabelføring, kursoppgradering, eller montering i borettslag/parkeringskjeller. <strong>Lader/ladeboks er ikke inkludert i prisen.</strong></p>
             </div>
             <span className="time">4–8 timer</span>
-            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 14 900</div></div>
+            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 18 490</div></div>
             <CartBtn id="elbil-komplex" />
           </div>
 
           <div className="price-section-label">Sikringsskap</div>
           <div className="price-row">
             <div className="info">
-              <h4>Bytte av sikringsskap — leilighet</h4>
-              <p>Nytt skap med jordfeilautomater og overspenningsvern. Inkluderer demontering, dokumentasjon og sluttkontroll.</p>
+              <h4>Rehabilitering av sikringsskap</h4>
+              <p>Nytt skap med jordfeilautomater og overspenningsvern. Inkluderer 5 stk. sikringer, demontering, dokumentasjon og sluttkontroll.</p>
             </div>
-            <span className="time">6–10 timer</span>
-            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 18 500</div></div>
+            <span className="time">4–8 timer</span>
+            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 14 990</div></div>
             <CartBtn id="skap-leilighet" />
           </div>
-          <div className="price-row">
-            <div className="info">
-              <h4>Bytte av sikringsskap — enebolig</h4>
-              <p>Større anlegg, flere kurser. Pris avhenger av eksisterende kabling og om hovedinntak må oppgraderes.</p>
-            </div>
-            <span className="time">1–2 dager</span>
-            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 24 900</div></div>
-            <CartBtn id="skap-enebolig" />
-          </div>
 
-          <div className="price-section-label">Service &amp; kontroll</div>
-          <div className="price-row">
-            <div className="info">
-              <h4>El-sjekk bolig</h4>
-              <p>Gjennomgang av sikringsskap, kurser, jordfeilbrytere og synlig installasjon. Skriftlig rapport med eventuelle avvik.</p>
-            </div>
-            <span className="time">1–2 timer</span>
-            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 2 990</div></div>
-            <CartBtn id="elkontroll-bolig" />
-          </div>
+          <div className="price-section-label">Service</div>
           <div className="price-row">
             <div className="info">
               <h4>Feilsøking &amp; retting</h4>
               <p>Diagnose og utbedring av elektrisk feil. Pris inkluderer oppmøte, kjøring og dokumentasjon.</p>
             </div>
             <span className="time">Avhenger av feil</span>
-            <div className="pr"><div className="fra">PER TIME</div><div className="amt">kr 1 490</div></div>
+            <div className="pr"><div className="fra">PER TIME</div><div className="amt">kr 1 200</div><div style={{ fontSize: 11, color: 'var(--text-faint)', marginTop: 2 }}>950 eks. mva</div></div>
             <CartBtn id="feilsok-time" />
           </div>
 
@@ -123,7 +105,7 @@ export function PricingSection() {
               <p>Montering inkludert hulltakfresing og kabling. Spotlights ikke inkludert.</p>
             </div>
             <span className="time">2–4 timer</span>
-            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 5 990</div></div>
+            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 6 490</div></div>
             <CartBtn id="downlight-5" />
           </div>
           <div className="price-row">
@@ -141,7 +123,7 @@ export function PricingSection() {
               <p>Inkluderer kabel, termostat, kontroll og dokumentasjon. Avrettingsmasse gjøres av flislegger.</p>
             </div>
             <span className="time">3–5 timer</span>
-            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 7 490</div></div>
+            <div className="pr"><div className="fra">FRA</div><div className="amt">kr 8 990</div></div>
             <CartBtn id="varmekabler-bad" />
           </div>
 
@@ -150,7 +132,7 @@ export function PricingSection() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
               </svg>
-              <span>Alle priser eks. mva. Materiell etter avtale. Befaring eller videovurdering før endelig pris.</span>
+              <span>Alle priser inkl. mva. Materiell etter avtale. Befaring eller videovurdering før endelig pris.</span>
             </div>
             <span className="pdf-stamp">Ingen skjulte tillegg</span>
           </div>
