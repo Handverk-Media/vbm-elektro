@@ -48,11 +48,11 @@ export function MobileNav() {
             </div>
 
             <nav className="mobile-nav-links">
-              <a href="#tjenester" onClick={close}>Tjenester</a>
-              <a href="#priser" onClick={close}>Priser</a>
-              <a href="#prosess" onClick={close}>Slik gjør vi det</a>
-              <a href="#faq" onClick={close}>FAQ</a>
-              <a href="#kontakt" onClick={close}>Kontakt</a>
+              <a href="/#tjenester" onClick={close}>Tjenester</a>
+              <a href="/#priser" onClick={close}>Priser</a>
+              <a href="/#prosess" onClick={close}>Slik gjør vi det</a>
+              <a href="/#faq" onClick={close}>FAQ</a>
+              <a href="/#kontakt" onClick={close}>Kontakt</a>
             </nav>
 
             <div className="mobile-nav-cta">
@@ -60,7 +60,7 @@ export function MobileNav() {
                 <span className="pulse" />
                 90 63 31 18
               </a>
-              <a href="#kontakt" className="btn btn-red" style={{ width: '100%', justifyContent: 'center' }} onClick={close}>
+              <a href="/#kontakt" className="btn btn-red" style={{ width: '100%', justifyContent: 'center' }} onClick={close}>
                 Få tilbud <span className="arr">→</span>
               </a>
               <a href="/book" className="btn btn-ghost" style={{ width: '100%', justifyContent: 'center' }} onClick={close}>
