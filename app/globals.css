@@ -746,8 +746,9 @@ footer.foot { background: var(--bg-dark); color: white; padding: 64px 0 28px; }
 .foot-logo .foot-contact a:hover { color: var(--red); }
 .foot-logo .foot-contact a svg { width: 16px; height: 16px; color: var(--red); flex-shrink: 0; }
 .foot-col h5 { font-size: 14px; font-weight: 600; margin-bottom: 18px; color: white; font-family: var(--body); letter-spacing: 0; text-transform: none; }
-.foot-col a, .foot-col p { display: block; font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 10px; transition: color 0.2s; text-decoration: none; }
-.foot-col a:hover { color: white; }
+.foot-col a, .foot-col p, .foot-col button { display: block; font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 10px; transition: color 0.2s; text-decoration: none; }
+.foot-col a:hover, .foot-col button:hover { color: white; }
+.foot-col button { background: none; border: none; padding: 0; cursor: pointer; text-align: left; font-family: inherit; }
 .foot-col .foot-meta { margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 13px; color: rgba(255,255,255,0.45); }
 .foot-newsletter h5 { font-size: 14px; font-weight: 600; color: white; margin-bottom: 6px; }
 .foot-newsletter p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.5; margin-bottom: 16px; max-width: 280px; }
