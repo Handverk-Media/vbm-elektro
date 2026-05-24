@@ -5,6 +5,7 @@ import { FooterNewsletter } from '@/components/FooterNewsletter'
 import { MobileNav } from '@/components/MobileNav'
 import { PricingSection } from '@/components/PricingSection'
 import { BefaringCTA } from '@/components/BefaringCTA'
+import { HomeNavLinks, ScrollLink } from '@/components/HomeNavLinks'
 
 export default function Home() {
   return (
@@ -24,19 +25,13 @@ export default function Home() {
               <span className="sub">Elektro AS</span>
             </div>
           </a>
-          <div className="nav-links">
-            <a href="#tjenester">Tjenester</a>
-            <a href="#priser">Priser</a>
-            <a href="#prosess">Slik gjør vi det</a>
-            <a href="#faq">FAQ</a>
-            <a href="#kontakt">Kontakt</a>
-          </div>
+          <HomeNavLinks />
           <div className="nav-right">
             <a href="tel:90633118" className="nav-phone">
               <span className="pulse" />
               90 63 31 18
             </a>
-            <a href="#kontakt" className="btn btn-red">Få tilbud <span className="arr">→</span></a>
+            <ScrollLink id="kontakt" className="btn btn-red">Få tilbud <span className="arr">→</span></ScrollLink>
             <MobileNav />
           </div>
         </div>
@@ -68,7 +63,7 @@ export default function Home() {
                 VBM Elektro er bygget for folk som vil ha en ryddig prosess fra første kontakt til ferdig jobb. Fastpris før vi starter. God kommunikasjon underveis. Ingen overraskelser på slutten.
               </p>
               <div className="hero-cta">
-                <a href="#kontakt" className="btn btn-red">Be om tilbud <span className="arr">→</span></a>
+                <ScrollLink id="kontakt" className="btn btn-red">Be om tilbud <span className="arr">→</span></ScrollLink>
                 <BefaringCTA />
               </div>
               <div className="hero-meta">
@@ -210,7 +205,7 @@ export default function Home() {
               </div>
               <h3>Ferdig montert elbillader med dokumentasjon inkludert.</h3>
               <p>Vi monterer Zaptec, Easee og andre kjente merker — klart til bruk samme dag i de fleste tilfeller.</p>
-              <a href="#kontakt" className="arrow-link">Få tilbud på elbillader <span className="a">→</span></a>
+              <ScrollLink id="kontakt" className="arrow-link">Få tilbud på elbillader <span className="a">→</span></ScrollLink>
             </div>
 
             <div className="b-card tr1 red" data-reveal>
@@ -223,7 +218,7 @@ export default function Home() {
               </div>
               <h3>Serviceoppdrag</h3>
               <p>Sikringer som ryker, stikkontakter som ikke virker eller ting som bare må fikses. Vi kommer, finner feilen og ordner det.</p>
-              <a href="#kontakt" className="arrow-link">Bestill hjelp <span className="a">→</span></a>
+              <ScrollLink id="kontakt" className="arrow-link">Bestill hjelp <span className="a">→</span></ScrollLink>
             </div>
 
             <div className="b-card tr2 warm" data-reveal>
@@ -236,7 +231,7 @@ export default function Home() {
               </div>
               <h3>Smarthus</h3>
               <p>Lys, dimmere og styring som faktisk er enkelt å bruke. Vi hjelper deg med smarte løsninger uten å gjøre det mer komplisert enn det trenger å være.</p>
-              <a href="#kontakt" className="arrow-link">Få tilbud <span className="a">→</span></a>
+              <ScrollLink id="kontakt" className="arrow-link">Få tilbud <span className="a">→</span></ScrollLink>
             </div>
 
             <div className="b-card br1" data-reveal>
@@ -249,7 +244,7 @@ export default function Home() {
               </div>
               <h3>Oppussing</h3>
               <p>Nytt kjøkken, bad, tilbygg eller totalrenovering. Vi samarbeider med de andre fagene og holder ting ryddig underveis.</p>
-              <a href="#kontakt" className="arrow-link">Få tilbud <span className="a">→</span></a>
+              <ScrollLink id="kontakt" className="arrow-link">Få tilbud <span className="a">→</span></ScrollLink>
             </div>
 
             <div className="b-card br2 warmer" data-reveal>
@@ -261,7 +256,7 @@ export default function Home() {
               </div>
               <h3>Feilsøking</h3>
               <p>Noe som lukter brent? Strøm som forsvinner? Kurser som går hele tiden? Vi finner problemet og forklarer hva som må gjøres før vi starter.</p>
-              <a href="#kontakt" className="arrow-link">Få hjelp <span className="a">→</span></a>
+              <ScrollLink id="kontakt" className="arrow-link">Få hjelp <span className="a">→</span></ScrollLink>
             </div>
 
             <div className="b-card br3" data-reveal>
@@ -274,7 +269,7 @@ export default function Home() {
               </div>
               <h3>Næringsbygg</h3>
               <p>For sameier, butikker, kontorer og entreprenører som trenger en elektriker som følger opp. Fast kontaktperson, tydelig kommunikasjon.</p>
-              <a href="#kontakt" className="arrow-link">Snakk med oss <span className="a">→</span></a>
+              <ScrollLink id="kontakt" className="arrow-link">Snakk med oss <span className="a">→</span></ScrollLink>
             </div>
           </div>
           <div style={{ textAlign: 'center', marginTop: 48 }} data-reveal>
@@ -645,19 +640,19 @@ export default function Home() {
 
             <div className="foot-col">
               <h5>Tjenester</h5>
-              <a href="#tjenester">Elbillader</a>
-              <a href="#tjenester">Serviceoppdrag</a>
-              <a href="#tjenester">Renovering</a>
-              <a href="#tjenester">Smarthus</a>
-              <a href="#tjenester">Feilsøking</a>
-              <a href="#tjenester">Næringsbygg</a>
+              <ScrollLink id="tjenester">Elbillader</ScrollLink>
+              <ScrollLink id="tjenester">Serviceoppdrag</ScrollLink>
+              <ScrollLink id="tjenester">Renovering</ScrollLink>
+              <ScrollLink id="tjenester">Smarthus</ScrollLink>
+              <ScrollLink id="tjenester">Feilsøking</ScrollLink>
+              <ScrollLink id="tjenester">Næringsbygg</ScrollLink>
             </div>
 
             <div className="foot-col">
               <h5>Info</h5>
               <a href="/om-oss">Om oss</a>
               <a href="/blogg">Blogg</a>
-              <a href="#kontakt">Kontakt oss</a>
+              <ScrollLink id="kontakt">Kontakt oss</ScrollLink>
               <a href="/personvern">Personvern</a>
               <a href="/nyhetsbrev">Nyhetsbrev</a>
               <a href="https://www.mittanbud.no" target="_blank" rel="noopener noreferrer">Mittanbud-profil ↗</a>
