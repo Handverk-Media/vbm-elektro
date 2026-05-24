@@ -15,7 +15,7 @@ export default function BookPage() {
     e.preventDefault()
     setLaster(true)
     const fd = new FormData(e.currentTarget)
-    await fetch("/api/befaring-lead", {
+    await fetch("/api/book-befaring", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Object.fromEntries(fd)),
