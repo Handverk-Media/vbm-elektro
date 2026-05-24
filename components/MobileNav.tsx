@@ -1,8 +1,19 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+
+const SECTIONS = [
+  { label: 'Tjenester', id: 'tjenester' },
+  { label: 'Priser', id: 'priser' },
+  { label: 'Slik gjør vi det', id: 'prosess' },
+  { label: 'FAQ', id: 'faq' },
+  { label: 'Kontakt', id: 'kontakt' },
+]
 
 export function MobileNav() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === '/'
 
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden'
@@ -11,6 +22,16 @@ export function MobileNav() {
   }, [open])
 
   const close = () => setOpen(false)
+
+  function handleSectionClick(e: React.MouseEvent, id: string) {
+    if (isHome) {
+      e.preventDefault()
+      close()
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      close()
+    }
+  }
 
   return (
     <>
@@ -48,11 +69,17 @@ export function MobileNav() {
             </div>
 
             <nav className="mobile-nav-links">
-              <a href="/#tjenester" onClick={close}>Tjenester</a>
-              <a href="/#priser" onClick={close}>Priser</a>
-              <a href="/#prosess" onClick={close}>Slik gjør vi det</a>
-              <a href="/#faq" onClick={close}>FAQ</a>
-              <a href="/#kontakt" onClick={close}>Kontakt</a>
+              {SECTIONS.map(({ label, id }) => (
+                <a
+                  key={id}
+                  href={`/#${id}`}
+                  onClick={(e) => handleSectionClick(e, id)}
+                >
+                  {label}
+                </a>
+              ))}
+              <a href="/blogg" onClick={close}>Blogg</a>
+              <a href="/om-oss" onClick={close}>Om oss</a>
             </nav>
 
             <div className="mobile-nav-cta">
@@ -60,7 +87,12 @@ export function MobileNav() {
                 <span className="pulse" />
                 90 63 31 18
               </a>
-              <a href="/#kontakt" className="btn btn-red" style={{ width: '100%', justifyContent: 'center' }} onClick={close}>
+              <a
+                href="/#kontakt"
+                className="btn btn-red"
+                style={{ width: '100%', justifyContent: 'center' }}
+                onClick={(e) => handleSectionClick(e, 'kontakt')}
+              >
                 Få tilbud <span className="arr">→</span>
               </a>
               <a href="/book" className="btn btn-ghost" style={{ width: '100%', justifyContent: 'center' }} onClick={close}>
