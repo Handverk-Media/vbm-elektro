@@ -1,9 +1,17 @@
 "use client"
 
-import Script from "next/script"
+import { useEffect } from "react"
 import { SiteHeader } from "@/components/SiteHeader"
 
 export default function SkjemaTestPage() {
+  useEffect(() => {
+    const script = document.createElement("script")
+    script.src = "https://api.handverkmedia.no/js/form_embed.js"
+    script.async = true
+    document.body.appendChild(script)
+    return () => { document.body.removeChild(script) }
+  }, [])
+
   return (
     <div className="subpage">
       <SiteHeader />
@@ -28,7 +36,6 @@ export default function SkjemaTestPage() {
           />
         </div>
       </div>
-      <Script src="https://api.handverkmedia.no/js/form_embed.js" strategy="afterInteractive" />
     </div>
   )
 }
