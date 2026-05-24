@@ -37,7 +37,7 @@ export default function BookPage() {
                 </svg>
                 <span>Gratis · Uforpliktende</span>
               </div>
-              <h1>Book befaring</h1>
+              <h1>Gratis Befaring</h1>
               <p>{steg === "form" ? "Fyll inn info — velg tid i neste steg" : "Velg tidspunkt som passer deg"}</p>
             </div>
 
