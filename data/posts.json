@@ -1,5 +1,121 @@
 [
   {
+    "slug": "sikringsskap-oppgradering-nar-er-det-nodvendig",
+    "tittel": "Sikringsskap oppgradering: Når er det nødvendig?",
+    "beskrivelse": "Lurer du på om sikringsskapet bør byttes? Se tegn på at oppgradering er nødvendig, hva det koster og hvilke krav som gjelder i 2026.",
+    "kategori": "Sikkerhet",
+    "dato": "2026-05-25",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Sikringsskapet er hjertet i boligens elektriske anlegg. Det fordeler strøm til alle kursene i huset og skal beskytte både mennesker og bygning mot feil. Mange norske boliger har imidlertid sikringsskap som er flere tiår gamle, og som ikke er bygget for dagens strømforbruk med elbillader, varmepumpe, induksjonstopp og en rekke smarte apparater. Men når er det egentlig nødvendig å oppgradere, og hva innebærer en slik jobb?"
+      },
+      {
+        "type": "h2",
+        "tekst": "Tegn på at sikringsskapet bør oppgraderes"
+      },
+      {
+        "type": "p",
+        "tekst": "Det er sjelden ett enkelt symptom som avgjør om sikringsskapet må byttes – ofte er det en kombinasjon av alder, slitasje og endret bruk. Som autorisert elektrikerbedrift i Bærum, Oslo, Asker og Drammen ser VBM Elektro stadig at sikringsskap fra 80- og 90-tallet ikke lenger holder mål for moderne boliger."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Du har fortsatt skrusikringer eller keramiske sikringer",
+          "Sikringer går ofte, særlig når flere apparater brukes samtidig",
+          "Skapet mangler jordfeilbryter (eller har bare én felles for hele boligen)",
+          "Du planlegger å installere elbillader, varmepumpe eller solceller",
+          "Skapet lukter brent, har misfarging eller varme komponenter",
+          "Boligen er bygget før 1995 og skapet aldri er oppgradert"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvorfor moderne sikringsskap er tryggere"
+      },
+      {
+        "type": "p",
+        "tekst": "Et moderne sikringsskap har automatsikringer og jordfeilautomater på hver enkelt kurs. Det betyr at en feil på badet ikke slår ut strømmen i hele boligen, og at risikoen for brann og elektrisk sjokk reduseres betydelig. Jordfeilautomater bryter strømmen i løpet av millisekunder dersom det oppstår en jordfeil – noe som kan være livreddende."
+      },
+      {
+        "type": "p",
+        "tekst": "I tillegg er nye skap dimensjonert for høyere belastning og forberedt for fremtidige behov som elbillading, energistyring og solceller. Mange bruker også overspenningsvern, som beskytter elektronikk mot lynnedslag og spenningstopper fra strømnettet."
+      },
+      {
+        "type": "h2",
+        "tekst": "Krav og regelverk i 2026"
+      },
+      {
+        "type": "p",
+        "tekst": "Selv om det ikke er lovpålagt å oppgradere et eksisterende sikringsskap som fungerer, stiller NEK 400 strenge krav til nye installasjoner. Skal du installere ny kurs til for eksempel elbillader, må denne ha jordfeilbeskyttelse. I praksis betyr det at mange velger å oppgradere hele skapet samtidig, fordi det blir både rimeligere og tryggere på sikt."
+      },
+      {
+        "type": "p",
+        "tekst": "Forsikringsselskaper kan også stille krav til elektrisk anlegg ved skadeoppgjør. Et utdatert sikringsskap kan i verste fall påvirke utbetalingen dersom det oppstår brann med elektrisk årsak."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva koster en oppgradering?"
+      },
+      {
+        "type": "p",
+        "tekst": "Prisen avhenger av størrelse på boligen, antall kurser, plassering av skapet og om det skal utvides med nye kurser. En enkel utskifting i enebolig ligger typisk i området 25 000–45 000 kroner, mens mer omfattende jobber med nye kurser og forberedelse for elbillader eller solceller kan bli høyere."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Type oppgradering",
+          "Omtrentlig pris fra"
+        ],
+        "rows": [
+          [
+            "Bytte av eksisterende skap (1:1)",
+            "25 000 kr"
+          ],
+          [
+            "Nytt skap med jordfeilautomater på alle kurser",
+            "30 000 kr"
+          ],
+          [
+            "Skap med utvidelse og forberedelse for elbillader",
+            "35 000 kr"
+          ],
+          [
+            "Større anlegg med energistyring/solceller",
+            "Etter befaring"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik foregår jobben"
+      },
+      {
+        "type": "p",
+        "tekst": "En oppgradering utføres alltid av autorisert elektriker. Strømmen kobles fra, det gamle skapet demonteres, og nytt skap monteres med moderne automatsikringer og jordfeilautomater. Eksisterende kurser kobles inn på nytt, merkes tydelig, og hele anlegget testes før det settes i drift. Du får samsvarserklæring som dokumentasjon."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Befaring og kartlegging av eksisterende anlegg",
+          "Tilbud med spesifikasjon av kurser og komponenter",
+          "Avtalt installasjonsdag – strømmen er borte 4–8 timer",
+          "Test, merking og overlevering med samsvarserklæring"
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Skal du uansett pusse opp, installere elbillader eller bygge på? Da er det ofte fornuftig å ta sikringsskapet samtidig. VBM Elektro utfører befaringer i hele Bærum, Asker, Oslo og Drammen, og kan gi en konkret vurdering av hva som er nødvendig for nettopp ditt anlegg."
+      },
+      {
+        "type": "cta",
+        "tekst": "Usikker på om sikringsskapet ditt bør oppgraderes? Bestill en uforpliktende befaring fra VBM Elektro i dag."
+      }
+    ]
+  },
+  {
     "slug": "varmekabel-pa-bad-alt-du-trenger-a-vite",
     "tittel": "Varmekabel på bad: Alt du trenger å vite",
     "beskrivelse": "Komplett guide til varmekabel på bad: typer, montering, effekt, pris og regler. Råd fra autorisert elektriker i Bærum, Oslo og Asker.",
