@@ -1,5 +1,137 @@
 [
   {
+    "slug": "stikkontakter-i-boligen-montering-antall-og-riktig-plassering",
+    "tittel": "Stikkontakter i boligen: Montering, antall og riktig plassering",
+    "beskrivelse": "Lurer du på hvor mange stikkontakter du trenger og hvor de bør plasseres? Komplett guide til montering, krav og smarte løsninger i boligen.",
+    "kategori": "Renovering",
+    "dato": "2026-05-28",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Stikkontakter er noe vi bruker hver eneste dag, men som de færreste tenker nøye over før de mangler en på riktig sted. Antall, plassering og montering av stikkontakter har stor betydning for både hverdagskomfort, brannsikkerhet og verdien på boligen. I denne guiden går vi gjennom hva som er anbefalt for ulike rom, hva regelverket sier, og hvilke grep du bør tenke på ved nybygg eller oppussing."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvor mange stikkontakter trenger du?"
+      },
+      {
+        "type": "p",
+        "tekst": "Det finnes ingen lovpålagt minimumsregel for antall stikkontakter i en bolig, men NEK 400 anbefaler et antall som gjør at boligen kan brukes praktisk uten bruk av skjøteledninger. Skjøteledninger er en av de vanligste årsakene til boligbranner i Norge, og god planlegging i forkant kan redusere risikoen betydelig."
+      },
+      {
+        "type": "p",
+        "tekst": "Som tommelfingerregel anbefaler vi følgende minimumsantall per rom:"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Rom",
+          "Anbefalt antall stikkontakter"
+        ],
+        "rows": [
+          [
+            "Stue",
+            "8–12"
+          ],
+          [
+            "Soverom",
+            "4–6"
+          ],
+          [
+            "Kjøkken (benk + øvrig)",
+            "8–10"
+          ],
+          [
+            "Bad",
+            "2–3 (med jordfeilbryter)"
+          ],
+          [
+            "Gang/entré",
+            "2–4"
+          ],
+          [
+            "Kontor/arbeidsrom",
+            "6–8"
+          ],
+          [
+            "Kjeller/bod",
+            "2–4"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Tallene varierer etter rommets størrelse og bruksmønster. På et kjøkken med mange hvitevarer og småapparater bør du planlegge ekstra kurser og kontakter, mens en stue med TV-vegg, sofakrok og leselys raskt kan trenge flere kontakter enn man først tror."
+      },
+      {
+        "type": "h2",
+        "tekst": "Plassering: Tenk bruk, ikke bare estetikk"
+      },
+      {
+        "type": "p",
+        "tekst": "God plassering handler om å forutse hvordan rommet faktisk brukes. Det vanligste feilgrepet er at stikkontakter plasseres for tett ved gulvet eller bak møbler man senere ikke vil flytte på. Her er noen praktiske retningslinjer:"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Stue: Plasser kontakter ved sofagrupper, ved siden av TV-vegg og minst én på hver langvegg.",
+          "Kjøkken: Minst én dobbel kontakt per meter benkeplate, samt egne kurser til oppvaskmaskin, komfyr og kjøl/frys.",
+          "Soverom: Doble kontakter på hver side av sengen i sengehøyde (ca. 70–80 cm) er svært populært.",
+          "Bad: Stikkontakter må plasseres utenfor sone 2 (minst 60 cm fra dusj/badekar) og være beskyttet av jordfeilbryter.",
+          "Entré: Tenk på lading av elsykler, robotstøvsuger og julebelysning utendørs."
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Krav til montering og sikkerhet"
+      },
+      {
+        "type": "p",
+        "tekst": "All montering av faste stikkontakter skal utføres av en registrert elektroinstallatør. Dette er ikke noe du har lov til å gjøre selv, selv om det kan se enkelt ut. Feil utført installasjon kan gi alvorlige konsekvenser ved brann eller personskade, og kan også føre til at boligforsikringen ikke dekker skader."
+      },
+      {
+        "type": "p",
+        "tekst": "Sentrale krav fra NEK 400 inkluderer:"
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Alle nye stikkontakter skal være beskyttet av jordfeilbryter (RCD).",
+          "Stikkontakter i våtrom må ha riktig IP-klasse og plasseres utenfor definerte våtsoner.",
+          "Utendørs stikkontakter skal være minimum IP44 og helst beskyttet mot regn.",
+          "Antall kurser må dimensjoneres etter forventet belastning – kjøkken og våtrom har ofte egne kurser.",
+          "Stikkontakter skal monteres slik at de er lett tilgjengelige for bruker."
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Når bør du oppgradere eller utvide?"
+      },
+      {
+        "type": "p",
+        "tekst": "Bor du i en eldre bolig med få stikkontakter og ujordede uttak, bør du vurdere oppgradering. Ujordede kontakter (de runde, gamle uten metallklips) tilfredsstiller ikke dagens krav og bør byttes ved oppussing. Det samme gjelder dersom du opplever at sikringer går ofte – det kan tyde på at kursene er overbelastet."
+      },
+      {
+        "type": "p",
+        "tekst": "Hos VBM Elektro hjelper vi kunder i Bærum, Oslo, Asker og Drammen med både enkle utvidelser og helhetlig planlegging i forbindelse med renovering. Vi gir alltid en faglig vurdering av hvor mange kontakter du faktisk trenger, og hva som bør prioriteres for å få en trygg og fleksibel installasjon."
+      },
+      {
+        "type": "h2",
+        "tekst": "Smart planlegging gir bedre hverdag"
+      },
+      {
+        "type": "p",
+        "tekst": "Tenk gjennom hvordan du faktisk bruker rommene før du bestemmer plasseringen. Vurder også fremtidige behov: elbillader i garasjen, smarthusløsninger, hjemmekontor eller varmepumpe. Det er langt rimeligere å legge inn ekstra kontakter under en oppussing enn å trekke nye kabler i ettertid."
+      },
+      {
+        "type": "cta",
+        "tekst": "Trenger du flere stikkontakter eller skal du pusse opp? Kontakt VBM Elektro for befaring og uforpliktende tilbud."
+      }
+    ]
+  },
+  {
     "slug": "sikringsskap-oppgradering-nar-er-det-nodvendig",
     "tittel": "Sikringsskap oppgradering: Når er det nødvendig?",
     "beskrivelse": "Lurer du på om sikringsskapet bør byttes? Se tegn på at oppgradering er nødvendig, hva det koster og hvilke krav som gjelder i 2026.",
