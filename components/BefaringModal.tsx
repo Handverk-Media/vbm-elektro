@@ -47,7 +47,7 @@ export function BefaringModal({ open, onClose }: Props) {
   if (!open || !mounted) return null
 
   return createPortal(
-    <div className="bm-overlay" onClick={onClose}>
+    <div className="bm-overlay">
       <div className="bm-panel" role="dialog" aria-modal="true" aria-label="Book gratis befaring" onClick={e => e.stopPropagation()}>
         <button className="bm-close" onClick={onClose} aria-label="Lukk">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -97,6 +97,11 @@ export function BefaringModal({ open, onClose }: Props) {
               <div className="form-field">
                 <label htmlFor="bm-adresse">Adresse / område</label>
                 <input id="bm-adresse" name="adresse" type="text" placeholder="F.eks. Sandvika, Bærum" />
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="bm-notat">Notat <span style={{ fontWeight: 400, opacity: 0.6 }}>(valgfritt)</span></label>
+                <textarea id="bm-notat" name="notat" rows={3} placeholder="Beskriv kort hva jobben gjelder…" />
               </div>
 
               <button type="submit" className="btn btn-red form-submit" disabled={laster}>
