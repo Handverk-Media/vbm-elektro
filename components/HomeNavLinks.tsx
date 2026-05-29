@@ -13,11 +13,17 @@ const NAV_SECTIONS = [
 ]
 
 export function HomeNavLinks() {
+  const isHome = typeof window !== 'undefined' && window.location.pathname === '/'
+
   return (
     <div className="nav-links">
-      {NAV_SECTIONS.map(({ label, id }) => (
-        <button key={id} onClick={() => scrollTo(id)}>{label}</button>
-      ))}
+      {NAV_SECTIONS.map(({ label, id }) =>
+        isHome ? (
+          <button key={id} onClick={() => scrollTo(id)}>{label}</button>
+        ) : (
+          <a key={id} href={`/#${id}`}>{label}</a>
+        )
+      )}
       <a href="/kontakt">Kontakt</a>
       <a href="/befaring">Befaring</a>
       <a href="/blogg">Blogg</a>
