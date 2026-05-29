@@ -6,9 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader"
 
 const KALENDER_URL = "https://api.leadconnectorhq.com/widget/bookings/vbmelektro"
 
-export default function BookPage() {
+export default function BefaringPage() {
   const [laster, setLaster] = useState(false)
-
   const [steg, setSteg] = useState<"form" | "kalender">("form")
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
