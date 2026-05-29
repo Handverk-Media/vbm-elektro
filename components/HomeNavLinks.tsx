@@ -19,6 +19,7 @@ export function HomeNavLinks() {
         <button key={id} onClick={() => scrollTo(id)}>{label}</button>
       ))}
       <a href="/kontakt">Kontakt</a>
+      <a href="/blogg">Blogg</a>
     </div>
   )
 }
