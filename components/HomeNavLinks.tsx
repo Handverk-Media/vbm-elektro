@@ -10,7 +10,6 @@ const NAV_SECTIONS = [
   { label: 'Priser', id: 'priser' },
   { label: 'Slik gjør vi det', id: 'prosess' },
   { label: 'FAQ', id: 'faq' },
-  { label: 'Kontakt', id: 'kontakt' },
 ]
 
 export function HomeNavLinks() {
@@ -19,6 +18,7 @@ export function HomeNavLinks() {
       {NAV_SECTIONS.map(({ label, id }) => (
         <button key={id} onClick={() => scrollTo(id)}>{label}</button>
       ))}
+      <a href="/kontakt">Kontakt</a>
     </div>
   )
 }
