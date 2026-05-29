@@ -18,8 +18,8 @@ export function HomeNavLinks() {
       {NAV_SECTIONS.map(({ label, id }) => (
         <button key={id} onClick={() => scrollTo(id)}>{label}</button>
       ))}
-      <a href="/befaring">Befaring</a>
       <a href="/kontakt">Kontakt</a>
+      <a href="/befaring">Befaring</a>
       <a href="/blogg">Blogg</a>
     </div>
   )
