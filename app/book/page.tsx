@@ -73,6 +73,10 @@ export default function BookPage() {
                     <label>Adresse / område</label>
                     <input name="adresse" type="text" placeholder="F.eks. Sandvika, Bærum" />
                   </div>
+                  <div className="form-field">
+                    <label>Notat <span style={{ fontWeight: 400, opacity: 0.6 }}>(valgfritt)</span></label>
+                    <textarea name="notat" rows={3} placeholder="Beskriv kort hva jobben gjelder…" />
+                  </div>
                   <button type="submit" disabled={laster} className="form-submit">
                     {laster ? "Sender…" : "Velg tidspunkt"}
                     {!laster && (
