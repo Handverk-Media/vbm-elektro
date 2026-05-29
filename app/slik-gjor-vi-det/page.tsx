@@ -53,22 +53,20 @@ export default function SlikGjorViDetPage() {
           </div>
         </section>
 
-        <section className="manifesto">
+        <section style={{ background: 'var(--bg-warm)', padding: '80px 0' }}>
           <div className="wrap">
-            <div className="lbl">Våre fire løfter</div>
-            <h2>Det du alltid kan forvente av oss</h2>
-            <div className="promise-grid">
+            <div style={{ marginBottom: 56 }}>
+              <div className="eyebrow" style={{ marginBottom: 12 }}>Våre fire løfter</div>
+              <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 700 }}>Det du alltid kan forvente av oss</h2>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 32 }}>
               {LOEFTER.map((l) => (
-                <div key={l.n} className="promise">
-                  <div className="n">{l.n}</div>
-                  <h3>{l.tittel}</h3>
-                  <p>{l.tekst}</p>
+                <div key={l.n} style={{ borderTop: '2px solid var(--red)', paddingTop: 20 }}>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--red)', fontWeight: 700, letterSpacing: '0.12em', marginBottom: 12 }}>{l.n}</div>
+                  <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10 }}>{l.tittel}</h3>
+                  <p style={{ color: 'var(--text-soft)', fontSize: 15, lineHeight: 1.6 }}>{l.tekst}</p>
                 </div>
               ))}
-            </div>
-            <div style={{ marginTop: 64, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              <BefaringCTA label="Book gratis befaring" className="btn btn-red" />
-              <a href="tel:90633118" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}>Ring 90 63 31 18</a>
             </div>
           </div>
         </section>
