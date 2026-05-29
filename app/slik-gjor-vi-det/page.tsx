@@ -66,21 +66,9 @@ export default function SlikGjorViDetPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section style={{ padding: '0 0 80px' }}>
-          <div className="wrap">
-            <div style={{ background: 'var(--bg-dark)', borderRadius: 16, padding: '48px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 24 }}>
-              <div>
-                <div className="eyebrow" style={{ color: 'var(--red)' }}>Klar til å komme i gang?</div>
-                <h2 style={{ color: 'white', marginTop: 12, fontSize: 'clamp(24px, 3vw, 36px)' }}>Start med en gratis befaring</h2>
-                <p style={{ color: 'rgba(255,255,255,0.65)', marginTop: 8 }}>Vi vurderer jobben og gir deg konkret pris — gratis og uforpliktende.</p>
-              </div>
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <BefaringCTA label="Book gratis befaring" className="btn btn-red" />
-                <a href="tel:90633118" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}>Ring 90 63 31 18</a>
-              </div>
+            <div style={{ marginTop: 64, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+              <BefaringCTA label="Book gratis befaring" className="btn btn-red" />
+              <a href="tel:90633118" className="btn btn-ghost" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}>Ring 90 63 31 18</a>
             </div>
           </div>
         </section>
