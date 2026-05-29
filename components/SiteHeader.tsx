@@ -1,92 +1,30 @@
-"use client"
+import { HomeNavLinks } from './HomeNavLinks'
+import { MobileNav } from './MobileNav'
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { useCart } from "@/context/CartContext"
-import { BEDRIFT } from "@/data/bedrift"
-import { trackPhoneClick } from "@/lib/analytics"
-
-const NAV_LINKS = [
-  { label: "Tjenester", id: "tjenester" },
-  { label: "Priser", id: "priser" },
-  { label: "Slik gjør vi det", id: "prosess" },
-  { label: "FAQ", id: "faq" },
-  { label: "Kontakt", id: "kontakt" },
-]
-
-interface Props {
-  homePage?: boolean
-}
-
-export function SiteHeader({ homePage = false }: Props) {
-  const { antall, setÅpen } = useCart()
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
-
-  function scrollTo(id: string) {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
-  }
-
+export function SiteHeader() {
   return (
-    <header className={`site-header${scrolled ? " sh-scrolled" : ""}`}>
-      <div className="sh-inner">
-        <Link
-          href="/"
-          onClick={homePage ? (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }) } : undefined}
-        >
-          <Image src="/logo.svg" alt="VBM Elektro" width={120} height={48} priority />
-        </Link>
-
-        <nav className="sh-nav">
-          {NAV_LINKS.map(({ label, id }) =>
-            id === "kontakt" ? (
-              <Link key={id} href="/kontakt">{label}</Link>
-            ) : homePage ? (
-              <button key={id} onClick={() => scrollTo(id)}>{label}</button>
-            ) : (
-              <Link key={id} href={`/#${id}`}>{label}</Link>
-            )
-          )}
-          <Link href="/blogg">Blogg</Link>
-        </nav>
-
-        <div className="sh-right">
-          <a
-            href={`tel:${BEDRIFT.telefon.replace(/\s/g, "")}`}
-            className="sh-phone"
-            onClick={() => trackPhoneClick("header")}
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 10.9a19.79 19.79 0 01-3.07-8.68A2 2 0 012.83 0h3a2 2 0 012 1.72c.128.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.98-.98a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-            </svg>
-            {BEDRIFT.telefon}
+    <nav className="top">
+      <div className="nav-inner">
+        <a href="/" className="logo">
+          <svg width="26" height="36" viewBox="0 0 175 340" aria-hidden="true">
+            <path d="M 60 0 L 130 0 L 100 130 L 165 130 L 40 340 L 95 195 L 10 195 Z" fill="#1A1A1A" />
+          </svg>
+          <div className="marks">
+            <span className="name">VBM</span>
+            <div className="div" />
+            <span className="sub">Elektro AS</span>
+          </div>
+        </a>
+        <HomeNavLinks />
+        <div className="nav-right">
+          <a href="tel:90633118" className="nav-phone">
+            <span className="pulse" />
+            90 63 31 18
           </a>
-
-          <button className="sh-cart" onClick={() => setÅpen(true)} aria-label="Åpne handlekurv">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <path d="M16 10a4 4 0 01-8 0" />
-            </svg>
-            {antall > 0 && <span className="sh-cart-badge">{antall}</span>}
-          </button>
-
-          <Link href="/befaring" className="sh-book">
-            Book befaring
-          </Link>
-
-          <Link href="/kontakt" className="sh-offer">
-            Få tilbud
-          </Link>
+          <a href="/befaring" className="btn btn-red">Book befaring <span className="arr">→</span></a>
+          <MobileNav />
         </div>
       </div>
-    </header>
+    </nav>
   )
 }
