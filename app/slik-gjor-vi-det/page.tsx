@@ -53,12 +53,10 @@ export default function SlikGjorViDetPage() {
           </div>
         </section>
 
-        <section style={{ padding: '80px 0', background: 'white' }}>
+        <section className="manifesto">
           <div className="wrap">
-            <div style={{ maxWidth: 720, margin: '0 auto 64px', textAlign: 'center' }}>
-              <div className="eyebrow" style={{ justifyContent: 'center', marginBottom: 16 }}>Våre fire løfter</div>
-              <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 700 }}>Det du alltid kan forvente av oss</h2>
-            </div>
+            <div className="lbl">Våre fire løfter</div>
+            <h2>Det du alltid kan forvente av oss</h2>
             <div className="promise-grid">
               {LOEFTER.map((l) => (
                 <div key={l.n} className="promise">
