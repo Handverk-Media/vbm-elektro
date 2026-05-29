@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { sendMail } from '@/lib/mail'
 
-const GHL_WEBHOOK = "https://services.leadconnectorhq.com/hooks/N3BOu2IUcQj6WVFJ2no2/webhook-trigger/c8dac68e-489a-4118-9c27-4eea37b4b870"
+const GHL_WEBHOOK = "https://services.leadconnectorhq.com/hooks/N3BOu2IUcQj6WVFJ2no2/webhook-trigger/d042da40-fdee-4314-8c9a-d4b0c0973c84"
 
 export async function POST(req: NextRequest) {
   const body = await req.json()
-  const { navn, telefon, epost, tjeneste, adresse } = body
+  const { navn, telefon, epost, tjeneste, adresse, notat } = body
 
   await fetch(GHL_WEBHOOK, {
     method: "POST",
@@ -17,6 +17,7 @@ export async function POST(req: NextRequest) {
       email: epost ?? "",
       service: tjeneste ?? "",
       address: adresse ?? "",
+      message: notat ?? "",
       source: "VBM Elektro – Befaring",
     }),
   }).catch((err) => console.error("GHL webhook feilet:", err))
@@ -32,6 +33,7 @@ export async function POST(req: NextRequest) {
           <tr><td><strong>E-post</strong></td><td>${epost ?? '—'}</td></tr>
           <tr><td><strong>Tjeneste</strong></td><td>${tjeneste ?? '—'}</td></tr>
           <tr><td><strong>Adresse</strong></td><td>${adresse ?? '—'}</td></tr>
+          <tr><td><strong>Notat</strong></td><td>${notat ?? '—'}</td></tr>
         </table>
       `
     )
