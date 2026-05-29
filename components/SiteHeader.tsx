@@ -46,7 +46,9 @@ export function SiteHeader({ homePage = false }: Props) {
 
         <nav className="sh-nav">
           {NAV_LINKS.map(({ label, id }) =>
-            homePage ? (
+            id === "kontakt" ? (
+              <Link key={id} href="/kontakt">{label}</Link>
+            ) : homePage ? (
               <button key={id} onClick={() => scrollTo(id)}>{label}</button>
             ) : (
               <Link key={id} href={`/#${id}`}>{label}</Link>
@@ -76,13 +78,13 @@ export function SiteHeader({ homePage = false }: Props) {
             {antall > 0 && <span className="sh-cart-badge">{antall}</span>}
           </button>
 
-          <a href={homePage ? "#kontakt" : "/#kontakt"} onClick={homePage ? (e) => { e.preventDefault(); scrollTo("kontakt") } : undefined} className="sh-book">
+          <Link href="/befaring" className="sh-book">
             Book befaring
-          </a>
+          </Link>
 
-          <a href={homePage ? "#kontakt" : "/#kontakt"} onClick={homePage ? (e) => { e.preventDefault(); scrollTo("kontakt") } : undefined} className="sh-offer">
+          <Link href="/kontakt" className="sh-offer">
             Få tilbud
-          </a>
+          </Link>
         </div>
       </div>
     </header>
