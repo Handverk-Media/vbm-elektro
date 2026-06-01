@@ -1,5 +1,122 @@
 [
   {
+    "slug": "feilsoking-av-elektrisk-anlegg-de-vanligste-problemene-og-hva-du-bor-gjore",
+    "tittel": "Feilsøking av elektrisk anlegg: De vanligste problemene og hva du bør gjøre",
+    "beskrivelse": "Sikring som slår ut, varme stikkontakter eller flimrende lys? Slik feilsøker du elektriske problemer i boligen – og når du må ringe elektriker.",
+    "kategori": "Sikkerhet",
+    "dato": "2026-06-01",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Et velfungerende elektrisk anlegg er noe de fleste tar for gitt – helt til noe slutter å virke. Sikringen slår ut gang på gang, en stikkontakt blir varm, eller lyset begynner å flimre uten åpenbar grunn. Slike symptomer kan virke ufarlige, men de er ofte boligens måte å varsle om underliggende feil. I denne guiden går vi gjennom de vanligste problemene i norske boliger, hvordan du kan gjenkjenne dem, og når det er på tide å koble inn en autorisert elektriker."
+      },
+      {
+        "type": "h2",
+        "tekst": "De mest vanlige tegnene på feil i anlegget"
+      },
+      {
+        "type": "p",
+        "tekst": "Mange elektriske problemer starter i det små og utvikler seg gradvis. Å kjenne igjen tidlige tegn kan både spare deg for penger og forebygge brann. Disse symptomene bør du være ekstra oppmerksom på:"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Sikringer eller jordfeilbryter som slår ut gjentatte ganger",
+          "Stikkontakter eller brytere som blir varme, misfarges eller lukter svidd",
+          "Lys som blinker, flimrer eller varierer i styrke",
+          "Knatrende lyder fra sikringsskap eller veggbokser",
+          "Strømstøt når du tar på hvitevarer eller springen",
+          "Eldre anlegg uten jordfeilbryter eller med skrusikringer"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva ligger bak de typiske feilene?"
+      },
+      {
+        "type": "p",
+        "tekst": "Bak symptomene finner vi som regel et fåtall gjengangere. Jordfeil oppstår når strøm finner veien til jord via en uønsket bane, ofte på grunn av fukt, slitt isolasjon eller defekte apparater. Overbelastning skjer når du kobler for mange effektkrevende enheter på samme kurs – typisk vannkoker, kaffetrakter og mikrobølgeovn i samme kontaktrekke på kjøkkenet. Løse koblinger i koblingsbokser, stikkontakter eller sikringsskap gir varmgang og er en av de hyppigste brannårsakene knyttet til el-anlegg."
+      },
+      {
+        "type": "p",
+        "tekst": "I tillegg ser vi ofte aldring av kabler og komponenter i boliger fra 70- og 80-tallet, der opprinnelig dimensjonering ikke lenger holder mål for dagens forbruk med induksjonstopp, varmepumpe og elbillader."
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik kan du feilsøke trygt selv"
+      },
+      {
+        "type": "p",
+        "tekst": "Det er noen enkle grep du kan gjøre på egen hånd før du ringer elektriker. Husk: du skal aldri åpne sikringsskap, koblingsbokser eller stikkontakter selv. Holder du deg til det synlige og det som kan plugges ut, er du på trygg grunn."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Trekk ut alle støpsler på den kursen som slår ut, og koble inn ett og ett apparat for å avdekke synderen",
+          "Sjekk om problemet bare oppstår i fuktige rom – det peker mot jordfeil i utstyr eller varmekabel",
+          "Test jordfeilbryteren med testknappen minst to ganger i året",
+          "Noter tidspunkt, hvilken kurs og hva som var i bruk når feilen oppstod",
+          "Inspeksjon visuelt: se etter brunsvidde stikkontakter, sprekker eller misfarging"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Når bør du kontakte elektriker?"
+      },
+      {
+        "type": "p",
+        "tekst": "Enkelte feil må håndteres av fagfolk – både av sikkerhetshensyn og fordi forsikringsselskapet krever det. Som tommelfingerregel bør du ringe en autorisert elektriker dersom symptomet gjentar seg, dersom det involverer varme eller lukt, eller dersom du ikke klarer å lokalisere kilden ved enkel feilsøking."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Symptom",
+          "Anbefalt tiltak"
+        ],
+        "rows": [
+          [
+            "Sikring slår ut sjelden ved tung last",
+            "Fordel utstyr på flere kurser"
+          ],
+          [
+            "Sikring slår ut uten forklaring",
+            "Ring elektriker – mulig jordfeil"
+          ],
+          [
+            "Varm stikkontakt",
+            "Koble fra umiddelbart, kontakt elektriker"
+          ],
+          [
+            "Lukt av svidd plast",
+            "Slå av hovedstrøm, ring elektriker straks"
+          ],
+          [
+            "Flimrende lys i hele boligen",
+            "Kan være feil hos nettselskap eller hovedinntak"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Hos VBM Elektro opplever vi at mange feil kunne vært unngått med en grundig elkontroll hvert femte år. En elkontroll avdekker skjulte feil før de blir farlige, og er ofte rimeligere enn å håndtere konsekvensene av en brann eller skadet elektronikk. Vi tilbyr feilsøking og elkontroll i Bærum, Oslo, Asker og Drammen, med priser fra kr 2 990."
+      },
+      {
+        "type": "h2",
+        "tekst": "Forebygging lønner seg"
+      },
+      {
+        "type": "p",
+        "tekst": "Den billigste feilen er den som aldri oppstår. Et oppdatert sikringsskap med automatsikringer og jordfeilbrytere på alle kurser, kombinert med en jevnlig elkontroll, gir både økt sikkerhet og lavere risiko. Eldre boliger med skrusikringer bør prioriteres – både fordi komponentene er aldrende, og fordi dagens strømforbruk ofte overskrider det anlegget ble dimensjonert for."
+      },
+      {
+        "type": "cta",
+        "tekst": "Mistenker du feil i anlegget? Ta kontakt med VBM Elektro for trygg feilsøking og elkontroll i Bærum, Oslo, Asker og Drammen."
+      }
+    ]
+  },
+  {
     "slug": "stikkontakter-i-boligen-montering-antall-og-riktig-plassering",
     "tittel": "Stikkontakter i boligen: Montering, antall og riktig plassering",
     "beskrivelse": "Lurer du på hvor mange stikkontakter du trenger og hvor de bør plasseres? Komplett guide til montering, krav og smarte løsninger i boligen.",
