@@ -1,7 +1,21 @@
 "use client"
 
+import { Suspense } from "react"
 import { CartProvider } from "@/context/CartContext"
+import { useGclid } from "@/hooks/useGclid"
+
+function GclidCapture() {
+  useGclid()
+  return null
+}
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  return <CartProvider>{children}</CartProvider>
+  return (
+    <CartProvider>
+      <Suspense fallback={null}>
+        <GclidCapture />
+      </Suspense>
+      {children}
+    </CartProvider>
+  )
 }

@@ -1,5 +1,6 @@
 import { HomeNavLinks } from './HomeNavLinks'
 import { MobileNav } from './MobileNav'
+import { PhoneLink } from './PhoneLink'
 
 export function SiteHeader() {
   return (
@@ -17,10 +18,10 @@ export function SiteHeader() {
         </a>
         <HomeNavLinks />
         <div className="nav-right">
-          <a href="tel:90633118" className="nav-phone">
+          <PhoneLink className="nav-phone" location="header">
             <span className="pulse" />
             90 63 31 18
-          </a>
+          </PhoneLink>
           <a href="/befaring" className="btn btn-red">Book befaring <span className="arr">→</span></a>
           <MobileNav />
         </div>

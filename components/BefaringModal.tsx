@@ -1,6 +1,8 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import { trackBefaringSubmit } from '@/lib/analytics'
+import { getStoredGclid } from '@/hooks/useGclid'
 
 const KALENDER_URL = 'https://api.leadconnectorhq.com/widget/bookings/vbmelektro'
 
@@ -35,11 +37,13 @@ export function BefaringModal({ open, onClose }: Props) {
     e.preventDefault()
     setLaster(true)
     const fd = new FormData(e.currentTarget)
+    const data = Object.fromEntries(fd)
     await fetch('/api/book-befaring', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.fromEntries(fd)),
+      body: JSON.stringify({ ...data, gclid: getStoredGclid() }),
     }).catch(() => {})
+    trackBefaringSubmit(data.tjeneste as string)
     setLaster(false)
     setStep('calendar')
   }

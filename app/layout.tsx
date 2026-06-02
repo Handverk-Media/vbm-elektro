@@ -113,16 +113,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           gtag('consent', 'default', {
             analytics_storage: 'denied',
             ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
           });
           var consent = localStorage.getItem('cookie-consent');
           if (consent === 'all') {
-            gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' });
+            gtag('consent', 'update', {
+              analytics_storage: 'granted',
+              ad_storage: 'granted',
+              ad_user_data: 'granted',
+              ad_personalization: 'granted',
+            });
           }
           gtag('js', new Date());
-          gtag('config', 'G-NCM4D5K2XN');
+          gtag('config', 'G-NCM4D5K2XN', { send_page_view: true });
+          ${process.env.NEXT_PUBLIC_GADS_ID ? `gtag('config', '${process.env.NEXT_PUBLIC_GADS_ID}');` : ''}
         `}</Script>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-NCM4D5K2XN"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-NCM4D5K2XN`}
           strategy="afterInteractive"
         />
         <Script

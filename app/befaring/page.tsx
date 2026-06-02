@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
 import { BEDRIFT } from '@/data/bedrift'
+import { trackBefaringSubmit } from '@/lib/analytics'
+import { getStoredGclid } from '@/hooks/useGclid'
 
 const KALENDER_URL = 'https://api.leadconnectorhq.com/widget/bookings/vbmelektro'
 
@@ -15,11 +17,13 @@ export default function BefaringPage() {
     e.preventDefault()
     setLaster(true)
     const fd = new FormData(e.currentTarget)
+    const data = Object.fromEntries(fd)
     await fetch('/api/book-befaring', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.fromEntries(fd)),
+      body: JSON.stringify({ ...data, gclid: getStoredGclid() }),
     }).catch(() => {})
+    trackBefaringSubmit(data.tjeneste as string)
     setLaster(false)
     setSteg('kalender')
   }
