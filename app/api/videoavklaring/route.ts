@@ -11,16 +11,13 @@ export async function POST(req: NextRequest) {
   const beskrivelse = fd.get('beskrivelse')?.toString() ?? ''
   const filer = fd.getAll('filer') as File[]
 
-  const rawPhone = telefon.replace(/\s/g, "")
-  const phone = rawPhone.startsWith("+") ? rawPhone : `+47${rawPhone}`
-
   await fetch(GHL_WEBHOOK, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       firstName: navn.split(" ")[0] ?? navn,
       lastName: navn.split(" ").slice(1).join(" ") || "",
-      phone,
+      phone: telefon,
       address: adresse,
       message: beskrivelse,
       source: "VBM Elektro – Videoavklaring",

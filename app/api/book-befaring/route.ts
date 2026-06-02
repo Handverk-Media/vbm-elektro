@@ -7,16 +7,13 @@ export async function POST(req: NextRequest) {
   const body = await req.json()
   const { navn, telefon, epost, tjeneste, adresse, notat, gclid } = body
 
-  const rawPhone = (telefon ?? "").replace(/\s/g, "")
-  const phone = rawPhone.startsWith("+") ? rawPhone : `+47${rawPhone}`
-
   await fetch(GHL_WEBHOOK, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       firstName: navn?.split(" ")[0] ?? navn,
       lastName: navn?.split(" ").slice(1).join(" ") || "",
-      phone,
+      phone: telefon,
       email: epost ?? "",
       service: tjeneste ?? "",
       address: adresse ?? "",
