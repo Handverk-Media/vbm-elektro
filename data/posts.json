@@ -1,5 +1,134 @@
 [
   {
+    "slug": "jordfeil-i-boligen-arsaker-farer-og-slik-loser-du-det",
+    "tittel": "Jordfeil i boligen: Årsaker, farer og slik løser du det",
+    "beskrivelse": "Jordfeil kan være farlig og koste deg dyrt i strømregning. Lær årsaker, faresignaler og hvordan en elektriker finner og løser jordfeil.",
+    "kategori": "Sikkerhet",
+    "dato": "2026-06-04",
+    "lesetid": 5,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Jordfeil er en av de vanligste – og mest oversette – feilene i norske boliger. Mange merker det først når jordfeilbryteren slår ut midt på natten, eller når strømregningen plutselig blir høyere enn vanlig. Men hva er egentlig en jordfeil, hvorfor oppstår den, og hvor farlig er det? I denne guiden går vi gjennom det du som boligeier bør vite, og hvordan en autorisert elektriker går frem for å finne og utbedre feilen."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva er en jordfeil?"
+      },
+      {
+        "type": "p",
+        "tekst": "En jordfeil oppstår når strøm lekker ut av det elektriske anlegget og finner en uønsket vei til jord. Det kan skje gjennom fukt, skadet isolasjon i en kabel, en defekt varmtvannsbereder eller en utslitt stikkontakt. Normalt skal all strøm gå tilbake gjennom returlederen, men ved en jordfeil forsvinner deler av strømmen ut i bygningsmasse, rør eller jordingssystemet."
+      },
+      {
+        "type": "p",
+        "tekst": "I norske boliger med IT-nett (det vanligste systemet) tolereres én jordfeil uten at sikringen slår ut. Men dersom det oppstår en jordfeil nummer to i en annen kurs, kan konsekvensene bli alvorlige – inkludert brann og elektrisk støt."
+      },
+      {
+        "type": "h2",
+        "tekst": "Vanlige årsaker til jordfeil"
+      },
+      {
+        "type": "p",
+        "tekst": "Jordfeil kan ha mange ulike årsaker, men noen går igjen hyppigere enn andre i boliger i Oslo, Bærum, Asker og Drammen:"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Fukt i utendørs stikkontakter, lyspunkter eller varmekabler",
+          "Gamle og slitte hvitevarer, særlig oppvaskmaskin, vaskemaskin og varmtvannsbereder",
+          "Skadet kabelisolasjon, ofte etter spikring, boring eller museskader",
+          "Defekte varmekabler i bad, gang eller innkjørsel",
+          "Feil i lysarmaturer, downlights eller transformatorer",
+          "Aldrende elektrisk anlegg fra før 1990-tallet"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvorfor er jordfeil farlig?"
+      },
+      {
+        "type": "p",
+        "tekst": "Selv om en jordfeil ikke alltid gir umiddelbare problemer, bør den aldri ignoreres. De viktigste farene er:"
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Brannfare – varmgang i skadet isolasjon kan antenne tre, isolasjonsmateriale eller støv",
+          "Risiko for elektrisk støt – metalldeler kan bli spenningsførende",
+          "Økt strømforbruk – lekkasjestrøm koster penger over tid",
+          "Skader på elektronikk og hvitevarer ved spenningsubalanse",
+          "Dobbel jordfeil kan føre til full kortslutning og strømbrudd"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Tegn på at du kan ha jordfeil"
+      },
+      {
+        "type": "p",
+        "tekst": "Det finnes flere signaler du bør være oppmerksom på. Hvis jordfeilbryteren slår ut gjentatte ganger, du føler svake støt fra metalldeler på hvitevarer, eller lyset blinker uten åpenbar grunn, kan det være tegn på jordfeil. Også en uforklarlig økning i strømregningen kan henge sammen med en lekkasjestrøm i anlegget."
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik finner elektrikeren jordfeilen"
+      },
+      {
+        "type": "p",
+        "tekst": "Å lete etter jordfeil er detektivarbeid. En autorisert elektriker bruker spesialinstrumenter som isolasjonsmåler (megger) og jordfeilsøker for å lokalisere problemet. Prosessen følger som regel disse trinnene:"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Trinn",
+          "Hva gjøres"
+        ],
+        "rows": [
+          [
+            "1. Måling i sikringsskap",
+            "Isolasjonsresistans måles på hver kurs"
+          ],
+          [
+            "2. Identifisering av kurs",
+            "Kursen med lavest motstand peker ut feilen"
+          ],
+          [
+            "3. Frakobling av punkter",
+            "Lamper, varmekabler og stikkontakter kobles ut for å snevre inn"
+          ],
+          [
+            "4. Utbedring",
+            "Defekt komponent eller kabel skiftes ut"
+          ],
+          [
+            "5. Kontrollmåling",
+            "Anlegget måles på nytt og dokumenteres"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Hos VBM Elektro bruker vi systematisk feilsøking og dokumenterer alle målinger i en sluttkontroll. Det gir deg som kunde trygghet for at anlegget er i orden – og at jordfeilen faktisk er funnet, ikke bare midlertidig forsvunnet."
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik forebygger du jordfeil"
+      },
+      {
+        "type": "p",
+        "tekst": "Du kan ikke garantere deg helt mot jordfeil, men du kan redusere risikoen betydelig. Regelmessig elkontroll hvert 5. år anbefales av forsikringsbransjen, og er spesielt viktig i eldre boliger. Sørg også for at utendørs stikkontakter har tett deksel, at varmekabler installeres av fagfolk, og at gamle hvitevarer byttes ut når de begynner å bli ustabile."
+      },
+      {
+        "type": "p",
+        "tekst": "En oppgradering av sikringsskapet med moderne jordfeilautomater på hver kurs gir også langt bedre beskyttelse enn ett samlet jordfeilrelé. Det gjør at du raskt ser hvilken kurs som har problemet, og resten av boligen påvirkes ikke."
+      },
+      {
+        "type": "cta",
+        "tekst": "Mistanke om jordfeil i boligen din? Ta kontakt med VBM Elektro for rask og grundig feilsøking i Oslo, Bærum, Asker og Drammen."
+      }
+    ]
+  },
+  {
     "slug": "feilsoking-av-elektrisk-anlegg-de-vanligste-problemene-og-hva-du-bor-gjore",
     "tittel": "Feilsøking av elektrisk anlegg: De vanligste problemene og hva du bør gjøre",
     "beskrivelse": "Sikring som slår ut, varme stikkontakter eller flimrende lys? Slik feilsøker du elektriske problemer i boligen – og når du må ringe elektriker.",
