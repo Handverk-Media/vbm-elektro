@@ -74,20 +74,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Floating invoice card */}
-          <div className="hero-card">
-            <div className="stamp">Som avtalt</div>
-            <div className="hd">
-              <div className="dot-row">
-                <span className="dot r" /><span className="dot y" /><span className="dot g" />
-              </div>
-              <span className="tag">Faktura #2641</span>
-            </div>
-            <div className="price-line"><span>Elbillader Zaptec Go</span><span>kr 9 990</span></div>
-            <div className="price-line"><span>Tilkobling sikringsskap</span><span>inkludert</span></div>
-            <div className="price-line"><span>Dokumentasjon</span><span>inkludert</span></div>
-            <div className="price-line"><span>Tillegg / overraskelser</span><span style={{ color: 'var(--green-ok)' }}>kr 0</span></div>
-            <div className="total"><span>Totalt</span><span>kr 9 990</span></div>
+          {/* Hero video */}
+          <div className="hero-video-wrap">
+            <video
+              src="/hero-video.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="hero-video"
+            />
           </div>
         </div>
       </section>
