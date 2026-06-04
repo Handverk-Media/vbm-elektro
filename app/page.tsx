@@ -39,6 +39,7 @@ export default function Home() {
 
       {/* ── Hero ────────────────────────────────── */}
       <section className="hero">
+        <video autoPlay muted loop playsInline className="hero-bg-video" src="/hero-video.mp4" />
         <svg className="hero-bolt" viewBox="0 0 175 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
           <path d="M 60 0 L 130 0 L 100 130 L 165 130 L 40 340 L 95 195 L 10 195 Z" />
         </svg>
@@ -74,17 +75,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero video */}
-          <div className="hero-video-wrap">
-            <video
-              src="/hero-video.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="hero-video"
-            />
-          </div>
         </div>
       </section>
 
