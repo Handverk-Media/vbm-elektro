@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { trackEvent } from '@/lib/analytics'
+import { getUtmParams } from '@/lib/utm'
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -22,6 +23,7 @@ export function ContactForm() {
           adresse: get('adresse'),
           tjeneste: get('kategori'),
           melding: get('melding'),
+          ...getUtmParams(),
         }),
       })
       if (res.ok) { trackEvent("generate_lead", { form_name: "kontaktskjema" }); setStatus('sent') } else { setStatus('error') }

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { trackBefaringSubmit } from '@/lib/analytics'
 import { getStoredGclid } from '@/hooks/useGclid'
+import { getUtmParams } from '@/lib/utm'
 
 const KALENDER_URL = 'https://api.leadconnectorhq.com/widget/bookings/vbmelektro'
 
@@ -41,7 +42,7 @@ export function BefaringModal({ open, onClose }: Props) {
     await fetch('/api/book-befaring', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...data, gclid: getStoredGclid() }),
+      body: JSON.stringify({ ...data, gclid: getStoredGclid(), ...getUtmParams() }),
     }).catch(() => {})
     trackBefaringSubmit(data.tjeneste as string)
     setLaster(false)

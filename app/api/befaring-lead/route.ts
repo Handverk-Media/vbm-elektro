@@ -5,7 +5,7 @@ const GHL_WEBHOOK = "https://services.leadconnectorhq.com/hooks/N3BOu2IUcQj6WVFJ
 
 export async function POST(req: NextRequest) {
   const body = await req.json()
-  const { navn, telefon, epost, tjeneste, adresse, melding } = body
+  const { navn, telefon, epost, tjeneste, adresse, melding, utm_source, utm_medium, utm_campaign, utm_term, utm_content } = body
 
   await fetch(GHL_WEBHOOK, {
     method: "POST",
@@ -19,6 +19,11 @@ export async function POST(req: NextRequest) {
       address: adresse ?? "",
       message: melding ?? "",
       source: "VBM Elektro – Kontaktskjema",
+      utm_source: utm_source ?? "",
+      utm_medium: utm_medium ?? "",
+      utm_campaign: utm_campaign ?? "",
+      utm_term: utm_term ?? "",
+      utm_content: utm_content ?? "",
     }),
   }).catch((err) => console.error("GHL webhook feilet:", err))
 

@@ -5,6 +5,7 @@ import "./globals.css"
 import { Providers } from "@/components/Providers"
 import { CartDrawer } from "@/components/CartDrawer"
 import { CookieConsent } from "@/components/CookieConsent"
+import { UtmCapture } from "@/components/UtmCapture"
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -106,6 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <CartDrawer />
           <CookieConsent />
+          <UtmCapture />
         </Providers>
         <Script id="gtag-consent-init" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
