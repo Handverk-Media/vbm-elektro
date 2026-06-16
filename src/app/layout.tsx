@@ -1,7 +1,10 @@
 import type { Metadata } from "next"
 import { Barlow_Condensed, Figtree } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 import { VBM } from "@/lib/vbm"
+import { GA4_ID } from "@/lib/gtag"
+import { CookieConsent } from "@/components/CookieConsent"
 
 const barlow = Barlow_Condensed({
   subsets: ["latin"],
@@ -84,12 +87,35 @@ export default function RootLayout({
       className={`${barlow.variable} ${figtree.variable}`}
     >
       <head>
+        {/* Consent Mode v2 — defaults must be set before gtag.js loads */}
+        <script dangerouslySetInnerHTML={{ __html: `
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  analytics_storage:'denied',
+  wait_for_update:500
+});
+        `}} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <CookieConsent />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-config" strategy="afterInteractive">{`
+gtag('js',new Date());
+gtag('config','${GA4_ID}');
+        `}</Script>
+      </body>
     </html>
   )
 }

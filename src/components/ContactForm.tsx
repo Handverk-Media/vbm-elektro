@@ -3,12 +3,22 @@
 import { useState } from "react"
 import { Phone, Send } from "lucide-react"
 import { VBM } from "@/lib/vbm"
+import { normalizePhoneNO } from "@/lib/gtag"
 
 export function ContactForm() {
   const [sent, setSent] = useState(false)
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    const form = e.currentTarget
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value.trim().toLowerCase()
+    const rawPhone = (form.elements.namedItem('phone') as HTMLInputElement).value.trim()
+    const phone = normalizePhoneNO(rawPhone)
+
+    // Enhanced Conversions for Leads — user_data must be set before the event
+    window.gtag?.('set', 'user_data', { email, phone_number: phone })
+    window.gtag?.('event', 'generate_lead')
+
     setSent(true)
   }
 
@@ -54,6 +64,7 @@ export function ContactForm() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
                 {[
                   { id: "name", label: "Navn", type: "text", autocomplete: "name", placeholder: "Ditt navn" },
+                  { id: "email", label: "E-post", type: "email", autocomplete: "email", placeholder: "din@epost.no" },
                   { id: "phone", label: "Telefon", type: "tel", autocomplete: "tel", placeholder: "Ditt telefonnummer" },
                 ].map((f) => (
                   <div key={f.id}>
