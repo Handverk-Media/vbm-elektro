@@ -8,6 +8,18 @@ import { normalizePhoneNO } from "@/lib/gtag"
 export function ContactForm() {
   const [sent, setSent] = useState(false)
 
+  // Push user_data on blur so it's in dataLayer before GTM fires generate_lead on submit
+  function handleUserDataBlur(e: React.FocusEvent<HTMLInputElement>) {
+    const form = e.currentTarget.form
+    if (!form) return
+    const email = (form.elements.namedItem('email') as HTMLInputElement)?.value?.trim().toLowerCase() ?? ''
+    const rawPhone = (form.elements.namedItem('phone') as HTMLInputElement)?.value?.trim() ?? ''
+    const userData: Record<string, string> = {}
+    if (email) userData.email = email
+    if (rawPhone) userData.phone_number = normalizePhoneNO(rawPhone)
+    if (Object.keys(userData).length) window.gtag?.('set', 'user_data', userData)
+  }
+
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const form = e.currentTarget
@@ -15,7 +27,7 @@ export function ContactForm() {
     const rawPhone = (form.elements.namedItem('phone') as HTMLInputElement).value.trim()
     const phone = normalizePhoneNO(rawPhone)
 
-    // Enhanced Conversions for Leads — user_data must be set before the event
+    // Ensure user_data is set (covers cases where blur didn't fire)
     window.gtag?.('set', 'user_data', { email, phone_number: phone })
     window.gtag?.('event', 'generate_lead')
 
@@ -63,9 +75,9 @@ export function ContactForm() {
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
                 {[
-                  { id: "name", label: "Navn", type: "text", autocomplete: "name", placeholder: "Ditt navn" },
-                  { id: "email", label: "E-post", type: "email", autocomplete: "email", placeholder: "din@epost.no" },
-                  { id: "phone", label: "Telefon", type: "tel", autocomplete: "tel", placeholder: "Ditt telefonnummer" },
+                  { id: "name", label: "Navn", type: "text", autocomplete: "name", placeholder: "Ditt navn", ecBlur: false },
+                  { id: "email", label: "E-post", type: "email", autocomplete: "email", placeholder: "din@epost.no", ecBlur: true },
+                  { id: "phone", label: "Telefon", type: "tel", autocomplete: "tel", placeholder: "Ditt telefonnummer", ecBlur: true },
                 ].map((f) => (
                   <div key={f.id}>
                     <label htmlFor={f.id} className="type-label text-ghost block mb-2">{f.label}</label>
@@ -76,6 +88,7 @@ export function ContactForm() {
                       required
                       autoComplete={f.autocomplete}
                       placeholder={f.placeholder}
+                      onBlur={f.ecBlur ? handleUserDataBlur : undefined}
                       className="w-full border border-border bg-white px-4 py-3 text-body text-coal placeholder-ghost rounded-md focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition"
                     />
                   </div>
