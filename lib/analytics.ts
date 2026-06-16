@@ -1,5 +1,12 @@
 const AW = process.env.NEXT_PUBLIC_GADS_ID // e.g. 'AW-123456789'
 
+export function normalizePhoneNO(raw: string): string {
+  const d = (raw || '').replace(/\D/g, '')
+  if (d.length === 8) return '+47' + d
+  if (d.startsWith('47') && d.length === 10) return '+' + d
+  return d ? '+' + d : ''
+}
+
 function gtag(...args: unknown[]) {
   if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

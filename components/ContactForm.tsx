@@ -1,7 +1,8 @@
 'use client'
 import { useState } from 'react'
-import { trackEvent } from '@/lib/analytics'
+import { trackEvent, normalizePhoneNO } from '@/lib/analytics'
 import { getUtmParams } from '@/lib/utm'
+import { getStoredGclid } from '@/hooks/useGclid'
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -23,10 +24,19 @@ export function ContactForm() {
           adresse: get('adresse'),
           tjeneste: get('kategori'),
           melding: get('melding'),
+          gclid: getStoredGclid(),
           ...getUtmParams(),
         }),
       })
-      if (res.ok) { trackEvent("generate_lead", { form_name: "kontaktskjema" }); setStatus('sent') } else { setStatus('error') }
+      if (res.ok) {
+        const epost = get('epost').trim().toLowerCase()
+        const tlf = normalizePhoneNO(get('telefon'))
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+          window.gtag('set', 'user_data', { email: epost, phone_number: tlf })
+        }
+        trackEvent("generate_lead", { form_name: "kontaktskjema" })
+        setStatus('sent')
+      } else { setStatus('error') }
     } catch {
       setStatus('error')
     }
