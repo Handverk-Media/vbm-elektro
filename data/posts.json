@@ -1,5 +1,132 @@
 [
   {
+    "slug": "lysstyring-og-dimmer-slik-far-du-smartere-belysning-hjemme",
+    "tittel": "Lysstyring og dimmer: Slik får du smartere belysning hjemme",
+    "beskrivelse": "Lær hvordan moderne lysstyring og dimmere fungerer, hvilke løsninger som passer for ditt hjem, og hva en elektriker bør montere.",
+    "kategori": "Smarthus",
+    "dato": "2026-06-22",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Riktig belysning handler om mer enn å skru lyset av og på. Med moderne lysstyring og dimmere kan du tilpasse lysnivået etter tid på døgnet, aktivitet og humør – samtidig som du sparer strøm og forlenger levetiden på lyskildene. I denne guiden går vi gjennom de vanligste løsningene for lysstyring i norske boliger, hva som kreves av installasjonen, og hvordan du velger riktig dimmer til ulike typer lys."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva er lysstyring – og hvorfor er det verdt det?"
+      },
+      {
+        "type": "p",
+        "tekst": "Lysstyring er en samlebetegnelse på systemer og komponenter som styrer hvordan belysningen oppfører seg. Det kan være alt fra en enkel dimmer på stuelampen til et fullintegrert smarthussystem som styrer lys, scenarier og tidsstyring i hele boligen. Fordelene merkes raskt: bedre komfort, lavere strømforbruk og en mer fleksibel bolig som tilpasser seg hverdagen din."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Justerbart lysnivå gir riktig stemning i hvert rom",
+          "Dimmet lys reduserer effektforbruket betydelig",
+          "Scenarier og automatikk forenkler hverdagen",
+          "LED-pærer varer lenger når de dimmes riktig",
+          "Økt verdi og attraktivitet på boligen"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Typer dimmere og hvilke som passer hvor"
+      },
+      {
+        "type": "p",
+        "tekst": "Det finnes flere typer dimmere på markedet, og valg av riktig modell avhenger av hvilken lyskilde du har og hvilken last den skal styre. En vanlig feil mange gjør er å bruke en gammel dimmer ment for glødepærer sammen med moderne LED-pærer – det kan gi flimmer, brumming eller skade på elektronikken."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Dimmertype",
+          "Egnet for",
+          "Typisk bruk"
+        ],
+        "rows": [
+          [
+            "Universaldimmer (LED)",
+            "Dimbare LED, halogen, glødelampe",
+            "Stue, soverom, spisestue"
+          ],
+          [
+            "Trykk-/trinndimmer",
+            "LED med trinnvis styring",
+            "Kjøkken, bad, gang"
+          ],
+          [
+            "Smart dimmer (Plejd, Zigbee)",
+            "Dimbar LED i smarthus",
+            "Hele boligen, scenarier"
+          ],
+          [
+            "DALI-dimmer",
+            "Profesjonell LED-styring",
+            "Næringsbygg, store anlegg"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Smart lysstyring med Plejd og andre systemer"
+      },
+      {
+        "type": "p",
+        "tekst": "Stadig flere velger smarte løsninger fremfor tradisjonelle dimmere. Med systemer som Plejd byttes vanlige brytere ut med smarte dimmere som kommuniserer trådløst. Du kan styre lyset fra app, lage scenarier som «Film», «Middag» eller «God natt», og koble lyset til tidsstyring eller bevegelsessensorer. Det fine med Plejd er at det installeres i eksisterende brytersteder uten å trekke nye kabler – noe som gjør det godt egnet for både nybygg og oppgradering av eldre boliger i Bærum, Oslo, Asker og Drammen."
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik foregår en dimmerinstallasjon"
+      },
+      {
+        "type": "p",
+        "tekst": "Selv om en dimmer kan se enkel ut, er det viktig at installasjonen utføres av en autorisert elektriker. Feil tilkobling kan gi varmgang, brannfare eller skade på lyskildene. Her er hovedstegene i en typisk installasjon:"
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Kartlegging av eksisterende anlegg og lyskilder",
+          "Valg av dimmer som matcher last og pæretype",
+          "Sikker frakobling av kursen i sikringsskapet",
+          "Montering og tilkobling av dimmer i bryterboks",
+          "Test av dimmeområde, flimmer og funksjon",
+          "Dokumentasjon og overlevering til kunde"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Vanlige problemer og hvordan unngå dem"
+      },
+      {
+        "type": "p",
+        "tekst": "Mange opplever at dimmeren ikke fungerer som forventet etter installasjon. De vanligste årsakene er feil pæretype, for lav last, eller en dimmer som ikke er kompatibel med LED. Sjekk alltid at pærene er merket «dimbar», og at samlet effekt er innenfor dimmerens spesifiserte område. Ved smarte systemer er det også viktig at nullleder finnes i bryterboksen – noe som ikke alltid er tilfelle i eldre boliger."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Flimrende lys – ofte feil dimmer/LED-kombinasjon",
+          "Brumming i dimmer – overbelastning eller dårlig kvalitet",
+          "Lyset slår seg ikke helt av – minimumslast er ikke oppnådd",
+          "Smart bryter fungerer ikke – manglende nullleder"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Når bør du kontakte elektriker?"
+      },
+      {
+        "type": "p",
+        "tekst": "Skal du bytte ut flere brytere, oppgradere til smart lysstyring eller installere downlights med dimmer, anbefaler vi alltid å bruke fagfolk. VBM Elektro hjelper deg med alt fra enkel dimmerbytte til komplette Plejd-installasjoner, og vi sørger for at anlegget er trygt, dokumentert og tilpasset boligen din. Vi tar oppdrag i hele Bærum, Oslo, Asker og Drammen."
+      },
+      {
+        "type": "cta",
+        "tekst": "Kontakt VBM Elektro for en uforpliktende prat om lysstyring og smart belysning i boligen din."
+      }
+    ]
+  },
+  {
     "slug": "zaptec-go-vs-easee-home-hvilken-elbillader-bor-du-velge",
     "tittel": "Zaptec Go vs Easee Home: Hvilken elbillader bør du velge?",
     "beskrivelse": "Sammenligning av Zaptec Go og Easee Home. Vi går gjennom funksjoner, pris, app, lastbalansering og hva som passer best for din bolig.",
