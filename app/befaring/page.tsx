@@ -10,22 +10,24 @@ import { getStoredGclid } from '@/hooks/useGclid'
 const KALENDER_URL = 'https://api.leadconnectorhq.com/widget/bookings/vbmelektro'
 
 export default function BefaringPage() {
-  const [steg, setSteg] = useState<'form' | 'kalender'>('form')
+  const [steg, setSteg] = useState<'form' | 'bekreftet' | 'kalender'>('form')
   const [laster, setLaster] = useState(false)
+  const [tjeneste, setTjeneste] = useState('')
+
+  const erElbillader = tjeneste === 'Elbillader'
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLaster(true)
     const fd = new FormData(e.currentTarget)
-    const data = Object.fromEntries(fd)
+    fd.set('gclid', getStoredGclid())
     await fetch('/api/book-befaring', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...data, gclid: getStoredGclid() }),
+      body: fd,
     }).catch(() => {})
-    trackBefaringSubmit(data.tjeneste as string)
+    trackBefaringSubmit(tjeneste)
     setLaster(false)
-    setSteg('kalender')
+    setSteg('bekreftet')
   }
 
   return (
@@ -41,11 +43,11 @@ export default function BefaringPage() {
           </div>
         </section>
 
-        <section style={{ padding: '80px 0', background: 'var(--bg)' }}>
+        <section style={{ padding: '80px 0 100px', background: 'var(--bg)' }}>
           <div className="wrap">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 64, alignItems: 'start' }}>
+            <div className="befaring-grid">
 
-              <div>
+              <div className="befaring-info">
                 <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 24 }}>Hvorfor booke befaring?</h2>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 40 }}>
                   {[
@@ -68,9 +70,9 @@ export default function BefaringPage() {
                 </div>
               </div>
 
-              <div className="book-box" style={{ background: 'white', borderRadius: 16, boxShadow: '0 8px 40px rgba(0,0,0,0.08)', overflow: 'hidden' }}>
+              <div className="befaring-box" style={{ background: 'white', borderRadius: 16, boxShadow: '0 8px 40px rgba(0,0,0,0.08)', overflow: 'hidden' }}>
                 {steg === 'form' ? (
-                  <div style={{ padding: '40px 36px' }}>
+                  <div className="befaring-box-inner">
                     <h3 style={{ fontWeight: 700, fontSize: 22, marginBottom: 24 }}>Fyll inn info</h3>
                     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                       <div className="form-row">
@@ -83,21 +85,56 @@ export default function BefaringPage() {
                           <input name="telefon" type="tel" required placeholder="900 00 000" />
                         </div>
                       </div>
+
                       <div className="form-field">
                         <label>Hva gjelder det? *</label>
-                        <select name="tjeneste" required defaultValue="" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 14px center', backgroundSize: '16px', appearance: 'none' }}>
-                          <option value="" disabled>Velg type oppdrag…</option>
-                          <option value="Elbillader">Elbillader-installasjon</option>
-                          <option value="El-anlegg">El-anlegg og sikringsskap</option>
-                          <option value="Renovering">Bad- og kjøkkenrenovering</option>
-                          <option value="Smarthus">Smarthus og styringssystemer</option>
-                          <option value="Montering">Montering av punkter og lamper</option>
-                          <option value="Elkontroll">Elkontroll og feilsøking</option>
-                          <option value="Næringsbygg">Næringsbygg og kontor</option>
-                          <option value="Nybygg">Nybygg og tilbygg</option>
-                          <option value="Annet">Annet</option>
+                        <select
+                          name="tjeneste"
+                          required
+                          value={tjeneste}
+                          onChange={e => setTjeneste(e.target.value)}
+                          style={{
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'right 14px center',
+                            backgroundSize: '16px',
+                            appearance: 'none',
+                          }}
+                        >
+                          <option value="" disabled>Velg type arbeid…</option>
+                          <option value="Generelt">Generelt elektriker arbeid</option>
+                          <option value="Elbillader">Elbillader</option>
                         </select>
                       </div>
+
+                      {erElbillader && (
+                        <div className="elbil-section">
+                          <p className="elbil-section-title">Elbillader — tilleggsinformasjon</p>
+                          <div className="form-field">
+                            <label>Kabellengde fra sikringsskap til lader</label>
+                            <input name="kabel_lengde" type="text" placeholder="F.eks. 10 meter" />
+                          </div>
+                          <p style={{ fontSize: 13, color: 'var(--text-soft)', margin: '4px 0 0' }}>
+                            Last gjerne opp bilder — hjelper oss å gi deg riktig pris:
+                          </p>
+                          <div className="form-field">
+                            <label>Sikringsskap <span style={{ fontWeight: 400, opacity: 0.6 }}>(valgfritt)</span></label>
+                            <input name="bilde_sikringsskap" type="file" accept="image/*" className="file-input" />
+                            <span className="file-hint">Bilde av sikringsskapet ditt</span>
+                          </div>
+                          <div className="form-field">
+                            <label>Føringsvei for kabel <span style={{ fontWeight: 400, opacity: 0.6 }}>(valgfritt)</span></label>
+                            <input name="bilde_foeringsvei" type="file" accept="image/*" className="file-input" />
+                            <span className="file-hint">Planlagt vei fra skap til lader</span>
+                          </div>
+                          <div className="form-field">
+                            <label>Monteringssted <span style={{ fontWeight: 400, opacity: 0.6 }}>(valgfritt)</span></label>
+                            <input name="bilde_monteringssted" type="file" accept="image/*" className="file-input" />
+                            <span className="file-hint">Der du ønsker laderen montert</span>
+                          </div>
+                        </div>
+                      )}
+
                       <div className="form-field">
                         <label>Adresse / område</label>
                         <input name="adresse" type="text" placeholder="F.eks. Sandvika, Bærum" />
@@ -107,11 +144,27 @@ export default function BefaringPage() {
                         <textarea name="notat" rows={3} placeholder="Beskriv kort hva jobben gjelder…" />
                       </div>
                       <button type="submit" disabled={laster} className="form-submit">
-                        {laster ? 'Sender…' : 'Velg tidspunkt'}
+                        {laster ? 'Sender…' : 'Send forespørsel'}
                         {!laster && <svg viewBox="0 0 20 20" fill="currentColor" width={16} height={16}><path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" /></svg>}
                       </button>
-                      <p className="form-note">Gratis og uforpliktende · Du velger tid i neste steg</p>
+                      <p className="form-note">Gratis og uforpliktende · Ingen faktura for befaring</p>
                     </form>
+                  </div>
+                ) : steg === 'bekreftet' ? (
+                  <div className="befaring-box-inner" style={{ textAlign: 'center' }}>
+                    <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#e8f5e9', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" strokeWidth={2.5}><path d="M20 6L9 17l-5-5" /></svg>
+                    </div>
+                    <h3 style={{ fontWeight: 700, fontSize: 22, marginBottom: 12 }}>Forespørsel mottatt!</h3>
+                    <p style={{ color: 'var(--text-soft)', marginBottom: 32, lineHeight: 1.6 }}>
+                      Takk! Vi ringer deg innen 4 timer for å bekrefte befaring.<br />
+                      Vil du også velge tidspunkt nå?
+                    </p>
+                    <button onClick={() => setSteg('kalender')} className="form-submit" style={{ width: '100%', justifyContent: 'center' }}>
+                      Velg tidspunkt
+                      <svg viewBox="0 0 20 20" fill="currentColor" width={16} height={16}><path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" /></svg>
+                    </button>
+                    <p style={{ color: 'var(--text-faint)', fontSize: 13, marginTop: 16 }}>Eller vent — vi tar kontakt innen 4 timer</p>
                   </div>
                 ) : (
                   <div>

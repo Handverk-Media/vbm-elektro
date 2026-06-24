@@ -13,9 +13,12 @@ interface Props {
 }
 
 export function BefaringModal({ open, onClose }: Props) {
-  const [step, setStep] = useState<'form' | 'calendar'>('form')
+  const [step, setStep] = useState<'form' | 'bekreftet' | 'calendar'>('form')
   const [laster, setLaster] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const [tjeneste, setTjeneste] = useState('')
+
+  const erElbillader = tjeneste === 'Elbillader'
 
   useEffect(() => { setMounted(true) }, [])
 
@@ -24,6 +27,7 @@ export function BefaringModal({ open, onClose }: Props) {
       document.body.style.overflow = 'hidden'
       document.body.classList.add('modal-open')
       setStep('form')
+      setTjeneste('')
     } else {
       document.body.style.overflow = ''
       document.body.classList.remove('modal-open')
@@ -38,15 +42,16 @@ export function BefaringModal({ open, onClose }: Props) {
     e.preventDefault()
     setLaster(true)
     const fd = new FormData(e.currentTarget)
-    const data = Object.fromEntries(fd)
+    fd.set('gclid', getStoredGclid())
+    const utmParams = getUtmParams()
+    Object.entries(utmParams).forEach(([k, v]) => { if (v) fd.set(k, v) })
     await fetch('/api/book-befaring', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...data, gclid: getStoredGclid(), ...getUtmParams() }),
+      body: fd,
     }).catch(() => {})
-    trackBefaringSubmit(data.tjeneste as string)
+    trackBefaringSubmit(tjeneste)
     setLaster(false)
-    setStep('calendar')
+    setStep('bekreftet')
   }
 
   if (!open || !mounted) return null
@@ -80,19 +85,47 @@ export function BefaringModal({ open, onClose }: Props) {
               </div>
 
               <div className="form-field">
-                <label htmlFor="bm-tjeneste">Hva gjelder befaringen?</label>
-                <select id="bm-tjeneste" name="tjeneste" required defaultValue="">
-                  <option value="" disabled>Velg type oppdrag…</option>
-                  <option value="Elbillader">Elbillader-installasjon</option>
-                  <option value="El-anlegg">El-anlegg og sikringsskap</option>
-                  <option value="Renovering">Bad- og kjøkkenrenovering</option>
-                  <option value="Smarthus">Smarthus og styringssystemer</option>
-                  <option value="Montering">Montering av punkter og lamper</option>
-                  <option value="Elkontroll">Elkontroll og feilsøking</option>
-                  <option value="Næringsbygg">Næringsbygg og kontor</option>
-                  <option value="Annet">Annet</option>
+                <label htmlFor="bm-tjeneste">Hva gjelder det?</label>
+                <select
+                  id="bm-tjeneste"
+                  name="tjeneste"
+                  required
+                  value={tjeneste}
+                  onChange={e => setTjeneste(e.target.value)}
+                >
+                  <option value="" disabled>Velg type arbeid…</option>
+                  <option value="Generelt">Generelt elektriker arbeid</option>
+                  <option value="Elbillader">Elbillader</option>
                 </select>
               </div>
+
+              {erElbillader && (
+                <div className="elbil-section">
+                  <p className="elbil-section-title">Elbillader — tilleggsinformasjon</p>
+                  <div className="form-field">
+                    <label htmlFor="bm-kabel">Kabellengde fra sikringsskap til lader</label>
+                    <input id="bm-kabel" name="kabel_lengde" type="text" placeholder="F.eks. 10 meter" />
+                  </div>
+                  <p style={{ fontSize: 13, color: 'var(--text-soft)', margin: '4px 0 0' }}>
+                    Last gjerne opp bilder — hjelper oss å gi deg riktig pris:
+                  </p>
+                  <div className="form-field">
+                    <label>Sikringsskap <span style={{ fontWeight: 400, opacity: 0.6 }}>(valgfritt)</span></label>
+                    <input name="bilde_sikringsskap" type="file" accept="image/*" className="file-input" />
+                    <span className="file-hint">Bilde av sikringsskapet ditt</span>
+                  </div>
+                  <div className="form-field">
+                    <label>Føringsvei for kabel <span style={{ fontWeight: 400, opacity: 0.6 }}>(valgfritt)</span></label>
+                    <input name="bilde_foeringsvei" type="file" accept="image/*" className="file-input" />
+                    <span className="file-hint">Planlagt vei fra skap til lader</span>
+                  </div>
+                  <div className="form-field">
+                    <label>Monteringssted <span style={{ fontWeight: 400, opacity: 0.6 }}>(valgfritt)</span></label>
+                    <input name="bilde_monteringssted" type="file" accept="image/*" className="file-input" />
+                    <span className="file-hint">Der du ønsker laderen montert</span>
+                  </div>
+                </div>
+              )}
 
               <div className="form-field">
                 <label htmlFor="bm-epost">E-post</label>
@@ -110,11 +143,26 @@ export function BefaringModal({ open, onClose }: Props) {
               </div>
 
               <button type="submit" className="btn btn-red form-submit" disabled={laster}>
-                {laster ? 'Sender…' : 'Velg tidspunkt'} <span className="arr">→</span>
+                {laster ? 'Sender…' : 'Send forespørsel'} <span className="arr">→</span>
               </button>
-              <p className="form-fine">Gratis og uforpliktende · Du velger tid i neste steg</p>
+              <p className="form-fine">Gratis og uforpliktende · Ingen faktura for befaring</p>
             </form>
           </>
+        ) : step === 'bekreftet' ? (
+          <div style={{ textAlign: 'center', padding: '8px 0' }}>
+            <div style={{ width: 56, height: 56, borderRadius: '50%', background: '#e8f5e9', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" strokeWidth={2.5}><path d="M20 6L9 17l-5-5" /></svg>
+            </div>
+            <p className="bm-title" style={{ marginBottom: 8 }}>Forespørsel mottatt!</p>
+            <p className="bm-sub" style={{ marginBottom: 28, lineHeight: 1.6 }}>
+              Takk! Vi ringer deg innen 4 timer.<br />
+              Vil du også velge tidspunkt nå?
+            </p>
+            <button onClick={() => setStep('calendar')} className="btn btn-red form-submit" style={{ width: '100%', justifyContent: 'center' }}>
+              Velg tidspunkt <span className="arr">→</span>
+            </button>
+            <p className="form-fine" style={{ marginTop: 12 }}>Eller vent — vi tar kontakt innen 4 timer</p>
+          </div>
         ) : (
           <div className="bm-calendar">
             <p className="bm-title" style={{ marginBottom: 16 }}>Velg tidspunkt</p>

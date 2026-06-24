@@ -191,6 +191,36 @@ body.modal-open .hero-bg-video { opacity: 0; }
   .bm-iframe { height: 480px; }
 }
 
+/* ── Befaring page layout ────────────────────────── */
+.befaring-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; }
+.befaring-box { width: 100%; }
+.befaring-box-inner { padding: 40px 36px; }
+@media (max-width: 880px) {
+  .befaring-grid { grid-template-columns: 1fr; gap: 48px; }
+  .befaring-info { order: 2; }
+  .befaring-box { order: 1; }
+}
+@media (max-width: 560px) {
+  .befaring-grid { gap: 32px; }
+  .befaring-box-inner { padding: 28px 20px; }
+}
+
+/* ── Elbillader section ──────────────────────────── */
+.elbil-section {
+  background: var(--bg-warm); border: 1px solid var(--line);
+  border-radius: 12px; padding: 20px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.elbil-section-title {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--text-soft); margin-bottom: 2px;
+}
+.form-field input[type="file"] {
+  padding: 8px 0; border: none; background: transparent;
+  box-shadow: none; font-size: 14px; cursor: pointer;
+}
+.file-hint { font-size: 12px; color: var(--text-faint); margin-top: -2px; }
+
 /* ── Hero ──────────────────────────────────────── */
 .hero { position: relative; padding: 80px 0 100px; overflow: hidden; }
 .hero::before {
