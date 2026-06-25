@@ -1,5 +1,140 @@
 [
   {
+    "slug": "samsvarserklaering-hva-er-det-og-hvorfor-trenger-du-det",
+    "tittel": "Samsvarserklæring: Hva er det og hvorfor trenger du det?",
+    "beskrivelse": "Samsvarserklæring er ditt bevis på lovlig elektrisk arbeid. Lær hva den inneholder, når du trenger den og hvorfor den er viktig ved boligsalg.",
+    "kategori": "Regelverk",
+    "dato": "2026-06-25",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Har du nettopp fått installert ny elbillader, nytt sikringsskap eller pusset opp badet? Da skal du ha mottatt en samsvarserklæring fra elektrikeren. Dette dokumentet er din juridiske garanti for at arbeidet er utført i henhold til norske forskrifter – og det kan bli avgjørende både ved boligsalg, forsikringssaker og fremtidig elkontroll. Likevel er det mange huseiere som aldri har hørt om dokumentet, eller som ikke vet hvor de har lagret det."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva er en samsvarserklæring?"
+      },
+      {
+        "type": "p",
+        "tekst": "En samsvarserklæring er et offisielt dokument som bekrefter at en elektrisk installasjon er utført i samsvar med gjeldende forskrifter, særlig forskrift om elektriske lavspenningsanlegg (FEL) og normen NEK 400. Dokumentet utstedes av den autoriserte elektrikeren eller elektroinstallasjonsbedriften som har utført jobben, og er et lovpålagt krav etter hver installasjon eller endring i det elektriske anlegget."
+      },
+      {
+        "type": "p",
+        "tekst": "Med andre ord: Samsvarserklæringen er elektrikerens skriftlige bekreftelse på at jobben er gjort riktig, at den er testet og målt, og at anlegget er trygt å bruke. Uten en gyldig samsvarserklæring regnes ikke arbeidet som dokumentert lovlig utført."
+      },
+      {
+        "type": "h2",
+        "tekst": "Når har du krav på samsvarserklæring?"
+      },
+      {
+        "type": "p",
+        "tekst": "Du skal alltid motta samsvarserklæring etter at en autorisert elektriker har utført arbeid på det elektriske anlegget ditt. Det gjelder både små og store jobber, og uavhengig av om det er i bolig, hytte eller næringsbygg."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Installasjon av elbillader",
+          "Bytte eller oppgradering av sikringsskap",
+          "Nye kurser, stikkontakter eller downlights",
+          "Installasjon av varmekabler på bad eller gang",
+          "Smarthusinstallasjoner som Plejd",
+          "Bad- og kjøkkenrenoveringer der elektrisk arbeid inngår"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva skal samsvarserklæringen inneholde?"
+      },
+      {
+        "type": "p",
+        "tekst": "En komplett samsvarserklæring følger en bestemt struktur, og skal blant annet inkludere informasjon om installatøren, eier av anlegget, hva slags arbeid som er utført, og hvilke normer det er utført etter. I tillegg skal det medfølge dokumentasjon som viser at anlegget er testet."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Del av dokumentasjonen",
+          "Hva det inneholder"
+        ],
+        "rows": [
+          [
+            "Samsvarserklæring",
+            "Bekreftelse på at arbeidet er i samsvar med FEL og NEK 400"
+          ],
+          [
+            "Sluttkontroll / måleprotokoll",
+            "Resultater fra tester av isolasjon, jordfeil, kontinuitet m.m."
+          ],
+          [
+            "Risikovurdering",
+            "Vurdering av risiko knyttet til installasjonen"
+          ],
+          [
+            "Brukerdokumentasjon",
+            "Veiledning og informasjon til eier av anlegget"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvorfor er samsvarserklæringen så viktig?"
+      },
+      {
+        "type": "p",
+        "tekst": "Mange undervurderer betydningen av dette papiret – helt til det smeller. Samsvarserklæringen har konkrete konsekvenser i en rekke situasjoner du som boligeier kan havne i."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Ved boligsalg: Megler og kjøper kan kreve dokumentasjon på alt elektrisk arbeid utført de siste fem årene.",
+          "Ved forsikringsoppgjør: Ved brann eller skade kan forsikringsselskapet avkorte erstatningen hvis arbeidet ikke er dokumentert.",
+          "Ved elkontroll: Det Lokale Eltilsyn (DLE) og kontrollører ser etter samsvarserklæring på utført arbeid.",
+          "Ved garanti og reklamasjon: Du trenger dokumentet for å kunne reklamere på utført arbeid.",
+          "Ved fremtidige utvidelser: Ny elektriker trenger historikken for å bygge videre på anlegget trygt."
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva gjør du hvis du mangler samsvarserklæring?"
+      },
+      {
+        "type": "p",
+        "tekst": "Hvis du har kjøpt bolig der det er utført elektrisk arbeid uten samsvarserklæring, eller hvis du har mistet dokumentet, bør du kontakte elektrikeren som utførte jobben. De er pliktige til å oppbevare kopi i minst fem år, og kan utstede en ny kopi til deg. Er bedriften nedlagt, eller arbeidet utført uten autorisert elektriker, anbefaler vi å bestille en elkontroll for å avdekke eventuelle feil og dokumentere dagens tilstand."
+      },
+      {
+        "type": "p",
+        "tekst": "Hos VBM Elektro leverer vi alltid komplett dokumentasjon etter utført arbeid, enten du er kunde i Bærum, Oslo, Asker eller Drammen. Vi arkiverer også samsvarserklæringene digitalt slik at du enkelt kan få tilsendt kopi senere – for eksempel når boligen skal selges."
+      },
+      {
+        "type": "h2",
+        "tekst": "Oppbevaring og praktiske tips"
+      },
+      {
+        "type": "p",
+        "tekst": "Samsvarserklæringer bør oppbevares sammen med annen viktig boligdokumentasjon, gjerne i en egen mappe – fysisk eller digitalt. Mange velger å scanne dokumentene og lagre dem i skytjenester slik at de er tilgjengelige også ved flytting eller brann."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Be alltid om samsvarserklæring før du betaler sluttfaktura",
+          "Sjekk at navn, adresse og dato stemmer",
+          "Lagre dokumentet både digitalt og fysisk",
+          "Samle alle erklæringer i én mappe sammen med boligpapirene",
+          "Ta kopi med deg ved boligsalg og overlever til ny eier"
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Når en autorisert bedrift som VBM Elektro er ferdig med jobben, skal samsvarserklæringen være en selvfølge – ikke noe du må mase om. Får du den ikke automatisk, er det et tydelig varselsignal."
+      },
+      {
+        "type": "cta",
+        "tekst": "Trenger du elektriker som leverer komplett dokumentasjon? Kontakt VBM Elektro for et uforpliktende tilbud i Bærum, Oslo, Asker eller Drammen."
+      }
+    ]
+  },
+  {
     "slug": "lysstyring-og-dimmer-slik-far-du-smartere-belysning-hjemme",
     "tittel": "Lysstyring og dimmer: Slik får du smartere belysning hjemme",
     "beskrivelse": "Lær hvordan moderne lysstyring og dimmere fungerer, hvilke løsninger som passer for ditt hjem, og hva en elektriker bør montere.",
