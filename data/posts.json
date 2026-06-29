@@ -1,5 +1,112 @@
 [
   {
+    "slug": "utendors-belysning-og-stikkontakter-krav-og-tips",
+    "tittel": "Utendørs belysning og stikkontakter – krav og tips",
+    "beskrivelse": "Slik velger du riktig utendørs belysning og stikkontakter. Krav til IP-klasse, jordfeilbryter og montering forklart av autorisert elektriker.",
+    "kategori": "Sikkerhet",
+    "dato": "2026-06-29",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Utendørs belysning og stikkontakter gjør hagen tryggere og mer brukervennlig, men de stiller også strengere krav til installasjon enn det du har inne i boligen. Vann, fukt, kulde og UV-stråling slipes på materialene året rundt, og feil utstyr kan både korte ut anlegget og utgjøre en reell brannfare. Her går vi gjennom de viktigste reglene, hva du bør tenke på når du planlegger, og hvilke løsninger som fungerer best for norske forhold."
+      },
+      {
+        "type": "h2",
+        "tekst": "Krav til utendørs elektrisk utstyr"
+      },
+      {
+        "type": "p",
+        "tekst": "All elektrisk installasjon ute må følge NEK 400 og produktene må være CE-merket og beregnet for utendørs bruk. Det viktigste begrepet å kjenne til er IP-klassen, som forteller hvor godt utstyret tåler støv og vann. For utendørs montering anbefales minimum IP44, mens utstyr som er direkte eksponert for regn og snø bør ha IP54 eller høyere. Stikkontakter under tak kan klare seg med IP44, mens en kontakt på en åpen vegg bør være IP54 eller IP65."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "IP44: Sprutsikker – egnet under tak og i ly",
+          "IP54: Støv- og sprutsikker – egnet for fasader",
+          "IP65: Vanntett mot stråle – egnet for utsatte plasseringer",
+          "IP67/IP68: Tåler midlertidig neddykking – brukes i bakke og dam"
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Alle utendørs stikkontakter skal være beskyttet av jordfeilbryter på 30 mA. Dette er et absolutt krav i NEK 400, og det gjelder også for fastmontert utebelysning der det er praktisk mulig. Har du et eldre sikringsskap uten jordfeilvern på utekursene, bør dette utbedres umiddelbart."
+      },
+      {
+        "type": "h2",
+        "tekst": "Planlegging av utebelysning"
+      },
+      {
+        "type": "p",
+        "tekst": "God utebelysning handler om mer enn å henge opp en lampe ved inngangsdøren. Tenk i lag: generell belysning for trygghet, oppgavebelysning ved inngang og uteplass, og stemningsbelysning i hagen. LED er nesten enerådende i dag, og du bør velge armaturer med varm fargetemperatur (2700–3000 K) for et hyggelig uttrykk. Bevegelsessensorer og skumringsrelé reduserer strømforbruket og øker bruksverdien."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Kartlegg hvor du trenger lys – innganger, trapper, gangveier og uteplass",
+          "Velg armaturer med riktig IP-klasse for plasseringen",
+          "Vurder styring via sensor, app eller smarthusløsning som Plejd",
+          "Legg trekkrør og kabler før eventuell asfaltering eller belegning",
+          "La en autorisert elektriker koble opp og dokumentere installasjonen"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Stikkontakter ute – hvor og hvor mange?"
+      },
+      {
+        "type": "p",
+        "tekst": "Det er ingen fast minimumsnorm for antall utendørs stikkontakter, men erfaringsmessig lønner det seg å være raus. En kontakt ved hovedinngang, en på terrassen, en ved carport eller bod, og gjerne en bak i hagen til gressklipper eller hekksaks dekker de fleste behov. Plasser kontaktene minst 30 cm over bakken for å unngå snø og vannsamling, og bruk modeller med lokk og fjær slik at de er tette når de ikke er i bruk."
+      },
+      {
+        "type": "h2",
+        "tekst": "Vanlige feil vi ser hos kunder"
+      },
+      {
+        "type": "p",
+        "tekst": "Når vi i VBM Elektro er ute på elkontroll i Bærum, Asker og Oslo, ser vi ofte de samme problemene utendørs: innvendige stikkontakter som er montert på vegger ute, manglende jordfeilvern, skjøteledninger som ligger permanent gjennom vinduskarmer, og armaturer som har sprukket på grunn av feil IP-klasse. Dette er ikke bare ulovlig – det er direkte farlig, og kan gi avslag på forsikringsoppgjør ved skade."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Plassering",
+          "Anbefalt IP-klasse"
+        ],
+        "rows": [
+          [
+            "Under tak / takutspring",
+            "IP44"
+          ],
+          [
+            "Vegg uten ly",
+            "IP54"
+          ],
+          [
+            "Bakkenivå / utsatt",
+            "IP65"
+          ],
+          [
+            "I bakken / nedgravd",
+            "IP67 eller IP68"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Smart styring av utebelysning"
+      },
+      {
+        "type": "p",
+        "tekst": "Stadig flere ønsker å styre utebelysningen fra mobilen eller integrere den med øvrig smarthusløsning. Med Plejd kan du dimme, tidsstyre og gruppere armaturer trådløst, samtidig som du beholder vanlige veggbrytere. Kombinert med astroklokke som følger soloppgang og solnedgang, slipper du å justere skumringsreléet manuelt gjennom året."
+      },
+      {
+        "type": "cta",
+        "tekst": "Ønsker du trygg og lovlig utebelysning? Kontakt VBM Elektro for en uforpliktende befaring i Bærum, Oslo, Asker eller Drammen."
+      }
+    ]
+  },
+  {
     "slug": "samsvarserklaering-hva-er-det-og-hvorfor-trenger-du-det",
     "tittel": "Samsvarserklæring: Hva er det og hvorfor trenger du det?",
     "beskrivelse": "Samsvarserklæring er ditt bevis på lovlig elektrisk arbeid. Lær hva den inneholder, når du trenger den og hvorfor den er viktig ved boligsalg.",
