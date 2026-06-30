@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { label: 'Priser', href: '/priser' },
   { label: 'Slik gjør vi det', href: '/slik-gjor-vi-det' },
   { label: 'FAQ', href: '/faq' },
-  { label: 'Kontakt', href: '/kontakt' },
   { label: 'Befaring', href: '/befaring' },
   { label: 'Blogg', href: '/blogg' },
 ]
