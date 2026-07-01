@@ -143,8 +143,8 @@ export default function BefaringPage() {
                         <input name="adresse" type="text" placeholder="F.eks. Sandvika, Bærum" />
                       </div>
                       <div className="form-field">
-                        <label>Notat <span style={{ fontWeight: 400, opacity: 0.6 }}>(valgfritt)</span></label>
-                        <textarea name="notat" rows={3} placeholder="Beskriv kort hva jobben gjelder…" />
+                        <label>Beskriv jobben</label>
+                        <textarea name="notat" rows={3} placeholder="Hva skal gjøres? Beskriv gjerne omfang, rom, eller annet som er relevant." required />
                       </div>
                       <button type="submit" disabled={laster} className="form-submit">
                         {laster ? 'Sender…' : 'Send forespørsel'}

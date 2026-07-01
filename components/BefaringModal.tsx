@@ -138,8 +138,8 @@ export function BefaringModal({ open, onClose }: Props) {
               </div>
 
               <div className="form-field">
-                <label htmlFor="bm-notat">Notat <span style={{ fontWeight: 400, opacity: 0.6 }}>(valgfritt)</span></label>
-                <textarea id="bm-notat" name="notat" rows={3} placeholder="Beskriv kort hva jobben gjelder…" />
+                <label htmlFor="bm-notat">Beskriv jobben</label>
+                <textarea id="bm-notat" name="notat" rows={3} placeholder="Hva skal gjøres? Beskriv gjerne omfang, rom, eller annet som er relevant." required />
               </div>
 
               <button type="submit" className="btn btn-red form-submit" disabled={laster}>
