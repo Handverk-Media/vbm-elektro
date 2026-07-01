@@ -103,7 +103,7 @@ export function SiteFooter() {
             <span>© 2026 VBM Elektro AS</span>
             <span>Org.nr: 935 452 856</span>
           </div>
-          <span>Bygget av <a href="https://handverkmedia.no" style={{ color: 'inherit', textDecoration: 'none' }}>Håndverk Media</a></span>
+          <span>Bygget av <a href="https://shiftmedia.no" style={{ color: 'inherit', textDecoration: 'none' }}>Shift Media</a></span>
         </div>
       </div>
     </footer>

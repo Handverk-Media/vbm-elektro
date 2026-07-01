@@ -1,6 +1,6 @@
 # VBM Elektro AS — Nettside
 
-Nettside for VBM Elektro AS, bygget av Håndverk Media.
+Nettside for VBM Elektro AS, bygget av Shift Media.
 
 - **Live:** https://web-ochre-rho-55.vercel.app
 - **GitHub:** https://github.com/Handverk-Media/vbm-elektro
