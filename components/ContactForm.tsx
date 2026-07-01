@@ -90,10 +90,8 @@ export function ContactForm() {
       </div>
 
       <div className="form-field">
-        <label htmlFor="melding">
-          Mer informasjon <span style={{ color: 'var(--text-faint)', fontWeight: 400 }}>(valgfritt)</span>
-        </label>
-        <textarea id="melding" name="melding" rows={4} placeholder="Beskriv kort hva du trenger …" />
+        <label htmlFor="melding">Beskriv jobben</label>
+        <textarea id="melding" name="melding" rows={4} placeholder="Hva skal gjøres? Beskriv gjerne omfang, rom, eller annet som er relevant." required />
       </div>
 
       <label className="form-check">
