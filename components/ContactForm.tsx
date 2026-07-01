@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { trackEvent, normalizePhoneNO } from '@/lib/analytics'
+import { trackLeadSubmit, normalizePhoneNO } from '@/lib/analytics'
 import { getUtmParams } from '@/lib/utm'
 import { getStoredGclid } from '@/hooks/useGclid'
 
@@ -34,7 +34,7 @@ export function ContactForm() {
         if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
           window.gtag('set', 'user_data', { email: epost, phone_number: tlf })
         }
-        trackEvent("generate_lead", { form_name: "kontaktskjema" })
+        trackLeadSubmit('kontaktskjema')
         setStatus('sent')
       } else { setStatus('error') }
     } catch {
@@ -71,7 +71,7 @@ export function ContactForm() {
 
       <div className="form-field">
         <label htmlFor="adresse">Adresse</label>
-        <input type="text" id="adresse" name="adresse" placeholder="Gateadresse, postnummer" required />
+        <input type="text" id="adresse" name="adresse" placeholder="Gateadresse, postnummer" />
       </div>
 
       <div className="form-field">

@@ -5,6 +5,7 @@ import { FooterNewsletter } from '@/components/FooterNewsletter'
 import { MobileNav } from '@/components/MobileNav'
 import { PricingSection } from '@/components/PricingSection'
 import { BefaringCTA } from '@/components/BefaringCTA'
+import { PhoneLink } from '@/components/PhoneLink'
 import { HomeNavLinks, ScrollLink } from '@/components/HomeNavLinks'
 
 export default function Home() {
@@ -27,10 +28,10 @@ export default function Home() {
           </a>
           <HomeNavLinks />
           <div className="nav-right">
-            <a href="tel:90633118" className="nav-phone">
+            <PhoneLink className="nav-phone" location="page-nav">
               <span className="pulse" />
               90 63 31 18
-            </a>
+            </PhoneLink>
             <ScrollLink id="kontakt" className="btn btn-red">Få tilbud <span className="arr">→</span></ScrollLink>
             <MobileNav />
           </div>
@@ -535,7 +536,7 @@ export default function Home() {
                       <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
                     </svg>
                   </div>
-                  <div><div className="cm-lbl">Telefon</div><a href="tel:90633118" className="cm-val">90 63 31 18</a></div>
+                  <div><div className="cm-lbl">Telefon</div><PhoneLink className="cm-val" location="contact-section">90 63 31 18</PhoneLink></div>
                 </div>
                 <div className="cm-row">
                   <div className="cm-ico">
@@ -608,12 +609,12 @@ export default function Home() {
               </a>
               <p>Autorisert elektroinstallasjonsbedrift. NHO Elektro-godkjent. Bærum og Oslo.</p>
               <div className="foot-contact">
-                <a href="tel:90633118">
+                <PhoneLink location="footer">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
                   </svg>
                   90 63 31 18
-                </a>
+                </PhoneLink>
                 <a href="mailto:benjamin@vbmelektro.no">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />

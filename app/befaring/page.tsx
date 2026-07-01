@@ -6,6 +6,7 @@ import { SiteFooter } from '@/components/SiteFooter'
 import { BEDRIFT } from '@/data/bedrift'
 import { trackBefaringSubmit } from '@/lib/analytics'
 import { getStoredGclid } from '@/hooks/useGclid'
+import { getUtmParams } from '@/lib/utm'
 
 const KALENDER_URL = 'https://api.leadconnectorhq.com/widget/bookings/vbmelektro'
 
@@ -21,6 +22,8 @@ export default function BefaringPage() {
     setLaster(true)
     const fd = new FormData(e.currentTarget)
     fd.set('gclid', getStoredGclid())
+    const utmParams = getUtmParams()
+    Object.entries(utmParams).forEach(([k, v]) => { if (v) fd.set(k, v) })
     await fetch('/api/book-befaring', {
       method: 'POST',
       body: fd,

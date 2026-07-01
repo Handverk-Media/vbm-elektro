@@ -26,3 +26,8 @@ export function trackBefaringSubmit(service?: string) {
   gtag('event', 'generate_lead', { form_name: 'befaring', service })
   if (AW) gtag('event', 'conversion', { send_to: `${AW}/befaring_skjema_sendt` })
 }
+
+export function trackLeadSubmit(formName: string) {
+  gtag('event', 'generate_lead', { form_name: formName })
+  if (AW) gtag('event', 'conversion', { send_to: `${AW}/befaring_skjema_sendt` })
+}

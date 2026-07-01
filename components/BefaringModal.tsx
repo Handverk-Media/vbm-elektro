@@ -129,7 +129,7 @@ export function BefaringModal({ open, onClose }: Props) {
 
               <div className="form-field">
                 <label htmlFor="bm-epost">E-post</label>
-                <input id="bm-epost" name="epost" type="email" placeholder="din@epost.no" />
+                <input id="bm-epost" name="epost" type="email" placeholder="din@epost.no" required />
               </div>
 
               <div className="form-field">

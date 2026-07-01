@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { BefaringModal } from './BefaringModal'
+import { trackEvent } from '@/lib/analytics'
 
 interface Props {
   label?: string
@@ -12,7 +13,7 @@ export function BefaringCTA({ label = 'Gratis Befaring', className = 'btn btn-gh
   const [open, setOpen] = useState(false)
   return (
     <>
-      <button className={className} style={style} onClick={() => setOpen(true)}>
+      <button className={className} style={style} onClick={() => { trackEvent('befaring_cta_click', { label }); setOpen(true) }}>
         {label} <span className="arr">→</span>
       </button>
       <BefaringModal open={open} onClose={() => setOpen(false)} />

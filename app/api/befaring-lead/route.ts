@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
             <p><strong>Hva skjer nå?</strong><br>
             En elektriker fra VBM Elektro vil ringe deg på <strong>${telefon ?? '—'}</strong> for å avtale gratis befaring.</p>
             <hr style="border:none;border-top:1px solid #eee;margin:24px 0;">
-            <p style="color:#888;font-size:13px;">VBM Elektro AS · Tlf: 975 45 115 · vbmelektro.no</p>
+            <p style="color:#888;font-size:13px;">VBM Elektro AS · Tlf: 90 63 31 18 · vbmelektro.no</p>
           </div>
         `,
         epost
