@@ -77,22 +77,6 @@ export async function POST(req: NextRequest) {
       'benjamin@vbmelektro.no',
       attachments.length > 0 ? attachments : undefined,
     )
-    if (epost) {
-      await sendMail(
-        'Vi har mottatt din forespørsel — VBM Elektro',
-        `
-          <div style="font-family:sans-serif;font-size:15px;max-width:520px;">
-            <h2 style="color:#c0392b;">Takk, ${navn ?? 'kunde'}!</h2>
-            <p>Vi har mottatt din befaringsforespørsel og tar kontakt innen 4 timer i normal arbeidstid.</p>
-            <p><strong>Hva skjer nå?</strong><br>
-            En elektriker fra VBM Elektro vil ringe deg på <strong>${telefon ?? '—'}</strong> for å avtale gratis befaring.</p>
-            <hr style="border:none;border-top:1px solid #eee;margin:24px 0;">
-            <p style="color:#888;font-size:13px;">VBM Elektro AS · Tlf: 90 63 31 18 · vbmelektro.no</p>
-          </div>
-        `,
-        epost
-      )
-    }
   } catch (err) {
     console.error('Mail feil (book-befaring):', err)
   }
