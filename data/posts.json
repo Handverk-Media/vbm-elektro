@@ -1,5 +1,127 @@
 [
   {
+    "slug": "elbillader-i-borettslag-og-sameie-slik-gjor-vi-det-steg-for-steg",
+    "tittel": "Elbillader i borettslag og sameie – slik gjør vi det steg for steg",
+    "beskrivelse": "Skal borettslaget eller sameiet installere elbilladere? Se hvordan VBM Elektro planlegger, prosjekterer og monterer felles ladeanlegg i Oslo, Bærum og Asker.",
+    "kategori": "Elbillading",
+    "dato": "2026-07-02",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Stadig flere borettslag og sameier i Oslo, Bærum, Asker og Drammen får henvendelser fra beboere som ønsker elbillader på egen plass. Utfordringen er at et garasjeanlegg sjelden er dimensjonert for at alle skal lade samtidig. Løsningen er et felles ladeanlegg med lastbalansering – men veien dit krever både god planlegging, tydelig prosess i styret og en erfaren elektriker. Her forklarer vi hvordan vi i VBM Elektro jobber med denne typen prosjekter fra første befaring til ferdig anlegg."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvorfor felles ladeanlegg er den beste løsningen"
+      },
+      {
+        "type": "p",
+        "tekst": "Individuelle installasjoner der hver beboer setter opp sin egen lader kan virke enkelt, men skaper raskt problemer. Kapasiteten i hovedinntaket er begrenset, og uten samordning risikerer man overbelastning, hyppige utkoblinger og urettferdig fordeling av strøm. Et felles anlegg med dynamisk lastbalansering fordeler tilgjengelig effekt mellom alle ladere, slik at ingen sikringer ryker – selv når mange lader samtidig."
+      },
+      {
+        "type": "p",
+        "tekst": "I tillegg blir det enklere å måle forbruk per bruker, fakturere korrekt og utvide anlegget etter hvert som flere beboere skaffer elbil. Fra 1. januar 2018 har også borettslag hatt lovfestet rett for andelseiere til å kreve lademulighet, forutsatt at det ikke foreligger saklig grunn til å nekte."
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik gjennomfører vi prosjektet"
+      },
+      {
+        "type": "p",
+        "tekst": "Vi følger en gjennomprøvd prosess som gir styret full oversikt over kostnader, teknisk løsning og tidsplan før noe blir bestilt."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Befaring og kartlegging av hovedinntak, eksisterende sikringsskap, kabelføringsveier og antall plasser.",
+          "Behovsanalyse: Hvor mange beboere ønsker lader nå, og hva er realistisk vekst de neste 5–10 årene?",
+          "Prosjektering med valg av ladermodell (Zaptec Pro eller Easee Charge er mest brukt i fellesanlegg), lastbalanseringssystem og backend for fakturering.",
+          "Tilbud og beslutning i styret eller generalforsamling – vi bistår gjerne med informasjonsmøte for beboerne.",
+          "Installasjon utført av autoriserte elektrikere, inkludert eventuell oppgradering av hovedsikring og fremføring av felleskurs.",
+          "Idriftsettelse, opplæring, samsvarserklæring og overlevering av dokumentasjon."
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Zaptec Pro eller Easee Charge – hva passer best?"
+      },
+      {
+        "type": "p",
+        "tekst": "Begge systemene er norskutviklet, godkjent for fellesanlegg og har god støtte for lastbalansering og betalingsløsninger. Valget avhenger av størrelse på anlegget, ønsket brukergrensesnitt og hvilken driftspartner sameiet ønsker for fakturering."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Egenskap",
+          "Zaptec Pro",
+          "Easee Charge"
+        ],
+        "rows": [
+          [
+            "Egnet for",
+            "Store fellesanlegg",
+            "Små til store fellesanlegg"
+          ],
+          [
+            "Lastbalansering",
+            "Ja, dynamisk",
+            "Ja, dynamisk"
+          ],
+          [
+            "Fakturering",
+            "Zaptec Portal",
+            "Easee Cloud / partnere"
+          ],
+          [
+            "Effekt per lader",
+            "Opptil 22 kW",
+            "Opptil 22 kW"
+          ],
+          [
+            "Utvidbart",
+            "Ja, modulært",
+            "Ja, modulært"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Kostnader og finansiering"
+      },
+      {
+        "type": "p",
+        "tekst": "Kostnaden per ladepunkt varierer med anleggets størrelse, avstand fra sikringsskap og om det må trekkes ny kabel. Typisk ligger en installert lader i fellesanlegg mellom 20 000 og 35 000 kroner, avhengig av kompleksitet. Mange borettslag velger å dele kostnaden slik at fellesskapet tar infrastrukturen (kabler, skap, lastbalansering), mens den enkelte beboer betaler for sin egen lader."
+      },
+      {
+        "type": "p",
+        "tekst": "Det finnes også støtteordninger. Oslo kommune har hatt tilskuddsordning for borettslag og sameier, og flere kommuner i Viken-området har lignende ordninger periodevis. Vi hjelper styret med å sjekke hva som er tilgjengelig når prosjektet er aktuelt."
+      },
+      {
+        "type": "h2",
+        "tekst": "Vanlige spørsmål fra styret"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Må vi oppgradere hovedinntaket? Ofte ikke – dynamisk lastbalansering utnytter eksisterende kapasitet effektivt.",
+          "Kan vi bygge ut i etapper? Ja, vi dimensjonerer skap og kabelføring for fremtidig kapasitet fra dag én.",
+          "Hvem betaler strømmen? Hver beboer faktureres eget forbruk via backend-løsningen.",
+          "Hvor lang tid tar installasjonen? Typisk 1–3 uker fra oppstart til ferdigstillelse, avhengig av størrelse."
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "VBM Elektro har lang erfaring med ladeanlegg i borettslag og sameier i Bærum, Asker, Oslo og Drammen. Vi tar hånd om hele prosessen – fra første befaring til ferdig dokumentasjon – og sørger for at anlegget er trygt, fremtidsrettet og enkelt å drifte."
+      },
+      {
+        "type": "cta",
+        "tekst": "Ta kontakt med VBM Elektro for en uforpliktende befaring og tilbud på ladeanlegg til ditt borettslag eller sameie."
+      }
+    ]
+  },
+  {
     "slug": "utendors-belysning-og-stikkontakter-krav-og-tips",
     "tittel": "Utendørs belysning og stikkontakter – krav og tips",
     "beskrivelse": "Slik velger du riktig utendørs belysning og stikkontakter. Krav til IP-klasse, jordfeilbryter og montering forklart av autorisert elektriker.",
