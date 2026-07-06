@@ -1,5 +1,126 @@
 [
   {
+    "slug": "enova-stotte-til-elbillader-2026-slik-soker-du-steg-for-steg",
+    "tittel": "Enova-støtte til elbillader 2026 – slik søker du steg for steg",
+    "beskrivelse": "Alt om Enova-støtte til elbillader i 2026: hvem kan søke, hvor mye du kan få, og hvordan du søker. Praktisk guide fra elektriker i Bærum.",
+    "kategori": "Elbillading",
+    "dato": "2026-07-06",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Vurderer du å installere elbillader hjemme i 2026? Da lurer du kanskje på om du kan få økonomisk støtte fra Enova. Reglene har endret seg flere ganger de siste årene, og mange blander sammen ordninger for enkeltboliger, borettslag og næringsbygg. I denne guiden går vi gjennom hva som faktisk gjelder i 2026, hvem som kan søke, hvor mye du kan få – og hvordan du går frem."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva slags Enova-støtte finnes for elbillading i 2026?"
+      },
+      {
+        "type": "p",
+        "tekst": "Enova skiller mellom støtteordninger for privatpersoner i enebolig, borettslag og sameier, og næringsvirksomhet. For eneboliger har Enova de siste årene ikke gitt direkte tilskudd til selve laderen, men fokusert støtten på borettslag og sameier som skal etablere ladeinfrastruktur til flere biler. Dette er fortsatt hovedbildet i 2026."
+      },
+      {
+        "type": "p",
+        "tekst": "For borettslag og sameier gis det tilskudd til grunnleggende infrastruktur, som fremføring av kabel, sikringsskap, lastbalansering og oppgradering av tavlerom. Selve ladestasjonen dekkes normalt av den enkelte beboer eller andelseier, men fellesanlegget kan i mange tilfeller få vesentlig støtte."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvem kan søke – og hvor mye kan du få?"
+      },
+      {
+        "type": "p",
+        "tekst": "Støttebeløpet avhenger av prosjektets omfang, antall parkeringsplasser som klargjøres, og de faktiske kostnadene. Enova oppdaterer satsene jevnlig, så det er alltid lurt å sjekke enova.no før du søker. Her er en oversikt over hovedkategoriene:"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Kategori",
+          "Hva støttes",
+          "Typisk støtte"
+        ],
+        "rows": [
+          [
+            "Enebolig",
+            "Ingen direkte støtte til lader i 2026",
+            "0 kr"
+          ],
+          [
+            "Borettslag/sameie",
+            "Infrastruktur til lading (kabling, tavle, lastbalansering)",
+            "Inntil ca. 5 000 kr pr. plass"
+          ],
+          [
+            "Næringsbygg",
+            "Ladepunkter og infrastruktur (via egne programmer)",
+            "Varierer etter prosjekt"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Merk at kommuner som Oslo, Bærum, Asker og Drammen fra tid til annen har hatt egne tilskuddsordninger i tillegg til Enova. Sjekk kommunens nettsider – enkelte år har det vært mulig å kombinere ordninger."
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik søker du Enova-støtte steg for steg"
+      },
+      {
+        "type": "p",
+        "tekst": "Selve søknadsprosessen er digital og relativt enkel, men den krever at du har dokumentasjon på plass før du starter. Følg disse stegene:"
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Kartlegg behov: Hvor mange plasser skal klargjøres nå, og hva må forberedes for fremtiden?",
+          "Innhent tilbud fra autorisert elektroinstallatør med spesifisert pris på infrastruktur og lader.",
+          "Fatt vedtak i styret (gjelder borettslag/sameie) om at prosjektet skal gjennomføres.",
+          "Registrer og send søknad på enova.no før arbeidet starter.",
+          "Gjennomfør installasjonen med autorisert elektriker og ta vare på alle fakturaer.",
+          "Send inn sluttrapport og dokumentasjon til Enova for utbetaling."
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Et viktig punkt: Du må søke før arbeidet igangsettes. Installasjoner som allerede er utført, kvalifiserer som hovedregel ikke til støtte. Dette er den vanligste feilen vi ser i praksis."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva bør stå i tilbudet fra elektrikeren?"
+      },
+      {
+        "type": "p",
+        "tekst": "For at Enova skal kunne behandle søknaden effektivt, må tilbudet være detaljert. Vi anbefaler at følgende er tydelig spesifisert:"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Antall ladepunkter som klargjøres og eventuelt monteres",
+          "Type lader (f.eks. Zaptec Pro eller Easee Charge) og lastbalanseringssystem",
+          "Kostnader for graving, kabling, sikringsskap og tavlerom",
+          "Effektuttak og dimensjonering av anlegget",
+          "Samsvarserklæring og garantivilkår"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Vanlige feil du bør unngå"
+      },
+      {
+        "type": "p",
+        "tekst": "Selv om ordningen er godt tilrettelagt, ser vi gjentatte feil som fører til avslag eller redusert støtte. De vanligste er å starte arbeidet før søknaden er sendt, å bruke installatør uten elektroautorisasjon, eller å underdimensjonere anlegget slik at det ikke tåler fremtidig utvidelse. Et anlegg bør alltid dimensjoneres med tanke på at flere beboere vil skaffe seg elbil de neste årene."
+      },
+      {
+        "type": "p",
+        "tekst": "Hos VBM Elektro har vi god erfaring med både private installasjoner og større prosjekter i borettslag og sameier i Bærum, Oslo, Asker og Drammen. Vi hjelper deg gjerne med kartlegging, tilbud og dokumentasjon som styret trenger for å ta en god beslutning – og for at søknaden til Enova skal gå smertefritt."
+      },
+      {
+        "type": "cta",
+        "tekst": "Skal borettslaget eller sameiet ditt etablere ladeanlegg? Ta kontakt med VBM Elektro for en uforpliktende befaring og et komplett tilbud tilpasset Enova-søknaden."
+      }
+    ]
+  },
+  {
     "slug": "elbillader-i-borettslag-og-sameie-slik-gjor-vi-det-steg-for-steg",
     "tittel": "Elbillader i borettslag og sameie – slik gjør vi det steg for steg",
     "beskrivelse": "Skal borettslaget eller sameiet installere elbilladere? Se hvordan VBM Elektro planlegger, prosjekterer og monterer felles ladeanlegg i Oslo, Bærum og Asker.",
