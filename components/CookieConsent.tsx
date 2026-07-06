@@ -16,6 +16,9 @@ export function CookieConsent() {
     if (typeof window.gtag === "function") {
       window.gtag("consent", "update", { analytics_storage: "granted", ad_storage: "granted" })
     }
+    if (typeof window.fbq === "function") {
+      window.fbq("consent", "grant")
+    }
     setSynlig(false)
   }
 
