@@ -6,9 +6,6 @@ import { fileURLToPath } from "url"
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.join(__dirname, "..")
 const POSTS_PATH = path.join(ROOT, "data", "posts.json")
-const SITEMAP_PATH = path.join(ROOT, "public", "sitemap.xml")
-
-const SITE_URL = "https://vbmelektro.no"
 
 // ── Topic pool ────────────────────────────────────────────────────────────────
 
@@ -43,17 +40,26 @@ function loadPosts() {
 }
 
 function pickTopic(posts) {
-  const usedTitles = posts.map((p) => p.tittel.toLowerCase())
-  const usedKeywords = usedTitles.join(" ")
+  const usedKeywords = posts.map((p) => p.tittel.toLowerCase()).join(" ")
   const available = TOPIC_POOL.filter((t) => {
     const words = t.toLowerCase().split(/\s+/).filter((w) => w.length > 4)
     return !words.some((w) => usedKeywords.includes(w))
   })
-  if (available.length === 0) {
-    // All covered – pick a random one for a fresh angle
-    return TOPIC_POOL[Math.floor(Math.random() * TOPIC_POOL.length)]
+  if (available.length > 0) {
+    return available[Math.floor(Math.random() * available.length)]
   }
-  return available[Math.floor(Math.random() * available.length)]
+  // Pool exhausted – instead of a fully random pick (which can resurface a topic
+  // covered just a few posts ago), pick whichever topic's last matching post is
+  // furthest back in history (posts[] is newest-first) to space out repeats.
+  const byAge = TOPIC_POOL.map((topic) => {
+    const words = topic.toLowerCase().split(/\s+/).filter((w) => w.length > 4)
+    const lastMatchIndex = posts.findIndex((p) =>
+      words.some((w) => p.tittel.toLowerCase().includes(w))
+    )
+    return { topic, age: lastMatchIndex === -1 ? Infinity : lastMatchIndex }
+  })
+  byAge.sort((a, b) => b.age - a.age)
+  return byAge[0].topic
 }
 
 function slugify(str) {
@@ -62,40 +68,6 @@ function slugify(str) {
     .replace(/æ/g, "ae").replace(/ø/g, "o").replace(/å/g, "a")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
-}
-
-function updateSitemap(posts) {
-  const urls = [
-    { loc: SITE_URL, priority: "1.0" },
-    { loc: `${SITE_URL}/befaring`, priority: "0.9" },
-    { loc: `${SITE_URL}/book`, priority: "0.8" },
-    { loc: `${SITE_URL}/blogg`, priority: "0.8" },
-    { loc: `${SITE_URL}/om-oss`, priority: "0.6" },
-    { loc: `${SITE_URL}/kontakt`, priority: "0.6" },
-    { loc: `${SITE_URL}/videoavklaring`, priority: "0.7" },
-    { loc: `${SITE_URL}/nyhetsbrev`, priority: "0.5" },
-    { loc: `${SITE_URL}/personvern`, priority: "0.3" },
-    ...posts.map((p) => ({
-      loc: `${SITE_URL}/blogg/${p.slug}`,
-      priority: "0.7",
-      lastmod: p.dato,
-    })),
-  ]
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    (u) => `  <url>
-    <loc>${u.loc}</loc>${u.lastmod ? `\n    <lastmod>${u.lastmod}</lastmod>` : ""}
-    <priority>${u.priority}</priority>
-  </url>`
-  )
-  .join("\n")}
-</urlset>`
-
-  fs.writeFileSync(SITEMAP_PATH, xml)
-  console.log("✓ sitemap.xml oppdatert")
 }
 
 // ── System prompt ─────────────────────────────────────────────────────────────
@@ -196,8 +168,6 @@ Husk: svar KUN med JSON.`,
   posts.unshift(newPost)
   fs.writeFileSync(POSTS_PATH, JSON.stringify(posts, null, 2))
   console.log(`✓ Innlegg lagret: ${slug}`)
-
-  updateSitemap(posts)
 
   console.log(`\n✅ Ferdig! Nytt innlegg: /blogg/${slug}\n`)
 }

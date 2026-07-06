@@ -25,7 +25,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = posts.find((p) => p.slug === slug)
   if (!post) return {}
-  return { title: post.tittel, description: post.beskrivelse }
+  const url = `https://vbmelektro.no/blogg/${post.slug}`
+  return {
+    title: post.tittel,
+    description: post.beskrivelse,
+    alternates: { canonical: url },
+    openGraph: {
+      title: post.tittel,
+      description: post.beskrivelse,
+      url,
+      type: "article",
+      publishedTime: post.dato,
+    },
+  }
 }
 
 function formatDato(dato: string) {
@@ -87,8 +99,21 @@ export default async function BloggArtikkelPage({ params }: Props) {
 
   const andrePoster = posts.filter((p) => p.slug !== slug).slice(0, 3)
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.tittel,
+    description: post.beskrivelse,
+    datePublished: post.dato,
+    dateModified: post.dato,
+    author: { "@type": "Organization", name: BEDRIFT.navn },
+    publisher: { "@type": "Organization", name: BEDRIFT.navn },
+    mainEntityOfPage: `https://vbmelektro.no/blogg/${post.slug}`,
+  }
+
   return (
     <div className="subpage">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <SiteHeader />
       <div className="subpage-pt">
 
