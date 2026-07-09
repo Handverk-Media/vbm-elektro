@@ -1,5 +1,117 @@
 [
   {
+    "slug": "downlights-installasjon-priser-og-praktisk-guide-for-2025",
+    "tittel": "Downlights installasjon: priser og praktisk guide for 2025",
+    "beskrivelse": "Skal du montere downlights? Se priser, antall, plassering og krav til IP-klasse. Praktisk guide fra erfarne elektrikere i Bærum, Oslo og Asker.",
+    "kategori": "Renovering",
+    "dato": "2026-07-09",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Downlights har blitt en av de mest populære belysningsløsningene i norske hjem. De gir et rent, moderne uttrykk, sparer takhøyde og kan skape en helt ny stemning i både stue, kjøkken, bad og gang. Men hvor mange downlights trenger du egentlig? Hva koster installasjonen? Og hvilke regler må følges? I denne guiden får du en praktisk gjennomgang basert på erfaringer fra hverdagen som elektriker."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva koster det å installere downlights?"
+      },
+      {
+        "type": "p",
+        "tekst": "Prisen på downlights-installasjon avhenger av flere faktorer: antall spotter, om det er nybygg eller etterinstallasjon, om taket er nedforet, og hvilken kvalitet du velger på selve armaturene. Etterinstallasjon i eksisterende betongtak er mer arbeidskrevende enn i et gipstak eller nedforet himling."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Type installasjon",
+          "Omtrentlig pris"
+        ],
+        "rows": [
+          [
+            "Downlight i gipshimling (per stk, inkl. montering)",
+            "kr 700 – 1 200"
+          ],
+          [
+            "Downlight i nedforet tak (per stk)",
+            "kr 900 – 1 500"
+          ],
+          [
+            "Etterinstallasjon i betongtak",
+            "Etter befaring"
+          ],
+          [
+            "Dimmer/lysstyring per sone",
+            "kr 1 500 – 3 500"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Prisene er veiledende og inkluderer standard LED-downlights. Ved større prosjekter, som et helt kjøkken eller stue, blir totalprisen ofte mer gunstig per punkt fordi mye av oppriggingen kan gjøres samlet."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvor mange downlights trenger du?"
+      },
+      {
+        "type": "p",
+        "tekst": "En vanlig tommelfingerregel er én downlight per kvadratmeter for en jevn allmennbelysning, men dette varierer med takhøyde, lysstyrke (lumen), spredningsvinkel og romfunksjon. Kjøkkenbenker og speil på bad trenger for eksempel mer punktlys, mens en stue ofte har best effekt av færre spotter kombinert med annen belysning."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Stue: 6–10 downlights avhengig av størrelse, gjerne dimbare",
+          "Kjøkken: én rekke over benken + jevn fordeling ellers",
+          "Bad: 4–6 stk med riktig IP-klasse (minimum IP44)",
+          "Gang og entré: 2–4 stk, ofte med bevegelsessensor",
+          "Soverom: 4–6 stk, gjerne med varmt lys (2700K)"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Krav til IP-klasse og sikkerhet"
+      },
+      {
+        "type": "p",
+        "tekst": "Downlights på bad og i våtrom må ha riktig IP-klasse og monteres i henhold til sonekravene i NEK 400. I sone 1 (rett over dusj og badekar) kreves minimum IP44, og armaturen må være godkjent for formålet. På kjøkken og i tørre rom er kravene mindre strenge, men fortsatt viktig å følge – spesielt med tanke på brannsikkerhet og isolasjonstetting mot kaldt loft."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Planlegg plassering på tegning før hulling gjøres",
+          "Kontroller taktype og eventuell isolasjon over",
+          "Velg armatur med riktig IP-klasse og fargetemperatur",
+          "Sørg for at trafo/driver er tilgjengelig for service",
+          "Test dimmer og lysstyring før himlingen lukkes"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Dimbare downlights og smart lysstyring"
+      },
+      {
+        "type": "p",
+        "tekst": "Skal du først installere downlights, anbefaler vi å tenke på dimming allerede fra start. En dimbar løsning gir mye bedre fleksibilitet i rommet og bidrar til lengre levetid på LED-en. Kombinert med smarthusløsninger som Plejd får du full kontroll over lyset via bryter eller app – uten synlige kabler eller stygge installasjoner."
+      },
+      {
+        "type": "p",
+        "tekst": "VBM Elektro monterer downlights i boliger og næringsbygg i Bærum, Asker, Oslo og Drammen. Vi tar alltid en befaring før større prosjekter, slik at du får riktig antall, riktig lysfarge og en installasjon som holder i mange år."
+      },
+      {
+        "type": "h2",
+        "tekst": "Kan du montere downlights selv?"
+      },
+      {
+        "type": "p",
+        "tekst": "Fastmontert belysning skal alltid tilkobles av en autorisert elektriker. Det er lov å bytte en eksisterende downlight med tilsvarende type, men å legge nye kurser, kutte hull i himling eller montere nye punkter regnes som elektroarbeid som krever fagkompetanse. Feil montering kan gi brannfare, spesielt der isolasjonsmateriale kommer i kontakt med armaturen."
+      },
+      {
+        "type": "cta",
+        "tekst": "Vurderer du downlights hjemme? Ta kontakt med VBM Elektro for en uforpliktende befaring og et konkret pristilbud."
+      }
+    ]
+  },
+  {
     "slug": "enova-stotte-til-elbillader-2026-slik-soker-du-steg-for-steg",
     "tittel": "Enova-støtte til elbillader 2026 – slik søker du steg for steg",
     "beskrivelse": "Alt om Enova-støtte til elbillader i 2026: hvem kan søke, hvor mye du kan få, og hvordan du søker. Praktisk guide fra elektriker i Bærum.",
