@@ -1,5 +1,142 @@
 [
   {
+    "slug": "smarthus-knx-vs-plejd-hva-passer-for-deg",
+    "tittel": "Smarthus KNX vs Plejd – hva passer for deg?",
+    "beskrivelse": "KNX eller Plejd i smarthuset? Vi sammenligner pris, funksjoner, installasjon og fleksibilitet – slik at du velger riktig løsning for din bolig.",
+    "kategori": "Smarthus",
+    "dato": "2026-07-13",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Skal du gjøre boligen smartere, står valget ofte mellom to systemer: KNX og Plejd. Begge styrer lys, varme og andre funksjoner – men de er bygget på helt ulike prinsipper. KNX er den etablerte, internasjonale standarden for bygningsautomasjon, mens Plejd er et nordisk system som har vokst raskt i norske hjem takket være enkel installasjon og god pris. I denne artikkelen ser vi på hva som skiller dem, og hvilket system som passer best til ulike behov."
+      },
+      {
+        "type": "h2",
+        "tekst": "Kort om KNX og Plejd"
+      },
+      {
+        "type": "p",
+        "tekst": "KNX er en åpen internasjonal standard som brukes i alt fra eneboliger til næringsbygg og hotellkjeder. Systemet består av kablet buss (grønn KNX-kabel) som kobler sammen brytere, dimmere, termostater, sensorer og aktuatorer. Alt programmeres i ETS-programvaren av en sertifisert KNX-integrator."
+      },
+      {
+        "type": "p",
+        "tekst": "Plejd er et svensk system som kommuniserer trådløst via Bluetooth mesh. Enhetene monteres bak eksisterende brytere og i taket bak downlights, og programmeres via en app på mobilen. Det gjør Plejd svært attraktivt ved oppgradering av eksisterende boliger, hvor det ikke er lagt bussekabel."
+      },
+      {
+        "type": "h2",
+        "tekst": "Sammenligning: KNX vs Plejd"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Egenskap",
+          "KNX",
+          "Plejd"
+        ],
+        "rows": [
+          [
+            "Kommunikasjon",
+            "Kablet buss",
+            "Trådløst (Bluetooth mesh)"
+          ],
+          [
+            "Installasjon",
+            "Krever bussekabel – best i nybygg",
+            "Passer både nybygg og rehab"
+          ],
+          [
+            "Programmering",
+            "ETS av sertifisert integrator",
+            "Plejd-app på mobil"
+          ],
+          [
+            "Skalerbarhet",
+            "Meget stor – hele bygg",
+            "God for boliger og små næringsbygg"
+          ],
+          [
+            "Levetid og standard",
+            "Åpen ISO-standard, 30+ år",
+            "Proprietært, men aktivt utviklet"
+          ],
+          [
+            "Pris (indikativ)",
+            "Høyere – fra ca. 150 000 kr",
+            "Fra ca. 9 900 kr for 5 rom"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Når bør du velge KNX?"
+      },
+      {
+        "type": "p",
+        "tekst": "KNX er ofte det riktige valget når du bygger nytt, har et stort hus eller ønsker maksimal fleksibilitet og integrasjon mot andre systemer som ventilasjon, adgangskontroll, alarm og AV-utstyr. Fordi kommunikasjonen går via kabel, er systemet svært stabilt og uavhengig av wifi eller Bluetooth-signal."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Nybygg der man kan legge bussekabel fra start",
+          "Store boliger, hytter og næringsbygg",
+          "Ønske om avansert integrasjon (ventilasjon, solceller, adgang)",
+          "Krav til lang levetid og leverandøruavhengighet"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Når passer Plejd best?"
+      },
+      {
+        "type": "p",
+        "tekst": "For de aller fleste norske eneboliger, leiligheter og rekkehus er Plejd et svært godt valg. Systemet installeres uten å rive vegger, og du får styring av lys, dimming, scener og varme via app eller fysiske brytere. Plejd støtter også integrasjon med Google Home, Apple HomeKit og Homey, slik at du kan kombinere det med annet smartteknologi."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Rehabilitering og oppgradering av eksisterende bolig",
+          "Boliger opp til 150–250 m² med normale behov",
+          "Ønske om rask installasjon og lav inngangspris",
+          "Enkel drift – du kan selv justere scener i appen"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Kostnad og installasjon"
+      },
+      {
+        "type": "p",
+        "tekst": "Prisforskjellen er betydelig. Et Plejd-anlegg for fem rom starter på rundt 9 900 kr installert, mens et komplett KNX-anlegg for en enebolig typisk ligger fra 150 000 kr og oppover, avhengig av kompleksitet og antall funksjoner. Til gjengjeld gir KNX en helhetlig løsning som styrer hele bygget som ett system."
+      },
+      {
+        "type": "p",
+        "tekst": "Uansett hvilket system du velger, må installasjonen utføres av autorisert elektriker. Hos VBM Elektro er vi sertifisert Plejd-installatør og har lang erfaring med både trådløse og kablede smarthusløsninger i Bærum, Oslo, Asker og Drammen. Vi hjelper deg med å velge riktig system ut fra behov, boligtype og budsjett."
+      },
+      {
+        "type": "h2",
+        "tekst": "Kan man kombinere KNX og Plejd?"
+      },
+      {
+        "type": "p",
+        "tekst": "Ja, i noen prosjekter kombineres systemene – for eksempel KNX som ryggrad i et større bygg, mens Plejd brukes i en tilbygd del eller i en utleiedel. Kombinasjonen krever imidlertid god planlegging, og bør prosjekteres av en elektriker med kompetanse på begge systemene."
+      },
+      {
+        "type": "h2",
+        "tekst": "Konklusjon"
+      },
+      {
+        "type": "p",
+        "tekst": "Kort oppsummert: Velg KNX hvis du bygger nytt, har store ambisjoner og ønsker en åpen standard med lang levetid. Velg Plejd hvis du vil ha en enkel, prisgunstig og fleksibel løsning som kan installeres uten store inngrep – noe som passer flertallet av norske boliger."
+      },
+      {
+        "type": "cta",
+        "tekst": "Vurderer du smarthus? Ta kontakt med VBM Elektro for en uforpliktende befaring og pristilbud på Plejd eller KNX."
+      }
+    ]
+  },
+  {
     "slug": "downlights-installasjon-priser-og-praktisk-guide-for-2025",
     "tittel": "Downlights installasjon: priser og praktisk guide for 2025",
     "beskrivelse": "Skal du montere downlights? Se priser, antall, plassering og krav til IP-klasse. Praktisk guide fra erfarne elektrikere i Bærum, Oslo og Asker.",
