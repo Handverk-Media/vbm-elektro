@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { usePathname } from 'next/navigation'
 
 const SECTIONS = [
@@ -12,8 +13,11 @@ const SECTIONS = [
 
 export function MobileNav() {
   const [open, setOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const isHome = pathname === '/'
+
+  useEffect(() => { setMounted(true) }, [])
 
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden'
@@ -46,7 +50,7 @@ export function MobileNav() {
         <span />
       </button>
 
-      {open && (
+      {open && mounted && createPortal(
         <>
           <div className="mobile-overlay" onClick={close} />
           <div className="mobile-panel">
@@ -100,7 +104,8 @@ export function MobileNav() {
               </a>
             </div>
           </div>
-        </>
+        </>,
+        document.body
       )}
     </>
   )
