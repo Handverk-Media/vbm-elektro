@@ -1,5 +1,140 @@
 [
   {
+    "slug": "elektriker-ved-badrenovering-hva-er-lovpalagt",
+    "tittel": "Elektriker ved badrenovering – hva er lovpålagt?",
+    "beskrivelse": "Skal du pusse opp badet? Se hva som er lovpålagt elektrikerarbeid, sonekrav, IP-klasser og hvorfor du trenger autorisert elektriker.",
+    "kategori": "Renovering",
+    "dato": "2026-07-20",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Badet er det rommet i boligen der elektrisitet og vann møtes tettest. Derfor stilles det svært strenge krav til det elektriske anlegget på bad, og mye av arbeidet er lovpålagt å utføre av autorisert elektriker. I denne guiden går vi gjennom hva regelverket faktisk krever ved en badrenovering, hvilke soner du må forholde deg til, og hvilke fallgruver mange huseiere i Oslo, Bærum, Asker og Drammen går i."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvilke elektrikerarbeider er lovpålagt på bad?"
+      },
+      {
+        "type": "p",
+        "tekst": "I Norge er det kun virksomheter som er registrert i Elvirksomhetsregisteret som lovlig kan utføre elektroinstallasjoner i boligen. På bad gjelder dette strengere enn ellers, fordi konsekvensene av feil kan være livsfarlige. Ifølge forskrift om elektroforetak (FEK) må alle faste installasjoner utføres av autorisert elektriker – du kan ikke gjøre dette selv, selv ikke i eget hjem."
+      },
+      {
+        "type": "p",
+        "tekst": "Følgende arbeider er alltid lovpålagt å få utført av elektriker på bad:"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Installasjon og tilkobling av varmekabler i gulv",
+          "Montering av stikkontakter, brytere og downlights",
+          "Tilkobling av varmtvannsbereder og elektrisk gulvvarme",
+          "Endringer i sikringsskap, inkludert egen kurs til bad",
+          "Installasjon av speil med lys, ventilasjon eller varmeviftetopplegg",
+          "Utstedelse av samsvarserklæring etter ferdig arbeid"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Sonekrav på bad – NEK 400"
+      },
+      {
+        "type": "p",
+        "tekst": "Regelverket NEK 400 deler badet inn i soner basert på avstand til vann. Hver sone har egne krav til hva som kan installeres, og hvilken IP-klasse (tetthetsgrad) utstyret må ha. Dette er ikke noe forslag – det er en norm som må følges for at anlegget skal være lovlig og forsikringsgyldig."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Sone",
+          "Område",
+          "Krav"
+        ],
+        "rows": [
+          [
+            "Sone 0",
+            "Inne i badekar/dusj",
+            "Kun 12V SELV, IPX7"
+          ],
+          [
+            "Sone 1",
+            "Rett over badekar/dusj (opp til 2,25 m)",
+            "IPX4, kun godkjent utstyr"
+          ],
+          [
+            "Sone 2",
+            "60 cm utenfor sone 1",
+            "IPX4, begrenset utstyr"
+          ],
+          [
+            "Utenfor soner",
+            "Resten av badet",
+            "Normalt IP21, stikkontakter tillatt"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "For eksempel må downlights over dusjen ha minimum IPX4, og stikkontakter kan aldri plasseres i sone 0, 1 eller 2. Alle kurser til bad skal også ha jordfeilbryter type A på maks 30 mA."
+      },
+      {
+        "type": "h2",
+        "tekst": "Egen kurs og jordfeilbryter"
+      },
+      {
+        "type": "p",
+        "tekst": "Ved en full badrenovering vil elektrikeren i praksis alltid legge opp minst én egen kurs til badet. Har du varmekabler, kreves det ofte en dedikert kurs kun for disse, mens stikkontakter og lys ligger på en annen. Dette er både et krav i moderne installasjoner og en fordel for driftssikkerheten – én utløst jordfeil skal ikke slå ut hele boligen."
+      },
+      {
+        "type": "h2",
+        "tekst": "Samsvarserklæring og dokumentasjon"
+      },
+      {
+        "type": "p",
+        "tekst": "Etter endt arbeid skal du som huseier motta en samsvarserklæring fra elektrikeren. Dette er ditt bevis på at anlegget er utført i henhold til forskriftene, og dokumentet er kritisk ved salg av boligen og ved eventuelle forsikringssaker. Uten samsvarserklæring kan forsikringsselskapet avslå erstatning ved brann eller vannskade knyttet til det elektriske."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Samsvarserklæring på utført arbeid",
+          "Kursfortegnelse oppdatert i sikringsskapet",
+          "Sluttkontroll med målerapport",
+          "Bruksanvisning for varmekabelstyring og annet utstyr"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Vanlige feil vi ser ved badrenovering"
+      },
+      {
+        "type": "p",
+        "tekst": "Hos VBM Elektro blir vi ofte kontaktet av boligeiere som har oppdaget mangler i etterkant av en oppussing – gjerne når badet skal selges eller etter en elkontroll. De vanligste feilene er stikkontakter plassert for nær dusjen, downlights med feil IP-klasse, manglende jordfeilbryter og varmekabler koblet på feil kurs."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Feil IP-klasse på lyspunkter i sone 1 og 2",
+          "Manglende egen kurs for varmekabel",
+          "Stikkontakter for tett på våtsone",
+          "Skjøter på varmekabel skjult i gulvet",
+          "Manglende samsvarserklæring"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik sikrer du en lovlig og trygg badrenovering"
+      },
+      {
+        "type": "p",
+        "tekst": "Det viktigste rådet er å involvere elektriker tidlig i prosjektet – helst før flisleggeren begynner. Da kan kurser, varmekabler og lyspunkter planlegges riktig fra start. VBM Elektro samarbeider tett med rørleggere og byggmestere i Bærum, Oslo, Asker og Drammen, og sørger for at alt elektrisk arbeid er dokumentert og i samsvar med NEK 400."
+      },
+      {
+        "type": "cta",
+        "tekst": "Planlegger du badrenovering? Kontakt VBM Elektro for en uforpliktende befaring og pris på det elektriske arbeidet."
+      }
+    ]
+  },
+  {
     "slug": "el-anlegg-i-nybygg-hva-koster-det-i-2026",
     "tittel": "El-anlegg i nybygg – hva koster det i 2026?",
     "beskrivelse": "Skal du bygge nytt hus? Se hva et komplett el-anlegg koster, hva som påvirker prisen, og hvilke valg du bør ta tidlig i prosessen.",
