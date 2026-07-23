@@ -1,5 +1,120 @@
 [
   {
+    "slug": "solcellepanel-tilkobling-hva-gjor-elektriker",
+    "tittel": "Solcellepanel tilkobling – hva gjør elektriker?",
+    "beskrivelse": "Skal du installere solceller? Se hva elektrikeren faktisk gjør ved tilkobling av solcellepanel – fra vekselretter til plusskundeavtale.",
+    "kategori": "Regelverk",
+    "dato": "2026-07-23",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Solceller blir stadig mer populært i norske boliger, og mange husstander i Bærum, Oslo, Asker og Drammen vurderer å installere anlegg på taket. Selve montasjen av panelene kan gjøres av taktekker eller solcelleleverandør, men den elektriske tilkoblingen er lovpålagt elektrikerarbeid. I denne artikkelen ser vi nærmere på hva en autorisert elektriker faktisk gjør når solcelleanlegget skal kobles til boligens elektriske anlegg og strømnettet."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvorfor må elektriker koble til solcelleanlegget?"
+      },
+      {
+        "type": "p",
+        "tekst": "Et solcelleanlegg produserer strøm, og all installasjon som er koblet til det faste elektriske anlegget i boligen skal utføres av en autorisert elektroinstallatør. Dette følger av forskrift om elektroforetak (FEK) og NEK 400. Solcelleanlegg utgjør en egen strømkilde, og feil tilkobling kan gi brannfare, jordfeil eller skade på både anlegget og strømnettet."
+      },
+      {
+        "type": "p",
+        "tekst": "I tillegg må anlegget meldes til den lokale nettoperatøren – for eksempel Elvia i Bærum og Oslo, eller Glitre Nett i Drammen – gjennom en formell melding om arbeid. Uten dette får du verken lovlig anlegg eller mulighet til å selge overskuddsstrøm tilbake til nettet."
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik foregår tilkoblingen steg for steg"
+      },
+      {
+        "type": "p",
+        "tekst": "Selve elektrikerarbeidet ved en solcelleinstallasjon består av flere faser. Her er en typisk arbeidsflyt:"
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Befaring og prosjektering: Elektrikeren vurderer sikringsskap, kapasitet og hvor vekselretter og kabling skal plasseres.",
+          "Melding til nettselskap: Det sendes installasjonsmelding og søknad om plusskundeavtale.",
+          "Kabling fra tak til vekselretter: DC-kabler føres fra panelene ned til vekselretteren, ofte plassert i teknisk rom eller garasje.",
+          "Tilkobling av vekselretter: Denne omformer likestrøm (DC) fra panelene til vekselstrøm (AC) som huset og nettet bruker.",
+          "Tilkobling i sikringsskap: Egen kurs med automatsikring, jordfeilbryter og AC-bryter installeres.",
+          "Idriftsettelse, måling og samsvarserklæring: Anlegget testes, dokumenteres og overleveres til kunden."
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Sikringsskap og vekselretter – ofte nøkkelen"
+      },
+      {
+        "type": "p",
+        "tekst": "Mange eldre boliger har sikringsskap som ikke er dimensjonert for tilkobling av solceller. Da må skapet ofte oppgraderes med større hovedsikring, ny samleskinne eller flere kursplasser. Vekselretteren må plasseres i et tørt, ventilert rom, og det stilles krav til overspenningsvern og jordfeilbeskyttelse. Elektrikeren vurderer også om det er behov for AMS-tilpasning og en toveis strømmåler – dette bestiller nettselskapet, men elektrikeren tilrettelegger for det."
+      },
+      {
+        "type": "h2",
+        "tekst": "Plusskundeavtale og salg av overskuddsstrøm"
+      },
+      {
+        "type": "p",
+        "tekst": "Når anlegget er ferdig tilkoblet, kan du bli såkalt plusskunde. Det betyr at overskuddsstrømmen du ikke bruker selv, selges tilbake til nettet. Elektrikeren melder anlegget inn til nettselskapet, som setter opp en toveismåler. Deretter inngår du en avtale med strømleverandøren din om salg av overskuddskraft."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva koster den elektriske tilkoblingen?"
+      },
+      {
+        "type": "p",
+        "tekst": "Prisene varierer avhengig av anleggets størrelse, avstand mellom paneler og vekselretter, samt om sikringsskapet må oppgraderes. Under ser du typiske kostnadsposter:"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Arbeid",
+          "Omtrentlig pris"
+        ],
+        "rows": [
+          [
+            "Tilkobling vekselretter og kurs i sikringsskap",
+            "Fra 8 000 kr"
+          ],
+          [
+            "Oppgradering av sikringsskap ved behov",
+            "15 000 – 30 000 kr"
+          ],
+          [
+            "Melding til nettselskap og dokumentasjon",
+            "2 000 – 4 000 kr"
+          ],
+          [
+            "Overspenningsvern og AC-bryter",
+            "3 000 – 6 000 kr"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Husk at Enova gir støtte til solcelleanlegg, og at støttebeløpet regnes ut fra installert effekt. Elektrikerarbeidet er en del av det totale investeringsgrunnlaget."
+      },
+      {
+        "type": "h2",
+        "tekst": "Kvalitet, dokumentasjon og garanti"
+      },
+      {
+        "type": "p",
+        "tekst": "Et solcelleanlegg skal fungere i 25–30 år, og kvaliteten på den elektriske tilkoblingen har mye å si for både sikkerhet og produksjon. Ved ferdig installasjon skal du motta samsvarserklæring, sluttkontrollskjema og teknisk dokumentasjon. Dette er også nødvendig ved eventuelt boligsalg og for garantikrav."
+      },
+      {
+        "type": "p",
+        "tekst": "Hos VBM Elektro tar vi hele den elektriske delen av solcelleprosjektet – fra befaring og prosjektering til melding, tilkobling og idriftsettelse. Vi samarbeider med etablerte solcelleleverandører, og sørger for at anlegget ditt oppfyller kravene i NEK 400 og til nettselskapet i ditt område."
+      },
+      {
+        "type": "cta",
+        "tekst": "Planlegger du solceller i Bærum, Oslo, Asker eller Drammen? Kontakt VBM Elektro for en uforpliktende befaring og pristilbud på tilkobling."
+      }
+    ]
+  },
+  {
     "slug": "elektriker-ved-badrenovering-hva-er-lovpalagt",
     "tittel": "Elektriker ved badrenovering – hva er lovpålagt?",
     "beskrivelse": "Skal du pusse opp badet? Se hva som er lovpålagt elektrikerarbeid, sonekrav, IP-klasser og hvorfor du trenger autorisert elektriker.",
