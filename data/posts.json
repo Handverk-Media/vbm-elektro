@@ -1,5 +1,132 @@
 [
   {
+    "slug": "sikringsskap-oppgradering-tegn-pa-at-ditt-gamle-skap-ma-byttes",
+    "tittel": "Sikringsskap oppgradering: Tegn på at ditt gamle skap må byttes",
+    "beskrivelse": "Er sikringsskapet ditt utdatert? Se hvilke tegn du bør se etter, hva et nytt skap koster og når oppgradering er lovpålagt.",
+    "kategori": "Sikkerhet",
+    "dato": "2026-07-27",
+    "lesetid": 5,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Sikringsskapet er hjertet i det elektriske anlegget ditt, men også en av de mest oversette delene av boligen. Mange norske hjem har fortsatt gamle skrusikringsskap fra 60- og 70-tallet – og disse holder ikke mål mot dagens strømforbruk. Med elbil, varmepumpe, induksjonstopp og en rekke smarte enheter belastes anlegget helt annerledes enn før. I denne artikkelen ser vi på når det er nødvendig å oppgradere sikringsskapet, hva du bør se etter, og hva du kan forvente av kostnader."
+      },
+      {
+        "type": "h2",
+        "tekst": "Tydelige tegn på at sikringsskapet bør oppgraderes"
+      },
+      {
+        "type": "p",
+        "tekst": "Det finnes flere klare signaler på at det gamle skapet ditt ikke lenger er trygt eller egnet for moderne bruk. Noen av tegnene er visuelle og lette å oppdage selv, mens andre krever en fagperson for å avdekke."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Du har fortsatt skrusikringer (porselenssikringer) i stedet for automatsikringer",
+          "Sikringer ryker ofte, spesielt når flere apparater er i bruk samtidig",
+          "Skapet mangler jordfeilbryter eller jordfeilautomater",
+          "Det lukter svidd, eller du ser misfarging og brannmerker rundt sikringene",
+          "Anlegget er over 30 år gammelt og aldri oppgradert",
+          "Du planlegger å installere elbillader, varmepumpe eller solceller"
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Spesielt manglende jordfeilbryter er en alvorlig sikkerhetsrisiko. Etter NEK 400:2022 stilles det strenge krav til jordfeilbeskyttelse i nye anlegg, og selv om eldre anlegg kan være lovlige etter datidens regler, er det sterkt anbefalt å oppgradere."
+      },
+      {
+        "type": "h2",
+        "tekst": "Når er oppgradering direkte nødvendig?"
+      },
+      {
+        "type": "p",
+        "tekst": "Det er ikke alltid lovpålagt å bytte sikringsskap, men i visse situasjoner er det praktisk talt uunngåelig. Ved større ombygginger, installasjon av nye kurser eller når kapasiteten er sprengt, må skapet oppgraderes for å oppfylle gjeldende forskrifter."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Ved installasjon av elbillader – krever ofte egen dedikert kurs og jordfeilvern type B",
+          "Ved renovering av bad eller kjøkken der nye kurser legges",
+          "Når forsikringsselskapet krever det etter elkontroll",
+          "Ved overgang fra IT-nett til TN-nett i eldre boliger",
+          "Når antall kurser ikke lenger dekker boligens behov"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva koster en oppgradering av sikringsskap?"
+      },
+      {
+        "type": "p",
+        "tekst": "Prisen på et nytt sikringsskap varierer basert på boligens størrelse, antall kurser og hvor kompleks jobben er. Under ser du typiske priser for oppgradering i Oslo, Bærum, Asker og Drammen."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Type oppgradering",
+          "Fra-pris"
+        ],
+        "rows": [
+          [
+            "Mindre skap – enebolig/leilighet med få kurser",
+            "kr 18 000"
+          ],
+          [
+            "Standard skap – enebolig med normal kursmengde",
+            "kr 25 000"
+          ],
+          [
+            "Stort skap – enebolig med mange kurser og smarthus",
+            "kr 35 000"
+          ],
+          [
+            "Tilleggskurs for elbillader",
+            "kr 5 000"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Prisene inkluderer normalt nytt skap, automatsikringer, jordfeilvern, arbeid og samsvarserklæring. Merk at eldre anlegg kan kreve mer omfattende arbeid, for eksempel utskifting av inntakskabel eller oppgradering av hovedsikring hos nettselskapet."
+      },
+      {
+        "type": "h2",
+        "tekst": "Fordelene ved et moderne sikringsskap"
+      },
+      {
+        "type": "p",
+        "tekst": "Et nytt sikringsskap gir mer enn bare økt sikkerhet. Du får bedre kapasitet, enklere feilsøking, og mulighet til å utvide anlegget med nye smarte løsninger. Jordfeilautomater kobler ut kun den kursen som har feil, i stedet for hele boligen – noe som gjør hverdagen tryggere og mer forutsigbar."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Vesentlig redusert brannfare",
+          "Bedre beskyttelse mot elektrisk sjokk",
+          "Plass for nye kurser til elbil, varmepumpe og solceller",
+          "Tydelig merking og enklere feilsøking",
+          "Ofte lavere forsikringspremie"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvordan går prosessen for seg?"
+      },
+      {
+        "type": "p",
+        "tekst": "En oppgradering starter alltid med en befaring, der en autorisert elektriker kartlegger dagens anlegg og lager et forslag til nytt skap. Selve byttet tar vanligvis én til to arbeidsdager, og i denne perioden vil strømmen være avslått i store deler av boligen. VBM Elektro planlegger jobben slik at nedetiden blir så kort som mulig, og alle nye installasjoner leveres med samsvarserklæring og fullstendig dokumentasjon."
+      },
+      {
+        "type": "p",
+        "tekst": "Etter installasjon anbefales det å ta en elkontroll noen år senere for å sikre at anlegget fortsatt fungerer optimalt. Dette er også et krav fra mange forsikringsselskaper i eldre boliger."
+      },
+      {
+        "type": "cta",
+        "tekst": "Lurer du på om sikringsskapet ditt bør oppgraderes? Kontakt VBM Elektro for en uforpliktende befaring i Bærum, Oslo, Asker eller Drammen."
+      }
+    ]
+  },
+  {
     "slug": "solcellepanel-tilkobling-hva-gjor-elektriker",
     "tittel": "Solcellepanel tilkobling – hva gjør elektriker?",
     "beskrivelse": "Skal du installere solceller? Se hva elektrikeren faktisk gjør ved tilkobling av solcellepanel – fra vekselretter til plusskundeavtale.",
