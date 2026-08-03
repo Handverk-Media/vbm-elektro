@@ -126,14 +126,13 @@ export default function ElbilladerKampanje() {
           </div>
 
           <div className="lp2-hero-visual">
-            <video
-              className="lp2-hero-video"
-              src="/hero-video.mp4"
-              poster="/elbillader-hero-poster.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
+            <Image
+              src="/elbillader-hero.jpg"
+              alt=""
+              fill
+              priority
+              sizes="(max-width: 980px) 0px, 55vw"
+              className="lp2-hero-image"
               aria-hidden="true"
             />
             <div className="lp2-hero-visual-scrim" />
@@ -269,14 +268,29 @@ export default function ElbilladerKampanje() {
 
       {/* ── Footer ─────────────────────────────────────────── */}
       <footer className="lp2-footer">
-        <div className="lp2-wrap">
-          <div className="lp2-footer-meta">
-            <span className="lp2-footer-name">VBM Elektro AS</span>
-            <span>Org.nr 935 452 856</span>
-            <span>Registrert i Elvirksomhetsregisteret</span>
-            <span>Medlem NELFO</span>
-            <span>{TELEFON}</span>
+        <div className="lp2-wrap lp2-footer-top">
+          <div className="lp2-footer-brand">
+            <Image src="/logo-white.svg" alt="VBM Elektro" width={124} height={50} className="lp2-logo" />
+            <p>Autorisert elektriker i Asker, Bærum, Oslo og Drammen.</p>
           </div>
+
+          <div className="lp2-footer-col">
+            <p className="lp2-footer-heading">Kontakt</p>
+            <PhoneCTA location="elbillader-lp2-footer" className="lp2-footer-phone">
+              <Phone size={15} weight="fill" />{TELEFON}
+            </PhoneCTA>
+            <p>Billingstadletta 22, 1396 Billingstad</p>
+          </div>
+
+          <div className="lp2-footer-col">
+            <p className="lp2-footer-heading">Godkjenninger</p>
+            <span className="lp2-footer-badge"><Certificate size={16} weight="bold" />Medlem NELFO</span>
+            <span className="lp2-footer-badge"><ShieldCheck size={16} weight="bold" />Elvirksomhetsregisteret</span>
+          </div>
+        </div>
+
+        <div className="lp2-wrap lp2-footer-bottom">
+          <span>VBM Elektro AS · Org.nr 935 452 856</span>
           <a href="/personvern" className="lp2-footer-link">Personvern</a>
         </div>
       </footer>
@@ -323,7 +337,7 @@ export default function ElbilladerKampanje() {
         .lp2-check { color: var(--lp-red); flex-shrink: 0; }
 
         .lp2-hero-visual { position: relative; min-height: 560px; display: flex; align-items: center; justify-content: flex-end; padding: 40px; overflow: hidden; }
-        .lp2-hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .lp2-hero-image { object-fit: cover; }
         .lp2-hero-visual-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,19,23,0.55) 0%, rgba(18,19,23,0.05) 45%); }
 
         /* Card / Form */
@@ -415,17 +429,28 @@ export default function ElbilladerKampanje() {
         .lp2-form-compact .lp2-form-error { width: 100%; }
 
         /* Footer */
-        .lp2-footer { padding: 28px 0 36px; border-top: 1px solid var(--lp-line); }
-        .lp2-footer-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
-        .lp2-footer-name { font-weight: 700; }
-        .lp2-footer-meta span { font-size: 12.5px; color: var(--lp-body); padding-left: 12px; border-left: 1px solid var(--lp-line); }
-        .lp2-footer-meta span:first-child { padding-left: 0; border-left: none; }
-        .lp2-footer-link { font-size: 12.5px; color: var(--lp-body); text-decoration: underline; }
+        .lp2-footer { background: var(--lp-dark); border-top: 1px solid rgba(255,255,255,0.08); }
+        .lp2-footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding: 56px 0 40px; }
+        .lp2-footer-brand { display: flex; flex-direction: column; gap: 14px; }
+        .lp2-footer-brand p { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.55); max-width: 32ch; }
+        .lp2-footer-heading { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); margin: 0 0 4px; }
+        .lp2-footer-col { display: flex; flex-direction: column; gap: 10px; }
+        .lp2-footer-col p { font-size: 14px; color: rgba(255,255,255,0.6); margin: 0; }
+        .lp2-footer-phone { display: flex; align-items: center; gap: 8px; color: #fff; font-weight: 700; font-size: 15px; text-decoration: none; }
+        .lp2-footer-phone svg { color: var(--lp-red); }
+        .lp2-footer-badge { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: rgba(255,255,255,0.75); }
+        .lp2-footer-badge svg { color: var(--lp-red); flex-shrink: 0; }
+        .lp2-footer-bottom {
+          display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+          padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .lp2-footer-bottom span { font-size: 12.5px; color: rgba(255,255,255,0.4); }
+        .lp2-footer-link { font-size: 12.5px; color: rgba(255,255,255,0.55); text-decoration: underline; }
 
         @media (max-width: 980px) {
           .lp2-hero-grid { grid-template-columns: 1fr; }
           .lp2-hero-visual { min-height: 0; padding: 0; justify-content: stretch; }
-          .lp2-hero-video, .lp2-hero-visual-scrim { display: none; }
+          .lp2-hero-image, .lp2-hero-visual-scrim { display: none; }
           .lp2-hero-copy { padding: 28px 0 0; }
           #skjema.lp2-card { max-width: 100%; box-shadow: none; border: 1px solid var(--lp-line); margin-top: 28px; }
           .lp2-price-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -453,6 +478,8 @@ export default function ElbilladerKampanje() {
           .lp2-trust-item { padding: 4px 18px 4px 0; border-left: none !important; }
           .lp2-trust-item span { max-width: none; }
           .lp2-closing { padding: 40px 0; }
+          .lp2-footer-top { grid-template-columns: 1fr; gap: 28px; padding: 40px 0 28px; }
+          .lp2-footer-bottom { padding: 16px 0 24px; }
         }
       `}</style>
     </div>
