@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
+import { GeistSans } from 'geist/font/sans'
 
 export const metadata: Metadata = {
-  title: 'Elbillader ferdig montert i Asker og Bærum | VBM Elektro',
+  title: 'Elbillader ferdig montert i Asker og Bærum',
   description:
     'Elbillader ferdig montert fra 14 900 kr. Fast pris før vi starter, samsvarserklæring inkludert. Vi hjelper deg med Enova-støtten. Ring 90 63 31 18.',
   alternates: { canonical: 'https://vbmelektro.no/elbillader' },
@@ -17,5 +18,5 @@ export const metadata: Metadata = {
 }
 
 export default function ElbilladerKampanjeLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return <div className={GeistSans.className}>{children}</div>
 }

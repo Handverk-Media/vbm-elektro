@@ -7,7 +7,7 @@ const GHL_WEBHOOK =
 export async function POST(req: NextRequest) {
   const body = await req.json()
   const {
-    navn, telefon, epost, kommune, hvaGjelder, boligInfo,
+    navn, telefon,
     utm_source, utm_medium, utm_campaign, utm_content, utm_term,
     landingsside, gclid,
   } = body
@@ -19,10 +19,7 @@ export async function POST(req: NextRequest) {
       firstName: navn?.split(' ')[0] ?? navn,
       lastName: navn?.split(' ').slice(1).join(' ') || '',
       phone: telefon,
-      email: epost ?? '',
       service: 'Elbillader',
-      message: `Hva gjelder det: ${hvaGjelder ?? '—'}\n\nOm boligen: ${boligInfo ?? '—'}`,
-      address: kommune ?? '',
       source: 'VBM Elektro – Elbillader kampanje',
       utm_source: utm_source ?? '',
       utm_medium: utm_medium ?? '',
@@ -37,16 +34,12 @@ export async function POST(req: NextRequest) {
 
   try {
     await sendMail(
-      `Nytt lead: ${navn}, ${kommune ?? '—'} – elbillader`,
+      `Nytt lead: ${navn} – elbillader`,
       `
         <h2>Nytt lead fra annonsene</h2>
         <table cellpadding="6" style="font-family:sans-serif;font-size:15px;">
           <tr><td><strong>Navn</strong></td><td>${navn ?? '—'}</td></tr>
           <tr><td><strong>Telefon</strong></td><td>${telefon ?? '—'}</td></tr>
-          <tr><td><strong>E-post</strong></td><td>${epost ?? '—'}</td></tr>
-          <tr><td><strong>Kommune</strong></td><td>${kommune ?? '—'}</td></tr>
-          <tr><td><strong>Hva gjelder det</strong></td><td>${hvaGjelder ?? '—'}</td></tr>
-          <tr><td><strong>Om boligen</strong></td><td>${boligInfo ?? '—'}</td></tr>
           <tr><td><strong>Tjeneste</strong></td><td>Elbillader</td></tr>
           <tr><td><strong>Kilde</strong></td><td>${utm_campaign ?? utm_source ?? 'direkte'} / ${utm_content ?? '—'}</td></tr>
           <tr><td><strong>GCLID</strong></td><td>${gclid ?? '—'}</td></tr>
