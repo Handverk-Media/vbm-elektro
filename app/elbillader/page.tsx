@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { getUtmParams } from '@/lib/utm'
 import { getStoredGclid } from '@/hooks/useGclid'
@@ -100,8 +101,8 @@ export default function ElbilladerKampanje() {
       {/* ── Header ─────────────────────────────────────────── */}
       <header className="lp2-header">
         <div className="lp2-header-inner">
-          <span className="lp2-logo">VBM Elektro</span>
-          <PhoneCTA location="elbillader-lp2-header" style={{ color: '#111111', fontWeight: 600, fontSize: 15 }}>{TELEFON}</PhoneCTA>
+          <Image src="/logo.svg" alt="VBM Elektro" width={124} height={50} className="lp2-logo" priority />
+          <PhoneCTA location="elbillader-lp2-header" style={{ color: '#111111', fontWeight: 700, fontSize: 15 }}>{TELEFON}</PhoneCTA>
         </div>
       </header>
 
@@ -276,20 +277,20 @@ export default function ElbilladerKampanje() {
           max-width: 1040px; margin: 0 auto; padding: 14px 20px;
           display: flex; align-items: center; justify-content: space-between;
         }
-        .lp2-logo { font-weight: 700; font-size: 16px; letter-spacing: -0.01em; color: var(--lp-text); }
+        .lp2-logo { height: 34px; width: auto; }
 
         /* Hero */
-        .lp2-hero { padding: 28px 0 40px; }
-        .lp2-hero-grid { display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: start; }
-        .lp2-hero-copy h1 { font-size: clamp(26px, 3.4vw, 42px); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 14px; }
-        .lp2-hero-sub { font-size: 15px; line-height: 1.55; color: var(--lp-body); margin: 0 0 20px; max-width: 46ch; }
-        .lp2-hero-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-        .lp2-hero-points li { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: var(--lp-text); }
+        .lp2-hero { padding: 40px 0 56px; }
+        .lp2-hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 56px; align-items: start; }
+        .lp2-hero-copy h1 { font-size: clamp(32px, 4.4vw, 54px); font-weight: 800; line-height: 1.06; letter-spacing: -0.025em; margin: 0 0 18px; }
+        .lp2-hero-sub { font-size: 17px; line-height: 1.55; color: var(--lp-body); margin: 0 0 28px; max-width: 46ch; }
+        .lp2-hero-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+        .lp2-hero-points li { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: var(--lp-text); }
 
         /* Card / Form */
-        .lp2-card { background: #FFFFFF; border: 1px solid var(--lp-line); border-radius: 0; padding: 22px 22px 24px; }
-        .lp2-card-title { font-size: 18px; font-weight: 700; margin: 0 0 4px; }
-        .lp2-card-sub { font-size: 13px; color: var(--lp-body); margin: 0 0 18px; }
+        .lp2-card { background: #FFFFFF; border: 1px solid var(--lp-line); border-top: 2px solid var(--lp-text); border-radius: 0; padding: 28px 26px 28px; }
+        .lp2-card-title { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 4px; }
+        .lp2-card-sub { font-size: 13.5px; color: var(--lp-body); margin: 0 0 22px; }
         .lp2-form { display: flex; flex-direction: column; gap: 14px; }
         .lp2-field { display: flex; flex-direction: column; gap: 6px; }
         .lp2-field label { font-size: 13px; font-weight: 600; color: var(--lp-text); }
@@ -313,37 +314,39 @@ export default function ElbilladerKampanje() {
         .lp2-cta-row { display: flex; justify-content: center; margin-top: 32px; }
 
         /* Sections */
-        .lp2-section { padding: 56px 0; }
+        .lp2-section { padding: 88px 0; }
         .lp2-section-tint { background: #FAFAFA; }
-        .lp2-h2 { font-size: clamp(22px, 2.6vw, 28px); font-weight: 700; letter-spacing: -0.01em; margin: 0 0 24px; }
-        .lp2-body-text { font-size: 15px; line-height: 1.65; color: var(--lp-body); margin: 0 0 32px; max-width: 62ch; }
+        .lp2-h2 { font-size: clamp(26px, 3vw, 34px); font-weight: 800; letter-spacing: -0.02em; margin: 0 0 28px; }
+        .lp2-body-text { font-size: 16px; line-height: 1.65; color: var(--lp-body); margin: 0 0 36px; max-width: 62ch; }
 
         /* Photo proof */
         .lp2-photo-frame {
-          display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-          aspect-ratio: 16 / 9; border: 1px dashed var(--lp-line); background: #FAFAFA;
+          display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+          aspect-ratio: 16 / 9; border: 1px solid var(--lp-line); background: #F4F4F4;
         }
-        .lp2-photo-frame span { font-size: 13px; color: var(--lp-body); }
-        .lp2-caption { font-size: 13px; color: var(--lp-body); margin: 10px 0 0; }
+        .lp2-photo-frame svg { opacity: 0.8; }
+        .lp2-photo-frame span { font-size: 13px; font-weight: 500; color: var(--lp-body); letter-spacing: -0.005em; }
+        .lp2-caption { font-size: 13.5px; color: var(--lp-body); margin: 14px 0 0; }
 
         /* Steps */
-        .lp2-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-        .lp2-step-nr { display: block; font-size: 13px; font-weight: 700; color: var(--lp-red); margin-bottom: 8px; }
-        .lp2-step-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; }
-        .lp2-step-text { font-size: 13px; line-height: 1.5; color: var(--lp-body); margin: 0; }
+        .lp2-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+        .lp2-step { border-top: 2px solid var(--lp-text); padding-top: 18px; }
+        .lp2-step-nr { display: block; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: var(--lp-text); margin-bottom: 10px; }
+        .lp2-step-title { font-size: 16px; font-weight: 700; margin: 0 0 6px; }
+        .lp2-step-text { font-size: 13.5px; line-height: 1.5; color: var(--lp-body); margin: 0; }
 
         /* Stats */
-        .lp2-stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--lp-line); }
-        .lp2-stat { display: flex; flex-direction: column; gap: 4px; padding: 20px 16px 20px 0; border-bottom: 1px solid var(--lp-line); }
-        .lp2-stat:not(:first-child) { padding-left: 16px; border-left: 1px solid var(--lp-line); }
-        .lp2-stat-nr { font-size: 20px; font-weight: 700; }
-        .lp2-stat-label { font-size: 12.5px; color: var(--lp-body); line-height: 1.4; }
+        .lp2-stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--lp-text); }
+        .lp2-stat { display: flex; flex-direction: column; gap: 6px; padding: 24px 20px 24px 0; border-bottom: 1px solid var(--lp-line); }
+        .lp2-stat:not(:first-child) { padding-left: 20px; border-left: 1px solid var(--lp-line); }
+        .lp2-stat-nr { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; }
+        .lp2-stat-label { font-size: 13px; color: var(--lp-body); line-height: 1.4; }
 
         /* FAQ */
-        .lp2-faq { border-bottom: 1px solid var(--lp-line); padding: 18px 0; }
-        .lp2-faq summary { font-size: 15px; font-weight: 600; cursor: pointer; list-style: none; }
+        .lp2-faq { border-bottom: 1px solid var(--lp-line); padding: 22px 0; }
+        .lp2-faq summary { font-size: 16px; font-weight: 700; cursor: pointer; list-style: none; }
         .lp2-faq summary::-webkit-details-marker { display: none; }
-        .lp2-faq p { font-size: 14px; line-height: 1.6; color: var(--lp-body); margin: 10px 0 0; }
+        .lp2-faq p { font-size: 14.5px; line-height: 1.6; color: var(--lp-body); margin: 12px 0 0; }
 
         .lp2-closing { border-top: 1px solid var(--lp-line); }
 
@@ -375,11 +378,13 @@ export default function ElbilladerKampanje() {
           .lp2-field input { padding: 10px 12px; font-size: 14px; }
           .lp2-btn-primary { padding: 12px; }
           .lp2-form-fine { font-size: 11px; }
-          .lp2-steps { grid-template-columns: 1fr; gap: 20px; }
+          .lp2-steps { grid-template-columns: 1fr; gap: 24px; }
           .lp2-stats { grid-template-columns: 1fr; }
           .lp2-stat:not(:first-child) { padding-left: 0; border-left: none; }
-          .lp2-section { padding: 40px 0; }
-          .lp2-header-inner { padding: 8px 16px; }
+          .lp2-h2 { font-size: 24px; margin-bottom: 20px; }
+          .lp2-section { padding: 56px 0; }
+          .lp2-header-inner { padding: 10px 16px; }
+          .lp2-logo { height: 28px; }
         }
       `}</style>
     </div>
