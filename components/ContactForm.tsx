@@ -4,8 +4,13 @@ import { trackLeadSubmit, normalizePhoneNO } from '@/lib/analytics'
 import { getUtmParams } from '@/lib/utm'
 import { getStoredGclid } from '@/hooks/useGclid'
 
-export function ContactForm() {
+interface Props {
+  variant?: 'card' | 'plain'
+}
+
+export function ContactForm({ variant = 'card' }: Props) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const formClass = variant === 'plain' ? 'bm-form' : 'contact-form'
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -44,15 +49,17 @@ export function ContactForm() {
 
   if (status === 'sent') {
     return (
-      <div className="contact-form" style={{ alignItems: 'center', justifyContent: 'center', minHeight: 300 }}>
-        <p style={{ fontFamily: 'var(--display)', fontSize: 24, fontWeight: 600, textAlign: 'center' }}>Takk!</p>
-        <p style={{ color: 'var(--text-soft)', textAlign: 'center', marginTop: 8 }}>Vi tar kontakt innen 1 time i normal arbeidstid.</p>
+      <div className={formClass} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 300 }}>
+        <div>
+          <p style={{ fontFamily: 'var(--display)', fontSize: 24, fontWeight: 600, textAlign: 'center' }}>Takk!</p>
+          <p style={{ color: 'var(--text-soft)', textAlign: 'center', marginTop: 8 }}>Vi tar kontakt innen 1 time i normal arbeidstid.</p>
+        </div>
       </div>
     )
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form className={formClass} onSubmit={handleSubmit}>
       <div className="form-row">
         <div className="form-field">
           <label htmlFor="navn">Navn</label>

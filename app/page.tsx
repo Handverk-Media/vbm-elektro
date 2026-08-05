@@ -5,6 +5,7 @@ import { FooterNewsletter } from '@/components/FooterNewsletter'
 import { MobileNav } from '@/components/MobileNav'
 import { PricingSection } from '@/components/PricingSection'
 import { BefaringCTA } from '@/components/BefaringCTA'
+import { TilbudCTA } from '@/components/TilbudCTA'
 import { PhoneLink } from '@/components/PhoneLink'
 import { HomeNavLinks, ScrollLink } from '@/components/HomeNavLinks'
 
@@ -65,7 +66,7 @@ export default function Home() {
                 VBM Elektro er bygget for folk som vil ha en ryddig prosess fra første kontakt til ferdig jobb. Fastpris før vi starter. God kommunikasjon underveis. Ingen overraskelser på slutten.
               </p>
               <div className="hero-cta">
-                <ScrollLink id="kontakt" className="btn btn-red">Be om tilbud <span className="arr">→</span></ScrollLink>
+                <TilbudCTA className="btn btn-red" />
                 <BefaringCTA />
               </div>
               <div className="hero-meta">
