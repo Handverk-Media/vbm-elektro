@@ -31,3 +31,26 @@ export function trackLeadSubmit(formName: string) {
   gtag('event', 'generate_lead', { form_name: formName })
   if (AW) gtag('event', 'conversion', { send_to: `${AW}/befaring_skjema_sendt` })
 }
+
+// ── Landingssider (Google Ads) ──────────────────────────────────────────
+// GA4-hendelser er frie å legge til. Ads-konvertering gjenbruker det ene
+// verifiserte, virkende labelen (befaring_skjema_sendt) inntil egne
+// konverteringshandlinger per landingsside er opprettet i Ads-kontoen.
+
+export function trackLpPrimaryCta(page: string) {
+  gtag('event', 'lp_primary_cta_click', { page })
+}
+
+export function trackLpFormStart(page: string) {
+  gtag('event', 'lp_form_start', { page })
+}
+
+export function trackLpFileUpload(page: string, field: string) {
+  gtag('event', 'lp_file_upload', { page, field })
+}
+
+export function trackLpLeadSubmit(page: string) {
+  gtag('event', 'generate_lead', { form_name: page })
+  gtag('event', 'lp_lead_submit', { page })
+  if (AW) gtag('event', 'conversion', { send_to: `${AW}/befaring_skjema_sendt` })
+}

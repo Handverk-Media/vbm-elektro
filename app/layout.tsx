@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google"
+import { Bricolage_Grotesque, Inter, JetBrains_Mono, Geist, Geist_Mono } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { Providers } from "@/components/Providers"
@@ -26,6 +26,20 @@ const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
   display: "swap",
   weight: ["400", "500"],
+})
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+})
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+  weight: ["400", "500", "600"],
 })
 
 const siteUrl = "https://vbmelektro.no"
@@ -97,7 +111,7 @@ const faqSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nb" className={`${bricolage.variable} ${inter.variable} ${jetbrains.variable}`}>
+    <html lang="nb" className={`${bricolage.variable} ${inter.variable} ${jetbrains.variable} ${geist.variable} ${geistMono.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
