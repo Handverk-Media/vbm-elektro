@@ -10,7 +10,7 @@ import { LpSticky } from '@/components/lp/LpSticky'
 import { LpFaq } from '@/components/lp/LpFaq'
 import { LpForm } from '@/components/lp/LpForm'
 import { PhoneLink } from '@/components/PhoneLink'
-import { IcRuler, IcPanel, IcCheckDoc, IcCamera, IcShield, IcClock, IcDoc } from '@/components/lp/LpIcons'
+import { IcRuler, IcPanel, IcCheckDoc, IcCamera, IcShield, IcClock, IcDoc, IcFolder } from '@/components/lp/LpIcons'
 import { trackLpPrimaryCta } from '@/lib/analytics'
 
 const PAGE = 'zaptec-go-montering'
@@ -33,8 +33,14 @@ export default function ZaptecGoPage() {
         h1Start="Zaptec Go"
         h1Accent="ferdig montert"
         lede="Trygg installasjon av en av Norges mest solgte smartladere. Send bilde av sikringsskapet — du får skriftlig pris før montering."
-        checklist={['Skriftlig pris før oppstart', 'Samsvarserklæring', 'Dokumentasjon i Boligmappa', 'Tillegg avklares på forhånd']}
-        imageLabel="Bilde: Zaptec Go montert på vegg"
+        primaryLabel="Få pris på Zaptec Go"
+        bgLabel="Bakgrunnsbilde: Zaptec Go montert på husvegg"
+        trustItems={[
+          { icon: <IcCheckDoc size={20} />, label: 'Skriftlig pris før oppstart' },
+          { icon: <IcDoc size={20} />, label: 'Samsvarserklæring' },
+          { icon: <IcFolder size={20} />, label: 'Dokumentasjon i Boligmappa' },
+          { icon: <IcShield size={20} />, label: 'Tillegg avklares på forhånd' },
+        ]}
       >
         <div className="lp3-form-head">
           <p className="lp3-card-title">Få pris på Zaptec Go</p>
@@ -56,13 +62,6 @@ export default function ZaptecGoPage() {
           ]}
         />
       </LpHero>
-
-      <LpTrustStats items={[
-        { icon: <IcShield size={26} />, label: 'NELFO-medlem', sub: 'Registrert i Elvirksomhetsregisteret' },
-        { icon: <IcCheckDoc size={26} />, label: 'Skriftlig pris', sub: 'Før vi starter' },
-        { icon: <IcClock size={26} />, label: 'Svar innen 1 time', sub: 'I normal arbeidstid' },
-        { icon: <IcDoc size={26} />, label: 'Boligmappa', sub: 'Dokumentasjon inkludert' },
-      ]} />
 
       <LpSection label="Dette trenger vi" heading="Dette trenger vi for å gi deg pris" narrow>
         <div className="lp3-icongrid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
@@ -95,6 +94,12 @@ export default function ZaptecGoPage() {
         ]}
       />
 
+      <LpTrustStats items={[
+        { icon: <IcShield size={26} />, label: 'NELFO-medlem', sub: 'Registrert i Elvirksomhetsregisteret' },
+        { icon: <IcClock size={26} />, label: 'Svar innen 1 time', sub: 'I normal arbeidstid' },
+        { icon: <IcCheckDoc size={26} />, label: 'Lokal ekspert', sub: 'Drammen, Asker, Bærum og omegn' },
+      ]} teamImageLabel="Bilde: VBM-teamet foran servicebil" />
+
       <LpSection label="Dekningsområde" heading="Områder" tint>
         <div className="lp3-areas">
           {OMRADER.map(o => <span key={o} className="lp3-area-tag">{o}</span>)}
@@ -106,11 +111,13 @@ export default function ZaptecGoPage() {
       </LpSection>
 
       <section id="kontakt" className="lp3-closing">
-        <div className="lp3-wrap lp3-wrap-narrow">
-          <h2>Få pris på Zaptec Go i dag</h2>
-          <p>Raskt, enkelt og uforpliktende.</p>
-          <div className="lp3-cta-row" style={{ justifyContent: 'center' }}>
-            <a href="#skjema" className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(`${PAGE}-bunn`)}>Få pris på Zaptec Go</a>
+        <div className="lp3-wrap lp3-closing-row">
+          <div>
+            <h2>Få pris på Zaptec Go i dag</h2>
+            <p>Raskt, enkelt og uforpliktende.</p>
+          </div>
+          <div className="lp3-cta-row">
+            <a href="#skjema-form" className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(`${PAGE}-bunn`)}>Få pris på Zaptec Go</a>
             <PhoneLink location={`${PAGE}-bunn`} className="lp3-btn lp3-btn-secondary">Ring 90 63 31 18</PhoneLink>
           </div>
         </div>

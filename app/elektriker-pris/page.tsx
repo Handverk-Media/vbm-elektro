@@ -9,7 +9,7 @@ import { LpSticky } from '@/components/lp/LpSticky'
 import { LpFaq } from '@/components/lp/LpFaq'
 import { LpForm } from '@/components/lp/LpForm'
 import { PhoneLink } from '@/components/PhoneLink'
-import { IcDoc, IcCamera, IcSearch, IcCheckDoc, IcShield, IcClock, IcPanel, IcPlug, IcBulb, IcHeat, IcHouse, IcMore } from '@/components/lp/LpIcons'
+import { IcDoc, IcCamera, IcSearch, IcCheckDoc, IcShield, IcClock, IcPanel, IcPlug, IcBulb, IcHeat, IcHouse, IcMore, IcFolder } from '@/components/lp/LpIcons'
 import { trackLpPrimaryCta } from '@/lib/analytics'
 
 const PAGE = 'elektriker-pris'
@@ -43,8 +43,14 @@ export default function ElektrikerPrisPage() {
         h1Start="Elektriker"
         h1Accent="med fastpris"
         lede="Vi gir deg pris før vi starter — du slipper uventede tillegg. Send en kort beskrivelse og noen bilder, så vurderer vi jobben."
-        checklist={['Fastpris på forhånd', 'Kvalitetsarbeid og trygghet', 'Samsvarserklæring', 'Dokumentasjon i Boligmappa']}
-        imageLabel="Bilde: elektriker i arbeid ved sikringsskap"
+        primaryLabel="Beskriv jobben og få pris"
+        bgLabel="Bakgrunnsbilde: elektriker i arbeid ved sikringsskap"
+        trustItems={[
+          { icon: <IcCheckDoc size={20} />, label: 'Fastpris på forhånd' },
+          { icon: <IcShield size={20} />, label: 'Kvalitetsarbeid og trygghet' },
+          { icon: <IcDoc size={20} />, label: 'Samsvarserklæring' },
+          { icon: <IcFolder size={20} />, label: 'Dokumentasjon i Boligmappa' },
+        ]}
       >
         <div className="lp3-form-head">
           <p className="lp3-card-title">Beskriv jobben og få pris</p>
@@ -64,13 +70,6 @@ export default function ElektrikerPrisPage() {
           ]}
         />
       </LpHero>
-
-      <LpTrustStats items={[
-        { icon: <IcShield size={26} />, label: 'NELFO-medlem', sub: 'Registrert i Elvirksomhetsregisteret' },
-        { icon: <IcCheckDoc size={26} />, label: 'Fastpris', sub: 'Der jobben lar seg avgrense' },
-        { icon: <IcClock size={26} />, label: 'Svar innen 1 time', sub: 'I normal arbeidstid' },
-        { icon: <IcDoc size={26} />, label: 'Boligmappa', sub: 'Dokumentasjon der aktuelt' },
-      ]} />
 
       <LpIconGrid label="Send inn" heading="Typiske oppdrag vi hjelper med" items={JOBBER} />
 
@@ -104,16 +103,24 @@ export default function ElektrikerPrisPage() {
         </ul>
       </LpSection>
 
+      <LpTrustStats items={[
+        { icon: <IcShield size={26} />, label: 'NELFO-medlem', sub: 'Registrert i Elvirksomhetsregisteret' },
+        { icon: <IcClock size={26} />, label: 'Svar innen 1 time', sub: 'I normal arbeidstid' },
+        { icon: <IcCheckDoc size={26} />, label: 'Lokal ekspert', sub: 'Drammen, Asker, Bærum og omegn' },
+      ]} teamImageLabel="Bilde: VBM-teamet foran servicebil" />
+
       <LpSection id="faq" label="Spørsmål" heading="Ofte stilt" narrow>
         <LpFaq items={FAQ} />
       </LpSection>
 
       <section id="kontakt" className="lp3-closing">
-        <div className="lp3-wrap lp3-wrap-narrow">
-          <h2>Få fastpris på ditt oppdrag</h2>
-          <p>Enkelt, trygt og forutsigbart.</p>
-          <div className="lp3-cta-row" style={{ justifyContent: 'center' }}>
-            <a href="#skjema" className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(`${PAGE}-bunn`)}>Beskriv jobben og få pris</a>
+        <div className="lp3-wrap lp3-closing-row">
+          <div>
+            <h2>Få fastpris på ditt oppdrag</h2>
+            <p>Enkelt, trygt og forutsigbart.</p>
+          </div>
+          <div className="lp3-cta-row">
+            <a href="#skjema-form" className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(`${PAGE}-bunn`)}>Beskriv jobben og få pris</a>
             <PhoneLink location={`${PAGE}-bunn`} className="lp3-btn lp3-btn-secondary">Ring 90 63 31 18</PhoneLink>
           </div>
         </div>

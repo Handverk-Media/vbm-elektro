@@ -10,7 +10,7 @@ import { LpSticky } from '@/components/lp/LpSticky'
 import { LpFaq } from '@/components/lp/LpFaq'
 import { LpForm } from '@/components/lp/LpForm'
 import { PhoneLink } from '@/components/PhoneLink'
-import { IcCamera, IcSearch, IcDoc, IcCalendar, IcCheckDoc, IcShield, IcClock } from '@/components/lp/LpIcons'
+import { IcCamera, IcSearch, IcDoc, IcCalendar, IcCheckDoc, IcShield, IcClock, IcFolder } from '@/components/lp/LpIcons'
 import { trackLpPrimaryCta } from '@/lib/analytics'
 
 const PAGE = 'elbillader-pris'
@@ -35,8 +35,14 @@ export default function ElbilladerPrisPage() {
         h1Start="Hva koster det å få montert"
         h1Accent="elbillader?"
         lede="Send bilde av sikringsskapet og kursfortegnelsen. Vi vurderer anlegget og gir deg skriftlig pris før arbeidet starter."
-        checklist={['Skriftlig pris før start', 'Tillegg avklares på forhånd', 'Samsvarserklæring', 'Dokumentasjon i Boligmappa']}
-        imageLabel="Bilde: elbillader montert på vegg"
+        primaryLabel="Send bilde og få pris"
+        bgLabel="Bakgrunnsbilde: elbillader montert på husvegg i skumring"
+        trustItems={[
+          { icon: <IcCheckDoc size={20} />, label: 'Skriftlig pris før start' },
+          { icon: <IcShield size={20} />, label: 'Tillegg avklares på forhånd' },
+          { icon: <IcDoc size={20} />, label: 'Samsvarserklæring' },
+          { icon: <IcFolder size={20} />, label: 'Dokumentasjon i Boligmappa' },
+        ]}
       >
         <div className="lp3-form-head">
           <p className="lp3-card-title">Send bilde og få pris</p>
@@ -59,13 +65,6 @@ export default function ElbilladerPrisPage() {
           ]}
         />
       </LpHero>
-
-      <LpTrustStats items={[
-        { icon: <IcShield size={26} />, label: 'NELFO-medlem', sub: 'Registrert i Elvirksomhetsregisteret' },
-        { icon: <IcCheckDoc size={26} />, label: 'Skriftlig pris', sub: 'Før vi starter' },
-        { icon: <IcClock size={26} />, label: 'Svar innen 1 time', sub: 'I normal arbeidstid' },
-        { icon: <IcDoc size={26} />, label: 'Boligmappa', sub: 'Dokumentasjon inkludert' },
-      ]} />
 
       <LpProcessSteps
         id="prosess"
@@ -90,6 +89,12 @@ export default function ElbilladerPrisPage() {
         ]}
       />
 
+      <LpTrustStats items={[
+        { icon: <IcShield size={26} />, label: 'NELFO-medlem', sub: 'Registrert i Elvirksomhetsregisteret' },
+        { icon: <IcClock size={26} />, label: 'Svar innen 1 time', sub: 'I normal arbeidstid' },
+        { icon: <IcCheckDoc size={26} />, label: 'Lokal ekspert', sub: 'Drammen, Asker, Bærum og omegn' },
+      ]} teamImageLabel="Bilde: VBM-teamet foran servicebil" />
+
       <LpGallery
         label="Fra virkeligheten"
         heading="Nylig utførte installasjoner"
@@ -107,11 +112,13 @@ export default function ElbilladerPrisPage() {
       </LpSection>
 
       <section id="kontakt" className="lp3-closing">
-        <div className="lp3-wrap lp3-wrap-narrow">
-          <h2>Klar for skriftlig pris?</h2>
-          <p>Send bilder nå — vi gjør resten.</p>
-          <div className="lp3-cta-row" style={{ justifyContent: 'center' }}>
-            <a href="#skjema" className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(`${PAGE}-bunn`)}>Send bilde og få pris</a>
+        <div className="lp3-wrap lp3-closing-row">
+          <div>
+            <h2>Klar for skriftlig pris?</h2>
+            <p>Send bilder nå — vi gjør resten.</p>
+          </div>
+          <div className="lp3-cta-row">
+            <a href="#skjema-form" className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(`${PAGE}-bunn`)}>Send bilde og få pris</a>
             <PhoneLink location={`${PAGE}-bunn`} className="lp3-btn lp3-btn-secondary">Ring 90 63 31 18</PhoneLink>
           </div>
         </div>

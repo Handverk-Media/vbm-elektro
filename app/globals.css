@@ -1341,37 +1341,54 @@ footer.foot { background: var(--bg-dark); color: white; padding: 64px 0 28px; }
 .lp3-header-phone:hover { background: var(--lp3-red); }
 .lp3-header-phone svg { flex-shrink: 0; }
 
-/* Hero */
-.lp3-hero { padding: 40px 0 0; }
-.lp3-hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: stretch; padding-bottom: 44px; }
-.lp3-hero-copy { display: flex; flex-direction: column; }
+/* Hero — mørkt fullbredde bakgrunnsbilde (plassholder til ekte foto er levert),
+   hvit tekst over, flytende hvitt skjema-kort. Matcher kundens referansemal. */
+.lp3-hero { position: relative; padding: 40px 0 0; overflow: hidden; background: #14100f; }
+.lp3-hero-bg { position: absolute; inset: 0; background: radial-gradient(120% 100% at 15% 15%, #262019 0%, #14100f 55%, #0c0a09 100%); }
+.lp3-hero-bg::after {
+  content: ''; position: absolute; inset: 0; opacity: 0.06; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.lp3-hero-bg-label { position: absolute; left: 24px; bottom: 16px; font-family: var(--font-geist-mono), monospace; font-size: 10.5px; color: rgba(255,255,255,0.32); letter-spacing: 0.03em; max-width: 46%; }
+.lp3-hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: stretch; padding-bottom: 36px; }
+.lp3-hero-copy { display: flex; flex-direction: column; justify-content: center; }
 .lp3-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: var(--lp3-gray); margin-bottom: 18px; }
 .lp3-eyebrow svg { color: var(--lp3-red); }
+.lp3-eyebrow-dark { color: rgba(255,255,255,0.65); }
 .lp3-hero h1 { font-size: clamp(30px, 4vw, 46px); margin: 0 0 16px; }
+.lp3-hero-h1-dark { color: #fff; }
 .lp3-hero-lede { font-size: 16.5px; line-height: 1.55; color: var(--lp3-gray); max-width: 48ch; margin: 0 0 22px; }
+.lp3-hero-lede-dark { color: rgba(255,255,255,0.72); }
 .lp3-check-list { list-style: none; margin: 0 0 26px; padding: 0; display: flex; flex-direction: column; gap: 11px; }
 .lp3-check-list li { display: flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 500; color: var(--lp3-black); }
 .lp3-check-list .ico { display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: var(--lp3-red); color: #fff; flex-shrink: 0; }
-.lp3-hero-image { flex: 1; min-height: 220px; margin-top: auto; aspect-ratio: auto; }
+.lp3-check-list-dark li { color: #fff; }
 
-.lp3-hero-card { background: #fff; border: 1px solid var(--lp3-line); border-radius: var(--lp3-r-lg); box-shadow: var(--lp3-shadow-lg); padding: 30px; }
+.lp3-hero-card { position: relative; background: #fff; border-radius: var(--lp3-r-lg); box-shadow: var(--lp3-shadow-lg); padding: 30px; align-self: center; }
 
-.lp3-btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 15px 26px; font-size: 15px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; border-radius: var(--lp3-r-sm); transition: background 0.15s, transform 0.1s, box-shadow 0.15s; white-space: nowrap; }
+/* Tillitsrad nederst i hero, hvite ikoner på mørk bunn */
+.lp3-hero-trust { position: relative; display: flex; flex-wrap: wrap; gap: 22px 36px; padding: 26px 0; border-top: 1px solid rgba(255,255,255,0.12); }
+.lp3-hero-trust-item { display: flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 600; color: #fff; }
+.lp3-hero-trust-item .ico { display: flex; color: var(--lp3-red); flex-shrink: 0; }
+
+.lp3-btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 15px 26px; font-size: 15px; font-weight: 600; text-decoration: none; border: 1.5px solid transparent; cursor: pointer; border-radius: var(--lp3-r-sm); transition: background 0.15s, transform 0.1s, box-shadow 0.15s, border-color 0.15s; white-space: nowrap; }
 .lp3-btn:active { transform: scale(0.97); }
 .lp3-btn-primary { background: var(--lp3-red); color: #fff; box-shadow: 0 8px 20px -6px rgba(225,52,43,0.45); }
 .lp3-btn-primary:hover { background: var(--lp3-red-dark); }
-.lp3-btn-secondary { background: var(--lp3-black); color: #fff; }
-.lp3-btn-secondary:hover { background: #2a2a2a; }
+.lp3-btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.4); }
+.lp3-btn-secondary:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
 .lp3-btn-block { width: 100%; }
 .lp3-cta-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 
-/* Trust-stats bånd */
-.lp3-trust-stats { background: var(--lp3-black); padding: 30px 0; }
-.lp3-trust-stats-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
-.lp3-trust-stat { display: flex; align-items: center; gap: 12px; color: #fff; }
-.lp3-trust-stat .ico { color: var(--lp3-red); flex-shrink: 0; }
-.lp3-trust-stat .label { font-size: 15px; font-weight: 700; margin: 0; }
-.lp3-trust-stat .sub { font-size: 12px; color: rgba(255,255,255,0.55); margin: 2px 0 0; }
+/* Derfor velger kunder VBM — stats + teamfoto */
+.lp3-trust-stats { padding-top: 0; }
+.lp3-trust-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+.lp3-trust-stats-row { display: flex; flex-direction: column; gap: 22px; }
+.lp3-trust-stat { display: flex; align-items: center; gap: 14px; }
+.lp3-trust-stat .ico { width: 46px; height: 46px; border-radius: 50%; background: var(--lp3-red-tint); color: var(--lp3-red); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lp3-trust-stat .label { font-size: 16px; font-weight: 700; margin: 0; color: var(--lp3-black); }
+.lp3-trust-stat .sub { font-size: 13px; color: var(--lp3-gray); margin: 2px 0 0; }
+.lp3-trust-stats-image { min-height: 260px; }
 
 /* Seksjoner */
 .lp3-section { padding: 72px 0; }
@@ -1461,12 +1478,14 @@ footer.foot { background: var(--bg-dark); color: white; padding: 64px 0 28px; }
 /* Skjema-seksjon nede på siden (fullt skjema, ikke i hero-kortet) */
 .lp3-form-panel { background: #fff; border: 1px solid var(--lp3-line); border-radius: var(--lp3-r-lg); box-shadow: var(--lp3-shadow); padding: 36px; max-width: 640px; margin: 0 auto; }
 
-/* Avslutning */
-.lp3-closing { background: var(--lp3-black); color: #fff; text-align: center; padding: 56px 0; }
-.lp3-closing h2 { color: #fff; font-size: clamp(20px, 2.6vw, 26px); margin: 0 0 6px; }
-.lp3-closing p { color: rgba(255,255,255,0.6); font-size: 14.5px; margin: 0 0 26px; }
+/* Avslutning — tekst venstre, knapper høyre (matcher referansen) */
+.lp3-closing { background: var(--lp3-black); color: #fff; padding: 40px 0; }
+.lp3-closing-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.lp3-closing h2 { color: #fff; font-size: clamp(19px, 2.4vw, 23px); margin: 0 0 4px; }
+.lp3-closing p { color: rgba(255,255,255,0.6); font-size: 14px; margin: 0; }
 .lp3-closing .lp3-btn-secondary { background: transparent; border: 1.5px solid rgba(255,255,255,0.3); }
 .lp3-closing .lp3-btn-secondary:hover { border-color: #fff; }
+@media (max-width: 640px) { .lp3-closing-row { flex-direction: column; text-align: center; } }
 .lp3-footer-mini { text-align: center; padding: 24px; font-size: 12.5px; color: var(--lp3-gray); border-top: 1px solid var(--lp3-line); }
 .lp3-footer-mini a { color: var(--lp3-gray); }
 
