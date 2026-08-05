@@ -13,7 +13,7 @@ interface Props {
 }
 
 export function BefaringModal({ open, onClose }: Props) {
-  const [step, setStep] = useState<'form' | 'bekreftet' | 'calendar'>('form')
+  const [step, setStep] = useState<'form' | 'calendar'>('form')
   const [laster, setLaster] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [tjeneste, setTjeneste] = useState('')
@@ -51,7 +51,7 @@ export function BefaringModal({ open, onClose }: Props) {
     }).catch(() => {})
     trackBefaringSubmit(tjeneste)
     setLaster(false)
-    setStep('bekreftet')
+    setStep('calendar')
   }
 
   if (!open || !mounted) return null
@@ -148,24 +148,10 @@ export function BefaringModal({ open, onClose }: Props) {
               <p className="form-fine">Gratis og uforpliktende · Ingen faktura for befaring</p>
             </form>
           </>
-        ) : step === 'bekreftet' ? (
-          <div style={{ textAlign: 'center', padding: '8px 0' }}>
-            <div style={{ width: 56, height: 56, borderRadius: '50%', background: '#e8f5e9', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" strokeWidth={2.5}><path d="M20 6L9 17l-5-5" /></svg>
-            </div>
-            <p className="bm-title" style={{ marginBottom: 8 }}>Forespørsel mottatt!</p>
-            <p className="bm-sub" style={{ marginBottom: 28, lineHeight: 1.6 }}>
-              Takk! Vi ringer deg innen 1 time.<br />
-              Vil du også velge tidspunkt nå?
-            </p>
-            <button onClick={() => setStep('calendar')} className="btn btn-red form-submit" style={{ width: '100%', justifyContent: 'center' }}>
-              Velg tidspunkt <span className="arr">→</span>
-            </button>
-            <p className="form-fine" style={{ marginTop: 12 }}>Eller vent — vi tar kontakt innen 1 time</p>
-          </div>
         ) : (
           <div className="bm-calendar">
-            <p className="bm-title" style={{ marginBottom: 16 }}>Velg tidspunkt</p>
+            <p className="bm-title" style={{ marginBottom: 4 }}>Forespørsel mottatt — velg et tidspunkt</p>
+            <p className="bm-sub" style={{ marginBottom: 16 }}>Får du ikke valgt nå, ringer vi deg uansett innen 1 time.</p>
             <iframe
               src={KALENDER_URL}
               title="Book tidspunkt"
