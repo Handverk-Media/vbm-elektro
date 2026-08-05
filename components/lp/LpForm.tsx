@@ -8,7 +8,7 @@ export type LpField =
   | { kind: 'text' | 'tel' | 'email'; name: string; label: string; placeholder?: string; required?: boolean }
   | { kind: 'select'; name: string; label: string; options: string[]; required?: boolean }
   | { kind: 'textarea'; name: string; label: string; placeholder?: string; required?: boolean; rows?: number }
-  | { kind: 'file'; name: string; label: string; hint?: string }
+  | { kind: 'file'; name: string; label: string; hint?: string; multiple?: boolean }
   | { kind: 'radio'; name: string; label: string; options: string[] }
 
 interface Props {
@@ -24,7 +24,7 @@ function Field({ f, id, onFileChange }: { f: LpField; id: string; onFileChange: 
     return (
       <div className="lp3-field-file">
         <label htmlFor={id}>{f.label}</label>
-        <input id={id} name={f.name} type="file" accept="image/*" capture="environment" onChange={() => onFileChange(f.name)} />
+        <input id={id} name={f.name} type="file" accept="image/*" multiple={f.multiple} onChange={() => onFileChange(f.name)} />
         {f.hint && <span className="lp3-field-hint">{f.hint}</span>}
       </div>
     )

@@ -55,11 +55,7 @@ export default function ZaptecGoPage() {
             [{ kind: 'text', name: 'navn', label: 'Navn', placeholder: 'Ola Nordmann', required: true }, { kind: 'tel', name: 'telefon', label: 'Telefonnummer', placeholder: '900 00 000', required: true }],
             [{ kind: 'email', name: 'epost', label: 'E-post', placeholder: 'ola@example.com', required: true }, { kind: 'text', name: 'postnummer', label: 'Postnummer', placeholder: '1337', required: true }],
             [{ kind: 'radio', name: 'har_lader', label: 'Har du allerede kjøpt Zaptec Go?', options: ['Ja', 'Nei', 'Vet ikke'] }],
-            [{ kind: 'file', name: 'bilde_sikringsskap', label: 'Bilde av sikringsskap', hint: 'Åpent skap, godt lys' }],
-            [{ kind: 'file', name: 'bilde_kursfortegnelse', label: 'Bilde av kursfortegnelse', hint: 'Listen inni skapdøren' }],
-            [{ kind: 'file', name: 'bilde_ladepunkt', label: 'Bilde av ønsket ladepunkt', hint: 'Valgfritt' }],
-            [{ kind: 'text', name: 'kabelavstand', label: 'Omtrentlig kabelavstand', placeholder: 'F.eks. 8–10 meter' }],
-            [{ kind: 'textarea', name: 'kommentar', label: 'Kommentar', placeholder: 'Annet vi bør vite?' }],
+            [{ kind: 'file', name: 'bilder', label: 'Last opp bilder', hint: 'Sikringsskap, kursfortegnelse og ønsket ladepunkt', multiple: true }],
           ]}
         />
       </LpHero>

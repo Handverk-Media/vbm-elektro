@@ -66,8 +66,7 @@ export default function ElektrikerPrisPage() {
             [{ kind: 'email', name: 'epost', label: 'E-post', placeholder: 'ola@example.com', required: true }, { kind: 'text', name: 'postnummer', label: 'Postnummer', placeholder: '1337', required: true }],
             [{ kind: 'select', name: 'type_jobb', label: 'Hva gjelder det?', options: ['Sikringsskap', 'Feilsøking', 'Belysning', 'Stikkontakter', 'Varmekabler', 'Oppussing', 'Elsjekk', 'Annet'], required: true }],
             [{ kind: 'textarea', name: 'beskrivelse', label: 'Beskriv kort hva du trenger hjelp med', placeholder: 'Skriv her …', required: true }],
-            [{ kind: 'file', name: 'bilder', label: 'Bilder', hint: 'Last opp ett eller flere bilder av jobben' }],
-            [{ kind: 'text', name: 'onsket_tidspunkt', label: 'Ønsket tidspunkt', placeholder: 'F.eks. denne uken, snarest' }],
+            [{ kind: 'file', name: 'bilder', label: 'Last opp bilder', hint: 'Ett eller flere bilder av jobben', multiple: true }],
           ]}
         />
       </LpHero>
