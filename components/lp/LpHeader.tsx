@@ -7,7 +7,7 @@ export function LpHeader({ location }: { location: string }) {
     <header className="lp3-header">
       <div className="lp3-header-inner">
         <a href="/" className="lp3-logo" aria-label="VBM Elektro AS">
-          <Image src="/logo.svg" alt="VBM Elektro AS" width={140} height={56} className="lp3-logo-img" priority />
+          <Image src="/logo-white.svg" alt="VBM Elektro AS" width={140} height={56} className="lp3-logo-img" priority />
         </a>
         <span className="lp3-header-locations"><IcPin size={13} />Drammen · Asker · Bærum</span>
         <PhoneLink location={location} className="lp3-header-phone">

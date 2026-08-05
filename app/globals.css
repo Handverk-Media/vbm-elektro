@@ -1332,28 +1332,28 @@ footer.foot { background: var(--bg-dark); color: white; padding: 64px 0 28px; }
 }
 .lp3-img-ph span { font-size: 12.5px; font-weight: 500; text-align: center; padding: 0 16px; }
 
-/* Header — logo, stedsnavn, telefon (to linjer) — matcher referansen */
-.lp3-header { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--lp3-line); }
-.lp3-header-inner { max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+/* Header — gjennomsiktig, flyter over hero-bildet (ikke en hvit bar) — matcher referansen nøyaktig */
+.lp3-header { position: absolute; top: 0; left: 0; right: 0; z-index: 20; background: transparent; }
+.lp3-header-inner { max-width: 1180px; margin: 0 auto; padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .lp3-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
 .lp3-logo-img { height: 34px; width: auto; }
-.lp3-header-locations { display: flex; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 500; color: var(--lp3-gray); }
+.lp3-header-locations { display: flex; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 500; color: rgba(255,255,255,0.75); }
 .lp3-header-locations svg { color: var(--lp3-red); flex-shrink: 0; }
-.lp3-header-phone { display: flex; align-items: center; gap: 9px; color: var(--lp3-black); text-decoration: none; flex-shrink: 0; }
+.lp3-header-phone { display: flex; align-items: center; gap: 9px; color: #fff; text-decoration: none; flex-shrink: 0; }
 .lp3-header-phone svg { color: var(--lp3-red); flex-shrink: 0; }
 .lp3-header-phone span { display: flex; flex-direction: column; line-height: 1.25; }
 .lp3-header-phone strong { font-size: 15px; font-weight: 700; }
-.lp3-header-phone small { font-size: 11.5px; font-weight: 500; color: var(--lp3-gray); }
+.lp3-header-phone small { font-size: 11.5px; font-weight: 500; color: rgba(255,255,255,0.6); }
 .lp3-header-phone:hover strong { color: var(--lp3-red); }
 @media (max-width: 640px) { .lp3-header-locations { display: none; } }
 
 /* Hero — mørkt fullbredde bakgrunnsbilde (plassholder til ekte foto er levert),
    hvit tekst over, flytende hvitt skjema-kort. Matcher kundens referansemal. */
-.lp3-hero { position: relative; padding: 40px 0 0; overflow: hidden; background: #14100f; }
+.lp3-hero { position: relative; padding: 104px 0 0; overflow: hidden; background: #14100f; }
 .lp3-hero-bg { position: absolute; inset: 0; }
 .lp3-hero-bg-img { object-fit: cover; }
 .lp3-hero-bg-scrim { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(10,8,7,0.74) 0%, rgba(10,8,7,0.56) 32%, rgba(10,8,7,0.28) 58%, rgba(10,8,7,0.08) 100%); }
-.lp3-hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: start; padding: 48px 0 40px; }
+.lp3-hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: start; padding: 0 0 40px; }
 .lp3-hero-copy { display: flex; flex-direction: column; padding-top: 8px; }
 .lp3-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: var(--lp3-gray); margin-bottom: 18px; }
 .lp3-eyebrow svg { color: var(--lp3-red); }
