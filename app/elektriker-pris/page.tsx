@@ -1,5 +1,7 @@
 'use client'
 import { LpHeader } from '@/components/lp/LpHeader'
+import { LpHero } from '@/components/lp/LpHero'
+import { LpSection } from '@/components/lp/LpSection'
 import { LpSticky } from '@/components/lp/LpSticky'
 import { LpFaq } from '@/components/lp/LpFaq'
 import { LpForm } from '@/components/lp/LpForm'
@@ -13,7 +15,6 @@ const Check = () => (
 )
 
 const JOBBER = ['Stikkontakter', 'Lamper og belysning', 'Feilsøking', 'Varmekabler', 'Mindre arbeid ved oppussing', 'Sikringsskap', 'Elsjekk']
-
 const PRIS_FAKTORER = ['Jobbens omfang', 'Materiell', 'Tilgang', 'Kabelføring', 'Eksisterende anlegg', 'Feilsøking', 'Dokumentasjon']
 
 const FAQ = [
@@ -28,85 +29,57 @@ export default function ElektrikerPrisPage() {
     <div className="lp3-page">
       <LpHeader location={`${PAGE}-header`} />
 
-      <section className="lp3-hero">
-        <div className="lp3-wrap">
-          <span className="lp3-eyebrow">Drammen · Asker · Bærum</span>
-          <h1>Hva koster en elektriker?</h1>
-          <p className="lp3-hero-lede">Prisen avhenger av jobben. Send en kort beskrivelse og bilder, så vurderer vi om arbeidet kan prises på forhånd.</p>
-          <div className="lp3-cta-row">
-            <a href="#skjema" className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(PAGE)}>Beskriv jobben og få pris</a>
-            <PhoneLink location={`${PAGE}-hero`} className="lp3-btn lp3-btn-secondary">Ring 90 63 31 18</PhoneLink>
-          </div>
-          <div className="lp3-trust-row">
-            <span className="lp3-trust-item"><Check />Skriftlig pris før start</span>
-            <span className="lp3-trust-item"><Check />Tillegg avklares på forhånd</span>
-            <span className="lp3-trust-item"><Check />Samsvarserklæring</span>
-          </div>
-        </div>
-      </section>
+      <LpHero
+        page={PAGE}
+        eyebrow="Drammen · Asker · Bærum"
+        h1="Hva koster en elektriker?"
+        lede="Prisen avhenger av jobben. Send en kort beskrivelse og bilder, så vurderer vi om arbeidet kan prises på forhånd."
+        primaryLabel="Beskriv jobben og få pris"
+        onPrimaryClick={() => trackLpPrimaryCta(PAGE)}
+        trustItems={['Skriftlig pris før start', 'Tillegg avklares på forhånd', 'Samsvarserklæring']}
+        panelLabel="Slik får du pris"
+        panelSteps={['Beskriv oppgaven', 'Last opp bilder', 'Få pris eller forslag til befaring']}
+      />
 
-      <section id="prisinformasjon" className="lp3-section">
-        <div className="lp3-wrap lp3-wrap-narrow">
-          <span className="lp3-section-label">Send inn</span>
-          <h2 className="lp3-h2">Jobber kunden kan sende inn</h2>
-          <div className="lp3-cols" style={{ gridTemplateColumns: '1fr' }}>
+      <LpSection id="prisinformasjon" label="Send inn" heading="Jobber kunden kan sende inn">
+        <ul className="lp3-col-list">
+          {JOBBER.map(t => <li key={t}><Check />{t}</li>)}
+        </ul>
+      </LpSection>
+
+      <LpSection label="Prisgrunnlag" heading="Hva påvirker prisen?" tint>
+        <div className="lp3-cols">
+          <div>
+            <p className="lp3-col-title">Dette avgjør prisen</p>
             <ul className="lp3-col-list">
-              {JOBBER.map(t => <li key={t}><Check />{t}</li>)}
+              {PRIS_FAKTORER.map(t => <li key={t}><Check />{t}</li>)}
+            </ul>
+          </div>
+          <div>
+            <p className="lp3-col-title">Fastpris eller timepris</p>
+            <ul className="lp3-col-list">
+              <li><Check />Avgrensede jobber kan vurderes og prises på forhånd</li>
+              <li><Check />Feilsøking og ukjent omfang kan kreve timearbeid</li>
+              <li><Check />Eventuelle tillegg avklares før de utføres</li>
             </ul>
           </div>
         </div>
-      </section>
+      </LpSection>
 
-      <section className="lp3-section lp3-section-tint">
-        <div className="lp3-wrap">
-          <span className="lp3-section-label">Prisgrunnlag</span>
-          <h2 className="lp3-h2">Hva påvirker prisen?</h2>
-          <div className="lp3-cols">
-            <div>
-              <p className="lp3-col-title">Dette avgjør prisen</p>
-              <ul className="lp3-col-list">
-                {PRIS_FAKTORER.map(t => <li key={t}><Check />{t}</li>)}
-              </ul>
+      <LpSection id="prosess" label="Fra beskrivelse til pris" heading="Slik får kunden pris">
+        <div className="lp3-steps">
+          {['Beskriv oppgaven', 'Last opp bilder', 'VBM vurderer informasjonen', 'Kunden får pris eller forslag til befaring'].map((t, i) => (
+            <div className="lp3-step" key={t}>
+              <span className="lp3-step-nr mono">{String(i + 1).padStart(2, '0')}</span>
+              <div><p className="lp3-step-title">{t}</p></div>
             </div>
-            <div>
-              <p className="lp3-col-title">Fastpris eller timepris</p>
-              <ul className="lp3-col-list">
-                <li><Check />Avgrensede jobber kan vurderes og prises på forhånd</li>
-                <li><Check />Feilsøking og ukjent omfang kan kreve timearbeid</li>
-                <li><Check />Eventuelle tillegg avklares før de utføres</li>
-              </ul>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </LpSection>
 
-      <section id="prosess" className="lp3-section">
-        <div className="lp3-wrap lp3-wrap-narrow">
-          <span className="lp3-section-label">Fra beskrivelse til pris</span>
-          <h2 className="lp3-h2">Slik får kunden pris</h2>
-          <div className="lp3-steps">
-            {[
-              'Beskriv oppgaven',
-              'Last opp bilder',
-              'VBM vurderer informasjonen',
-              'Kunden får pris eller forslag til befaring',
-            ].map((t, i) => (
-              <div className="lp3-step" key={t}>
-                <span className="lp3-step-nr mono">0{i + 1}</span>
-                <div><p className="lp3-step-title">{t}</p></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="faq" className="lp3-section lp3-section-tint">
-        <div className="lp3-wrap lp3-wrap-narrow">
-          <span className="lp3-section-label">Spørsmål</span>
-          <h2 className="lp3-h2">Ofte stilt</h2>
-          <LpFaq items={FAQ} />
-        </div>
-      </section>
+      <LpSection id="faq" label="Spørsmål" heading="Ofte stilt" tint>
+        <LpFaq items={FAQ} />
+      </LpSection>
 
       <section id="skjema" className="lp3-section">
         <div className="lp3-wrap lp3-wrap-narrow">
@@ -115,31 +88,38 @@ export default function ElektrikerPrisPage() {
             <h2 className="lp3-h2 lp3-h2-tight">Beskriv jobben og få pris</h2>
             <p className="lp3-body">Jo mer du beskriver og viser i bilder, jo mer presis kan prisen bli.</p>
           </div>
-          <LpForm
-            page={PAGE}
-            idPrefix="ep-"
-            submitLabel="Send og få pris"
-            rows={[
-              [{ kind: 'text', name: 'navn', label: 'Navn', placeholder: 'Ola Nordmann', required: true }, { kind: 'tel', name: 'telefon', label: 'Telefonnummer', placeholder: '900 00 000', required: true }],
-              [{ kind: 'email', name: 'epost', label: 'E-post', placeholder: 'ola@example.com', required: true }, { kind: 'text', name: 'postnummer', label: 'Postnummer', placeholder: '1337', required: true }],
-              [{ kind: 'select', name: 'type_jobb', label: 'Type jobb', options: [...JOBBER, 'Annet'], required: true }],
-              [{ kind: 'textarea', name: 'beskrivelse', label: 'Beskrivelse', placeholder: 'Hva skal gjøres? Beskriv gjerne omfang og rom.', required: true }],
-              [{ kind: 'file', name: 'bilder', label: 'Bilder', hint: 'Last opp ett eller flere bilder av jobben' }],
-              [{ kind: 'text', name: 'onsket_tidspunkt', label: 'Ønsket tidspunkt', placeholder: 'F.eks. denne uken, snarest' }],
-            ]}
-          />
+          <div className="lp3-form-panel">
+            <LpForm
+              page={PAGE}
+              idPrefix="ep-"
+              submitLabel="Send og få pris"
+              rows={[
+                [{ kind: 'text', name: 'navn', label: 'Navn', placeholder: 'Ola Nordmann', required: true }, { kind: 'tel', name: 'telefon', label: 'Telefonnummer', placeholder: '900 00 000', required: true }],
+                [{ kind: 'email', name: 'epost', label: 'E-post', placeholder: 'ola@example.com', required: true }, { kind: 'text', name: 'postnummer', label: 'Postnummer', placeholder: '1337', required: true }],
+                [{ kind: 'select', name: 'type_jobb', label: 'Type jobb', options: [...JOBBER, 'Annet'], required: true }],
+                [{ kind: 'textarea', name: 'beskrivelse', label: 'Beskrivelse', placeholder: 'Hva skal gjøres? Beskriv gjerne omfang og rom.', required: true }],
+                [{ kind: 'file', name: 'bilder', label: 'Bilder', hint: 'Last opp ett eller flere bilder av jobben' }],
+                [{ kind: 'text', name: 'onsket_tidspunkt', label: 'Ønsket tidspunkt', placeholder: 'F.eks. denne uken, snarest' }],
+              ]}
+            />
+          </div>
         </div>
       </section>
 
-      <section id="kontakt" className="lp3-section" style={{ textAlign: 'center' }}>
-        <div className="lp3-wrap lp3-wrap-narrow">
-          <h2 className="lp3-h2">Beskriv jobben og få pris — eller ring oss direkte</h2>
-          <div className="lp3-cta-row" style={{ justifyContent: 'center' }}>
+      <section id="kontakt" className="lp3-closing">
+        <div className="lp3-noise" />
+        <div className="lp3-wrap lp3-wrap-narrow" style={{ position: 'relative' }}>
+          <h2 className="lp3-h2" style={{ marginBottom: 32 }}>Beskriv jobben og få pris — eller ring oss direkte</h2>
+          <div className="lp3-cta-row" style={{ justifyContent: 'center', marginBottom: 0 }}>
             <a href="#skjema" className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(`${PAGE}-bunn`)}>Beskriv jobben og få pris</a>
             <PhoneLink location={`${PAGE}-bunn`} className="lp3-btn lp3-btn-secondary">Ring 90 63 31 18</PhoneLink>
           </div>
         </div>
       </section>
+
+      <div className="lp3-footer-mini">
+        <a href="/personvern">Personvern</a> · VBM Elektro AS
+      </div>
 
       <LpSticky page={PAGE} formLabel="Beskriv jobb" />
     </div>
