@@ -64,7 +64,6 @@ export default function Home() {
                 VBM Elektro er bygget for folk som vil ha en ryddig prosess fra første kontakt til ferdig jobb. Fastpris før vi starter. God kommunikasjon underveis. Ingen overraskelser på slutten.
               </p>
               <div className="hero-cta">
-                <ScrollLink id="kontakt" className="btn btn-red">Be om tilbud <span className="arr">→</span></ScrollLink>
                 <BefaringCTA />
               </div>
               <div className="hero-meta">
