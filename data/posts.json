@@ -1,5 +1,767 @@
 [
   {
+    "slug": "sikringsskap-oppgradering-tegn-pa-at-ditt-gamle-skap-ma-byttes",
+    "tittel": "Sikringsskap oppgradering: Tegn på at ditt gamle skap må byttes",
+    "beskrivelse": "Er sikringsskapet ditt utdatert? Se hvilke tegn du bør se etter, hva et nytt skap koster og når oppgradering er lovpålagt.",
+    "kategori": "Sikkerhet",
+    "dato": "2026-07-27",
+    "lesetid": 5,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Sikringsskapet er hjertet i det elektriske anlegget ditt, men også en av de mest oversette delene av boligen. Mange norske hjem har fortsatt gamle skrusikringsskap fra 60- og 70-tallet – og disse holder ikke mål mot dagens strømforbruk. Med elbil, varmepumpe, induksjonstopp og en rekke smarte enheter belastes anlegget helt annerledes enn før. I denne artikkelen ser vi på når det er nødvendig å oppgradere sikringsskapet, hva du bør se etter, og hva du kan forvente av kostnader."
+      },
+      {
+        "type": "h2",
+        "tekst": "Tydelige tegn på at sikringsskapet bør oppgraderes"
+      },
+      {
+        "type": "p",
+        "tekst": "Det finnes flere klare signaler på at det gamle skapet ditt ikke lenger er trygt eller egnet for moderne bruk. Noen av tegnene er visuelle og lette å oppdage selv, mens andre krever en fagperson for å avdekke."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Du har fortsatt skrusikringer (porselenssikringer) i stedet for automatsikringer",
+          "Sikringer ryker ofte, spesielt når flere apparater er i bruk samtidig",
+          "Skapet mangler jordfeilbryter eller jordfeilautomater",
+          "Det lukter svidd, eller du ser misfarging og brannmerker rundt sikringene",
+          "Anlegget er over 30 år gammelt og aldri oppgradert",
+          "Du planlegger å installere elbillader, varmepumpe eller solceller"
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Spesielt manglende jordfeilbryter er en alvorlig sikkerhetsrisiko. Etter NEK 400:2022 stilles det strenge krav til jordfeilbeskyttelse i nye anlegg, og selv om eldre anlegg kan være lovlige etter datidens regler, er det sterkt anbefalt å oppgradere."
+      },
+      {
+        "type": "h2",
+        "tekst": "Når er oppgradering direkte nødvendig?"
+      },
+      {
+        "type": "p",
+        "tekst": "Det er ikke alltid lovpålagt å bytte sikringsskap, men i visse situasjoner er det praktisk talt uunngåelig. Ved større ombygginger, installasjon av nye kurser eller når kapasiteten er sprengt, må skapet oppgraderes for å oppfylle gjeldende forskrifter."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Ved installasjon av elbillader – krever ofte egen dedikert kurs og jordfeilvern type B",
+          "Ved renovering av bad eller kjøkken der nye kurser legges",
+          "Når forsikringsselskapet krever det etter elkontroll",
+          "Ved overgang fra IT-nett til TN-nett i eldre boliger",
+          "Når antall kurser ikke lenger dekker boligens behov"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva koster en oppgradering av sikringsskap?"
+      },
+      {
+        "type": "p",
+        "tekst": "Prisen på et nytt sikringsskap varierer basert på boligens størrelse, antall kurser og hvor kompleks jobben er. Under ser du typiske priser for oppgradering i Oslo, Bærum, Asker og Drammen."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Type oppgradering",
+          "Fra-pris"
+        ],
+        "rows": [
+          [
+            "Mindre skap – enebolig/leilighet med få kurser",
+            "kr 18 000"
+          ],
+          [
+            "Standard skap – enebolig med normal kursmengde",
+            "kr 25 000"
+          ],
+          [
+            "Stort skap – enebolig med mange kurser og smarthus",
+            "kr 35 000"
+          ],
+          [
+            "Tilleggskurs for elbillader",
+            "kr 5 000"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Prisene inkluderer normalt nytt skap, automatsikringer, jordfeilvern, arbeid og samsvarserklæring. Merk at eldre anlegg kan kreve mer omfattende arbeid, for eksempel utskifting av inntakskabel eller oppgradering av hovedsikring hos nettselskapet."
+      },
+      {
+        "type": "h2",
+        "tekst": "Fordelene ved et moderne sikringsskap"
+      },
+      {
+        "type": "p",
+        "tekst": "Et nytt sikringsskap gir mer enn bare økt sikkerhet. Du får bedre kapasitet, enklere feilsøking, og mulighet til å utvide anlegget med nye smarte løsninger. Jordfeilautomater kobler ut kun den kursen som har feil, i stedet for hele boligen – noe som gjør hverdagen tryggere og mer forutsigbar."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Vesentlig redusert brannfare",
+          "Bedre beskyttelse mot elektrisk sjokk",
+          "Plass for nye kurser til elbil, varmepumpe og solceller",
+          "Tydelig merking og enklere feilsøking",
+          "Ofte lavere forsikringspremie"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvordan går prosessen for seg?"
+      },
+      {
+        "type": "p",
+        "tekst": "En oppgradering starter alltid med en befaring, der en autorisert elektriker kartlegger dagens anlegg og lager et forslag til nytt skap. Selve byttet tar vanligvis én til to arbeidsdager, og i denne perioden vil strømmen være avslått i store deler av boligen. VBM Elektro planlegger jobben slik at nedetiden blir så kort som mulig, og alle nye installasjoner leveres med samsvarserklæring og fullstendig dokumentasjon."
+      },
+      {
+        "type": "p",
+        "tekst": "Etter installasjon anbefales det å ta en elkontroll noen år senere for å sikre at anlegget fortsatt fungerer optimalt. Dette er også et krav fra mange forsikringsselskaper i eldre boliger."
+      },
+      {
+        "type": "cta",
+        "tekst": "Lurer du på om sikringsskapet ditt bør oppgraderes? Kontakt VBM Elektro for en uforpliktende befaring i Bærum, Oslo, Asker eller Drammen."
+      }
+    ]
+  },
+  {
+    "slug": "solcellepanel-tilkobling-hva-gjor-elektriker",
+    "tittel": "Solcellepanel tilkobling – hva gjør elektriker?",
+    "beskrivelse": "Skal du installere solceller? Se hva elektrikeren faktisk gjør ved tilkobling av solcellepanel – fra vekselretter til plusskundeavtale.",
+    "kategori": "Regelverk",
+    "dato": "2026-07-23",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Solceller blir stadig mer populært i norske boliger, og mange husstander i Bærum, Oslo, Asker og Drammen vurderer å installere anlegg på taket. Selve montasjen av panelene kan gjøres av taktekker eller solcelleleverandør, men den elektriske tilkoblingen er lovpålagt elektrikerarbeid. I denne artikkelen ser vi nærmere på hva en autorisert elektriker faktisk gjør når solcelleanlegget skal kobles til boligens elektriske anlegg og strømnettet."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvorfor må elektriker koble til solcelleanlegget?"
+      },
+      {
+        "type": "p",
+        "tekst": "Et solcelleanlegg produserer strøm, og all installasjon som er koblet til det faste elektriske anlegget i boligen skal utføres av en autorisert elektroinstallatør. Dette følger av forskrift om elektroforetak (FEK) og NEK 400. Solcelleanlegg utgjør en egen strømkilde, og feil tilkobling kan gi brannfare, jordfeil eller skade på både anlegget og strømnettet."
+      },
+      {
+        "type": "p",
+        "tekst": "I tillegg må anlegget meldes til den lokale nettoperatøren – for eksempel Elvia i Bærum og Oslo, eller Glitre Nett i Drammen – gjennom en formell melding om arbeid. Uten dette får du verken lovlig anlegg eller mulighet til å selge overskuddsstrøm tilbake til nettet."
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik foregår tilkoblingen steg for steg"
+      },
+      {
+        "type": "p",
+        "tekst": "Selve elektrikerarbeidet ved en solcelleinstallasjon består av flere faser. Her er en typisk arbeidsflyt:"
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Befaring og prosjektering: Elektrikeren vurderer sikringsskap, kapasitet og hvor vekselretter og kabling skal plasseres.",
+          "Melding til nettselskap: Det sendes installasjonsmelding og søknad om plusskundeavtale.",
+          "Kabling fra tak til vekselretter: DC-kabler føres fra panelene ned til vekselretteren, ofte plassert i teknisk rom eller garasje.",
+          "Tilkobling av vekselretter: Denne omformer likestrøm (DC) fra panelene til vekselstrøm (AC) som huset og nettet bruker.",
+          "Tilkobling i sikringsskap: Egen kurs med automatsikring, jordfeilbryter og AC-bryter installeres.",
+          "Idriftsettelse, måling og samsvarserklæring: Anlegget testes, dokumenteres og overleveres til kunden."
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Sikringsskap og vekselretter – ofte nøkkelen"
+      },
+      {
+        "type": "p",
+        "tekst": "Mange eldre boliger har sikringsskap som ikke er dimensjonert for tilkobling av solceller. Da må skapet ofte oppgraderes med større hovedsikring, ny samleskinne eller flere kursplasser. Vekselretteren må plasseres i et tørt, ventilert rom, og det stilles krav til overspenningsvern og jordfeilbeskyttelse. Elektrikeren vurderer også om det er behov for AMS-tilpasning og en toveis strømmåler – dette bestiller nettselskapet, men elektrikeren tilrettelegger for det."
+      },
+      {
+        "type": "h2",
+        "tekst": "Plusskundeavtale og salg av overskuddsstrøm"
+      },
+      {
+        "type": "p",
+        "tekst": "Når anlegget er ferdig tilkoblet, kan du bli såkalt plusskunde. Det betyr at overskuddsstrømmen du ikke bruker selv, selges tilbake til nettet. Elektrikeren melder anlegget inn til nettselskapet, som setter opp en toveismåler. Deretter inngår du en avtale med strømleverandøren din om salg av overskuddskraft."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva koster den elektriske tilkoblingen?"
+      },
+      {
+        "type": "p",
+        "tekst": "Prisene varierer avhengig av anleggets størrelse, avstand mellom paneler og vekselretter, samt om sikringsskapet må oppgraderes. Under ser du typiske kostnadsposter:"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Arbeid",
+          "Omtrentlig pris"
+        ],
+        "rows": [
+          [
+            "Tilkobling vekselretter og kurs i sikringsskap",
+            "Fra 8 000 kr"
+          ],
+          [
+            "Oppgradering av sikringsskap ved behov",
+            "15 000 – 30 000 kr"
+          ],
+          [
+            "Melding til nettselskap og dokumentasjon",
+            "2 000 – 4 000 kr"
+          ],
+          [
+            "Overspenningsvern og AC-bryter",
+            "3 000 – 6 000 kr"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Husk at Enova gir støtte til solcelleanlegg, og at støttebeløpet regnes ut fra installert effekt. Elektrikerarbeidet er en del av det totale investeringsgrunnlaget."
+      },
+      {
+        "type": "h2",
+        "tekst": "Kvalitet, dokumentasjon og garanti"
+      },
+      {
+        "type": "p",
+        "tekst": "Et solcelleanlegg skal fungere i 25–30 år, og kvaliteten på den elektriske tilkoblingen har mye å si for både sikkerhet og produksjon. Ved ferdig installasjon skal du motta samsvarserklæring, sluttkontrollskjema og teknisk dokumentasjon. Dette er også nødvendig ved eventuelt boligsalg og for garantikrav."
+      },
+      {
+        "type": "p",
+        "tekst": "Hos VBM Elektro tar vi hele den elektriske delen av solcelleprosjektet – fra befaring og prosjektering til melding, tilkobling og idriftsettelse. Vi samarbeider med etablerte solcelleleverandører, og sørger for at anlegget ditt oppfyller kravene i NEK 400 og til nettselskapet i ditt område."
+      },
+      {
+        "type": "cta",
+        "tekst": "Planlegger du solceller i Bærum, Oslo, Asker eller Drammen? Kontakt VBM Elektro for en uforpliktende befaring og pristilbud på tilkobling."
+      }
+    ]
+  },
+  {
+    "slug": "elektriker-ved-badrenovering-hva-er-lovpalagt",
+    "tittel": "Elektriker ved badrenovering – hva er lovpålagt?",
+    "beskrivelse": "Skal du pusse opp badet? Se hva som er lovpålagt elektrikerarbeid, sonekrav, IP-klasser og hvorfor du trenger autorisert elektriker.",
+    "kategori": "Renovering",
+    "dato": "2026-07-20",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Badet er det rommet i boligen der elektrisitet og vann møtes tettest. Derfor stilles det svært strenge krav til det elektriske anlegget på bad, og mye av arbeidet er lovpålagt å utføre av autorisert elektriker. I denne guiden går vi gjennom hva regelverket faktisk krever ved en badrenovering, hvilke soner du må forholde deg til, og hvilke fallgruver mange huseiere i Oslo, Bærum, Asker og Drammen går i."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvilke elektrikerarbeider er lovpålagt på bad?"
+      },
+      {
+        "type": "p",
+        "tekst": "I Norge er det kun virksomheter som er registrert i Elvirksomhetsregisteret som lovlig kan utføre elektroinstallasjoner i boligen. På bad gjelder dette strengere enn ellers, fordi konsekvensene av feil kan være livsfarlige. Ifølge forskrift om elektroforetak (FEK) må alle faste installasjoner utføres av autorisert elektriker – du kan ikke gjøre dette selv, selv ikke i eget hjem."
+      },
+      {
+        "type": "p",
+        "tekst": "Følgende arbeider er alltid lovpålagt å få utført av elektriker på bad:"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Installasjon og tilkobling av varmekabler i gulv",
+          "Montering av stikkontakter, brytere og downlights",
+          "Tilkobling av varmtvannsbereder og elektrisk gulvvarme",
+          "Endringer i sikringsskap, inkludert egen kurs til bad",
+          "Installasjon av speil med lys, ventilasjon eller varmeviftetopplegg",
+          "Utstedelse av samsvarserklæring etter ferdig arbeid"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Sonekrav på bad – NEK 400"
+      },
+      {
+        "type": "p",
+        "tekst": "Regelverket NEK 400 deler badet inn i soner basert på avstand til vann. Hver sone har egne krav til hva som kan installeres, og hvilken IP-klasse (tetthetsgrad) utstyret må ha. Dette er ikke noe forslag – det er en norm som må følges for at anlegget skal være lovlig og forsikringsgyldig."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Sone",
+          "Område",
+          "Krav"
+        ],
+        "rows": [
+          [
+            "Sone 0",
+            "Inne i badekar/dusj",
+            "Kun 12V SELV, IPX7"
+          ],
+          [
+            "Sone 1",
+            "Rett over badekar/dusj (opp til 2,25 m)",
+            "IPX4, kun godkjent utstyr"
+          ],
+          [
+            "Sone 2",
+            "60 cm utenfor sone 1",
+            "IPX4, begrenset utstyr"
+          ],
+          [
+            "Utenfor soner",
+            "Resten av badet",
+            "Normalt IP21, stikkontakter tillatt"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "For eksempel må downlights over dusjen ha minimum IPX4, og stikkontakter kan aldri plasseres i sone 0, 1 eller 2. Alle kurser til bad skal også ha jordfeilbryter type A på maks 30 mA."
+      },
+      {
+        "type": "h2",
+        "tekst": "Egen kurs og jordfeilbryter"
+      },
+      {
+        "type": "p",
+        "tekst": "Ved en full badrenovering vil elektrikeren i praksis alltid legge opp minst én egen kurs til badet. Har du varmekabler, kreves det ofte en dedikert kurs kun for disse, mens stikkontakter og lys ligger på en annen. Dette er både et krav i moderne installasjoner og en fordel for driftssikkerheten – én utløst jordfeil skal ikke slå ut hele boligen."
+      },
+      {
+        "type": "h2",
+        "tekst": "Samsvarserklæring og dokumentasjon"
+      },
+      {
+        "type": "p",
+        "tekst": "Etter endt arbeid skal du som huseier motta en samsvarserklæring fra elektrikeren. Dette er ditt bevis på at anlegget er utført i henhold til forskriftene, og dokumentet er kritisk ved salg av boligen og ved eventuelle forsikringssaker. Uten samsvarserklæring kan forsikringsselskapet avslå erstatning ved brann eller vannskade knyttet til det elektriske."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Samsvarserklæring på utført arbeid",
+          "Kursfortegnelse oppdatert i sikringsskapet",
+          "Sluttkontroll med målerapport",
+          "Bruksanvisning for varmekabelstyring og annet utstyr"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Vanlige feil vi ser ved badrenovering"
+      },
+      {
+        "type": "p",
+        "tekst": "Hos VBM Elektro blir vi ofte kontaktet av boligeiere som har oppdaget mangler i etterkant av en oppussing – gjerne når badet skal selges eller etter en elkontroll. De vanligste feilene er stikkontakter plassert for nær dusjen, downlights med feil IP-klasse, manglende jordfeilbryter og varmekabler koblet på feil kurs."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Feil IP-klasse på lyspunkter i sone 1 og 2",
+          "Manglende egen kurs for varmekabel",
+          "Stikkontakter for tett på våtsone",
+          "Skjøter på varmekabel skjult i gulvet",
+          "Manglende samsvarserklæring"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik sikrer du en lovlig og trygg badrenovering"
+      },
+      {
+        "type": "p",
+        "tekst": "Det viktigste rådet er å involvere elektriker tidlig i prosjektet – helst før flisleggeren begynner. Da kan kurser, varmekabler og lyspunkter planlegges riktig fra start. VBM Elektro samarbeider tett med rørleggere og byggmestere i Bærum, Oslo, Asker og Drammen, og sørger for at alt elektrisk arbeid er dokumentert og i samsvar med NEK 400."
+      },
+      {
+        "type": "cta",
+        "tekst": "Planlegger du badrenovering? Kontakt VBM Elektro for en uforpliktende befaring og pris på det elektriske arbeidet."
+      }
+    ]
+  },
+  {
+    "slug": "el-anlegg-i-nybygg-hva-koster-det-i-2026",
+    "tittel": "El-anlegg i nybygg – hva koster det i 2026?",
+    "beskrivelse": "Skal du bygge nytt hus? Se hva et komplett el-anlegg koster, hva som påvirker prisen, og hvilke valg du bør ta tidlig i prosessen.",
+    "kategori": "Renovering",
+    "dato": "2026-07-16",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Elektrikerarbeid utgjør ofte 8–12 prosent av totalkostnaden ved bygging av nytt hus. Prisen varierer mye ut fra boligens størrelse, standard og hvilke løsninger du velger. I denne artikkelen går vi gjennom hva et komplett el-anlegg i et nybygg typisk koster i 2026, hva som er inkludert, og hvilke valg som påvirker sluttregningen mest."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva koster el-anlegg i nybygg?"
+      },
+      {
+        "type": "p",
+        "tekst": "For en enebolig på 150–180 kvm med normal standard ligger prisen for et komplett el-anlegg vanligvis mellom 180 000 og 320 000 kroner inkludert materiell og arbeid. For rekkehus og mindre boliger blir prisen lavere, mens store boliger med høy teknisk standard fort kommer over 400 000 kroner. Prisen omfatter da alt fra sikringsskap og kursopplegg til stikkontakter, belysning, varmestyring og tilkobling til strømnettet."
+      },
+      {
+        "type": "p",
+        "tekst": "En tommelfingerregel er 1 500–2 200 kroner per kvadratmeter for et grunnleggende anlegg, og 2 500–3 500 kroner per kvadratmeter når du legger inn smarthus, ekstra downlights og avansert varmestyring."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva er inkludert i et komplett el-anlegg?"
+      },
+      {
+        "type": "p",
+        "tekst": "Et fullverdig el-anlegg i nybygg omfatter mye mer enn stikkontakter og lys. Følgende er normalt inkludert:"
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Sikringsskap med automatsikringer og jordfeilbrytere",
+          "Hovedinntak og tilkobling mot nettselskap",
+          "Kursopplegg og trekking av kabler i vegger og tak",
+          "Stikkontakter, brytere og uttak i alle rom",
+          "Belysning, downlights og utelys",
+          "Varmekabler, panelovner og termostater",
+          "Røykvarslere, ringeanlegg og eventuelt data/nettverk",
+          "Samsvarserklæring og sluttdokumentasjon"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Prisoversikt – vanlige tilvalg"
+      },
+      {
+        "type": "p",
+        "tekst": "Mange velger tilvalg utover standardpakken fra byggefirmaet. Her er typiske priser for tilleggsarbeid vi utfører for kunder i Bærum, Oslo, Asker og Drammen:"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Tilvalg",
+          "Fra-pris"
+        ],
+        "rows": [
+          [
+            "Elbillader (Zaptec/Easee) standard",
+            "9 990 kr"
+          ],
+          [
+            "Elbillader kompleks installasjon",
+            "14 900 kr"
+          ],
+          [
+            "Smarthus Plejd, 5 rom",
+            "9 900 kr"
+          ],
+          [
+            "Downlights per stk (inkl. montering)",
+            "600–900 kr"
+          ],
+          [
+            "Varmekabel bad (5–8 kvm)",
+            "12 000–18 000 kr"
+          ],
+          [
+            "Ekstra dobbel stikkontakt",
+            "1 200–1 800 kr"
+          ],
+          [
+            "Utvendig stikkontakt med jordfeil",
+            "2 500–3 500 kr"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva påvirker prisen mest?"
+      },
+      {
+        "type": "p",
+        "tekst": "Sluttprisen henger tett sammen med valgene du tar tidlig i prosjektet. De største kostnadsdriverne er:"
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Antall punkter (stikkontakter, brytere, lyspunkt) – flere punkter gir mer arbeid og materiell",
+          "Smarthusløsninger som Plejd eller KNX, som krever mer planlegging og programmering",
+          "Belysningsplan med mange downlights, LED-strips og sceneprogrammering",
+          "Elbillader og forberedelse for solceller i sikringsskapet",
+          "Varmeløsning – vannbåren gulvvarme krever mindre elektro enn full elektrisk oppvarming",
+          "Avstand til nærmeste nettstasjon og eventuelle graveavgifter for kabelframføring"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Tenk langsiktig når du planlegger"
+      },
+      {
+        "type": "p",
+        "tekst": "Det er langt billigere å legge inn ekstra kurser, tomrør og data-punkter i byggefasen enn å ettermontere senere. Vi anbefaler alltid å forberede for elbillader, solceller og smarthus – selv om du ikke installerer det med en gang. Et ekstra tomrør fra sikringsskap til tak og garasje koster lite nå, men sparer deg for titusener senere."
+      },
+      {
+        "type": "p",
+        "tekst": "Hos VBM Elektro tar vi gjerne en befaring i planleggingsfasen og hjelper deg å prioritere hva som bør inn nå, og hva som kan vente. Vi jobber tett med byggmestere i Bærum, Asker, Oslo og Drammen, og leverer alt fra grunnleggende anlegg til komplette smarthusløsninger."
+      },
+      {
+        "type": "h2",
+        "tekst": "Slik får du et presist tilbud"
+      },
+      {
+        "type": "p",
+        "tekst": "For å gi et nøyaktig pristilbud trenger elektrikeren tegninger, romskjema og en beskrivelse av ønsket standard. Jo tidligere du involverer elektriker i prosjektet, jo bedre blir løsningen – og prisen. Be alltid om et skriftlig tilbud som spesifiserer antall punkter, type sikringsskap, belysning og tilvalg."
+      },
+      {
+        "type": "cta",
+        "tekst": "Skal du bygge nytt? Kontakt VBM Elektro for en uforpliktende prat og et konkret tilbud på el-anlegget."
+      }
+    ]
+  },
+  {
+    "slug": "smarthus-knx-vs-plejd-hva-passer-for-deg",
+    "tittel": "Smarthus KNX vs Plejd – hva passer for deg?",
+    "beskrivelse": "KNX eller Plejd i smarthuset? Vi sammenligner pris, funksjoner, installasjon og fleksibilitet – slik at du velger riktig løsning for din bolig.",
+    "kategori": "Smarthus",
+    "dato": "2026-07-13",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Skal du gjøre boligen smartere, står valget ofte mellom to systemer: KNX og Plejd. Begge styrer lys, varme og andre funksjoner – men de er bygget på helt ulike prinsipper. KNX er den etablerte, internasjonale standarden for bygningsautomasjon, mens Plejd er et nordisk system som har vokst raskt i norske hjem takket være enkel installasjon og god pris. I denne artikkelen ser vi på hva som skiller dem, og hvilket system som passer best til ulike behov."
+      },
+      {
+        "type": "h2",
+        "tekst": "Kort om KNX og Plejd"
+      },
+      {
+        "type": "p",
+        "tekst": "KNX er en åpen internasjonal standard som brukes i alt fra eneboliger til næringsbygg og hotellkjeder. Systemet består av kablet buss (grønn KNX-kabel) som kobler sammen brytere, dimmere, termostater, sensorer og aktuatorer. Alt programmeres i ETS-programvaren av en sertifisert KNX-integrator."
+      },
+      {
+        "type": "p",
+        "tekst": "Plejd er et svensk system som kommuniserer trådløst via Bluetooth mesh. Enhetene monteres bak eksisterende brytere og i taket bak downlights, og programmeres via en app på mobilen. Det gjør Plejd svært attraktivt ved oppgradering av eksisterende boliger, hvor det ikke er lagt bussekabel."
+      },
+      {
+        "type": "h2",
+        "tekst": "Sammenligning: KNX vs Plejd"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Egenskap",
+          "KNX",
+          "Plejd"
+        ],
+        "rows": [
+          [
+            "Kommunikasjon",
+            "Kablet buss",
+            "Trådløst (Bluetooth mesh)"
+          ],
+          [
+            "Installasjon",
+            "Krever bussekabel – best i nybygg",
+            "Passer både nybygg og rehab"
+          ],
+          [
+            "Programmering",
+            "ETS av sertifisert integrator",
+            "Plejd-app på mobil"
+          ],
+          [
+            "Skalerbarhet",
+            "Meget stor – hele bygg",
+            "God for boliger og små næringsbygg"
+          ],
+          [
+            "Levetid og standard",
+            "Åpen ISO-standard, 30+ år",
+            "Proprietært, men aktivt utviklet"
+          ],
+          [
+            "Pris (indikativ)",
+            "Høyere – fra ca. 150 000 kr",
+            "Fra ca. 9 900 kr for 5 rom"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Når bør du velge KNX?"
+      },
+      {
+        "type": "p",
+        "tekst": "KNX er ofte det riktige valget når du bygger nytt, har et stort hus eller ønsker maksimal fleksibilitet og integrasjon mot andre systemer som ventilasjon, adgangskontroll, alarm og AV-utstyr. Fordi kommunikasjonen går via kabel, er systemet svært stabilt og uavhengig av wifi eller Bluetooth-signal."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Nybygg der man kan legge bussekabel fra start",
+          "Store boliger, hytter og næringsbygg",
+          "Ønske om avansert integrasjon (ventilasjon, solceller, adgang)",
+          "Krav til lang levetid og leverandøruavhengighet"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Når passer Plejd best?"
+      },
+      {
+        "type": "p",
+        "tekst": "For de aller fleste norske eneboliger, leiligheter og rekkehus er Plejd et svært godt valg. Systemet installeres uten å rive vegger, og du får styring av lys, dimming, scener og varme via app eller fysiske brytere. Plejd støtter også integrasjon med Google Home, Apple HomeKit og Homey, slik at du kan kombinere det med annet smartteknologi."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Rehabilitering og oppgradering av eksisterende bolig",
+          "Boliger opp til 150–250 m² med normale behov",
+          "Ønske om rask installasjon og lav inngangspris",
+          "Enkel drift – du kan selv justere scener i appen"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Kostnad og installasjon"
+      },
+      {
+        "type": "p",
+        "tekst": "Prisforskjellen er betydelig. Et Plejd-anlegg for fem rom starter på rundt 9 900 kr installert, mens et komplett KNX-anlegg for en enebolig typisk ligger fra 150 000 kr og oppover, avhengig av kompleksitet og antall funksjoner. Til gjengjeld gir KNX en helhetlig løsning som styrer hele bygget som ett system."
+      },
+      {
+        "type": "p",
+        "tekst": "Uansett hvilket system du velger, må installasjonen utføres av autorisert elektriker. Hos VBM Elektro er vi sertifisert Plejd-installatør og har lang erfaring med både trådløse og kablede smarthusløsninger i Bærum, Oslo, Asker og Drammen. Vi hjelper deg med å velge riktig system ut fra behov, boligtype og budsjett."
+      },
+      {
+        "type": "h2",
+        "tekst": "Kan man kombinere KNX og Plejd?"
+      },
+      {
+        "type": "p",
+        "tekst": "Ja, i noen prosjekter kombineres systemene – for eksempel KNX som ryggrad i et større bygg, mens Plejd brukes i en tilbygd del eller i en utleiedel. Kombinasjonen krever imidlertid god planlegging, og bør prosjekteres av en elektriker med kompetanse på begge systemene."
+      },
+      {
+        "type": "h2",
+        "tekst": "Konklusjon"
+      },
+      {
+        "type": "p",
+        "tekst": "Kort oppsummert: Velg KNX hvis du bygger nytt, har store ambisjoner og ønsker en åpen standard med lang levetid. Velg Plejd hvis du vil ha en enkel, prisgunstig og fleksibel løsning som kan installeres uten store inngrep – noe som passer flertallet av norske boliger."
+      },
+      {
+        "type": "cta",
+        "tekst": "Vurderer du smarthus? Ta kontakt med VBM Elektro for en uforpliktende befaring og pristilbud på Plejd eller KNX."
+      }
+    ]
+  },
+  {
+    "slug": "downlights-installasjon-priser-og-praktisk-guide-for-2025",
+    "tittel": "Downlights installasjon: priser og praktisk guide for 2025",
+    "beskrivelse": "Skal du montere downlights? Se priser, antall, plassering og krav til IP-klasse. Praktisk guide fra erfarne elektrikere i Bærum, Oslo og Asker.",
+    "kategori": "Renovering",
+    "dato": "2026-07-09",
+    "lesetid": 6,
+    "featured": false,
+    "content": [
+      {
+        "type": "p",
+        "tekst": "Downlights har blitt en av de mest populære belysningsløsningene i norske hjem. De gir et rent, moderne uttrykk, sparer takhøyde og kan skape en helt ny stemning i både stue, kjøkken, bad og gang. Men hvor mange downlights trenger du egentlig? Hva koster installasjonen? Og hvilke regler må følges? I denne guiden får du en praktisk gjennomgang basert på erfaringer fra hverdagen som elektriker."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hva koster det å installere downlights?"
+      },
+      {
+        "type": "p",
+        "tekst": "Prisen på downlights-installasjon avhenger av flere faktorer: antall spotter, om det er nybygg eller etterinstallasjon, om taket er nedforet, og hvilken kvalitet du velger på selve armaturene. Etterinstallasjon i eksisterende betongtak er mer arbeidskrevende enn i et gipstak eller nedforet himling."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Type installasjon",
+          "Omtrentlig pris"
+        ],
+        "rows": [
+          [
+            "Downlight i gipshimling (per stk, inkl. montering)",
+            "kr 700 – 1 200"
+          ],
+          [
+            "Downlight i nedforet tak (per stk)",
+            "kr 900 – 1 500"
+          ],
+          [
+            "Etterinstallasjon i betongtak",
+            "Etter befaring"
+          ],
+          [
+            "Dimmer/lysstyring per sone",
+            "kr 1 500 – 3 500"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "tekst": "Prisene er veiledende og inkluderer standard LED-downlights. Ved større prosjekter, som et helt kjøkken eller stue, blir totalprisen ofte mer gunstig per punkt fordi mye av oppriggingen kan gjøres samlet."
+      },
+      {
+        "type": "h2",
+        "tekst": "Hvor mange downlights trenger du?"
+      },
+      {
+        "type": "p",
+        "tekst": "En vanlig tommelfingerregel er én downlight per kvadratmeter for en jevn allmennbelysning, men dette varierer med takhøyde, lysstyrke (lumen), spredningsvinkel og romfunksjon. Kjøkkenbenker og speil på bad trenger for eksempel mer punktlys, mens en stue ofte har best effekt av færre spotter kombinert med annen belysning."
+      },
+      {
+        "type": "ul",
+        "punkter": [
+          "Stue: 6–10 downlights avhengig av størrelse, gjerne dimbare",
+          "Kjøkken: én rekke over benken + jevn fordeling ellers",
+          "Bad: 4–6 stk med riktig IP-klasse (minimum IP44)",
+          "Gang og entré: 2–4 stk, ofte med bevegelsessensor",
+          "Soverom: 4–6 stk, gjerne med varmt lys (2700K)"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Krav til IP-klasse og sikkerhet"
+      },
+      {
+        "type": "p",
+        "tekst": "Downlights på bad og i våtrom må ha riktig IP-klasse og monteres i henhold til sonekravene i NEK 400. I sone 1 (rett over dusj og badekar) kreves minimum IP44, og armaturen må være godkjent for formålet. På kjøkken og i tørre rom er kravene mindre strenge, men fortsatt viktig å følge – spesielt med tanke på brannsikkerhet og isolasjonstetting mot kaldt loft."
+      },
+      {
+        "type": "ol",
+        "punkter": [
+          "Planlegg plassering på tegning før hulling gjøres",
+          "Kontroller taktype og eventuell isolasjon over",
+          "Velg armatur med riktig IP-klasse og fargetemperatur",
+          "Sørg for at trafo/driver er tilgjengelig for service",
+          "Test dimmer og lysstyring før himlingen lukkes"
+        ]
+      },
+      {
+        "type": "h2",
+        "tekst": "Dimbare downlights og smart lysstyring"
+      },
+      {
+        "type": "p",
+        "tekst": "Skal du først installere downlights, anbefaler vi å tenke på dimming allerede fra start. En dimbar løsning gir mye bedre fleksibilitet i rommet og bidrar til lengre levetid på LED-en. Kombinert med smarthusløsninger som Plejd får du full kontroll over lyset via bryter eller app – uten synlige kabler eller stygge installasjoner."
+      },
+      {
+        "type": "p",
+        "tekst": "VBM Elektro monterer downlights i boliger og næringsbygg i Bærum, Asker, Oslo og Drammen. Vi tar alltid en befaring før større prosjekter, slik at du får riktig antall, riktig lysfarge og en installasjon som holder i mange år."
+      },
+      {
+        "type": "h2",
+        "tekst": "Kan du montere downlights selv?"
+      },
+      {
+        "type": "p",
+        "tekst": "Fastmontert belysning skal alltid tilkobles av en autorisert elektriker. Det er lov å bytte en eksisterende downlight med tilsvarende type, men å legge nye kurser, kutte hull i himling eller montere nye punkter regnes som elektroarbeid som krever fagkompetanse. Feil montering kan gi brannfare, spesielt der isolasjonsmateriale kommer i kontakt med armaturen."
+      },
+      {
+        "type": "cta",
+        "tekst": "Vurderer du downlights hjemme? Ta kontakt med VBM Elektro for en uforpliktende befaring og et konkret pristilbud."
+      }
+    ]
+  },
+  {
     "slug": "enova-stotte-til-elbillader-2026-slik-soker-du-steg-for-steg",
     "tittel": "Enova-støtte til elbillader 2026 – slik søker du steg for steg",
     "beskrivelse": "Alt om Enova-støtte til elbillader i 2026: hvem kan søke, hvor mye du kan få, og hvordan du søker. Praktisk guide fra elektriker i Bærum.",
