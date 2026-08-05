@@ -166,7 +166,6 @@ nav.top {
   position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
   display: flex; align-items: center; justify-content: center; padding: 16px;
 }
-body.modal-open .hero-bg-video { opacity: 0; }
 .bm-panel {
   position: relative;
   z-index: 301; width: min(520px, 100%); max-height: calc(100dvh - 32px); overflow-y: auto;
@@ -236,7 +235,12 @@ body.modal-open .hero-bg-video { opacity: 0; }
   z-index: 0; pointer-events: none; opacity: 0.08;
 }
 .hero-bolt path { fill: var(--red); }
-.hero-grid { display: grid; grid-template-columns: 1fr; gap: 60px; align-items: end; position: relative; z-index: 1; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: start; position: relative; z-index: 1; }
+.hero-form-col { padding-top: 4px; }
+.hero-form-head { margin-bottom: 16px; }
+.hero-form-head h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; }
+.hero-form-head p { font-size: 14.5px; color: var(--text-soft); }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-form-col { max-width: 480px; } }
 .hero-live {
   display: flex; width: fit-content; align-items: center; gap: 8px;
   background: white; border: 1px solid var(--line);
@@ -278,13 +282,6 @@ body.modal-open .hero-bg-video { opacity: 0; }
   font-size: 12px; font-weight: 700;
 }
 .hero .wrap { position: relative; }
-.hero-bg-video {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  z-index: 0; opacity: 0.18;
-  pointer-events: none;
-}
 
 /* ── Marquee ───────────────────────────────────── */
 .marquee {

@@ -695,7 +695,7 @@
       },
       {
         "type": "p",
-        "tekst": "Selve laderen koster omtrent det samme fra de to produsentene – rundt 9 000–11 000 kroner med kabel. Den største kostnaden ligger i installasjonen, som avhenger av avstand til sikringsskap, type sikringsskap og om det må trekkes ny kurs. Hos VBM Elektro starter en standard installasjon av elbillader på 9 990 kroner, mens mer komplekse installasjoner med lang kabelføring eller oppgradering av sikringsskap ligger fra 14 900 kroner."
+        "tekst": "Selve laderen koster omtrent det samme fra de to produsentene – rundt 9 000–11 000 kroner med kabel. Den største kostnaden ligger i installasjonen, som avhenger av avstand til sikringsskap, type sikringsskap og om det må trekkes ny kurs. Hos VBM Elektro starter en standard installasjon av elbillader på 12 490 kroner, mens mer komplekse installasjoner med lang kabelføring eller oppgradering av sikringsskap ligger fra 18 490 kroner."
       },
       {
         "type": "h2",
@@ -1621,7 +1621,7 @@
       },
       {
         "type": "p",
-        "tekst": "I Bærum og Oslo-området koster en standard installasjon av Zaptec Go eller Easee Home fra kr 9 990 inkl. materiell. Komplekse installasjoner med lang kabeltrekk, graving eller oppgradering av sikringsskap koster mer."
+        "tekst": "I Bærum og Oslo-området koster en standard installasjon av Zaptec Go eller Easee Home fra kr 12 490 inkl. materiell. Komplekse installasjoner med lang kabeltrekk, graving eller oppgradering av sikringsskap koster mer."
       },
       {
         "type": "cta",
@@ -1802,11 +1802,11 @@
         "rows": [
           [
             "Standard (< 10m kabel)",
-            "kr 9 990"
+            "kr 12 490"
           ],
           [
             "Kompleks (lang trekk, graving)",
-            "kr 14 900"
+            "kr 18 490"
           ],
           [
             "Borettslag / sameie",

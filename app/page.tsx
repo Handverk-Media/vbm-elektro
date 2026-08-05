@@ -40,7 +40,6 @@ export default function Home() {
 
       {/* ── Hero ────────────────────────────────── */}
       <section className="hero">
-        <video autoPlay muted loop playsInline className="hero-bg-video" src="/hero-video.mp4" />
         <svg className="hero-bolt" viewBox="0 0 175 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
           <path d="M 60 0 L 130 0 L 100 130 L 165 130 L 40 340 L 95 195 L 10 195 Z" />
         </svg>
@@ -73,6 +72,13 @@ export default function Home() {
                 <div className="hero-meta-item"><span className="check">✓</span> Svar innen 1 time</div>
                 <div className="hero-meta-item"><span className="check">✓</span> NELFO-godkjent</div>
               </div>
+            </div>
+            <div className="hero-form-col">
+              <div className="hero-form-head">
+                <h2>Få tilbud</h2>
+                <p>Beskriv jobben — vi svarer innen 1 time.</p>
+              </div>
+              <ContactForm idPrefix="hero-" />
             </div>
           </div>
 
@@ -444,7 +450,7 @@ export default function Home() {
             <details className="faq-item" open>
               <summary>Hva koster en elbillader-installasjon hos dere?<span className="ico">+</span></summary>
               <div className="answer">
-                <p>Standard installasjon starter på <strong>kr 9 990</strong>. Det inkluderer kabling fra sikringsskap, nødvendig vern, dokumentasjon og idriftsettelse. Hvis det trengs kursoppgradering, ekstra kabling i parkeringskjeller eller graving, ligger vi typisk på kr 14 900 og oppover.</p>
+                <p>Standard installasjon starter på <strong>kr 12 490</strong>. Det inkluderer kabling fra sikringsskap, nødvendig vern, dokumentasjon og idriftsettelse. Hvis det trengs kursoppgradering, ekstra kabling i parkeringskjeller eller graving, ligger vi typisk på kr 18 490 og oppover.</p>
                 <p>Selve laderen kommer i tillegg. Vi monterer alle godkjente merker — Zaptec, Easee, Defa, Schneider — og kan også skaffe utstyret hvis du ønsker.</p>
               </div>
             </details>

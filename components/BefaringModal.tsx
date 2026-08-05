@@ -155,13 +155,13 @@ export function BefaringModal({ open, onClose }: Props) {
             </div>
             <p className="bm-title" style={{ marginBottom: 8 }}>Forespørsel mottatt!</p>
             <p className="bm-sub" style={{ marginBottom: 28, lineHeight: 1.6 }}>
-              Takk! Vi ringer deg innen 4 timer.<br />
+              Takk! Vi ringer deg innen 1 time.<br />
               Vil du også velge tidspunkt nå?
             </p>
             <button onClick={() => setStep('calendar')} className="btn btn-red form-submit" style={{ width: '100%', justifyContent: 'center' }}>
               Velg tidspunkt <span className="arr">→</span>
             </button>
-            <p className="form-fine" style={{ marginTop: 12 }}>Eller vent — vi tar kontakt innen 4 timer</p>
+            <p className="form-fine" style={{ marginTop: 12 }}>Eller vent — vi tar kontakt innen 1 time</p>
           </div>
         ) : (
           <div className="bm-calendar">

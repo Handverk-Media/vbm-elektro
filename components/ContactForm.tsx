@@ -4,7 +4,7 @@ import { trackLeadSubmit, normalizePhoneNO } from '@/lib/analytics'
 import { getUtmParams } from '@/lib/utm'
 import { getStoredGclid } from '@/hooks/useGclid'
 
-export function ContactForm() {
+export function ContactForm({ idPrefix = '' }: { idPrefix?: string }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -55,28 +55,28 @@ export function ContactForm() {
     <form className="contact-form" onSubmit={handleSubmit}>
       <div className="form-row">
         <div className="form-field">
-          <label htmlFor="navn">Navn</label>
-          <input type="text" id="navn" name="navn" placeholder="Ola Nordmann" required />
+          <label htmlFor={`${idPrefix}navn`}>Navn</label>
+          <input type="text" id={`${idPrefix}navn`} name="navn" placeholder="Ola Nordmann" required />
         </div>
         <div className="form-field">
-          <label htmlFor="telefon">Telefon</label>
-          <input type="tel" id="telefon" name="telefon" placeholder="900 00 000" required />
+          <label htmlFor={`${idPrefix}telefon`}>Telefon</label>
+          <input type="tel" id={`${idPrefix}telefon`} name="telefon" placeholder="900 00 000" required />
         </div>
       </div>
 
       <div className="form-field">
-        <label htmlFor="epost">E-post</label>
-        <input type="email" id="epost" name="epost" placeholder="ola@example.com" required />
+        <label htmlFor={`${idPrefix}epost`}>E-post</label>
+        <input type="email" id={`${idPrefix}epost`} name="epost" placeholder="ola@example.com" required />
       </div>
 
       <div className="form-field">
-        <label htmlFor="adresse">Adresse</label>
-        <input type="text" id="adresse" name="adresse" placeholder="Gateadresse, postnummer" />
+        <label htmlFor={`${idPrefix}adresse`}>Adresse</label>
+        <input type="text" id={`${idPrefix}adresse`} name="adresse" placeholder="Gateadresse, postnummer" />
       </div>
 
       <div className="form-field">
-        <label htmlFor="kategori">Hva gjelder oppdraget?</label>
-        <select id="kategori" name="kategori" required>
+        <label htmlFor={`${idPrefix}kategori`}>Hva gjelder oppdraget?</label>
+        <select id={`${idPrefix}kategori`} name="kategori" required>
           <option value="">Velg kategori …</option>
           <option>Elbillader</option>
           <option>Serviceoppdrag</option>
@@ -90,8 +90,8 @@ export function ContactForm() {
       </div>
 
       <div className="form-field">
-        <label htmlFor="melding">Beskriv jobben</label>
-        <textarea id="melding" name="melding" rows={4} placeholder="Hva skal gjøres? Beskriv gjerne omfang, rom, eller annet som er relevant." required />
+        <label htmlFor={`${idPrefix}melding`}>Beskriv jobben</label>
+        <textarea id={`${idPrefix}melding`} name="melding" rows={4} placeholder="Hva skal gjøres? Beskriv gjerne omfang, rom, eller annet som er relevant." required />
       </div>
 
       <label className="form-check">

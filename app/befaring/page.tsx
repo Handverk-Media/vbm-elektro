@@ -42,7 +42,7 @@ export default function BefaringPage() {
           <div className="wrap">
             <div className="eyebrow">Gratis · Uforpliktende</div>
             <h1>Book gratis befaring</h1>
-            <p>Fyll inn info og velg tidspunkt. Vi ringer deg innen 4 timer for å bekrefte — befaring er helt kostnadsfri.</p>
+            <p>Fyll inn info og velg tidspunkt. Vi ringer deg innen 1 time for å bekrefte — befaring er helt kostnadsfri.</p>
           </div>
         </section>
 
@@ -160,14 +160,14 @@ export default function BefaringPage() {
                     </div>
                     <h3 style={{ fontWeight: 700, fontSize: 22, marginBottom: 12 }}>Forespørsel mottatt!</h3>
                     <p style={{ color: 'var(--text-soft)', marginBottom: 32, lineHeight: 1.6 }}>
-                      Takk! Vi ringer deg innen 4 timer for å bekrefte befaring.<br />
+                      Takk! Vi ringer deg innen 1 time for å bekrefte befaring.<br />
                       Vil du også velge tidspunkt nå?
                     </p>
                     <button onClick={() => setSteg('kalender')} className="form-submit" style={{ width: '100%', justifyContent: 'center' }}>
                       Velg tidspunkt
                       <svg viewBox="0 0 20 20" fill="currentColor" width={16} height={16}><path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" /></svg>
                     </button>
-                    <p style={{ color: 'var(--text-faint)', fontSize: 13, marginTop: 16 }}>Eller vent — vi tar kontakt innen 4 timer</p>
+                    <p style={{ color: 'var(--text-faint)', fontSize: 13, marginTop: 16 }}>Eller vent — vi tar kontakt innen 1 time</p>
                   </div>
                 ) : (
                   <div>
