@@ -14,9 +14,10 @@ interface Props {
   trustItems: string[]
   panelLabel: string
   panelSteps: string[]
+  panelStat: string
 }
 
-export function LpHero({ page, eyebrow, h1, lede, primaryLabel, onPrimaryClick, trustItems, panelLabel, panelSteps }: Props) {
+export function LpHero({ page, eyebrow, h1, lede, primaryLabel, onPrimaryClick, trustItems, panelLabel, panelSteps, panelStat }: Props) {
   return (
     <section className="lp3-hero">
       <div className="lp3-hero-grid">
@@ -36,17 +37,23 @@ export function LpHero({ page, eyebrow, h1, lede, primaryLabel, onPrimaryClick, 
           </div>
         </div>
         <div className="lp3-hero-panel">
-          <svg className="lp3-hero-bolt" viewBox="0 0 175 340" fill="#fff" aria-hidden="true">
+          <svg className="lp3-hero-bolt" viewBox="0 0 175 340" fill="var(--red)" aria-hidden="true">
             <path d="M 60 0 L 130 0 L 100 130 L 165 130 L 40 340 L 95 195 L 10 195 Z" />
           </svg>
-          <span className="lp3-hero-panel-label">{panelLabel}</span>
-          <div className="lp3-hero-panel-steps">
-            {panelSteps.map((t, i) => (
-              <div className="lp3-hero-panel-step" key={t}>
-                <span className="nr">{String(i + 1).padStart(2, '0')}</span>
-                <p>{t}</p>
-              </div>
-            ))}
+          <div>
+            <span className="lp3-hero-panel-label">{panelLabel}</span>
+            <div className="lp3-hero-panel-steps">
+              {panelSteps.map((t, i) => (
+                <div className="lp3-hero-panel-step" key={t}>
+                  <span className="nr">{String(i + 1).padStart(2, '0')}</span>
+                  <p>{t}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="lp3-hero-panel-stat">
+            <span className="dot" />
+            {panelStat}
           </div>
         </div>
       </div>

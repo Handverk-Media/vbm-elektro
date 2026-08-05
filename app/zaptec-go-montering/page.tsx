@@ -37,6 +37,7 @@ export default function ZaptecGoPage() {
         trustItems={['Skriftlig pris før start', 'Tillegg avklares på forhånd', 'Samsvarserklæring', 'Dokumentasjon i Boligmappa']}
         panelLabel="Slik får du pris på Zaptec Go"
         panelSteps={['Bilde av sikringsskap', 'Vi vurderer kapasitet og kabelvei', 'Du får skriftlig pris']}
+        panelStat="Svar innen 1 time"
       />
 
       <LpSection id="prisinformasjon" label="Hva du får" heading="Dette gjør vi — og dette avgjør prisen" tint>

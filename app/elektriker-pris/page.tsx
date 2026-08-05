@@ -39,6 +39,7 @@ export default function ElektrikerPrisPage() {
         trustItems={['Skriftlig pris før start', 'Tillegg avklares på forhånd', 'Samsvarserklæring']}
         panelLabel="Slik får du pris"
         panelSteps={['Beskriv oppgaven', 'Last opp bilder', 'Få pris eller forslag til befaring']}
+        panelStat="Svar innen 1 time"
       />
 
       <LpSection id="prisinformasjon" label="Send inn" heading="Jobber kunden kan sende inn">
