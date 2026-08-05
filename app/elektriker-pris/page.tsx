@@ -1,21 +1,29 @@
 'use client'
 import { LpHeader } from '@/components/lp/LpHeader'
 import { LpHero } from '@/components/lp/LpHero'
+import { LpTrustStats } from '@/components/lp/LpTrustStats'
+import { LpProcessSteps } from '@/components/lp/LpProcessSteps'
+import { LpIconGrid } from '@/components/lp/LpIconGrid'
 import { LpSection } from '@/components/lp/LpSection'
 import { LpSticky } from '@/components/lp/LpSticky'
 import { LpFaq } from '@/components/lp/LpFaq'
 import { LpForm } from '@/components/lp/LpForm'
 import { PhoneLink } from '@/components/PhoneLink'
+import { IcDoc, IcCamera, IcSearch, IcCheckDoc, IcShield, IcClock, IcPanel, IcPlug, IcBulb, IcHeat, IcHouse, IcMore } from '@/components/lp/LpIcons'
 import { trackLpPrimaryCta } from '@/lib/analytics'
 
 const PAGE = 'elektriker-pris'
 
-const Check = () => (
-  <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
-)
-
-const JOBBER = ['Stikkontakter', 'Lamper og belysning', 'Feilsøking', 'Varmekabler', 'Mindre arbeid ved oppussing', 'Sikringsskap', 'Elsjekk']
-const PRIS_FAKTORER = ['Jobbens omfang', 'Materiell', 'Tilgang', 'Kabelføring', 'Eksisterende anlegg', 'Feilsøking', 'Dokumentasjon']
+const JOBBER = [
+  { icon: <IcPanel size={20} />, title: 'Sikringsskap' },
+  { icon: <IcSearch size={20} />, title: 'Feilsøking' },
+  { icon: <IcBulb size={20} />, title: 'Belysning' },
+  { icon: <IcPlug size={20} />, title: 'Stikkontakter' },
+  { icon: <IcHeat size={20} />, title: 'Varmekabler' },
+  { icon: <IcHouse size={20} />, title: 'Oppussing' },
+  { icon: <IcCheckDoc size={20} />, title: 'Elsjekk' },
+  { icon: <IcMore size={20} />, title: 'Annet' },
+]
 
 const FAQ = [
   { q: 'Får jeg fastpris eller timepris?', a: 'Avgrensede jobber med kjent omfang kan vi ofte gi fastpris på etter å ha sett bilder og beskrivelse. Feilsøking og jobber med ukjent omfang kan kreve timearbeid — det avklarer vi før vi starter, ikke etterpå.' },
@@ -30,88 +38,81 @@ export default function ElektrikerPrisPage() {
       <LpHeader location={`${PAGE}-header`} />
 
       <LpHero
+        id="skjema"
         page={PAGE}
-        eyebrow="Drammen · Asker · Bærum"
-        h1="Hva koster en elektriker?"
-        lede="Prisen avhenger av jobben. Send en kort beskrivelse og bilder, så vurderer vi om arbeidet kan prises på forhånd."
-        primaryLabel="Beskriv jobben og få pris"
-        onPrimaryClick={() => trackLpPrimaryCta(PAGE)}
-        trustItems={['Skriftlig pris før start', 'Tillegg avklares på forhånd', 'Samsvarserklæring']}
-        panelLabel="Slik får du pris"
-        panelSteps={['Beskriv oppgaven', 'Last opp bilder', 'Få pris eller forslag til befaring']}
-        panelStat="Svar innen 1 time"
-      />
-
-      <LpSection id="prisinformasjon" label="Send inn" heading="Jobber kunden kan sende inn">
-        <ul className="lp3-col-list">
-          {JOBBER.map(t => <li key={t}><Check />{t}</li>)}
-        </ul>
-      </LpSection>
-
-      <LpSection label="Prisgrunnlag" heading="Hva påvirker prisen?" tint>
-        <div className="lp3-cols">
-          <div>
-            <p className="lp3-col-title">Dette avgjør prisen</p>
-            <ul className="lp3-col-list">
-              {PRIS_FAKTORER.map(t => <li key={t}><Check />{t}</li>)}
-            </ul>
-          </div>
-          <div>
-            <p className="lp3-col-title">Fastpris eller timepris</p>
-            <ul className="lp3-col-list">
-              <li><Check />Avgrensede jobber kan vurderes og prises på forhånd</li>
-              <li><Check />Feilsøking og ukjent omfang kan kreve timearbeid</li>
-              <li><Check />Eventuelle tillegg avklares før de utføres</li>
-            </ul>
-          </div>
+        h1Start="Elektriker"
+        h1Accent="med fastpris"
+        lede="Vi gir deg pris før vi starter — du slipper uventede tillegg. Send en kort beskrivelse og noen bilder, så vurderer vi jobben."
+        checklist={['Fastpris på forhånd', 'Kvalitetsarbeid og trygghet', 'Samsvarserklæring', 'Dokumentasjon i Boligmappa']}
+        imageLabel="Bilde: elektriker i arbeid ved sikringsskap"
+      >
+        <div className="lp3-form-head">
+          <p className="lp3-card-title">Beskriv jobben og få pris</p>
+          <p className="lp3-body">Vi ringer deg tilbake innen 1 time.</p>
         </div>
-      </LpSection>
+        <LpForm
+          page={PAGE}
+          idPrefix="ep-"
+          submitLabel="Send og få pris"
+          rows={[
+            [{ kind: 'text', name: 'navn', label: 'Navn', placeholder: 'Ola Nordmann', required: true }, { kind: 'tel', name: 'telefon', label: 'Telefonnummer', placeholder: '900 00 000', required: true }],
+            [{ kind: 'email', name: 'epost', label: 'E-post', placeholder: 'ola@example.com', required: true }, { kind: 'text', name: 'postnummer', label: 'Postnummer', placeholder: '1337', required: true }],
+            [{ kind: 'select', name: 'type_jobb', label: 'Hva gjelder det?', options: ['Sikringsskap', 'Feilsøking', 'Belysning', 'Stikkontakter', 'Varmekabler', 'Oppussing', 'Elsjekk', 'Annet'], required: true }],
+            [{ kind: 'textarea', name: 'beskrivelse', label: 'Beskriv kort hva du trenger hjelp med', placeholder: 'Skriv her …', required: true }],
+            [{ kind: 'file', name: 'bilder', label: 'Bilder', hint: 'Last opp ett eller flere bilder av jobben' }],
+            [{ kind: 'text', name: 'onsket_tidspunkt', label: 'Ønsket tidspunkt', placeholder: 'F.eks. denne uken, snarest' }],
+          ]}
+        />
+      </LpHero>
 
-      <LpSection id="prosess" label="Fra beskrivelse til pris" heading="Slik får kunden pris">
-        <div className="lp3-steps">
-          {['Beskriv oppgaven', 'Last opp bilder', 'VBM vurderer informasjonen', 'Kunden får pris eller forslag til befaring'].map((t, i) => (
-            <div className="lp3-step" key={t}>
-              <span className="lp3-step-nr mono">{String(i + 1).padStart(2, '0')}</span>
-              <div><p className="lp3-step-title">{t}</p></div>
+      <LpTrustStats items={[
+        { icon: <IcShield size={26} />, label: 'NELFO-medlem', sub: 'Registrert i Elvirksomhetsregisteret' },
+        { icon: <IcCheckDoc size={26} />, label: 'Fastpris', sub: 'Der jobben lar seg avgrense' },
+        { icon: <IcClock size={26} />, label: 'Svar innen 1 time', sub: 'I normal arbeidstid' },
+        { icon: <IcDoc size={26} />, label: 'Boligmappa', sub: 'Dokumentasjon der aktuelt' },
+      ]} />
+
+      <LpIconGrid label="Send inn" heading="Typiske oppdrag vi hjelper med" items={JOBBER} />
+
+      <LpSection label="Prisgrunnlag" heading="Hva påvirker prisen?" tint narrow>
+        <div className="lp3-icongrid" style={{ gridTemplateColumns: 'repeat(2, 1fr)', maxWidth: 560, margin: '0 auto' }}>
+          {['Jobbens omfang', 'Materiell', 'Tilgang', 'Kabelføring', 'Eksisterende anlegg', 'Feilsøking', 'Dokumentasjon'].map(t => (
+            <div className="lp3-icongrid-item" key={t} style={{ background: 'transparent', border: 'none', padding: '8px 0', flexDirection: 'row', gap: 10, textAlign: 'left' }}>
+              <p style={{ fontWeight: 500 }}>{t}</p>
             </div>
           ))}
         </div>
       </LpSection>
 
-      <LpSection id="faq" label="Spørsmål" heading="Ofte stilt" tint>
+      <LpProcessSteps
+        id="prosess"
+        label="Fra beskrivelse til pris"
+        heading="Slik får du fastpris"
+        steps={[
+          { icon: <IcDoc size={24} />, title: 'Fortell oss hva du trenger', text: 'Beskriv jobben i skjemaet' },
+          { icon: <IcCamera size={24} />, title: 'Vi gir deg pris', text: 'Basert på bilder og beskrivelse' },
+          { icon: <IcCheckDoc size={24} />, title: 'Vi utfører jobben', text: 'Som avtalt, uten overraskelser' },
+          { icon: <IcSearch size={24} />, title: 'Du godkjenner', text: 'Og vi dokumenterer arbeidet' },
+        ]}
+      />
+
+      <LpSection id="prisinformasjon" label="Prismodell" heading="Fastpris eller timepris" tint narrow>
+        <ul className="lp3-check-list" style={{ maxWidth: 520, margin: '0 auto' }}>
+          <li><span className="ico"><IcCheckDoc size={13} /></span>Avgrensede jobber kan vurderes og prises på forhånd</li>
+          <li><span className="ico"><IcCheckDoc size={13} /></span>Feilsøking og ukjent omfang kan kreve timearbeid</li>
+          <li><span className="ico"><IcCheckDoc size={13} /></span>Eventuelle tillegg avklares før de utføres</li>
+        </ul>
+      </LpSection>
+
+      <LpSection id="faq" label="Spørsmål" heading="Ofte stilt" narrow>
         <LpFaq items={FAQ} />
       </LpSection>
 
-      <section id="skjema" className="lp3-section">
-        <div className="lp3-wrap lp3-wrap-narrow">
-          <div className="lp3-form-head">
-            <span className="lp3-section-label">Beskriv jobben</span>
-            <h2 className="lp3-h2 lp3-h2-tight">Beskriv jobben og få pris</h2>
-            <p className="lp3-body">Jo mer du beskriver og viser i bilder, jo mer presis kan prisen bli.</p>
-          </div>
-          <div className="lp3-form-panel">
-            <LpForm
-              page={PAGE}
-              idPrefix="ep-"
-              submitLabel="Send og få pris"
-              rows={[
-                [{ kind: 'text', name: 'navn', label: 'Navn', placeholder: 'Ola Nordmann', required: true }, { kind: 'tel', name: 'telefon', label: 'Telefonnummer', placeholder: '900 00 000', required: true }],
-                [{ kind: 'email', name: 'epost', label: 'E-post', placeholder: 'ola@example.com', required: true }, { kind: 'text', name: 'postnummer', label: 'Postnummer', placeholder: '1337', required: true }],
-                [{ kind: 'select', name: 'type_jobb', label: 'Type jobb', options: [...JOBBER, 'Annet'], required: true }],
-                [{ kind: 'textarea', name: 'beskrivelse', label: 'Beskrivelse', placeholder: 'Hva skal gjøres? Beskriv gjerne omfang og rom.', required: true }],
-                [{ kind: 'file', name: 'bilder', label: 'Bilder', hint: 'Last opp ett eller flere bilder av jobben' }],
-                [{ kind: 'text', name: 'onsket_tidspunkt', label: 'Ønsket tidspunkt', placeholder: 'F.eks. denne uken, snarest' }],
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-
       <section id="kontakt" className="lp3-closing">
-        <div className="lp3-noise" />
-        <div className="lp3-wrap lp3-wrap-narrow" style={{ position: 'relative' }}>
-          <h2 className="lp3-h2" style={{ marginBottom: 32 }}>Beskriv jobben og få pris — eller ring oss direkte</h2>
-          <div className="lp3-cta-row" style={{ justifyContent: 'center', marginBottom: 0 }}>
+        <div className="lp3-wrap lp3-wrap-narrow">
+          <h2>Få fastpris på ditt oppdrag</h2>
+          <p>Enkelt, trygt og forutsigbart.</p>
+          <div className="lp3-cta-row" style={{ justifyContent: 'center' }}>
             <a href="#skjema" className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(`${PAGE}-bunn`)}>Beskriv jobben og få pris</a>
             <PhoneLink location={`${PAGE}-bunn`} className="lp3-btn lp3-btn-secondary">Ring 90 63 31 18</PhoneLink>
           </div>
