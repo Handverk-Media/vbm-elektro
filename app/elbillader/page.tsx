@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import {
-  User, Phone, CheckCircle, CaretRight, Question,
+  User, Phone, CheckCircle, CaretRight,
   PhoneCall, FileText, Wrench, ClipboardText, Certificate, ShieldCheck,
 } from '@phosphor-icons/react'
 import { getUtmParams } from '@/lib/utm'
@@ -94,13 +94,28 @@ function LeadForm({ formId, compact }: LeadFormProps) {
   )
 }
 
+function LogoLockup({ dark }: { dark?: boolean }) {
+  return (
+    <a href="/" className="lp2-logo-lockup" aria-label="VBM Elektro AS">
+      <svg width="22" height="30" viewBox="0 0 175 340" aria-hidden="true">
+        <path d="M 60 0 L 130 0 L 100 130 L 165 130 L 40 340 L 95 195 L 10 195 Z" fill={dark ? '#1A1A1A' : '#fff'} />
+      </svg>
+      <div className="lp2-logo-marks">
+        <span className="lp2-logo-name">VBM</span>
+        <div className="lp2-logo-div" />
+        <span className="lp2-logo-sub">Elektro AS</span>
+      </div>
+    </a>
+  )
+}
+
 export default function ElbilladerKampanje() {
   return (
     <div className="lp2-page">
       {/* ── Header ─────────────────────────────────────────── */}
       <header className="lp2-header">
-        <div className="lp2-header-inner">
-          <Image src="/logo-white.svg" alt="VBM Elektro" width={124} height={50} className="lp2-logo" priority />
+        <div className="lp2-wrap lp2-header-inner">
+          <LogoLockup />
           <PhoneCTA location="elbillader-lp2-header" className="lp2-header-phone">
             <Phone size={16} weight="fill" />{TELEFON}
           </PhoneCTA>
@@ -243,8 +258,8 @@ export default function ElbilladerKampanje() {
             ].map(({ sp, sv }) => (
               <details key={sp} className="lp2-faq">
                 <summary>
-                  <span className="lp2-faq-q"><Question size={16} weight="bold" />{sp}</span>
-                  <CaretRight size={16} weight="bold" className="lp2-faq-chevron" />
+                  <span className="lp2-faq-q">{sp}</span>
+                  <span className="lp2-faq-ico"><CaretRight size={14} weight="bold" /></span>
                 </summary>
                 <p>{sv}</p>
               </details>
@@ -270,7 +285,7 @@ export default function ElbilladerKampanje() {
       <footer className="lp2-footer">
         <div className="lp2-wrap lp2-footer-top">
           <div className="lp2-footer-brand">
-            <Image src="/logo-white.svg" alt="VBM Elektro" width={124} height={50} className="lp2-logo" />
+            <LogoLockup />
             <p>Autorisert elektriker i Asker, Bærum, Oslo og Drammen.</p>
           </div>
 
@@ -297,91 +312,93 @@ export default function ElbilladerKampanje() {
 
       <style>{`
         .lp2-page {
-          --lp-text: #111111;
-          --lp-body: #63635F;
-          --lp-line: #E5E5E5;
-          --lp-red: #E31E25;
-          --lp-red-dark: #C81920;
-          --lp-red-soft: rgba(227,30,37,0.09);
-          --lp-dark: #121317;
-          --lp-radius: 16px;
+          --lp-radius: 18px;
           --lp-radius-sm: 10px;
-          color: var(--lp-text);
-          background: #FFFFFF;
+          color: var(--text);
+          background: var(--bg);
         }
         .lp2-page * { box-sizing: border-box; }
+        .lp2-page h1, .lp2-page h2 { font-family: var(--display); letter-spacing: -0.02em; }
         .lp2-wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
         .lp2-wrap-narrow { max-width: 680px; }
 
         /* Header */
-        .lp2-header { position: sticky; top: 0; z-index: 50; background: var(--lp-dark); }
-        .lp2-header-inner {
-          max-width: 1120px; margin: 0 auto; padding: 16px 24px;
-          display: flex; align-items: center; justify-content: space-between;
+        .lp2-header {
+          position: sticky; top: 0; z-index: 50;
+          background: rgba(26,26,26,0.88);
+          backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+          border-bottom: 0.5px solid rgba(255,255,255,0.08);
         }
-        .lp2-logo { height: 30px; width: auto; }
+        .lp2-header-inner { padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .lp2-logo-lockup { display: flex; align-items: center; gap: 10px; }
+        .lp2-logo-marks { display: flex; flex-direction: column; }
+        .lp2-logo-name { font-family: var(--display); font-size: 16px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: #fff; }
+        .lp2-logo-div { width: 44px; height: 2px; background: var(--red); margin: 3px 0; }
+        .lp2-logo-sub { font-size: 11px; line-height: 1; color: rgba(255,255,255,0.6); }
         .lp2-header-phone {
           display: flex; align-items: center; gap: 8px;
-          color: #fff; font-weight: 700; font-size: 15px; text-decoration: none;
+          color: #fff; font-weight: 600; font-size: 14.5px; text-decoration: none;
         }
+        .lp2-header-phone svg { color: var(--red); }
 
         /* Hero */
-        .lp2-hero { background: var(--lp-dark); padding-bottom: 0; }
+        .lp2-hero { background: var(--bg-dark); padding-bottom: 0; }
         .lp2-hero-grid { display: grid; grid-template-columns: 1fr 1.15fr; align-items: stretch; gap: 0; }
         .lp2-hero-copy { padding: 48px 32px 56px 0; display: flex; flex-direction: column; justify-content: center; }
-        .lp2-hero-copy h1 { font-size: clamp(30px, 3.6vw, 46px); font-weight: 800; line-height: 1.12; letter-spacing: -0.02em; color: #fff; margin: 0 0 18px; }
-        .lp2-hero-accent { color: var(--lp-red); }
+        .lp2-hero-copy h1 { font-size: clamp(30px, 3.6vw, 46px); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; color: #fff; margin: 0 0 18px; }
+        .lp2-hero-accent { color: var(--red); font-style: italic; }
         .lp2-hero-sub { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.68); margin: 0 0 26px; max-width: 46ch; }
         .lp2-hero-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
         .lp2-hero-points li { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.9); }
-        .lp2-check { color: var(--lp-red); flex-shrink: 0; }
+        .lp2-check { color: var(--red); flex-shrink: 0; }
 
         .lp2-hero-visual { position: relative; min-height: 560px; display: flex; align-items: center; justify-content: flex-end; padding: 40px; overflow: hidden; }
         .lp2-hero-image { object-fit: cover; }
-        .lp2-hero-visual-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,19,23,0.55) 0%, rgba(18,19,23,0.05) 45%); }
+        .lp2-hero-visual-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(26,26,26,0.6) 0%, rgba(26,26,26,0.05) 45%); }
 
         /* Card / Form */
-        .lp2-card { position: relative; z-index: 1; background: #FFFFFF; border-radius: var(--lp-radius); padding: 30px 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.28); width: 100%; max-width: 380px; }
-        .lp2-card-title { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 4px; }
-        .lp2-card-sub { font-size: 13.5px; color: var(--lp-body); margin: 0 0 22px; }
+        .lp2-card { position: relative; z-index: 1; background: #FFFFFF; border-radius: var(--lp-radius); padding: 30px 28px; box-shadow: 0 30px 70px -12px rgba(0,0,0,0.35); width: 100%; max-width: 380px; }
+        .lp2-card-title { font-family: var(--display); font-size: 20px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 4px; }
+        .lp2-card-sub { font-size: 13.5px; color: var(--text-soft); margin: 0 0 22px; }
         .lp2-form { display: flex; flex-direction: column; gap: 12px; }
         .lp2-field { position: relative; display: flex; align-items: center; }
-        .lp2-field-icon { position: absolute; left: 14px; color: #9A9A9A; pointer-events: none; }
+        .lp2-field-icon { position: absolute; left: 14px; color: var(--text-faint); pointer-events: none; }
         .lp2-field input {
-          width: 100%; font-family: inherit; font-size: 15px; padding: 13px 14px 13px 40px;
-          border: 1px solid var(--lp-line); border-radius: var(--lp-radius-sm); background: #FFFFFF; color: var(--lp-text);
+          width: 100%; font-family: var(--body); font-size: 15px; padding: 13px 14px 13px 40px;
+          border: 1px solid var(--line-strong); border-radius: var(--lp-radius-sm); background: #FFFFFF; color: var(--text);
         }
-        .lp2-field input::placeholder { color: #9A9A9A; }
-        .lp2-field input:focus { outline: none; border-color: var(--lp-text); }
+        .lp2-field input::placeholder { color: var(--text-faint); }
+        .lp2-field input:focus { outline: none; border-color: var(--red); }
         .lp2-btn-primary {
           display: flex; align-items: center; justify-content: center;
-          width: 100%; background: var(--lp-red); color: #FFFFFF; font-weight: 700; font-size: 15px;
-          padding: 14px; border: none; border-radius: var(--lp-radius-sm); cursor: pointer; text-decoration: none;
+          width: 100%; background: var(--red); color: #FFFFFF; font-weight: 600; font-size: 15px;
+          padding: 14px; border: none; border-radius: 100px; cursor: pointer; text-decoration: none;
+          transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .lp2-btn-primary:hover { background: var(--lp-red-dark); }
-        .lp2-btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+        .lp2-btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(225,52,43,0.3); }
+        .lp2-btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
         .lp2-btn-inline { width: auto; padding: 13px 32px; }
-        .lp2-form-error { font-size: 13px; color: var(--lp-red); margin: 0; }
-        .lp2-form-fine { font-size: 12px; line-height: 1.5; color: var(--lp-body); text-align: center; margin: 2px 0 0; }
-        .lp2-form-call { font-size: 13px; color: var(--lp-body); text-align: center; margin: 4px 0 0; }
-        .lp2-form-call-link { color: var(--lp-red); font-weight: 700; text-decoration: none; }
+        .lp2-form-error { font-size: 13px; color: var(--red); margin: 0; }
+        .lp2-form-fine { font-size: 12px; line-height: 1.5; color: var(--text-soft); text-align: center; margin: 2px 0 0; }
+        .lp2-form-call { font-size: 13px; color: var(--text-soft); text-align: center; margin: 4px 0 0; }
+        .lp2-form-call-link { color: var(--red); font-weight: 600; text-decoration: none; }
         .lp2-cta-row { display: flex; justify-content: center; margin-top: 36px; }
         .lp2-cta-row-left { justify-content: flex-start; margin-top: 28px; }
 
         /* Trust bar */
-        .lp2-trustbar { background: #F7F6F4; border-bottom: 1px solid var(--lp-line); }
+        .lp2-trustbar { background: var(--bg-warm); border-bottom: 1px solid var(--line); }
         .lp2-trust-row { display: flex; align-items: center; justify-content: center; gap: 0; padding: 28px 24px; flex-wrap: wrap; }
-        .lp2-trust-item { display: flex; align-items: center; gap: 12px; padding: 8px 36px; color: var(--lp-text); }
-        .lp2-trust-item:not(:first-child) { border-left: 1px solid var(--lp-line); }
-        .lp2-trust-item svg { color: var(--lp-red); flex-shrink: 0; }
+        .lp2-trust-item { display: flex; align-items: center; gap: 12px; padding: 8px 36px; color: var(--text); }
+        .lp2-trust-item:not(:first-child) { border-left: 1px solid var(--line-strong); }
+        .lp2-trust-item svg { color: var(--red); flex-shrink: 0; }
         .lp2-trust-item span { font-size: 14px; font-weight: 600; line-height: 1.3; max-width: 16ch; }
 
         /* Sections */
         .lp2-section { padding: 88px 0; }
-        .lp2-section-tint { background: #FAFAFA; }
-        .lp2-h2 { font-size: clamp(26px, 3vw, 34px); font-weight: 800; letter-spacing: -0.02em; margin: 0 0 28px; }
+        .lp2-section-tint { background: var(--bg-warm); }
+        .lp2-h2 { font-size: clamp(26px, 3vw, 34px); font-weight: 700; letter-spacing: -0.02em; margin: 0 0 28px; }
         .lp2-h2-tight { margin-bottom: 12px; }
-        .lp2-body-text { font-size: 16px; line-height: 1.65; color: var(--lp-body); margin: 0 0 0; max-width: 56ch; }
+        .lp2-body-text { font-size: 16px; line-height: 1.65; color: var(--text-soft); margin: 0 0 0; max-width: 56ch; }
         .lp2-body-text-tight { margin-bottom: 0; }
 
         /* Steps */
@@ -389,34 +406,40 @@ export default function ElbilladerKampanje() {
         .lp2-step-wrap { display: flex; align-items: flex-start; flex: 1; min-width: 0; }
         .lp2-step { flex: 1; min-width: 0; }
         .lp2-step-icon {
-          width: 52px; height: 52px; border-radius: 50%; background: var(--lp-red-soft); color: var(--lp-red);
+          width: 52px; height: 52px; border-radius: 50%; background: #fff; border: 2px solid var(--bg-dark); color: var(--bg-dark);
           display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.05); transition: all 0.3s ease;
         }
-        .lp2-step-title { font-size: 15.5px; font-weight: 700; margin: 0 0 6px; }
-        .lp2-step-text { font-size: 13.5px; line-height: 1.5; color: var(--lp-body); margin: 0; }
-        .lp2-step-caret { color: #C9C9C6; flex-shrink: 0; margin: 16px 12px 0; }
+        .lp2-step:first-child .lp2-step-icon { background: var(--red); border-color: var(--red); color: #fff; box-shadow: 0 4px 20px rgba(225,52,43,0.3); }
+        .lp2-step-title { font-family: var(--display); font-size: 15.5px; font-weight: 600; margin: 0 0 6px; }
+        .lp2-step-text { font-size: 13.5px; line-height: 1.5; color: var(--text-soft); margin: 0; }
+        .lp2-step-caret { color: var(--text-faint); flex-shrink: 0; margin: 16px 12px 0; }
 
         /* Price */
         .lp2-price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
         .lp2-stats { display: flex; flex-direction: column; gap: 0; }
-        .lp2-stat { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--lp-line); }
-        .lp2-stat-nr { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: var(--lp-red); white-space: nowrap; }
-        .lp2-stat-label { font-size: 14px; color: var(--lp-text); font-weight: 500; }
+        .lp2-stat { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line-strong); }
+        .lp2-stat-nr { font-family: var(--mono); font-size: 21px; font-weight: 600; letter-spacing: -0.01em; color: var(--red); white-space: nowrap; }
+        .lp2-stat-label { font-size: 14px; color: var(--text); font-weight: 500; }
 
         /* FAQ */
-        .lp2-faq-card { border: 1px solid var(--lp-line); border-radius: var(--lp-radius); overflow: hidden; background: #fff; }
-        .lp2-faq { border-bottom: 1px solid var(--lp-line); padding: 18px 20px; }
+        .lp2-faq-card { border: 1px solid var(--line); border-radius: var(--lp-radius); overflow: hidden; background: #fff; }
+        .lp2-faq { border-bottom: 1px solid var(--line); padding: 4px 20px; }
         .lp2-faq:last-child { border-bottom: none; }
-        .lp2-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; }
+        .lp2-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; padding: 18px 0; transition: color 0.2s; }
+        .lp2-faq summary:hover { color: var(--red); }
         .lp2-faq summary::-webkit-details-marker { display: none; }
-        .lp2-faq-q { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; }
-        .lp2-faq-q svg { color: var(--lp-red); flex-shrink: 0; background: var(--lp-red-soft); border-radius: 50%; padding: 3px; width: 22px; height: 22px; box-sizing: border-box; }
-        .lp2-faq-chevron { color: #B5B5B2; flex-shrink: 0; transition: transform 0.2s; }
-        .lp2-faq[open] .lp2-faq-chevron { transform: rotate(90deg); }
-        .lp2-faq p { font-size: 14px; line-height: 1.6; color: var(--lp-body); margin: 12px 0 0 32px; }
+        .lp2-faq-q { font-family: var(--display); font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; }
+        .lp2-faq-ico {
+          flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+          background: var(--bg-warm); color: var(--bg-dark);
+          display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+        }
+        .lp2-faq[open] .lp2-faq-ico { background: var(--red); color: #fff; transform: rotate(90deg); }
+        .lp2-faq p { font-size: 14.5px; line-height: 1.6; color: var(--text-soft); margin: 0 0 20px; }
 
         /* Closing */
-        .lp2-closing { background: var(--lp-dark); padding: 64px 0; }
+        .lp2-closing { background: var(--bg-dark); padding: 64px 0; }
         .lp2-closing .lp2-h2, .lp2-closing .lp2-body-text { color: #fff; }
         .lp2-closing .lp2-body-text { color: rgba(255,255,255,0.65); }
         .lp2-closing-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 48px; }
@@ -425,21 +448,22 @@ export default function ElbilladerKampanje() {
         .lp2-form-compact .lp2-btn-primary { width: auto; padding: 13px 28px; }
         .lp2-form-compact .lp2-form-call { width: 100%; text-align: left; margin-top: 8px; }
         .lp2-form-compact .lp2-form-call, .lp2-form-compact .lp2-form-call-link { color: rgba(255,255,255,0.6); }
-        .lp2-form-compact .lp2-form-call-link { color: var(--lp-red); }
+        .lp2-form-compact .lp2-form-call-link { color: var(--red); }
         .lp2-form-compact .lp2-form-error { width: 100%; }
 
         /* Footer */
-        .lp2-footer { background: var(--lp-dark); border-top: 1px solid rgba(255,255,255,0.08); }
+        .lp2-footer { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.08); }
         .lp2-footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding: 56px 0 40px; }
         .lp2-footer-brand { display: flex; flex-direction: column; gap: 14px; }
         .lp2-footer-brand p { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.55); max-width: 32ch; }
-        .lp2-footer-heading { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); margin: 0 0 4px; }
+        .lp2-footer-heading { font-size: 14px; font-weight: 600; color: #fff; margin: 0 0 4px; }
         .lp2-footer-col { display: flex; flex-direction: column; gap: 10px; }
         .lp2-footer-col p { font-size: 14px; color: rgba(255,255,255,0.6); margin: 0; }
-        .lp2-footer-phone { display: flex; align-items: center; gap: 8px; color: #fff; font-weight: 700; font-size: 15px; text-decoration: none; }
-        .lp2-footer-phone svg { color: var(--lp-red); }
-        .lp2-footer-badge { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: rgba(255,255,255,0.75); }
-        .lp2-footer-badge svg { color: var(--lp-red); flex-shrink: 0; }
+        .lp2-footer-phone { display: flex; align-items: center; gap: 8px; color: #fff; font-weight: 600; font-size: 14.5px; text-decoration: none; transition: color 0.2s; }
+        .lp2-footer-phone:hover { color: var(--red); }
+        .lp2-footer-phone svg { color: var(--red); }
+        .lp2-footer-badge { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 6px 12px; width: fit-content; }
+        .lp2-footer-badge svg { color: var(--red); flex-shrink: 0; }
         .lp2-footer-bottom {
           display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
           padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.08);
@@ -452,7 +476,7 @@ export default function ElbilladerKampanje() {
           .lp2-hero-visual { min-height: 0; padding: 0; justify-content: stretch; }
           .lp2-hero-image, .lp2-hero-visual-scrim { display: none; }
           .lp2-hero-copy { padding: 28px 0 0; }
-          #skjema.lp2-card { max-width: 100%; box-shadow: none; border: 1px solid var(--lp-line); margin-top: 28px; }
+          #skjema.lp2-card { max-width: 100%; box-shadow: none; border: 1px solid var(--line); margin-top: 28px; }
           .lp2-price-grid { grid-template-columns: 1fr; gap: 32px; }
           .lp2-closing-row { grid-template-columns: 1fr; gap: 28px; }
           .lp2-form-compact .lp2-field { width: 100%; }
@@ -464,7 +488,6 @@ export default function ElbilladerKampanje() {
         }
         @media (max-width: 640px) {
           .lp2-header-inner { padding: 10px 16px; }
-          .lp2-logo { height: 26px; }
           .lp2-hero { padding-bottom: 24px; }
           .lp2-hero-copy { padding: 20px 0 0; }
           .lp2-hero-copy h1 { font-size: 24px; margin-bottom: 10px; }

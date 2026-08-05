@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
 
 export const metadata: Metadata = {
   title: 'Elbillader ferdig montert i Asker og Bærum',
@@ -18,5 +17,5 @@ export const metadata: Metadata = {
 }
 
 export default function ElbilladerKampanjeLayout({ children }: { children: React.ReactNode }) {
-  return <div className={GeistSans.className}>{children}</div>
+  return children
 }
