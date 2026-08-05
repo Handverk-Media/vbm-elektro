@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { PhoneLink } from '@/components/PhoneLink'
 import { IcPin } from './LpIcons'
 import { trackLpPrimaryCta } from '@/lib/analytics'
@@ -10,15 +11,17 @@ interface Props {
   lede: string
   primaryLabel: string
   trustItems: Array<{ icon: React.ReactNode; label: string }>
-  bgLabel: string
+  bgImage: string
+  bgAlt: string
   children: React.ReactNode
 }
 
-export function LpHero({ id, page, h1Start, h1Accent, lede, primaryLabel, trustItems, bgLabel, children }: Props) {
+export function LpHero({ id, page, h1Start, h1Accent, lede, primaryLabel, trustItems, bgImage, bgAlt, children }: Props) {
   return (
     <section id={id} className="lp3-hero">
       <div className="lp3-hero-bg" aria-hidden="true">
-        <span className="lp3-hero-bg-label">{bgLabel}</span>
+        <Image src={bgImage} alt={bgAlt} fill priority sizes="100vw" className="lp3-hero-bg-img" />
+        <div className="lp3-hero-bg-scrim" />
       </div>
       <div className="lp3-wrap">
         <div className="lp3-hero-grid">

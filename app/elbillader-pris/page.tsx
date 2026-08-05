@@ -36,7 +36,8 @@ export default function ElbilladerPrisPage() {
         h1Accent="elbillader?"
         lede="Send bilde av sikringsskapet og kursfortegnelsen. Vi vurderer anlegget og gir deg skriftlig pris før arbeidet starter."
         primaryLabel="Send bilde og få pris"
-        bgLabel="Bakgrunnsbilde: elbillader montert på husvegg i skumring"
+        bgImage="/hero-elbillader-pris.png"
+        bgAlt="Elbillader montert på husvegg i skumring"
         trustItems={[
           { icon: <IcCheckDoc size={20} />, label: 'Skriftlig pris før start' },
           { icon: <IcShield size={20} />, label: 'Tillegg avklares på forhånd' },

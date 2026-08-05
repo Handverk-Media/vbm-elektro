@@ -34,7 +34,8 @@ export default function ZaptecGoPage() {
         h1Accent="ferdig montert"
         lede="Trygg installasjon av en av Norges mest solgte smartladere. Send bilde av sikringsskapet — du får skriftlig pris før montering."
         primaryLabel="Få pris på Zaptec Go"
-        bgLabel="Bakgrunnsbilde: Zaptec Go montert på husvegg"
+        bgImage="/hero-zaptec-go-montering.png"
+        bgAlt="Zaptec Go montert på husvegg"
         trustItems={[
           { icon: <IcCheckDoc size={20} />, label: 'Skriftlig pris før oppstart' },
           { icon: <IcDoc size={20} />, label: 'Samsvarserklæring' },

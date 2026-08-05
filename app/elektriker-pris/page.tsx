@@ -44,7 +44,8 @@ export default function ElektrikerPrisPage() {
         h1Accent="med fastpris"
         lede="Vi gir deg pris før vi starter — du slipper uventede tillegg. Send en kort beskrivelse og noen bilder, så vurderer vi jobben."
         primaryLabel="Beskriv jobben og få pris"
-        bgLabel="Bakgrunnsbilde: elektriker i arbeid ved sikringsskap"
+        bgImage="/hero-elektriker-pris.png"
+        bgAlt="Elektriker i arbeid ved sikringsskap"
         trustItems={[
           { icon: <IcCheckDoc size={20} />, label: 'Fastpris på forhånd' },
           { icon: <IcShield size={20} />, label: 'Kvalitetsarbeid og trygghet' },
