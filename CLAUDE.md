@@ -16,11 +16,13 @@ VBM logger aldri inn i CRM eller annonsekontoer. De ringer kunden, gir pris, gj�
 
 ## Les alltid dette først
 
-`00-Faktaark-VBM.md` er eneste sannhetskilde for tall, priser, farger, ID-er og status.
+`docs/00-kunde-og-fakta.md` er eneste sannhetskilde for tall, priser, farger, ID-er og status. Det er del 1 av «Shift kundestandard» (`docs/00` til `docs/06`), en strengere og nyere revisjon som **erstatter** de eldre `00-faktaark.md` og `08-implementeringsplan.md` i samme mappe.
 
-**Hent aldri en pris, adresse eller et Enova-beløp fra hukommelsen eller fra et eldre dokument.** Flere dokumenter i prosjektet inneholder utdaterte tall. Faktaarket merker hvert punkt som verifisert, usikkert eller manglende.
+**Hent aldri en pris, adresse eller et Enova-beløp fra hukommelsen eller fra et eldre dokument.** Flere dokumenter i prosjektet inneholder utdaterte tall. Faktaarket merker hvert punkt som verifisert (✓), antatt (⚠) eller manglende (✗).
 
-Er et tall merket `⚠ USIKKER` eller `✗ MANGLER`, skal det ikke publiseres. Bruk plassholder og flagg det.
+Er et tall merket `⚠ Antatt` eller `✗ Mangler`, skal det ikke publiseres. Bruk plassholder og flagg det.
+
+**Viktig avvik, uløst per 05.08.2026:** De gamle dokumentene (`00-faktaark.md`) behandlet nettsidens prisliste (12 490/18 490 kr for elbillader) som VBMs faktiske, gjeldende priser — bare internt inkonsistente med FAQ-en. `docs/00-kunde-og-fakta.md` går lenger og sier **VBM har ikke bekreftet noen pris i det hele tatt** — tallene på siden kan være en tidligere sesjons plassholder som aldri ble verifisert med Benjamin. Dette er uavklart og må tas opp direkte med kunden før noen prisrelatert endring gjøres, i annonser eller på siden.
 
 ---
 
@@ -116,31 +118,42 @@ Si «det gjør vi ikke» når det er sant.
 
 ## Kjente feil som må rettes
 
-- **Prisliste og FAQ motsier hverandre.** Prislisten sier elbillader fra 12 490, FAQ sier 9 990. Uakseptabelt på en side som lover at prisen holder.
-- **Adressen spriker.** Google sier Billingstadsletta 17, nettsiden sier 22. Avklares, deretter rettes overalt.
-- **Fra-pris uten lader.** «Fra 12 490» utelater hovedkomponenten. Annonser skal bruke totalpris.
-- **Anonyme sitater.** De fire korte utsagnene uten navn leser som plassholdere. Fjern dem — de tre navngitte er langt bedre.
-- **«4,9 av 5»** med to Google-anmeldelser. Oppgi antall, eller vent til grunnlaget er der.
+- ~~**Prisliste og FAQ motsier hverandre.**~~ Rettet 05.08.2026 — alle forekomster (prisliste, FAQ, JSON-LD, blogg, blogg-generator) synket til 12 490/18 490 kr. **Men:** se avviket om selve tallets gyldighet i «Les alltid dette først» over — internt konsistent er ikke det samme som bekreftet av kunden.
+- **Adressen spriker.** Google sier Billingstadsletta 17, nettsiden/Proff sier 22. Erik avklarer med Benjamin. Ikke rett noe sted før det er avklart.
+- **Fra-pris uten lader.** «Fra 12 490» utelater hovedkomponenten. Annonser skal bruke totalpris — når prisen er bekreftet.
+- **Anonyme sitater.** De fire korte utsagnene uten navn leser som plassholdere. Fjern dem — de tre navngitte er langt bedre. (Ikke gjort ennå.)
+- **«4,9 av 5»** med to Google-anmeldelser. Oppgi antall, eller vent til grunnlaget er der. (Ikke gjort ennå.)
+- ~~**Hero-video ødelegger LCP på mobil.**~~ Rettet 05.08.2026 — fjernet fra forsiden. Bekreftet av ekte Google Ads-data (57,3 % tapt visningsandel på rangering) som riktig prioritet, se `docs/02-markedsundersokelse.md` punkt 04.
+- **To ikke-sammenslåtte `/elbillader`-branches** (`claude/campaign-landing-page-oh0f6p` og `elbillader-kampanjeside-fra-handverk-media`) bruker begge de uverifiserte prisene (14 900/17 900 kr, 35 % Enova). Ikke merge før pris er avklart med Benjamin — se `docs/06-nettside-og-landingsside.md` punkt 12.
 
 ---
 
 ## Filer
 
+**I `vbm-elektro/docs/` — Shift kundestandard, gjeldende (v1.0/v2.0, 05.08.2026):**
+
 ```
-00-Faktaark-VBM.md                    Sannhetskilde — les alltid
-01-Rapport-juni-2026.html             Klientrapport
-02-Vekstplan-sommer-host.html         Utdatert, erstattet
-03-Rapportgrunnlag-juni.md            Rådata fra Ads
-04-Konsept-og-identitet.html          Merkevarefasit
-05-Markedsundersokelse.md             Segmenter, konkurrenter, SWOT
-06-Konsept-og-kundeprofiler.html      ICP-er
-07-Markedsplan-host-2026.html         Gjeldende plan
-08-Implementeringsplan.md             Byggeinstruks, annonsetekster
-09-Tilgangsmote.md                    Kontooppsett
-10-Motenotat.html                     Spørsmål til kunde
+00-kunde-og-fakta.md                  Sannhetskilde — les alltid
+01-merkevare.md                       Posisjon, stemme, farger, typografi, voicelås
+02-markedsundersokelse.md             Halo-segmenter, konkurrenter, søkeatferd
+03-icp-og-kundesprak.md               Målgrupper, kjøpssituasjoner, kundens ord
+04-tilbud-budskap-og-bevis.md         Tilbudsstruktur, budskap, beviskart
+05-digital-strategi.md                Mål, konvertering, kundereise, prioritering
+06-nettside-og-landingsside.md        Sidekart, seksjonsstruktur, sporing, "ferdig når"
 ```
 
-Ved motstrid gjelder denne rekkefølgen: faktaarket, deretter avtalen, deretter nyeste plan, deretter eldre dokumenter.
+Original i claude.ai-prosjektet «Vbm Elektro AS» (Shift-dokumenter, `.dc.html`); konvertert til markdown og lagt i repoet 05.08.2026 slik at Claude Code leser samme grunnlag automatisk.
+
+**Eldre, delvis erstattet — behold for historikk, ikke som sannhetskilde ved motstrid:**
+
+```
+00-faktaark.md                        Forgjenger til docs/00 — uenig med den om pris, se avvik over
+08-implementeringsplan.md             Byggeinstruks/annonsetekster med IKKE-verifiserte tall (14 900 kr, 35 % Enova). Ikke bruk uten ny bekreftelse.
+```
+
+**Ikke overført til repoet ennå** (finnes i claude.ai-prosjektet «Vbm Elektro AS»): `01-Rapport-juni-2026.html`, `02-Vekstplan-sommer-host.html` (utdatert), `03-Rapportgrunnlag-juni.md`, `04-Konsept-og-identitet.html`, `06-Konsept-og-kundeprofiler.html`, `07-Markedsplan-host-2026.html`, `09-Tilgangsmote.md`, `10-Motenotat.html`.
+
+Ved motstrid gjelder denne rekkefølgen: `docs/00-kunde-og-fakta.md`, deretter avtalen, deretter nyeste Shift-dokument (`docs/01`–`06`), deretter eldre dokumenter.
 
 ---
 
