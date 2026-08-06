@@ -3,12 +3,13 @@ import { useRef, useState } from 'react'
 import { getUtmParams } from '@/lib/utm'
 import { getStoredGclid } from '@/hooks/useGclid'
 import { trackLpFormStart, trackLpFileUpload, trackLpLeadSubmit } from '@/lib/analytics'
+import { IcUploadCloud, IcSend, IcLock, IcCheck } from './LpIcons'
 
 export type LpField =
-  | { kind: 'text' | 'tel' | 'email'; name: string; label: string; placeholder?: string; required?: boolean }
+  | { kind: 'text' | 'tel' | 'email'; name: string; label: string; placeholder?: string; required?: boolean; icon?: React.ReactNode }
   | { kind: 'select'; name: string; label: string; options: string[]; required?: boolean }
-  | { kind: 'textarea'; name: string; label: string; placeholder?: string; required?: boolean; rows?: number }
-  | { kind: 'file'; name: string; label: string; hint?: string; multiple?: boolean }
+  | { kind: 'textarea'; name: string; label: string; placeholder?: string; required?: boolean; rows?: number; icon?: React.ReactNode }
+  | { kind: 'file'; name: string; label: string; hint?: string; required?: boolean }
   | { kind: 'radio'; name: string; label: string; options: string[] }
 
 interface Props {
@@ -19,13 +20,21 @@ interface Props {
   onSent?: () => void
 }
 
+function ReqMark({ required }: { required?: boolean }) {
+  return required ? <span className="lp3-req">*</span> : <span className="lp3-optional">(valgfritt)</span>
+}
+
 function Field({ f, id, onFileChange }: { f: LpField; id: string; onFileChange: (name: string) => void }) {
   if (f.kind === 'file') {
     return (
-      <div className="lp3-field-file">
-        <label htmlFor={id}>{f.label}</label>
-        <input id={id} name={f.name} type="file" accept="image/*" multiple={f.multiple} onChange={() => onFileChange(f.name)} />
-        {f.hint && <span className="lp3-field-hint">{f.hint}</span>}
+      <div className="lp3-field">
+        <label htmlFor={id}>{f.label} <ReqMark required={f.required} /></label>
+        <label className="lp3-dropzone" htmlFor={id}>
+          <input id={id} name={f.name} type="file" accept="image/*" required={f.required} onChange={() => onFileChange(f.name)} />
+          <span className="lp3-dropzone-chip"><IcUploadCloud size={19} /></span>
+          <b>Klikk for å laste opp eller<br />dra og slipp bildet her</b>
+          <span className="lp3-dropzone-hint">JPG, PNG eller HEIC. Maks 10 MB</span>
+        </label>
       </div>
     )
   }
@@ -46,9 +55,9 @@ function Field({ f, id, onFileChange }: { f: LpField; id: string; onFileChange: 
         <label>{f.label}</label>
         <div className="lp3-radio-row">
           {f.options.map(o => (
-            <label key={o}>
+            <label key={o} className="lp3-radio-box">
               <input type="radio" name={f.name} value={o} />
-              {o}
+              <span>{o}</span>
             </label>
           ))}
         </div>
@@ -58,15 +67,21 @@ function Field({ f, id, onFileChange }: { f: LpField; id: string; onFileChange: 
   if (f.kind === 'textarea') {
     return (
       <div className="lp3-field">
-        <label htmlFor={id}>{f.label}</label>
-        <textarea id={id} name={f.name} rows={f.rows ?? 4} placeholder={f.placeholder} required={f.required} />
+        <label htmlFor={id}>{f.label} <ReqMark required={f.required} /></label>
+        <div className="lp3-input-icon lp3-input-icon-textarea">
+          {f.icon}
+          <textarea id={id} name={f.name} rows={f.rows ?? 4} placeholder={f.placeholder} required={f.required} />
+        </div>
       </div>
     )
   }
   return (
     <div className="lp3-field">
-      <label htmlFor={id}>{f.label}</label>
-      <input id={id} name={f.name} type={f.kind} placeholder={f.placeholder} required={f.required} />
+      <label htmlFor={id}>{f.label} <ReqMark required={f.required} /></label>
+      <div className="lp3-input-icon">
+        {f.icon}
+        <input id={id} name={f.name} type={f.kind} placeholder={f.placeholder} required={f.required} />
+      </div>
     </div>
   )
 }
@@ -121,14 +136,17 @@ export function LpForm({ page, idPrefix, rows, submitLabel, onSent }: Props) {
       ))}
 
       <label className="lp3-checkbox">
-        <input type="checkbox" required />
-        <span>Jeg godtar <a href="/personvern">personvernerklæringen</a> og at VBM Elektro kan kontakte meg angående denne henvendelsen.</span>
+        <span className="lp3-checkbox-box"><input type="checkbox" required /><IcCheck size={13} /></span>
+        <span>Jeg samtykker til at VBM Elektro kan kontakte meg angående forespørselen min. <span className="lp3-req">*</span><br />
+          <small>Vi behandler opplysningene dine i henhold til vår <a href="/personvern">personvernerklæring</a>.</small>
+        </span>
       </label>
 
       <button type="submit" className="lp3-btn lp3-btn-primary lp3-btn-block" disabled={status === 'sending'}>
+        {status !== 'sending' && <IcSend size={18} />}
         {status === 'sending' ? 'Sender …' : submitLabel}
       </button>
-      <p className="lp3-form-fine">Vi ringer deg tilbake innen 1 time i normal arbeidstid.</p>
+      <p className="lp3-form-fine"><IcLock size={15} /><span>Dine opplysninger er trygge hos oss og deles ikke med uvedkommende.</span></p>
       {status === 'error' && <p className="lp3-form-error">Noe gikk galt. Ring oss på 90 63 31 18.</p>}
     </form>
   )

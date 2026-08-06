@@ -51,6 +51,13 @@ export async function POST(req: NextRequest) {
     .map(([k, v]) => `${k}: ${v}`)
   if (attachments.length > 0) ovrigeLinjer.push(`Bilder vedlagt: ${attachments.length}`)
 
+  const SIDE_LABEL: Record<string, string> = {
+    'elbillader-pris': 'Elbillader',
+    'zaptec-go-montering': 'Zaptec Go',
+    'elektriker-pris': 'Elektriker',
+  }
+  const sideLabel = SIDE_LABEL[landingsside ?? ''] ?? landingsside ?? 'ukjent'
+
   await fetch(GHL_WEBHOOK, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -59,9 +66,10 @@ export async function POST(req: NextRequest) {
       lastName: navn?.split(' ').slice(1).join(' ') || '',
       phone: telefon,
       email: epost ?? '',
-      address: [adresse, postnummer].filter(Boolean).join(', '),
+      postalCode: postnummer ?? '',
+      address: adresse ?? '',
       message: ovrigeLinjer.join('\n'),
-      source: `VBM Elektro – Annonse-landingsside (${landingsside ?? 'ukjent'})`,
+      source: `Google Ads | ${sideLabel}`,
       landingsside: landingsside ?? '',
       gclid: gclid ?? '',
       referrer: referrer ?? '',

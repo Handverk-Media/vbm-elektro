@@ -8,26 +8,28 @@ import { LpSection } from '@/components/lp/LpSection'
 import { LpSticky } from '@/components/lp/LpSticky'
 import { LpFaq } from '@/components/lp/LpFaq'
 import { LpForm } from '@/components/lp/LpForm'
+import { LpFooter } from '@/components/lp/LpFooter'
 import { PhoneLink } from '@/components/PhoneLink'
-import { IcDoc, IcCamera, IcSearch, IcCheckDoc, IcShield, IcClock, IcPanel, IcPlug, IcBulb, IcHeat, IcHouse, IcMore, IcFolder } from '@/components/lp/LpIcons'
+import { IcDoc, IcCamera, IcSearch, IcCheckDoc, IcPanel, IcPlug, IcBulb, IcHeat, IcMore, IcPin, IcShield, IcStar, IcChat, IcFolder, IcUser, IcPhoneOutline, IcPencil, IcMail } from '@/components/lp/LpIcons'
 import { trackLpPrimaryCta } from '@/lib/analytics'
 
 const PAGE = 'elektriker-pris'
+const CTA = 'Få vurdert oppdraget'
+
+const JOBB_TYPER = ['Feilsøking', 'Sikringsskap', 'Stikkontakt/belysning', 'Varmekabler', 'Elbillader', 'Annet']
 
 const JOBBER = [
-  { icon: <IcPanel size={20} />, title: 'Sikringsskap' },
   { icon: <IcSearch size={20} />, title: 'Feilsøking' },
-  { icon: <IcBulb size={20} />, title: 'Belysning' },
-  { icon: <IcPlug size={20} />, title: 'Stikkontakter' },
+  { icon: <IcPanel size={20} />, title: 'Sikringsskap' },
+  { icon: <IcBulb size={20} />, title: 'Stikkontakt/belysning' },
   { icon: <IcHeat size={20} />, title: 'Varmekabler' },
-  { icon: <IcHouse size={20} />, title: 'Oppussing' },
-  { icon: <IcCheckDoc size={20} />, title: 'Elsjekk' },
+  { icon: <IcPlug size={20} />, title: 'Elbillader' },
   { icon: <IcMore size={20} />, title: 'Annet' },
 ]
 
 const FAQ = [
   { q: 'Får jeg fastpris eller timepris?', a: 'Avgrensede jobber med kjent omfang kan vi ofte gi fastpris på etter å ha sett bilder og beskrivelse. Feilsøking og jobber med ukjent omfang kan kreve timearbeid — det avklarer vi før vi starter, ikke etterpå.' },
-  { q: 'Hva slags jobber kan jeg sende inn?', a: 'Alt fra stikkontakter og belysning til feilsøking, varmekabler, mindre arbeid ved oppussing, sikringsskap og elsjekk.' },
+  { q: 'Hva slags jobber kan jeg sende inn?', a: 'Alt fra stikkontakter og belysning til feilsøking, varmekabler, sikringsskap og elbillader.' },
   { q: 'Kommer det tillegg jeg ikke visste om?', a: 'Nei. Eventuelle tillegg avklares med deg før de utføres, ikke etterpå.' },
   { q: 'Får jeg dokumentasjon på jobben?', a: 'Ja, der det er aktuelt — samsvarserklæring og dokumentasjon leveres etter utført arbeid.' },
 ]
@@ -40,58 +42,41 @@ export default function ElektrikerPrisPage() {
       <LpHero
         id="skjema"
         page={PAGE}
-        h1Start="Elektriker"
-        h1Accent="med fastpris"
-        lede="Vi gir deg pris før vi starter — du slipper uventede tillegg. Send en kort beskrivelse og noen bilder, så vurderer vi jobben."
-        primaryLabel="Beskriv jobben og få pris"
+        h1="Beskriv jobben, få den vurdert"
+        lede="Fortell oss hva du trenger hjelp med. Avgrensede jobber gir vi ofte fastpris på — ved feilsøking eller ukjent omfang avklarer vi pris før vi starter."
         bgImage="/hero-elektriker-pris.png"
         bgAlt="Elektriker i arbeid ved sikringsskap"
-        trustItems={[
-          { icon: <IcCheckDoc size={20} />, label: 'Fastpris på forhånd' },
-          { icon: <IcShield size={20} />, label: 'Kvalitetsarbeid og trygghet' },
-          { icon: <IcDoc size={20} />, label: 'Samsvarserklæring' },
-          { icon: <IcFolder size={20} />, label: 'Dokumentasjon i Boligmappa' },
-        ]}
+        bgPosition="56% 32%"
+        checklist={['Pris eller vurdering før oppstart', 'Tillegg avklares på forhånd', 'Samsvarserklæring der det er aktuelt', 'Dokumentasjon i Boligmappa']}
       >
         <div className="lp3-form-head">
-          <p className="lp3-card-title">Beskriv jobben og få pris</p>
-          <p className="lp3-body">Vi ringer deg tilbake innen 1 time.</p>
+          <p className="lp3-card-title">{CTA}</p>
+          <p className="lp3-body">Fyll ut skjemaet, så vurderer vi oppdraget og gir deg svar før vi starter.</p>
         </div>
         <LpForm
           page={PAGE}
           idPrefix="ep-"
-          submitLabel="Send og få pris"
+          submitLabel={CTA}
           rows={[
-            [{ kind: 'text', name: 'navn', label: 'Navn', placeholder: 'Ola Nordmann', required: true }, { kind: 'tel', name: 'telefon', label: 'Telefonnummer', placeholder: '900 00 000', required: true }],
-            [{ kind: 'email', name: 'epost', label: 'E-post', placeholder: 'ola@example.com', required: true }, { kind: 'text', name: 'postnummer', label: 'Postnummer', placeholder: '1337', required: true }],
-            [{ kind: 'select', name: 'type_jobb', label: 'Hva gjelder det?', options: ['Sikringsskap', 'Feilsøking', 'Belysning', 'Stikkontakter', 'Varmekabler', 'Oppussing', 'Elsjekk', 'Annet'], required: true }],
-            [{ kind: 'textarea', name: 'beskrivelse', label: 'Beskriv kort hva du trenger hjelp med', placeholder: 'Skriv her …', required: true }],
-            [{ kind: 'file', name: 'bilder', label: 'Last opp bilder', hint: 'Ett eller flere bilder av jobben', multiple: true }],
+            [{ kind: 'text', name: 'navn', label: 'Navn', placeholder: 'Ditt navn', required: true, icon: <IcUser size={18} /> }, { kind: 'tel', name: 'telefon', label: 'Telefonnummer', placeholder: 'Ditt telefonnummer', required: true, icon: <IcPhoneOutline size={18} /> }],
+            [{ kind: 'text', name: 'postnummer', label: 'Postnummer', placeholder: 'Postnummer', required: true, icon: <IcPin size={18} /> }, { kind: 'email', name: 'epost', label: 'E-post', placeholder: 'Din e-post', icon: <IcMail size={18} /> }],
+            [{ kind: 'select', name: 'type_jobb', label: 'Hva gjelder oppdraget?', options: JOBB_TYPER, required: true }],
+            [{ kind: 'file', name: 'bilder', label: 'Last opp bilder av jobben', required: true }],
+            [{ kind: 'textarea', name: 'beskrivelse', label: 'Beskriv oppdraget kort', placeholder: 'Beskriv kort hva du trenger hjelp med', rows: 3, icon: <IcPencil size={18} /> }],
           ]}
         />
       </LpHero>
 
       <LpIconGrid label="Send inn" heading="Typiske oppdrag vi hjelper med" items={JOBBER} />
 
-      <LpSection label="Prisgrunnlag" heading="Hva påvirker prisen?" tint narrow>
-        <div className="lp3-icongrid" style={{ gridTemplateColumns: 'repeat(2, 1fr)', maxWidth: 560, margin: '0 auto' }}>
-          {['Jobbens omfang', 'Materiell', 'Tilgang', 'Kabelføring', 'Eksisterende anlegg', 'Feilsøking', 'Dokumentasjon'].map(t => (
-            <div className="lp3-icongrid-item" key={t} style={{ background: 'transparent', border: 'none', padding: '8px 0', flexDirection: 'row', gap: 10, textAlign: 'left' }}>
-              <p style={{ fontWeight: 500 }}>{t}</p>
-            </div>
-          ))}
-        </div>
-      </LpSection>
-
       <LpProcessSteps
         id="prosess"
-        label="Fra beskrivelse til pris"
-        heading="Slik får du fastpris"
+        label="Fra beskrivelse til svar"
+        heading="Slik fungerer det"
         steps={[
-          { icon: <IcDoc size={24} />, title: 'Fortell oss hva du trenger', text: 'Beskriv jobben i skjemaet' },
-          { icon: <IcCamera size={24} />, title: 'Vi gir deg pris', text: 'Basert på bilder og beskrivelse' },
-          { icon: <IcCheckDoc size={24} />, title: 'Vi utfører jobben', text: 'Som avtalt, uten overraskelser' },
-          { icon: <IcSearch size={24} />, title: 'Du godkjenner', text: 'Og vi dokumenterer arbeidet' },
+          { icon: <IcDoc size={24} />, title: 'Beskriv jobben', text: 'Fortell oss hva du trenger, med bilder.' },
+          { icon: <IcSearch size={24} />, title: 'Vi vurderer', text: 'Basert på bilder og beskrivelse.' },
+          { icon: <IcCheckDoc size={24} />, title: 'Du får svar', text: 'Fastpris der vi kan, ellers avtalt time.' },
         ]}
       />
 
@@ -103,32 +88,36 @@ export default function ElektrikerPrisPage() {
         </ul>
       </LpSection>
 
-      <LpTrustStats items={[
-        { icon: <IcShield size={26} />, label: 'NELFO-medlem', sub: 'Registrert i Elvirksomhetsregisteret' },
-        { icon: <IcClock size={26} />, label: 'Svar innen 1 time', sub: 'I normal arbeidstid' },
-        { icon: <IcCheckDoc size={26} />, label: 'Lokal ekspert', sub: 'Drammen, Asker, Bærum og omegn' },
-      ]} teamImageLabel="Bilde: VBM-teamet foran servicebil" />
+      <LpTrustStats
+        label="Vår standard"
+        heading="Derfor velger kunder VBM Elektro"
+        items={[
+          { icon: <IcPin size={26} />, label: 'Lokal elektriker', sub: 'Drammen, Asker, Bærum, Lier og Øvre Eiker' },
+          { icon: <IcShield size={26} />, label: 'Registrert elvirksomhet', sub: 'Elvirksomhetsregisteret' },
+          { icon: <IcStar size={26} />, label: 'Fagfolk med lang erfaring', sub: 'Kvalitet i alle ledd' },
+          { icon: <IcChat size={26} />, label: 'Trygg og forutsigbar prosess', sub: 'Vurdering før oppstart' },
+          { icon: <IcFolder size={26} />, label: 'Dokumentasjon du kan stole på', sub: 'Boligmappa' },
+        ]}
+      />
 
-      <LpSection id="faq" label="Spørsmål" heading="Ofte stilt" narrow>
+      <LpSection id="faq" label="Spørsmål" heading="Ofte stilte spørsmål">
         <LpFaq items={FAQ} />
       </LpSection>
 
       <section id="kontakt" className="lp3-closing">
         <div className="lp3-wrap lp3-closing-row">
           <div>
-            <h2>Få fastpris på ditt oppdrag</h2>
+            <h2>Beskriv jobben og få den vurdert</h2>
             <p>Enkelt, trygt og forutsigbart.</p>
           </div>
           <div className="lp3-cta-row">
-            <a href="#skjema-form" className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(`${PAGE}-bunn`)}>Beskriv jobben og få pris</a>
+            <a href="#skjema" className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(`${PAGE}-bunn`)}>{CTA}</a>
             <PhoneLink location={`${PAGE}-bunn`} className="lp3-btn lp3-btn-secondary">Ring 90 63 31 18</PhoneLink>
           </div>
         </div>
       </section>
 
-      <div className="lp3-footer-mini">
-        <a href="/personvern">Personvern</a> · VBM Elektro AS
-      </div>
+      <LpFooter />
 
       <LpSticky page={PAGE} formLabel="Beskriv jobb" />
     </div>

@@ -1,21 +1,19 @@
-import { LpImagePlaceholder } from './LpImagePlaceholder'
-
-export function LpTrustStats({ items, teamImageLabel }: { items: Array<{ icon: React.ReactNode; label: string; sub: string }>; teamImageLabel?: string }) {
+export function LpTrustStats({ label, heading, items }: { label: string; heading: string; items: Array<{ icon: React.ReactNode; label: string; sub: string }> }) {
   return (
-    <section className="lp3-section lp3-trust-stats">
-      <div className="lp3-wrap lp3-trust-stats-grid">
-        <div className="lp3-trust-stats-row">
+    <section className="lp3-section">
+      <div className="lp3-wrap">
+        <div className="lp3-section-intro">
+          <h2 className="lp3-h2">{heading}</h2>
+        </div>
+        <div className="lp3-trust-row">
           {items.map(({ icon, label, sub }) => (
-            <div className="lp3-trust-stat" key={label}>
+            <div className="lp3-trust-item" key={label}>
               <span className="ico">{icon}</span>
-              <div>
-                <p className="label">{label}</p>
-                <p className="sub">{sub}</p>
-              </div>
+              <p className="label">{label}</p>
+              <p className="sub">{sub}</p>
             </div>
           ))}
         </div>
-        {teamImageLabel && <LpImagePlaceholder label={teamImageLabel} aspect="16/9" className="lp3-trust-stats-image" />}
       </div>
     </section>
   )

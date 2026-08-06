@@ -3,7 +3,6 @@ export function LpSection({ id, label, heading, tint, narrow, children }: { id?:
     <section id={id} className={`lp3-section${tint ? ' lp3-section-tint' : ''}`}>
       <div className={`lp3-wrap${narrow ? ' lp3-wrap-narrow' : ''}`}>
         <div className="lp3-section-intro">
-          <span className="lp3-section-label lp3-section-label-center">{label}</span>
           <h2 className="lp3-h2">{heading}</h2>
         </div>
         {children}

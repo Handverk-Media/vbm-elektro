@@ -1,53 +1,40 @@
 import Image from 'next/image'
-import { PhoneLink } from '@/components/PhoneLink'
-import { IcPin } from './LpIcons'
-import { trackLpPrimaryCta } from '@/lib/analytics'
+import { IcCheckCircle } from './LpIcons'
 
 interface Props {
   id?: string
   page: string
-  h1Start: string
-  h1Accent: string
+  h1: string
   lede: string
-  primaryLabel: string
-  trustItems: Array<{ icon: React.ReactNode; label: string }>
+  checklist: string[]
   bgImage: string
   bgAlt: string
+  bgPosition?: string
+  /** Ekstra høyde over/under hero (i %) — gir horisontalt spillerom til å panorere bildet
+   *  bort fra produktet som ellers ville havnet under skjemakortet. */
+  bgZoomY?: number
   children: React.ReactNode
 }
 
-export function LpHero({ id, page, h1Start, h1Accent, lede, primaryLabel, trustItems, bgImage, bgAlt, children }: Props) {
+export function LpHero({ id, h1, lede, checklist, bgImage, bgAlt, bgPosition, bgZoomY = 0, children }: Props) {
   return (
     <section id={id} className="lp3-hero">
-      <div className="lp3-hero-bg" aria-hidden="true">
-        <Image src={bgImage} alt={bgAlt} fill priority sizes="100vw" className="lp3-hero-bg-img" />
+      <div className="lp3-hero-bg" aria-hidden="true" style={bgZoomY ? { top: `${-bgZoomY}%`, bottom: `${-bgZoomY}%` } : undefined}>
+        <Image src={bgImage} alt={bgAlt} fill priority sizes="100vw" className="lp3-hero-bg-img" style={bgPosition ? { objectPosition: bgPosition } : undefined} />
         <div className="lp3-hero-bg-scrim" />
       </div>
-      <div className="lp3-wrap">
-        <div className="lp3-hero-grid">
-          <div className="lp3-hero-copy">
-            <span className="lp3-eyebrow lp3-eyebrow-dark"><IcPin size={14} />Drammen · Asker · Bærum</span>
-            <h1 className="lp3-hero-h1-dark">{h1Start} <span className="accent">{h1Accent}</span></h1>
-            <p className="lp3-hero-lede lp3-hero-lede-dark">{lede}</p>
-            <div className="lp3-cta-row">
-              <a href={`#${id ?? 'skjema'}-form`} className="lp3-btn lp3-btn-primary" onClick={() => trackLpPrimaryCta(page)}>{primaryLabel}</a>
-              <PhoneLink location={`${page}-hero`} className="lp3-btn lp3-btn-secondary">Ring 90 63 31 18</PhoneLink>
-            </div>
-          </div>
-          <div id={`${id ?? 'skjema'}-form`} className="lp3-hero-card">
-            {children}
-            <p className="lp3-form-call">
-              Eller ring oss nå <PhoneLink location={`${page}-hero-card`} className="lp3-form-call-link">90 63 31 18</PhoneLink>
-            </p>
-          </div>
+      <div className="lp3-wrap lp3-hero-grid">
+        <div className="lp3-hero-copy">
+          <h1 className="lp3-hero-h1-dark">{h1}</h1>
+          <p className="lp3-hero-lede lp3-hero-lede-dark">{lede}</p>
+          <ul className="lp3-check-list lp3-check-list-dark">
+            {checklist.map(item => (
+              <li key={item}><IcCheckCircle size={26} />{item}</li>
+            ))}
+          </ul>
         </div>
-        <div className="lp3-hero-trust">
-          {trustItems.map(({ icon, label }) => (
-            <div className="lp3-hero-trust-item" key={label}>
-              <span className="ico">{icon}</span>
-              <span>{label}</span>
-            </div>
-          ))}
+        <div className="lp3-hero-card">
+          {children}
         </div>
       </div>
     </section>
