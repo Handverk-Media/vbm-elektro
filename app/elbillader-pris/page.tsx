@@ -38,7 +38,7 @@ export default function ElbilladerPrisPage() {
         lede="Send bilde av sikringsskapet, så vurderer vi anlegget ditt og gir deg fast pris før arbeidet starter."
         bgImage="/hero-elbillader-pris.png"
         bgAlt="Elbillader montert på husvegg i skumring"
-        bgPosition="70% 40%"
+        bgPosition="45% 22%"
         checklist={['Skriftlig pris før oppstart', 'Tillegg avklares på forhånd', 'Samsvarserklæring inkludert', 'Dokumentasjon i Boligmappa']}
       >
         <div className="lp3-form-head">
