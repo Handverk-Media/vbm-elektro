@@ -6,6 +6,7 @@ const base = "https://vbmelektro.no"
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base,                         lastModified: new Date(), changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${base}/elbillader`,         lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/befaring`,           lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/tjenester`,          lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/tjenester/elbillader`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
