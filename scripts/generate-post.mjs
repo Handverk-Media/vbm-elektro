@@ -76,7 +76,7 @@ const SYSTEM_PROMPT = `Du er fagredaktør for VBM Elektro AS sin blogg. VBM Elek
 
 TJENESTER: Elbillader (Zaptec, Easee), elkontroll, smarthus (Plejd), bad- og kjøkkenrenovering, sikringsskap, downlights, varmekabel, næringsbygg.
 
-PRISER (omtrentlige fra-priser): Elbillader standard kr 9 990, kompleks kr 14 900, elkontroll fra kr 2 990, smarthus 5 rom fra kr 9 900.
+PRISER (omtrentlige fra-priser): Elbillader standard kr 12 490, kompleks kr 18 490, elkontroll fra kr 2 990, smarthus 5 rom fra kr 9 900.
 
 MÅL: Skriv SEO-optimaliserte bloggartikler på norsk bokmål som:
 - Rangerer på Google for lokale søk (Bærum, Oslo, Asker, Drammen)

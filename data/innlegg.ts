@@ -59,7 +59,7 @@ Uansett hvilken lader du velger, **må en autorisert elektriker stå for install
 
 ## Hva koster det?
 
-I Bærum og Oslo-området koster en standard installasjon av Zaptec Go eller Easee Home fra kr 9 990 inkl. materiell. Komplekse installasjoner med lang kabeltrekk, graving eller oppgradering av sikringsskap koster mer.
+I Bærum og Oslo-området koster en standard installasjon av Zaptec Go eller Easee Home fra kr 12 490 inkl. materiell. Komplekse installasjoner med lang kabeltrekk, graving eller oppgradering av sikringsskap koster mer.
 
 Ta kontakt for et uforpliktende tilbud – vi befarer og priser jobben gratis.
     `.trim(),
@@ -260,8 +260,8 @@ Prisene varierer basert på:
 
 | Type installasjon | Pris fra |
 |---|---|
-| Standard (< 10m kabel, enkel) | kr 9 990 |
-| Kompleks (lang trekk, graving) | kr 14 900 |
+| Standard (< 10m kabel, enkel) | kr 12 490 |
+| Kompleks (lang trekk, graving) | kr 18 490 |
 | Borettslag / sameie (per enhet) | Etter befaring |
 
 ## Støtteordninger

@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google"
+import { Bricolage_Grotesque, Inter, JetBrains_Mono, Geist, Geist_Mono } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { Providers } from "@/components/Providers"
@@ -26,6 +26,20 @@ const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
   display: "swap",
   weight: ["400", "500"],
+})
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+})
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+  weight: ["400", "500", "600"],
 })
 
 const siteUrl = "https://vbmelektro.no"
@@ -87,7 +101,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    { "@type": "Question", name: "Hva koster en elbillader-installasjon hos dere?", acceptedAnswer: { "@type": "Answer", text: "Standard installasjon starter på kr 9 990. Det inkluderer kabling fra sikringsskap, nødvendig vern, dokumentasjon og idriftsettelse." } },
+    { "@type": "Question", name: "Hva koster en elbillader-installasjon hos dere?", acceptedAnswer: { "@type": "Answer", text: "Standard installasjon starter på kr 12 490. Det inkluderer kabling fra sikringsskap, nødvendig vern, dokumentasjon og idriftsettelse." } },
     { "@type": "Question", name: "Hvor raskt kan dere komme?", acceptedAnswer: { "@type": "Answer", text: "Vanlige serviceoppdrag og elbillader: 1–5 dager. Akutte feil prioriteres — ring 90 63 31 18." } },
     { "@type": "Question", name: "Hva hvis jobben blir større enn dere trodde?", acceptedAnswer: { "@type": "Answer", text: "Du hører fra oss før det skjer. Tillegg avklares alltid med deg før vi går videre." } },
     { "@type": "Question", name: "Er dere NELFO-godkjent og autorisert?", acceptedAnswer: { "@type": "Answer", text: "Ja. Vi er registrert i Elvirksomhetsregisteret hos DSB og NELFO-medlem." } },
@@ -97,7 +111,7 @@ const faqSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nb" className={`${bricolage.variable} ${inter.variable} ${jetbrains.variable}`}>
+    <html lang="nb" className={`${bricolage.variable} ${inter.variable} ${jetbrains.variable} ${geist.variable} ${geistMono.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

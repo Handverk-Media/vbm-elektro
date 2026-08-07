@@ -43,7 +43,7 @@ export function TilbudModal({ open, onClose }: Props) {
           <p className="bm-sub">Fortell oss hva du trenger — vi svarer innen 1 time</p>
         </div>
 
-        <ContactForm variant="plain" />
+        <ContactForm variant="plain" idPrefix="tilbud-" />
       </div>
     </div>,
     document.body
