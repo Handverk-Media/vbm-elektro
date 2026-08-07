@@ -22,21 +22,29 @@
   --mono: var(--font-jetbrains), 'JetBrains Mono', monospace;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--body);
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; }
+/* Wrapped in a cascade layer so pages that opt into Tailwind (e.g. /befaring)
+   can override these resets with plain utility classes — unlayered CSS always
+   beats layered CSS regardless of specificity, and Tailwind v4 always emits
+   its utilities inside @layer. This layer sorts before Tailwind's own layers
+   since it's registered first (globals.css loads before any page-level CSS),
+   so it keeps resetting every other (non-Tailwind) page exactly as before. */
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
-h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; }
+  h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; }
+}
 
 /* ── Utilities ─────────────────────────────────── */
 .wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }

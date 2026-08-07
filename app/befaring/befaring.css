@@ -1,0 +1,9 @@
+/* Scoped Tailwind for /befaring only — theme + utilities, no Preflight,
+   so this route doesn't reset element defaults used elsewhere on the site. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}
